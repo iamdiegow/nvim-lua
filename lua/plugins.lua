@@ -18,6 +18,7 @@ return require('packer').startup(function()
   }
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/vim-vsnip'
 end)
 
 
