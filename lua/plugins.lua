@@ -11,8 +11,7 @@ end
 
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use {'wbthomason/packer.nvim', opt=true }
+  use 'wbthomason/packer.nvim'
 
   use {'dracula/vim', as = 'dracula'}
 
@@ -22,6 +21,8 @@ return require('packer').startup(function(use)
   }
 
   use 'neovim/nvim-lspconfig'
+
+	use "kabouzeid/nvim-lspinstall"
 
   use 'hrsh7th/nvim-compe'
 
