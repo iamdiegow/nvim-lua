@@ -11,3 +11,6 @@ o.incsearch = true
 o.ignorecase = true
 o.scrolloff = 12
 o.number = true
+o.colorcolumn = "80"
+
+vim.cmd('colorscheme dracula')
