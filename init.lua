@@ -1,6 +1,5 @@
 require('plugins')
 require('keymappings')
-require('options')
+require('settings')
 require('compe-config')
 require('lsp.lua-ls')
-
