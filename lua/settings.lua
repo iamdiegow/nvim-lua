@@ -21,7 +21,7 @@ o.timeoutlen = 300
 o.updatetime = 300
 o.background = 'dark'
 o.autoindent = true
-o.cmdheight = 2
+o.cmdheight = 1
 o.mouse = 'a'
 o.tabstop = 2
 o.signcolumn = "yes"
@@ -29,6 +29,7 @@ o.showmode = false
 o.backup = false
 o.writebackup = false
 o.cursorline = true
+o.termguicolors = true
 
 -- vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
 -- vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
