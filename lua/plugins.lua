@@ -28,4 +28,8 @@ return require('packer').startup(function(use)
   }
 	use 'psliwka/vim-smoothie'
 	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+	use {
+  'nvim-telescope/telescope.nvim',
+  requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+	}
 end)

@@ -6,7 +6,8 @@ require('lualine-config')
 require('bufferline-config')
 require('nvim-tree-config')
 require('treesitter-config')
+require('telescope-config')
+require('lspconfig-config')
+require('lspsaga-config')
 require('lsp.lua-ls')
 
-require'lspconfig'.tsserver.setup{}
-require('lspkind').init({})
