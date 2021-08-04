@@ -3,8 +3,8 @@ local options = { noremap = true, silent = true }
 
 -- NORMAL MODE ----------
 -- set LEADER key to space
-map('n', '<Space>', '<NOP>', options )
 vim.g.mapleader = ' '
+map('n', '<Space>', '<NOP>', options )
 -- disable highlight search
 map('n', '<Leader>h', ':set hlsearch!<CR>', options)
 -- better movement
@@ -22,12 +22,22 @@ map('n', '<Leader>h', ':noh<CR>', options )
 -- Tab switch buffer
 map('n', '<TAB>', ':bnext<CR>', options )
 map('n', '<S-TAB>', ':bprevious<CR>', options )
+-- Resize buffers with arrows
+map('n', '<C-Up>', ':resize -2<CR>', options )
+map('n', '<C-Down>', ':resize +2<CR>', options )
+map('n', '<C-Left>', ':vertical resize -2<CR>', options )
+map('n', '<C-Right>', ':vertical resize +2<CR>', options )
 
 -- INSERT MODE ----------
--- exit INSERT mode
+-- exit insert mode
 map('i', 'jj', '<Esc>', options )
 map('i', 'jk', '<Esc>', options )
 map('i', 'kj', '<Esc>', options )
+
+-- move current line
+map('i', '<A-j>', '<Esc>:m .+1<CR>==gi', options )
+map('i', '<A-k>', '<Esc>:m .-2<CR>==gi', options )
+
 
 -- VISUAL MODE -----------
 -- better indenting
@@ -40,7 +50,14 @@ map('v', '>', '>gv', options )
 map('n', '<Leader>e', ':NvimTreeToggle<CR>', options )
 
 -- TERMINAL
--- open terminal
-map("n", "<C-x>", ":10new +terminal | setlocal nobuflisted <CR>", options ) --  term bottom
+-- open terminal below
+map('n', '<C-x>', ':10new +terminal | setlocal nobuflisted <CR>', options ) 
+-- open terminal in new buffer
+map('n', '<C-t>', ':terminal<CR>' , options )
 -- escape terminal mode
-map("t", "<C-\\>", "<C-\\><C-n>", options )
+map('t', '<C-\\>', '<C-\\><C-n>', options )
+-- terminal window navigation
+map('t', '<C-h>', '<C-\\><C-N><C-w>h', options )
+map('t', '<C-j>', '<C-\\><C-N><C-w>j', options )
+map('t', '<C-k>', '<C-\\><C-N><C-w>k', options )
+map('t', '<C-l>', '<C-\\><C-N><C-w>l', options )
