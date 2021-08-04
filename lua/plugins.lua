@@ -12,22 +12,16 @@ end
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-
   use {'dracula/vim', as = 'dracula'}
-
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
   }
-
   use 'neovim/nvim-lspconfig'
-
 	use "kabouzeid/nvim-lspinstall"
-
   use 'hrsh7th/nvim-compe'
-
   use 'hrsh7th/vim-vsnip'
-
+	use 'hoob3rt/lualine.nvim'
 end)
 
 
