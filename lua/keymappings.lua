@@ -44,6 +44,10 @@ map('i', '<A-k>', '<Esc>:m .-2<CR>==gi', options )
 map('v', '<', '<gv', options )
 map('v', '>', '>gv', options )
 
+-- VISUAL BLOCK MODE
+map('x', '<A-j>', ':m \'>+1<CR>gv-gv', options )
+map('x', '<A-k>', ':m \'<-2<CR>gv-gv', options )
+
 
 -- NVIM TREE
 -- toggle nvim tree
