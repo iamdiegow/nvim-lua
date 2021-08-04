@@ -1,10 +1,12 @@
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true, silent = true }
 
+
 -- NORMAL MODE ----------
 -- set LEADER key to space
 vim.g.mapleader = ' '
 map('n', '<Space>', '<NOP>', options )
+map("n", "<Leader>sv", ":luafile %<CR>", options )
 -- disable highlight search
 map('n', '<Leader>h', ':set hlsearch!<CR>', options)
 -- exit buffer
