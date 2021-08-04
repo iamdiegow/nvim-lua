@@ -7,6 +7,8 @@ vim.g.mapleader = ' '
 map('n', '<Space>', '<NOP>', options )
 -- disable highlight search
 map('n', '<Leader>h', ':set hlsearch!<CR>', options)
+-- exit buffer
+map('n', '<Leader>q', ':wq<CR>', options)
 -- better movement
 map('n', '<C-j>', '5j', options )
 map('n', '<C-k>', '5k', options )

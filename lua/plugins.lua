@@ -27,4 +27,5 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
   }
 	use 'psliwka/vim-smoothie'
+	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 end)
