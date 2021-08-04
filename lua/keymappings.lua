@@ -55,7 +55,7 @@ map('x', '<A-k>', ':m \'<-2<CR>gv-gv', options )
 
 -- NVIM TREE
 -- toggle nvim tree
-map('n', '<Leader>e', ':NvimTreeToggle<CR>', options )
+map('n', '<Space>e', ':NvimTreeToggle<CR>', options )
 
 -- TERMINAL
 -- open terminal below
