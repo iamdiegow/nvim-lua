@@ -40,7 +40,6 @@ map('v', '>', '>gv', options )
 map('n', '<Leader>e', ':NvimTreeToggle<CR>', options )
 
 -- TERMINAL
--- open terminal
+-- OPEN TERMINALS --
 map("n", "<C-x>", ":10new +terminal | setlocal nobuflisted <CR>", options ) --  term bottom
--- escape terminal mode
 map("t", "<C-\\>", "<C-\\><C-n>", options )

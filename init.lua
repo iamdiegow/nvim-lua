@@ -6,3 +6,4 @@ require('lualine-config')
 require('lsp.lua-ls')
 
 require'lspconfig'.tsserver.setup{}
+require('lspkind').init({})

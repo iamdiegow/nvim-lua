@@ -8,8 +8,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-
-
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use {'dracula/vim', as = 'dracula'}
@@ -18,11 +16,15 @@ return require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons'
   }
   use 'neovim/nvim-lspconfig'
+	use 'glepnir/lspsaga.nvim'
+	use 'onsails/lspkind-nvim'
 	use "kabouzeid/nvim-lspinstall"
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
 	use 'hoob3rt/lualine.nvim'
+	use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+  }
+	use 'psliwka/vim-smoothie'
 end)
-
-
-
