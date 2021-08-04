@@ -40,7 +40,6 @@ require("telescope").setup {
 
 local M = {}
 
-
 function M.find_files()
   require("telescope.builtin").find_files {
     prompt_title = "Search .config",
