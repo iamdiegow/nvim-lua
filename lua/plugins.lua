@@ -33,4 +33,5 @@ return require('packer').startup(function(use)
   requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
 	use 'marko-cerovac/material.nvim'
+	use 'famiu/bufdelete.nvim'
 end)

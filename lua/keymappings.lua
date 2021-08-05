@@ -10,7 +10,7 @@ map("n", "<Leader>sv", ":luafile %<CR>", options )
 -- disable highlight search
 map('n', '<Leader>h', ':set hlsearch!<CR>', options)
 -- exit buffer
-map('n', '<Leader>q', ':wq<CR>', options)
+map('n', '<Leader>q', ':Bdelete<CR>', options)
 -- better movement
 map('n', '<C-j>', '5j', options )
 map('n', '<C-k>', '5k', options )
