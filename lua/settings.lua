@@ -41,4 +41,3 @@ bo.shiftwidth = 2
 -- vim.cmd("au ColorScheme * hi MsgArea ctermbg=none guibg=none")
 -- vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
 -- vim.cmd("au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none")
-vim.cmd('colorscheme dracula')

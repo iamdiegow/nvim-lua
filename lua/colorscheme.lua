@@ -3,7 +3,7 @@ vim.cmd([[colo material]])
 -- Material Config
 -- variants = 'darker' | 'lighter' | 'oceanic' | 'palenight' | 'deep ocean'
 -- lualine -> theme = 'material-nvim'
-vim.g.material_style = 'deep ocean'
+vim.g.material_style = 'oceanic'
 vim.g.material_italic_comments = true
 vim.g.material_italic_keywords = true
 vim.g.material_italic_functions = true

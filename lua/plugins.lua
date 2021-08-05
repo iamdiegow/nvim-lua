@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
 	use 'glepnir/lspsaga.nvim'
 	use 'onsails/lspkind-nvim'
 	use "kabouzeid/nvim-lspinstall"
+	use 'nvim-lua/completion-nvim'
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
 	use 'hoob3rt/lualine.nvim'
@@ -34,4 +35,6 @@ return require('packer').startup(function(use)
 	}
 	use 'marko-cerovac/material.nvim'
 	use 'famiu/bufdelete.nvim'
+	use 'terrortylor/nvim-comment'
 end)
+
