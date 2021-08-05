@@ -13,5 +13,6 @@ require('lspsaga-config')
 require('nvim-comment-config')
 require('neoscroll-config')
 require('formatter-config')
+require('indent-blankline-config')
 require('lsp.lua-ls')
 

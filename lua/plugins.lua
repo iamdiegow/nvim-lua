@@ -37,5 +37,6 @@ return require('packer').startup(function(use)
 	use 'terrortylor/nvim-comment'
 	use 'karb94/neoscroll.nvim'
 	use 'mhartington/formatter.nvim'
+	use "lukas-reineke/indent-blankline.nvim"
 end)
 
