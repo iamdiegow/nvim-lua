@@ -12,5 +12,6 @@ require('lspconfig-config')
 require('lspsaga-config')
 require('nvim-comment-config')
 require('neoscroll-config')
+require('formatter-config')
 require('lsp.lua-ls')
 

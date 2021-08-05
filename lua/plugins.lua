@@ -36,5 +36,6 @@ return require('packer').startup(function(use)
 	use 'famiu/bufdelete.nvim'
 	use 'terrortylor/nvim-comment'
 	use 'karb94/neoscroll.nvim'
+	use 'mhartington/formatter.nvim'
 end)
 
