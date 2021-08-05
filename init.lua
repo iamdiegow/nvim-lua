@@ -14,5 +14,7 @@ require('nvim-comment-config')
 require('neoscroll-config')
 require('formatter-config')
 require('indent-blankline-config')
+require('nvim-autopairs-config')
+require('nvim-ts-autotag-config')
 require('lsp.lua-ls')
 

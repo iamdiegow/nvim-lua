@@ -19,4 +19,10 @@ ts.setup({
     extended_mode = true,
     max_file_lines = 1000,
   },
+	autopairs = {
+		enable = true
+	},
+	autotag = {
+     enable = true
+  }
 })

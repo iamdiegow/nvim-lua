@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
 	use 'glepnir/lspsaga.nvim'
 	use 'onsails/lspkind-nvim'
-	use "kabouzeid/nvim-lspinstall"
+	use 'kabouzeid/nvim-lspinstall'
 	use 'nvim-lua/completion-nvim'
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
@@ -37,6 +37,8 @@ return require('packer').startup(function(use)
 	use 'terrortylor/nvim-comment'
 	use 'karb94/neoscroll.nvim'
 	use 'mhartington/formatter.nvim'
-	use "lukas-reineke/indent-blankline.nvim"
+	use 'lukas-reineke/indent-blankline.nvim'
+	use 'windwp/nvim-autopairs'
+	use 'windwp/nvim-ts-autotag'
 end)
 
