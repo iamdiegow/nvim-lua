@@ -11,5 +11,6 @@ require('telescope-config')
 require('lspconfig-config')
 require('lspsaga-config')
 require('nvim-comment-config')
+require('neoscroll-config')
 require('lsp.lua-ls')
 

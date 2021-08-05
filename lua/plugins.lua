@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
   }
-	use 'psliwka/vim-smoothie'
 	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 	use {
   'nvim-telescope/telescope.nvim',
@@ -36,5 +35,6 @@ return require('packer').startup(function(use)
 	use 'marko-cerovac/material.nvim'
 	use 'famiu/bufdelete.nvim'
 	use 'terrortylor/nvim-comment'
+	use 'karb94/neoscroll.nvim'
 end)
 
