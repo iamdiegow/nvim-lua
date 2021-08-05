@@ -1,20 +1,25 @@
+-- Core
 require('plugins')
 require('keymappings')
 require('settings')
 require('colorscheme')
-require('compe-config')
+
+-- Plugin config
 require('lualine-config')
 require('bufferline-config')
 require('nvim-tree-config')
 require('treesitter-config')
 require('telescope-config')
-require('lspconfig-config')
-require('lspsaga-config')
 require('nvim-comment-config')
 require('neoscroll-config')
 require('formatter-config')
 require('indent-blankline-config')
 require('nvim-autopairs-config')
 require('nvim-ts-autotag-config')
+
+-- LSP
 require('lsp.lua-ls')
+require('compe-config')
+require('lspconfig-config')
+require('lspsaga-config')
 

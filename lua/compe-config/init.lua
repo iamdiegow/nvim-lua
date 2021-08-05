@@ -13,17 +13,18 @@ require'compe'.setup {
   max_abbr_width = 100;
   max_kind_width = 100;
   max_menu_width = 100;
-  documentation = false;
-
+  documentation = true;
   source = {
     path = true;
     buffer = true;
     calc = true;
     nvim_lsp = true;
     nvim_lua = true;
-    vsnip = false;
+    vsnip = true;
+		spell = true;
     ultisnips = true;
     luasnip = true;
+		treesitter = true;
   };
 }
 
