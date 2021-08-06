@@ -1,7 +1,7 @@
 local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
 
--- Use an on_attach function to only map the following keys 
+-- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -155,3 +155,6 @@ vim.cmd([[
   autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
   autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
 ]])
+
+-- YAML
+require'lspconfig'.yamlls.setup({})
