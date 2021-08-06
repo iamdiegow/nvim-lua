@@ -18,7 +18,7 @@ require('nvim-autopairs-config')
 require('nvim-ts-autotag-config')
 
 -- LSP
-require('lsp.lua-ls')
+require('lsp')
 require('compe-config')
 require('lspconfig-config')
 require('lspsaga-config')
