@@ -25,6 +25,7 @@ o.autoindent = true
 o.cmdheight = 1
 o.mouse = 'a'
 o.tabstop = 2
+o.shiftwidth = 2
 o.signcolumn = "yes"
 o.showmode = false
 o.backup = false

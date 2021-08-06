@@ -5,6 +5,8 @@ vim.cmd([[
 	nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 ]])
 
+local actions = require('telescope.actions')
+
 require("telescope").setup {
   defaults = {
     vimgrep_arguments = {
@@ -17,24 +19,41 @@ require("telescope").setup {
       "--smart-case",
       "--hidden",
     },
+		border = {},
+    borderchars = { "─", "│", "─", "│", "+", "+", "+", "+" },
     prompt_prefix = "❯ ",
     selection_caret = "❯ ",
-    sorting_strategy = "ascending",
+		initial_mode = "insert",
+		use_less = true,
+		set_env = { ["COLORTERM"] = "truecolor" },
+    sorting_strategy = "descending",
     color_devicons = true,
+		winblend = 0,
+		layout_strategy = "vertical",
     layout_config = {
       prompt_position = "top",
       horizontal = {
         width_padding = 0.04,
         height_padding = 0.1,
         preview_width = 0.7,
+				mirror = false
       },
       vertical = {
         width_padding = 0.05,
         height_padding = 1,
         preview_height = 0.5,
+				miror = false
       },
     },
-    mappings = {},
+		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+    mappings = {
+			i = {
+				["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-c>"] = actions.close,
+			}
+    },
   },
 }
 
