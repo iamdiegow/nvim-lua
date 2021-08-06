@@ -33,16 +33,18 @@ require("telescope").setup {
     layout_config = {
       prompt_position = "top",
       horizontal = {
+				preview_cutoff = 0.20,
         width_padding = 0.04,
         height_padding = 0.1,
-        preview_width = 0.7,
-				mirror = false
+        preview_width = 0.5,
+    		mirror = false
       },
       vertical = {
+				preview_cutoff = 0.20,
         width_padding = 0.05,
         height_padding = 1,
-        preview_height = 0.5,
-				miror = false
+        preview_height = 0.4,
+    		miror = false
       },
     },
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
