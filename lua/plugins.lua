@@ -40,5 +40,7 @@ return require('packer').startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'windwp/nvim-autopairs'
 	use 'windwp/nvim-ts-autotag'
+	use 'tpope/vim-surround'
+	use { 'phaazon/hop.nvim', as = 'hop' }
 end)
 

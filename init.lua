@@ -16,6 +16,8 @@ require('formatter-config')
 require('indent-blankline-config')
 require('nvim-autopairs-config')
 require('nvim-ts-autotag-config')
+require('hop-config')
+
 
 -- LSP
 require('lsp')
