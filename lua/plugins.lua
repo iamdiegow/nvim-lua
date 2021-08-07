@@ -43,5 +43,6 @@ return require('packer').startup(function(use)
 	use 'windwp/nvim-ts-autotag'
 	use 'tpope/vim-surround'
 	use { 'phaazon/hop.nvim', as = 'hop' }
+	use 'p00f/nvim-ts-rainbow'
 end)
 
