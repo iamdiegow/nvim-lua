@@ -13,8 +13,7 @@ vim.cmd([[
 	nnoremap <leader>gr <cmd>lua require('telescope').extensions.gh.run({wincmd = 'new'})<cr>
 
 	nnoremap <leader>nv <cmd>lua require('telescope-config').nvim_config()<cr>
-
-
+	nnoremap <leader>fp <cmd>lua require('telescope-config').grep_prompt()<cr>
 ]])
 
 local actions = require('telescope.actions')
@@ -91,6 +90,13 @@ function M.file_explorer()
     layout_strategy = "horizontal",
     layout_config = { preview_width = 0.65, width = 0.75 },
   }
+end
+
+function M.grep_prompt()
+	require('telescope.builtin').grep_string {
+		path_display = true,
+		search = vim.fn.input("Rg> "),
+	}
 end
 
 return M
