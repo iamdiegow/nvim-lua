@@ -38,5 +38,5 @@ local nvnightTheme = function()
 end
 
 -- materialTheme()
--- everforestTheme()
-nvnightTheme()
+everforestTheme()
+-- nvnightTheme()
