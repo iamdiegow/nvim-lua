@@ -51,5 +51,6 @@ return require('packer').startup(function(use)
 	use {"akinsho/nvim-toggleterm.lua"}
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
 	use 'nvim-telescope/telescope-github.nvim'
+	use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
 end)
 
