@@ -10,6 +10,9 @@ vim.cmd([[
 	nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits()<cr>
 	nnoremap <leader>gf <cmd>lua require('telescope.builtin').git_files()<cr>
 	nnoremap <leader>gb <cmd>lua require('telescope.builtin').git_branches()<cr>
+
+	nnoremap <leader>nv <cmd>lua require('telescope-config').nvim_config()<cr>
+
 ]])
 
 local actions = require('telescope.actions')
@@ -68,25 +71,11 @@ require("telescope").setup {
 
 local M = {}
 
-function M.find_files()
-  require("telescope.builtin").find_files {
-    prompt_title = "Search .config",
-    path_display = { "shorten" },
-    search_dirs = {
-      "~/.config",
-    },
-    cwd = "~/.config/nvim/",
-    layout_strategy = "horizontal",
-    layout_config = { preview_width = 0.65, width = 0.75 },
-  }
-end
-
 function M.nvim_config()
   require("telescope.builtin").file_browser {
     prompt_title = " NVim Config Browse",
     cwd = "~/.config/nvim/",
-    layout_strategy = "horizontal",
-    layout_config = { preview_width = 0.65, width = 0.75 },
+    layout_strategy = "vertical",
   }
 end
 
