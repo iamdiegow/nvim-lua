@@ -60,13 +60,13 @@ map('n', '<Space>e', ':NvimTreeToggle<CR>', options )
 
 -- TERMINAL
 -- open terminal below
-map('n', '<C-x>', ':10new +terminal | setlocal nobuflisted <CR>', options ) 
+-- map('n', '<C-x>', ':10new +terminal | setlocal nobuflisted <CR>', options ) 
 -- open terminal in new buffer
-map('n', '<C-t>', ':terminal<CR>' , options )
+-- map('n', '<C-t>', ':terminal<CR>' , options )
 -- escape terminal mode
-map('t', '<C-\\>', '<C-\\><C-n>', options )
+-- map('t', '<C-\\>', '<C-\\><C-n>', options )
 -- terminal window navigation
-map('t', '<C-h>', '<C-\\><C-N><C-w>h', options )
-map('t', '<C-j>', '<C-\\><C-N><C-w>j', options )
-map('t', '<C-k>', '<C-\\><C-N><C-w>k', options )
-map('t', '<C-l>', '<C-\\><C-N><C-w>l', options )
+-- map('t', '<C-h>', '<C-\\><C-N><C-w>h', options )
+-- map('t', '<C-j>', '<C-\\><C-N><C-w>j', options )
+-- map('t', '<C-k>', '<C-\\><C-N><C-w>k', options )
+-- map('t', '<C-l>', '<C-\\><C-N><C-w>l', options )

@@ -48,5 +48,6 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-surround'
 	use { 'phaazon/hop.nvim', as = 'hop' }
 	use 'p00f/nvim-ts-rainbow'
+	use {"akinsho/nvim-toggleterm.lua"}
 end)
 
