@@ -181,9 +181,10 @@ require'lspconfig'.tsserver.setup {
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
+		signs = true,
+    underline = false,
     -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
+    virtual_text = {    
       spacing = 4,
       prefix = ''
     }
@@ -197,6 +198,7 @@ vim.cmd([[
   nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
   nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
   nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+  nnoremap <silent> <leader>et <cmd>lua vim.lsp.diagnostic.clear()<CR>
 ]])
 
 vim.cmd([[
