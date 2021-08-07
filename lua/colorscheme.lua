@@ -33,5 +33,10 @@ local everforestTheme = function()
 	]])
 end
 
+local nvnightTheme = function()
+	require('vn-night').setup()
+end
+
 -- materialTheme()
-everforestTheme()
+-- everforestTheme()
+nvnightTheme()

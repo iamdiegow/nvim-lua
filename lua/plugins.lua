@@ -10,31 +10,34 @@ end
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+	-- Colorschemes
   use {'dracula/vim', as = 'dracula'}
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'
-  }
+	use 'marko-cerovac/material.nvim'
+	use 'sainnhe/everforest'
+	use {'nxvu699134/vn-night.nvim'}
+	-- Lsp
   use 'neovim/nvim-lspconfig'
-	use 'glepnir/lspsaga.nvim'
-	use 'onsails/lspkind-nvim'
 	use 'kabouzeid/nvim-lspinstall'
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-	-- use 'nvim-lua/completion-nvim'
+	use 'glepnir/lspsaga.nvim'
+	use 'onsails/lspkind-nvim'
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
-	use 'hoob3rt/lualine.nvim'
 	use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
   }
+	-- Workflow
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
+	use 'hoob3rt/lualine.nvim'
 	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 	use {
   'nvim-telescope/telescope.nvim',
   requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
-	use 'marko-cerovac/material.nvim'
-	use 'sainnhe/everforest'
 	use 'famiu/bufdelete.nvim'
 	use 'terrortylor/nvim-comment'
 	use 'karb94/neoscroll.nvim'
