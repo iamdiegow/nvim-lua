@@ -6,7 +6,8 @@ local options = { noremap = true, silent = true }
 -- set LEADER key to space
 vim.g.mapleader = ','
 map('n', '<Space>', '<NOP>', options )
-map("n", "<Leader>sv", ":w<CR>:luafile %<CR>", options )
+map("n", "<Leader>sv", ":luafile %<CR>", options )
+map("n", "<Leader>s", ":w<CR> ", options )
 -- disable highlight search
 map('n', '<Leader>h', ':set hlsearch!<CR>', options)
 -- exit buffer
