@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
   requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
 	use 'marko-cerovac/material.nvim'
+	use 'sainnhe/everforest'
 	use 'famiu/bufdelete.nvim'
 	use 'terrortylor/nvim-comment'
 	use 'karb94/neoscroll.nvim'
