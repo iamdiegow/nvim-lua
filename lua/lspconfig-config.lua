@@ -1,11 +1,12 @@
-local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+	client.resolved_capabilities.document_formatting = false
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
@@ -24,14 +25,67 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
   -- formatting
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+  -- if client.resolved_capabilities.document_formatting then
+  --   vim.api.nvim_command [[augroup Format]]
+  --   vim.api.nvim_command [[autocmd! * <buffer>]]
+  --   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+  --   vim.api.nvim_command [[augroup END]]
+  -- end
 
-  -- require'completion'.on_attach(client, bufnr)
+	  -- define an alias
+  vim.cmd("command -buffer Formatting lua vim.lsp.buf.formatting()")
+
+  -- format on save
+  -- vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
+  vim.cmd("autocmd BufWritePost <buffer> :Format")
+
+	local ts_utils = require('nvim-lsp-ts-utils')
+
+	ts_utils.setup {
+		debug = false,
+		disable_commands = false,
+		enable_import_on_completion = false,
+
+		-- import all
+		import_all_timeout = 5000, -- ms
+		import_all_priorities = {
+				buffers = 4, -- loaded buffer names
+				buffer_content = 3, -- loaded buffer content
+				local_files = 2, -- git files or files with relative path markers
+				same_file = 1, -- add to existing import statement
+		},
+		import_all_scan_buffers = 100,
+		import_all_select_source = false,
+
+		-- eslint
+		eslint_enable_code_actions = true,
+		eslint_enable_disable_comments = true,
+		eslint_bin = "eslint",
+		eslint_config_fallback = nil,
+		eslint_enable_diagnostics = false,
+		eslint_show_rule_id = false,
+
+		-- formatting
+		enable_formatting = false,
+		formatter = "prettier",
+		formatter_config_fallback = nil,
+
+		-- update imports on file move
+		update_imports_on_move = false,
+		require_confirmation_on_move = false,
+		watch_dir = nil,
+		}
+
+		-- required to fix code action ranges
+		ts_utils.setup_client(client)
+
+		-- no default maps, so you may want to define some here
+		local options = {silent = true}
+
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", options)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "qq", ":TSLspFixCurrent<CR>", options)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", options)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", options)
 
   protocol.CompletionItemKind = {
     '', -- Text
@@ -62,71 +116,67 @@ local on_attach = function(client, bufnr)
   }
 end
 
--- nvim_lsp.flow.setup {
---   on_attach = on_attach
--- }
-
-nvim_lsp.tsserver.setup {
+require'lspconfig'.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" }
 }
 
-nvim_lsp.diagnosticls.setup {
-  on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
-  init_options = {
-    linters = {
-      eslint = {
-        command = 'eslint_d',
-        rootPatterns = { '.git' },
-        debounce = 100,
-        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-        sourceName = 'eslint_d',
-        parseJson = {
-          errorsRoot = '[0].messages',
-          line = 'line',
-          column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '[eslint] ${message} [${ruleId}]',
-          security = 'severity'
-        },
-        securities = {
-          [2] = 'error',
-          [1] = 'warning'
-        }
-      },
-    },
-    filetypes = {
-      javascript = 'eslint',
-      javascriptreact = 'eslint',
-      typescript = 'eslint',
-      typescriptreact = 'eslint',
-    },
-    formatters = {
-      eslint_d = {
-        command = 'eslint_d',
-        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
-        rootPatterns = { '.git' },
-      },
-      prettier = {
-        command = 'prettier',
-        args = { '--stdin-filepath', '%filename' }
-      }
-    },
-    formatFiletypes = {
-      css = 'prettier',
-      javascript = 'eslint_d',
-      javascriptreact = 'eslint_d',
-      scss = 'prettier',
-      less = 'prettier',
-      typescript = 'eslint_d',
-      typescriptreact = 'eslint_d',
-      json = 'prettier',
-      markdown = 'prettier',
-    }
-  }
-}
+-- require'lspconfig'.diagnosticls.setup {
+--   on_attach = on_attach,
+--   filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+--   init_options = {
+--     linters = {
+--       eslint = {
+--         command = 'eslint_d',
+--         rootPatterns = { '.git' },
+--         debounce = 100,
+--         args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+--         sourceName = 'eslint_d',
+--         parseJson = {
+--           errorsRoot = '[0].messages',
+--           line = 'line',
+--           column = 'column',
+--           endLine = 'endLine',
+--           endColumn = 'endColumn',
+--           message = '[eslint] ${message} [${ruleId}]',
+--           security = 'severity'
+--         },
+--         securities = {
+--           [2] = 'error',
+--           [1] = 'warning'
+--         }
+--       },
+--     },
+--     filetypes = {
+--       javascript = 'eslint',
+--       javascriptreact = 'eslint',
+--       typescript = 'eslint',
+--       typescriptreact = 'eslint',
+--     },
+--     formatters = {
+--       eslint_d = {
+--         command = 'eslint_d',
+--         args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+--         rootPatterns = { '.git' },
+--       },
+--       prettier = {
+--         command = 'prettier',
+--         args = { '--stdin-filepath', '%filename' }
+--       }
+--     },
+--     formatFiletypes = {
+--       css = 'prettier',
+--       javascript = 'eslint_d',
+--       javascriptreact = 'eslint_d',
+--       scss = 'prettier',
+--       less = 'prettier',
+--       typescript = 'eslint_d',
+--       typescriptreact = 'eslint_d',
+--       json = 'prettier',
+--       markdown = 'prettier',
+--     }
+--   }
+-- }
 
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

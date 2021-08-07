@@ -6,7 +6,7 @@ ts.setup({
   },
 	indent = {
     enable = true,
-		disable = { "yaml" }
+		disable = {}
 	},
 	matchup = {
     enable = false
