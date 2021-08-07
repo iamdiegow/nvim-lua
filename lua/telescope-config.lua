@@ -10,8 +10,10 @@ vim.cmd([[
 	nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits()<cr>
 	nnoremap <leader>gf <cmd>lua require('telescope.builtin').git_files()<cr>
 	nnoremap <leader>gb <cmd>lua require('telescope.builtin').git_branches()<cr>
+	nnoremap <leader>gr <cmd>lua require('telescope').extensions.gh.run({wincmd = 'new'})<cr>
 
 	nnoremap <leader>nv <cmd>lua require('telescope-config').nvim_config()<cr>
+
 
 ]])
 
@@ -68,6 +70,8 @@ require("telescope").setup {
     },
   },
 }
+
+require'telescope'.load_extension('gh')
 
 local M = {}
 

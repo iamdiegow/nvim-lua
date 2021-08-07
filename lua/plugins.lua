@@ -49,5 +49,7 @@ return require('packer').startup(function(use)
 	use { 'phaazon/hop.nvim', as = 'hop' }
 	use 'p00f/nvim-ts-rainbow'
 	use {"akinsho/nvim-toggleterm.lua"}
+	use 'JoosepAlviste/nvim-ts-context-commentstring'
+	use 'nvim-telescope/telescope-github.nvim'
 end)
 
