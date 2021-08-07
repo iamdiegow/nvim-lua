@@ -18,7 +18,6 @@ require('nvim-autopairs-config')
 require('nvim-ts-autotag-config')
 require('hop-config')
 
-
 -- LSP
 require('lsp')
 require('compe-config')
