@@ -52,5 +52,11 @@ return require('packer').startup(function(use)
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
 	use 'nvim-telescope/telescope-github.nvim'
 	use 'vim-test/vim-test'
+	use {
+  'lewis6991/gitsigns.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim'
+  	}
+	}
 end)
 

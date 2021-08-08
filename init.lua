@@ -18,6 +18,7 @@ require('nvim-autopairs-config')
 require('nvim-ts-autotag-config')
 require('hop-config')
 require('nvim-toggleterm-config')
+require('gitsigns-config')
 
 -- LSP
 require('lsp')
