@@ -15,7 +15,7 @@ require("bufferline").setup{
     max_name_length = 14,
     max_prefix_length = 13,
     tab_size = 20,
-		view = "multiwindow",
+		view = "default",
 		offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "left", padding = 1}},
     diagnostics = "nvim_lsp",
 		diagnostics_indicator = function(count, level, diagnostics_dict, context)
@@ -37,3 +37,5 @@ end,
 vim.api.nvim_set_keymap('n', 'gb', ':BufferLinePick<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<S-l>', ':bnext<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<S-h>', ':bprevious<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'b[', ':BufferLineMovePrev<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'b]', ':BufferLineMoveNext<CR>', { noremap = true, silent = true})

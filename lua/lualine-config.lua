@@ -1,10 +1,16 @@
 require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = "material-nvim",
-    component_separators = { " ", " " },
-    section_separators = { "", "" },
+    theme = "codedark",
+		-- component_separators = {'', ''},
+		-- section_separators = {'', ''},
+		component_separators = {' ', ' '},
+		section_separators = {'', ''},
+    --section_separators = { "", "" },
+		--component_separators = { " ", " " },
     disabled_filetypes = {},
+		left_padding = 1,
+		right_padding = 1
   },
   sections = {
     lualine_a = { "mode", "paste" },
