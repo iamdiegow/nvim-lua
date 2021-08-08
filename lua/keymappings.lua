@@ -49,6 +49,9 @@ map('i', '<A-k>', '<Esc>:m .-2<CR>==gi', options )
 map('v', '<', '<gv', options )
 map('v', '>', '>gv', options )
 
+map('v', '<C-l>', '$', options )
+map('v', '<C-h>', '0', options )
+
 -- VISUAL BLOCK MODE
 map('x', '<A-j>', ':m \'>+1<CR>gv-gv', options )
 map('x', '<A-k>', ':m \'<-2<CR>gv-gv', options )
