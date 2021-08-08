@@ -13,8 +13,6 @@ local materialTheme = function ()
 	require('material').set()
 end
 
-
-
 -- Everforest
 local everforestTheme = function()
 	vim.cmd([[
@@ -33,10 +31,20 @@ local everforestTheme = function()
 	]])
 end
 
-local nvnightTheme = function()
+-- VN NIGHT
+local vnnightTheme = function()
+	vim.cmd([[
+		set background=dark
+	]])
 	require('vn-night').setup()
 end
 
+-- VIM CODE DARK
+local vimCodeDarkTheme = function()
+	vim.cmd('colorscheme codedark')
+end
+
 -- materialTheme()
-everforestTheme()
--- nvnightTheme()
+-- everforestTheme()
+-- vnnightTheme()
+vimCodeDarkTheme()
