@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 	use 'glepnir/lspsaga.nvim'
 	use 'onsails/lspkind-nvim'
+	use {
+  "ray-x/lsp_signature.nvim",
+	}
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
 	use {
@@ -59,5 +62,6 @@ return require('packer').startup(function(use)
     'nvim-lua/plenary.nvim'
   	}
 	}
+	use 'moll/vim-node'
 end)
 
