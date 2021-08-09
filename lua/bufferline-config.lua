@@ -37,5 +37,5 @@ end,
 vim.api.nvim_set_keymap('n', 'gb', ':BufferLinePick<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<S-l>', ':bnext<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<S-h>', ':bprevious<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'b[', ':BufferLineMovePrev<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'b]', ':BufferLineMoveNext<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>b[', ':BufferLineMovePrev<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>b]', ':BufferLineMoveNext<CR>', { noremap = true, silent = true})
