@@ -37,9 +37,6 @@ require('gitsigns').setup {
     -- Default keymap options
     noremap = true,
 		buffer = true,
-    ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
-    ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-    ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
   },
   watch_index = {
     interval = 1000,

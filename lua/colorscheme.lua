@@ -45,6 +45,6 @@ local vimCodeDarkTheme = function()
 end
 
 -- materialTheme()
--- everforestTheme()
-vnnightTheme()
+everforestTheme()
+-- vnnightTheme()
 -- vimCodeDarkTheme()
