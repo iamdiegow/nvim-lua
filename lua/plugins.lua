@@ -63,5 +63,6 @@ return require('packer').startup(function(use)
   	}
 	}
 	use 'moll/vim-node'
+	use 'folke/which-key.nvim'
 end)
 

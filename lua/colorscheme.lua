@@ -46,5 +46,5 @@ end
 
 -- materialTheme()
 -- everforestTheme()
--- vnnightTheme()
-vimCodeDarkTheme()
+vnnightTheme()
+-- vimCodeDarkTheme()

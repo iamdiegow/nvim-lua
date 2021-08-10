@@ -19,6 +19,7 @@ require('nvim-ts-autotag-config')
 require('hop-config')
 require('nvim-toggleterm-config')
 require('gitsigns-config')
+require('which-key-config')
 
 -- LSP
 require('lsp')
