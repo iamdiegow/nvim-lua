@@ -153,11 +153,11 @@ local normal_mappings = {
 		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+			"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
 			"Next Diagnostic",
 		},
 		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
 			"Prev Diagnostic",
 		},
 		p = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
