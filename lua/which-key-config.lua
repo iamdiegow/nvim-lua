@@ -62,6 +62,12 @@ local normal_mode_options= {
 }
 
 local normal_mappings = {
+	["w"] = { "<cmd>w!<CR>", "Save" },
+	["q"] = { "<cmd>q!<CR>", "Quit" },
+	["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
+	["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
+	["c"] = { "<cmd>BufferLinePickClose<CR>", "Close Buffer Pick" },
+	["s"] = { "<cmd>luafile %<CR>", "Source File" },
 	-- NVIM Tree
 	e = {"<cmd>:NvimTreeToggle<CR>", "Open Explorer"},
 	-- TELESCOPE

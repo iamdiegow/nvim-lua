@@ -2,7 +2,7 @@ require("bufferline").setup{
  options = {
     numbers = "ordinal",
     number_style = "superscript",
-    mappings = true,
+    mappings = false,
     close_command = "bdelete! %d",
     right_mouse_command = "bdelete! %d",
     left_mouse_command = "buffer %d",
