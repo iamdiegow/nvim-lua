@@ -64,7 +64,6 @@ local normal_mode_options= {
 local normal_mappings = {
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
 	["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
 	["c"] = { "<cmd>BufferLinePickClose<CR>", "Close Buffer Pick" },
 	["s"] = { "<cmd>luafile %<CR>", "Source File" },
@@ -76,11 +75,13 @@ local normal_mappings = {
 		f = { "<cmd>Telescope find_files<CR>", "Find Files" }, --ff
 		r = { "<cmd>Telescope live_grep<CR>", "Live Grep"}, --fr
 		b = { "<cmd>Telescope buffers<CR>", "Buffers"}, --fb
-		c = { "<cmd>Telescope colorscheme<CR>", "Colorschemes"}, --fc
+		c = { "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<CR>", "Colorschemes"}, --fc
 		h = { "<cmd>Telescope help_tags<CR>", "Help Tags"}, --fh
+		o = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files"}, --fo
+		R = { "<cmd>Telescope registers<CR>", "Open Registers"}, --fR
 		s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols"}, --fs
 		k = { "<cmd>Telescope keymaps<CR>", "Keymaps"}, --fk
-		n = { "<cmd>Telescope nvim_config<CR>", "Search Nvim Config Folder"}, --fn
+		n = { "<cmd>lua require('telescope-config').nvim_config()<CR>", "Search Nvim Config Folder"}, --fn
 		p = { "<cmd>lua require('telescope-config').grep_prompt()<CR>", "Grep Propmpt"}, --fp
 		g = {
 			name = "Telescope Git",
@@ -168,6 +169,14 @@ local normal_mappings = {
 			"Workspace Symbols",
 		},
 	},
+	h = {
+		name = "Hop & Highlight",
+		h = { '<cmd>let @/=""<CR>', "No Highlight" },
+		w = { '<cmd>HopWord<CR>', "Hop Word" },
+		a = { '<cmd>HopChar1<CR>', "Hop Char 1" },
+		s = { '<cmd>HopChar2<CR>', "Hop Char 2" },
+		d = { '<cmd>HopChar2<CR>', "Hop Line" },
+	}
 }
 
 -- NORMAL MODE KEYBINDINGS
