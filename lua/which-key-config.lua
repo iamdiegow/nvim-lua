@@ -62,6 +62,8 @@ local normal_mode_options= {
 }
 
 local normal_mappings = {
+	-- NVIM Tree
+	e = {"<cmd>:NvimTreeToggle<CR>", "Open Explorer"},
 	-- TELESCOPE
 	f = {
 		name = "Telescope",
@@ -126,6 +128,39 @@ local normal_mappings = {
 			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
 			"Undo Stage Hunk",
 		}, --gu
+	},
+	-- LSP
+	l = {
+		name = "LSP",
+		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		d = {
+			"<cmd>Telescope lsp_document_diagnostics<cr>",
+			"Document Diagnostics",
+		},
+		l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics"},
+		t = { "<cmd>lua vim.lsp.diagnostic.clear()<CR>", "Clear Diagnostics"},
+		w = {
+			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
+			"Workspace Diagnostics",
+		},
+		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+		i = { "<cmd>LspInfo<cr>", "Info" },
+		j = {
+			"<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+			"Next Diagnostic",
+		},
+		k = {
+			"<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+			"Prev Diagnostic",
+		},
+		p = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
+		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+		S = {
+			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+			"Workspace Symbols",
+		},
 	},
 }
 

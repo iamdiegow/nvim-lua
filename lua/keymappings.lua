@@ -4,7 +4,7 @@ local options = { noremap = true, silent = true }
 
 -- NORMAL MODE ----------
 -- set LEADER key to space
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 map('n', '<Space>', '<NOP>', options )
 map("n", "<Leader>sv", ":luafile %<CR>", options )
 map("n", "<Leader>s", ":w<CR> ", options )
@@ -56,10 +56,6 @@ map('v', '<C-h>', '0', options )
 map('x', '<A-j>', ':m \'>+1<CR>gv-gv', options )
 map('x', '<A-k>', ':m \'<-2<CR>gv-gv', options )
 
-
--- NVIM TREE
--- toggle nvim tree
-map('n', '<Space>e', ':NvimTreeToggle<CR>', options )
 
 -- TERMINAL
 -- open terminal below
