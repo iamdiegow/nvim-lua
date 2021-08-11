@@ -39,12 +39,14 @@ local vnnightTheme = function()
 	require('vn-night').setup()
 end
 
--- VIM CODE DARK
-local vimCodeDarkTheme = function()
-	vim.cmd('colorscheme codedark')
+-- VSCODE
+local vscodeTheme = function()
+	-- For dark theme
+	vim.g.vscode_style = "dark"
+	vim.cmd[[colorscheme vscode]]
 end
 
 -- materialTheme()
-everforestTheme()
+-- everforestTheme()
 -- vnnightTheme()
--- vimCodeDarkTheme()
+vscodeTheme()

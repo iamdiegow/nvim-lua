@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
 	use 'marko-cerovac/material.nvim'
 	use 'sainnhe/everforest'
 	use {'nxvu699134/vn-night.nvim'}
-	use 'tomasiser/vim-code-dark'
+	use 'Mofiqul/vscode.nvim'
 	-- Lsp
   use 'neovim/nvim-lspconfig'
 	use 'kabouzeid/nvim-lspinstall'
