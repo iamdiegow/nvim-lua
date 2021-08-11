@@ -144,6 +144,7 @@ local normal_mappings = {
 			"<cmd>Telescope lsp_document_diagnostics<cr>",
 			"Document Diagnostics",
 		},
+		c = { "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", "Lsp Saga Show Line Diagnostics"},
 		l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics"},
 		t = { "<cmd>lua vim.lsp.diagnostic.clear()<CR>", "Clear Diagnostics"},
 		w = {
@@ -194,7 +195,7 @@ local normal_mappings = {
 		["3"] = { '<cmd>3ToggleTerm<CR>', "Toggle Terminal 3" },
 		a = { '<cmd>ToggleTermOpenAll<CR>', "Open All Terminals" },
 		q = { '<cmd>ToggleTermCloseAll<CR>', "Close All Terminals" },
-	}
+	},
 }
 
 -- NORMAL MODE KEYBINDINGS
