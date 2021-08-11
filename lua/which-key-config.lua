@@ -176,6 +176,15 @@ local normal_mappings = {
 		a = { '<cmd>HopChar1<CR>', "Hop Char 1" },
 		s = { '<cmd>HopChar2<CR>', "Hop Char 2" },
 		d = { '<cmd>HopChar2<CR>', "Hop Line" },
+	},
+	-- TROUBLE
+	t = {
+		name = "Trouble quickfix list",
+		t = { '<cmd>TroubleToggle<CR>', "Open Trouble" },
+		w = { '<cmd>Trouble lsp_workspace_diagnostics<CR>', "Workspace diagnostics" },
+		d = { '<cmd>Trouble lsp_document_diagnostics<CR>', "Document diagnostics" },
+		q = { '<cmd>Trouble quickfix<CR>', "Open quickfix list" },
+		r = { '<cmd>Trouble lsp_references<CR>', "Open Reference list" },
 	}
 }
 
