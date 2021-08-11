@@ -20,6 +20,7 @@ require('hop-config')
 require('nvim-toggleterm-config')
 require('gitsigns-config')
 require('which-key-config')
+require('trouble-config')
 
 -- LSP
 require('lsp')
