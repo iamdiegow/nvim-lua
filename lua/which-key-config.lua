@@ -185,6 +185,15 @@ local normal_mappings = {
 		d = { '<cmd>Trouble lsp_document_diagnostics<CR>', "Document diagnostics" },
 		q = { '<cmd>Trouble quickfix<CR>', "Open quickfix list" },
 		r = { '<cmd>Trouble lsp_references<CR>', "Open Reference list" },
+	},
+	-- TERMINAL
+	x = {
+		name = "Terminal",
+		["1"] = { '<cmd>1ToggleTerm<CR>', "Toggle Terminal 1" },
+		["2"] = { '<cmd>2ToggleTerm<CR>', "Toggle Terminal 2" },
+		["3"] = { '<cmd>3ToggleTerm<CR>', "Toggle Terminal 3" },
+		a = { '<cmd>ToggleTermOpenAll<CR>', "Open All Terminals" },
+		q = { '<cmd>ToggleTermCloseAll<CR>', "Close All Terminals" },
 	}
 }
 
