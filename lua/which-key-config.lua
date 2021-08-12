@@ -65,7 +65,8 @@ local normal_mappings = {
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
-	["c"] = { "<cmd>BufferLinePickClose<CR>", "Close Buffer Pick" },
+	-- ["c"] = { "<cmd>BufferLinePickClose<CR>", "Close Buffer Pick" },
+	["c"] = { "<cmd>lua require('bufferline-config').closeBuffer()<CR>", "Close Buffer Pick" },
 	["s"] = { "<cmd>luafile %<CR>", "Source File" },
 	-- NVIM Tree
 	e = {"<cmd>:NvimTreeToggle<CR>", "Open Explorer"},

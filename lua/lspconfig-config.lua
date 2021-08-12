@@ -194,10 +194,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		signs = true,
     underline = false,
     -- This sets the spacing and the prefix, obviously.
-    virtual_text = {    
-      spacing = 4,
-      prefix = ''
-    }
+		virtual_text = false
+    -- virtual_text = {
+    --   spacing = 4,
+    --   prefix = ''
+    -- }
   }
 )
 
