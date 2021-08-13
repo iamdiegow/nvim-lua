@@ -16,7 +16,7 @@ require("bufferline").setup{
     max_prefix_length = 13,
     tab_size = 20,
 		view = "default",
-		offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "left", padding = 1}},
+		offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "left", padding = 0}},
     diagnostics = "nvim_lsp",
 		diagnostics_indicator = function(count, level, diagnostics_dict, context)
 			local icon = level:match("error") and " " or " "

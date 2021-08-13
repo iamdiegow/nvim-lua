@@ -1,7 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true, silent = true }
 
-
 -- NORMAL MODE ----------
 -- set LEADER key to space
 vim.g.mapleader = ' '
@@ -24,6 +23,11 @@ map('n', '<C-Up>', ':resize -2<CR>', options )
 map('n', '<C-Down>', ':resize +2<CR>', options )
 map('n', '<C-Left>', ':vertical resize -2<CR>', options )
 map('n', '<C-Right>', ':vertical resize +2<CR>', options )
+
+-- quickfix list
+map('n', '<]q>', ':cnext<CR>', options )
+map('n', '<[q>', 'cprev<CR>', options )
+map('n', '<C-q>', ':TroubleToggle<CR>', options )
 
 -- INSERT MODE ----------
 -- exit insert mode
