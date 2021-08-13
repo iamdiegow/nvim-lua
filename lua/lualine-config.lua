@@ -1,7 +1,8 @@
 require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = "vscode",
+		-- "vscode" | "everforest" | "material" | "neon"
+    theme = "neon",
 		-- component_separators = {'', ''},
 		-- section_separators = {'', ''},
 		component_separators = {' ', ' '},

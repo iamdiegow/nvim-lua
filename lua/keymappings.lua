@@ -53,3 +53,6 @@ map('v', '<C-k>', '5k', options )
 -- VISUAL BLOCK MODE
 map('x', '<A-j>', ':m \'>+1<CR>gv-gv', options )
 map('x', '<A-k>', ':m \'<-2<CR>gv-gv', options )
+
+map("", "j", 'v:count ? "j" : "gj"', {expr = true})
+map("", "k", 'v:count ? "k" : "gk"', {expr = true})

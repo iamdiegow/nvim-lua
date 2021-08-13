@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 	use 'sainnhe/everforest'
 	use {'nxvu699134/vn-night.nvim'}
 	use 'Mofiqul/vscode.nvim'
+	use "rafamadriz/neon"
 	-- Lsp
   use 'neovim/nvim-lspconfig'
 	use 'kabouzeid/nvim-lspinstall'
