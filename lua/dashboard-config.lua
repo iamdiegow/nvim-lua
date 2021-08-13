@@ -1,4 +1,3 @@
-
 vim.g.dashboard_default_executive = "telescope"
 vim.g.dashboard_custom_header = {
     "",
@@ -11,7 +10,6 @@ vim.g.dashboard_custom_section = {
     d = {description = {"洛 New File                  SPC f n"}, command = "DashboardNewFile"},
     e = {description = {"  Bookmarks                 SPC b m"}, command = "Telescope marks"},
 }
-
 
 vim.g.dashboard_custom_footer = {
     "NVIM"
