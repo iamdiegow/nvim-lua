@@ -21,6 +21,7 @@ require('nvim-toggleterm-config')
 require('gitsigns-config')
 require('which-key-config')
 require('trouble-config')
+require('dashboard-config')
 
 -- LSP
 require('lsp')
