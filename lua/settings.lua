@@ -6,6 +6,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldmethod = "expr"
 vim.opt.foldnestmax = 10
 vim.opt.foldenable = false
+vim.opt.foldlevel = 10
 vim.opt.lazyredraw = true
 vim.opt.encoding = "UTF-8"
 vim.opt.showmatch = true
