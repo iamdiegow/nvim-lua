@@ -2,6 +2,17 @@ local o = vim.o
 local wo = vim.wo
 local bo = vim.bo
 
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = "expr"
+vim.opt.foldnestmax = 10
+vim.opt.foldenable = false
+vim.opt.lazyredraw = true
+vim.opt.encoding = "UTF-8"
+vim.opt.showmatch = true
+vim.opt.listchars = { tab = ">>>", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
+vim.opt.fillchars = { vert = ' '}
+vim.opt.hlsearch = true
+
 wo.number = true
 wo.relativenumber = false
 
