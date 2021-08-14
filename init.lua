@@ -1,3 +1,5 @@
+vim.g.start_time = vim.fn.reltime()
+
 -- Core
 require('plugins')
 require('keymappings')
@@ -22,10 +24,10 @@ require('gitsigns-config')
 require('which-key-config')
 require('trouble-config')
 require('dashboard-config')
+require('nvim-web-devicons-config')
 
 -- LSP
 require('lsp')
 require('compe-config')
 require('lspconfig-config')
 require('lspsaga-config')
-
