@@ -1,4 +1,3 @@
-
 require'nvim-treesitter.configs'.setup({
   ensure_installed = "maintained",
 	highlight = {
@@ -15,7 +14,7 @@ require'nvim-treesitter.configs'.setup({
     enable = false,
   },
   rainbow = {
-    enable = true,
+    enable = false,
     extended_mode = true,
     max_file_lines = 1000,
   },
@@ -45,3 +44,6 @@ require'nvim-treesitter.configs'.setup({
 		}
 	}
 })
+
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldmethod = "expr"
