@@ -59,5 +59,5 @@ end
 -- materialTheme()
 -- everforestTheme()
 -- vnnightTheme()
--- vscodeTheme()
-neonTheme()
+vscodeTheme()
+-- neonTheme()

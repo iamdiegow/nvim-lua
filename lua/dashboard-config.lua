@@ -14,3 +14,7 @@ vim.g.dashboard_custom_section = {
 vim.g.dashboard_custom_footer = {
     "NVIM"
 }
+
+vim.g.dashboard_custom_footer = {
+	"Nvim loaded in " .. vim.fn.printf("%.3f", vim.fn.reltimefloat(vim.fn.reltime(vim.g.start_time))) .. " seconds.",
+}

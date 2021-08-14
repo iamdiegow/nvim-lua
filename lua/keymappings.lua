@@ -1,6 +1,12 @@
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true, silent = true }
 
+
+-- Disable accidentally pressing ctrl-z and suspending
+map('n', '<c-z>', '<Nop>', options )
+-- Disable ex mode
+map('n', 'Q', '<Nop>', options )
+
 -- NORMAL MODE ----------
 -- set LEADER key to space
 vim.g.mapleader = ' '
@@ -54,5 +60,5 @@ map('v', '<C-k>', '5k', options )
 map('x', '<A-j>', ':m \'>+1<CR>gv-gv', options )
 map('x', '<A-k>', ':m \'<-2<CR>gv-gv', options )
 
-map("", "j", 'v:count ? "j" : "gj"', {expr = true})
-map("", "k", 'v:count ? "k" : "gk"', {expr = true})
+-- map("", "j", 'v:count ? "j" : "gj"', {expr = true})
+-- map("", "k", 'v:count ? "k" : "gk"', {expr = true})
