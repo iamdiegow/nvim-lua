@@ -197,6 +197,16 @@ local normal_mappings = {
 		a = { '<cmd>ToggleTermOpenAll<CR>', "Open All Terminals" },
 		q = { '<cmd>ToggleTermCloseAll<CR>', "Close All Terminals" },
 	},
+	-- VIM TEST
+	[";"] = {
+		name = "Vim Test",
+		n = { '<cmd>TestNearest -strategy=neovim<CR>', "Test Nearest" },
+		f = { '<cmd>TestFile -strategy=neovim<CR>', "Test File" },
+		s = { '<cmd>TestSuite -strategy=neovim<CR>', "Test Suite" },
+		l = { '<cmd>TestLast -strategy=neovim<CR>', "Test Last" },
+		v = { '<cmd>TestVisit -strategy=neovim<CR>', "Test Visit" },
+	}
+	
 }
 
 -- NORMAL MODE KEYBINDINGS
