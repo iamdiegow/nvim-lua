@@ -129,3 +129,11 @@ vim.cmd([[
 
 -- YAML
 require'lspconfig'.yamlls.setup({})
+-- CSS
+require'lspconfig'.cssls.setup({})
+-- DOCKER
+require'lspconfig'.dockerls.setup({})
+-- JSON
+require'lspconfig'.jsonls.setup({})
+
+
