@@ -127,13 +127,19 @@ vim.cmd([[
   autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
 ]])
 
--- YAML
-require'lspconfig'.yamlls.setup({})
--- CSS
-require'lspconfig'.cssls.setup({})
--- DOCKER
-require'lspconfig'.dockerls.setup({})
--- JSON
-require'lspconfig'.jsonls.setup({})
-
-
+-- YAML yarn global add yaml-language-server
+require'lspconfig'.yamlls.setup{}
+-- CSS npm i -g vscode-langservers-extracted
+require'lspconfig'.cssls.setup{}
+-- DOCKER npm install -g dockerfile-language-server-nodejs
+require'lspconfig'.dockerls.setup{}
+-- JSON npm i -g vscode-langservers-extracted
+require'lspconfig'.jsonls.setup({
+ commands = {
+		Format = {
+			function()
+				vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
+			end
+		}
+	}
+})
