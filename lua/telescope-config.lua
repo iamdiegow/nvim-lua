@@ -84,5 +84,13 @@ function M.grep_prompt()
 	}
 end
 
+function M.fuzzy_find_file()
+	require('telescope.builtin').current_buffer_fuzzy_find {
+    prompt_title = " Fuzzy Find Buffer",
+		sorting_strategy = "ascending",
+		layout_strategy = "vertical"
+	}
+end
+
 return M
 
