@@ -73,6 +73,7 @@ local normal_mappings = {
 	-- TELESCOPE
 	f = {
 		name = "Telescope",
+		a = { "<cmd>Telescope file_browser<CR>", "Browse Files" }, --fa
 		f = { "<cmd>Telescope find_files<CR>", "Find Files" }, --ff
 		r = { "<cmd>Telescope live_grep<CR>", "Live Grep"}, --fr
 		b = { "<cmd>Telescope buffers<CR>", "Buffers"}, --fb
