@@ -131,6 +131,13 @@ vim.cmd([[
 require'lspconfig'.yamlls.setup{}
 -- CSS npm i -g vscode-langservers-extracted
 require'lspconfig'.cssls.setup{}
+-- HTML npm i -g vscode-langservers-extracted
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
 -- DOCKER npm install -g dockerfile-language-server-nodejs
 require'lspconfig'.dockerls.setup{}
 -- JSON npm i -g vscode-langservers-extracted
