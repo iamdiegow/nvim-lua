@@ -6,7 +6,6 @@ saga.init_lsp_saga {
   hint_sign = '',
   infor_sign = '',
   border_style = "round",
-
 }
 
 vim.cmd([[
