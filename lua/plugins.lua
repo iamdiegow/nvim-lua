@@ -70,5 +70,6 @@ return require('packer').startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 	}
 	use 'glepnir/dashboard-nvim'
+	use 'vimwiki/vimwiki'
 end)
 
