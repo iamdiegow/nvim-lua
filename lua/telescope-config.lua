@@ -19,7 +19,7 @@ require("telescope").setup {
 		prompt_prefix = " ",
 		selection_caret = " ",
 		initial_mode = "insert",
-		use_less = true,
+		use_less = false,
 		set_env = { ["COLORTERM"] = "truecolor" },
 		selection_strategy = "reset",
     sorting_strategy = "descending",

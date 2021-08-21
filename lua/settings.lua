@@ -47,6 +47,7 @@ o.termguicolors = true
 
 bo.tabstop = 2
 bo.shiftwidth = 2
+bo.autoindent = false
 
 -- vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
 -- vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
