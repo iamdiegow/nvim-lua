@@ -71,5 +71,6 @@ return require('packer').startup(function(use)
 	}
 	use 'glepnir/dashboard-nvim'
 	use 'vimwiki/vimwiki'
+	use "rafamadriz/friendly-snippets"
 end)
 
