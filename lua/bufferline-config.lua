@@ -1,8 +1,10 @@
 require("bufferline").setup{
  options = {
-    numbers = "ordinal",
-    number_style = "superscript",
-    mappings = false,
+		numbers = function(opts)
+    return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
+		end,
+    -- number_style = "superscript",
+    -- mappings = false,
     close_command = "bdelete! %d",
     right_mouse_command = "bdelete! %d",
     left_mouse_command = "buffer %d",

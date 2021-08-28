@@ -62,7 +62,7 @@ local normal_mode_options= {
 }
 
 local normal_mappings = {
-	["w"] = { "<cmd>w!<CR>", "Save" },
+	-- ["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
 	-- ["c"] = { "<cmd>BufferLinePickClose<CR>", "Close Buffer Pick" },

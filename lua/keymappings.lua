@@ -38,6 +38,7 @@ map('n', '<C-q>', ':TroubleToggle<CR>', options )
 -- Telescope Fuzzy find file
 map('n', '<C-_>', ':lua require("telescope-config").fuzzy_find_file()<CR>', options )
 
+map('n', '<C-s>', '<cmd>w!<CR>', options )
 -- INSERT MODE ----------
 -- exit insert mode
 map('i', 'jj', '<Esc>', options )

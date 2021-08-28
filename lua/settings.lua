@@ -49,6 +49,8 @@ bo.tabstop = 2
 bo.shiftwidth = 2
 bo.autoindent = false
 
+vim.cmd([[set shortmess+=c]])
+
 -- vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
 -- vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
 -- vim.cmd("au ColorScheme * hi NormalNC ctermbg=none guibg=none")
