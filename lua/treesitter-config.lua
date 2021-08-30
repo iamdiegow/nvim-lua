@@ -14,9 +14,14 @@ require'nvim-treesitter.configs'.setup({
     enable = false,
   },
   rainbow = {
-    enable = false,
-    extended_mode = true,
+    enable = true,
+    extended_mode = false,
     max_file_lines = 1000,
+		colors = {
+			"orchid",
+			"lightskyblue",
+			"gold"
+		}
   },
 	autopairs = {
 		enable = true
