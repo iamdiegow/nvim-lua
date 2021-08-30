@@ -8,11 +8,6 @@ wk.setup {
       enabled = false,
       suggestions = 20,
     },
-		-- icons = {
-		-- 	breadcrumb = "»",
-		-- 	separator = "➜",
-		-- 	group = "+",
-		-- },
     presets = {
       operators = true,
       motions = true,
@@ -23,6 +18,11 @@ wk.setup {
       g = true,
     },
   },
+	icons = {
+		breadcrumb = "»",
+		separator = "➜",
+		group = "+",
+	},
   operators = { gc = "Comments" },
   key_labels = {
     ["<space>"] = "SPC",
@@ -31,7 +31,7 @@ wk.setup {
 		["<leader>"] = "LEADER"
   },
   window = {
-    border = "none",
+    border = "shadow",
     position = "bottom",
     margin = { 1, 0, 1, 0 },
     padding = { 2, 2, 2, 2 },
