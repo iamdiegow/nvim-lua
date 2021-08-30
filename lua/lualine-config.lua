@@ -1,3 +1,19 @@
+local window_width_limit = 80
+
+local conditions = {
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand "%:t") ~= 1
+  end,
+  hide_in_width = function()
+    return vim.fn.winwidth(0) > window_width_limit
+  end,
+  -- check_git_workspace = function()
+  --   local filepath = vim.fn.expand "%:p:h"
+  --   local gitdir = vim.fn.finddir(".git", filepath .. ";")
+  --   return gitdir and #gitdir > 0 and #gitdir < #filepath
+  -- end,
+}
+
 require("lualine").setup({
   options = {
     icons_enabled = true,
@@ -14,29 +30,51 @@ require("lualine").setup({
 		right_padding = 1
   },
   sections = {
-    lualine_a = { "mode", "paste" },
+    lualine_a = {{"mode", left_padding = 0, right_padding = 0}, "paste" },
     lualine_b = {
-      { "diagnostics", sources = { "nvim_lsp" } },
-      function()
-        return "%="
-      end,
-      "filename",
+      { "diagnostics",
+				sources = { "nvim_lsp" }, 	
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				color = {},
+				condition = conditions.hide_in_width
+			},
+			-- {
+			-- 	"filename",
+			-- 	function()
+			-- 		return "%="
+			-- 	end,
+			-- }
     },
 		lualine_c = {},
-    lualine_x = { "filetype" },
+    lualine_x = { 
+			{ "filetype",
+				condition = conditions.hide_in_width
+			} 
+		},
     -- lualine_b = {
     --   {
     --     "progress",
     --   },
     -- },
     lualine_y = {
-      { "branch", icon = "" },
-      { "diff", color_added = "#a7c080", color_modified = "#ffdf1b", color_removed = "#ff6666" },
-    },
+      { "branch", "b:gitsigns_head", icon = "", color = {gui = "bold"} },
+      {
+				"diff",
+				source = diff_source,
+				symbols = { added = "  ", modified = "柳", removed = " " },
+				color_added = "#a7c080",
+				color_modified = "#ffdf1b",
+				color_removed = "#ff6666",
+				color = {},
+				condition = nil,
+			},
+  	},
+			-- { "diff", color_added = "#a7c080", color_modified = "#ffdf1b", color_removed = "#ff6666" },
     lualine_z = {
       {
         "location",
         icon = "",
+				condition = conditions.hide_in_width
       },
     },
   },
