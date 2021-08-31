@@ -25,7 +25,13 @@ require("lualine").setup({
 		section_separators = {'', ''},
     --section_separators = { "", "" },
 		--component_separators = { " ", " " },
-    disabled_filetypes = {},
+    disabled_filetypes = {
+			"dapui_scopes",
+			"dapui_breakpoints",
+			"dapui_stacks",
+			"dapui_watches",
+			"dap-repl"
+		},
 		left_padding = 1,
 		right_padding = 1
   },
