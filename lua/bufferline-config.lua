@@ -1,8 +1,8 @@
 require("bufferline").setup{
  options = {
-		numbers = function(opts)
-    return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
-		end,
+		-- numbers = function(opts)
+		--     return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
+		-- end,
     -- number_style = "superscript",
     -- mappings = false,
     close_command = "bdelete! %d",
