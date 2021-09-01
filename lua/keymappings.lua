@@ -12,10 +12,14 @@ map('n', 'Q', '<Nop>', options )
 vim.g.mapleader = ' '
 map('n', '<Space>', '<NOP>', options )
 -- better movement
-map('n', '<C-j>', '5j', options )
-map('n', '<C-k>', '5k', options )
-map('n', '<C-l>', '$', options )
-map('n', '<C-h>', '0', options )
+-- map('n', '<C-j>', '5j', options )
+-- map('n', '<C-k>', '5k', options )
+-- map('n', '<C-l>', '$', options )
+-- map('n', '<C-h>', '0', options )
+map('n', '<C-j>', '<C-w>j', options )
+map('n', '<C-k>', '<C-w>k', options )
+map('n', '<C-l>', '<C-w>l', options )
+map('n', '<C-h>', '<C-w>h', options )
 -- better yank
 map('n', 'Y', 'y$', options )
 -- search and center
@@ -63,6 +67,7 @@ map('v', '<C-k>', '5k', options )
 -- VISUAL BLOCK MODE
 map('x', '<A-j>', ':m \'>+1<CR>gv-gv', options )
 map('x', '<A-k>', ':m \'<-2<CR>gv-gv', options )
+map('x', '<C-_>', ':CommentToggle<CR>', options )
 
 -- map("", "j", 'v:count ? "j" : "gj"', {expr = true})
 -- map("", "k", 'v:count ? "k" : "gk"', {expr = true})
