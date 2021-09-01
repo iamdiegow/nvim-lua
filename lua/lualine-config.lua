@@ -21,8 +21,9 @@ require("lualine").setup({
     theme = "vscode",
 		-- component_separators = {'', ''},
 		-- section_separators = {'', ''},
+		section_separators = {' ', ' '},
 		component_separators = {' ', ' '},
-		section_separators = {'', ''},
+		-- section_separators = {'', ''},
     --section_separators = { "", "" },
 		--component_separators = { " ", " " },
     disabled_filetypes = {
@@ -36,7 +37,7 @@ require("lualine").setup({
 		right_padding = 1
   },
   sections = {
-    lualine_a = {{"mode", left_padding = 0, right_padding = 0}, "paste" },
+    lualine_a = {{"mode"}, "paste" },
     lualine_b = {
       { "diagnostics",
 				sources = { "nvim_lsp" }, 	

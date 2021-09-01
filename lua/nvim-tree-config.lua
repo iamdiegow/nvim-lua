@@ -7,7 +7,7 @@ local tree_cb = tree_c.nvim_tree_callback
 local g = vim.g
 
 g.nvim_tree_side = "left"
-g.nvim_tree_width = 20
+g.nvim_tree_width = 30
 g.nvim_tree_ignore = {".git", ".cache"}
 g.nvim_tree_gitignore = 1
 g.nvim_tree_auto_ignore_ft = {"dashboard"} -- don't open tree on specific fiypes.
