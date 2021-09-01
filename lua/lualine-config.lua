@@ -1,5 +1,16 @@
 local window_width_limit = 80
 
+local function diff_source()
+  local gitsigns = vim.b.gitsigns_status_dict
+  if gitsigns then
+    return {
+      added = gitsigns.added,
+      modified = gitsigns.changed,
+      removed = gitsigns.removed,
+    }
+  end
+end
+
 local conditions = {
   buffer_not_empty = function()
     return vim.fn.empty(vim.fn.expand "%:t") ~= 1
@@ -40,7 +51,7 @@ require("lualine").setup({
     lualine_a = {{"mode"}, "paste" },
     lualine_b = {
       { "diagnostics",
-				sources = { "nvim_lsp" }, 	
+				sources = { "nvim_lsp" },
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 				color = {},
 				condition = conditions.hide_in_width
@@ -53,10 +64,10 @@ require("lualine").setup({
 			-- }
     },
 		lualine_c = {},
-    lualine_x = { 
+    lualine_x = {
 			{ "filetype",
 				condition = conditions.hide_in_width
-			} 
+			}
 		},
     -- lualine_b = {
     --   {
