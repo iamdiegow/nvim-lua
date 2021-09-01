@@ -26,12 +26,13 @@ g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
 g.nvim_tree_disable_netrw = 1
 g.nvim_tree_hijack_netrw = 0
 g.nvim_tree_update_cwd = 1
+g.nvim_tree_lsp_diagnostics = 1
 
 g.nvim_tree_show_icons = {
     git = 1,
     folders = 1,
-    files = 1
-    -- folder_arrows= 1
+    files = 1,
+    folder_arrows= 1
 }
 g.nvim_tree_icons = {
     default = "",
