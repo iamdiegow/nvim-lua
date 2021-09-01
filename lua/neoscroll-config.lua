@@ -15,4 +15,3 @@ t['zz']    = {'zz', {'100'}}
 t['zb']    = {'zb', {'100'}}
 
 require('neoscroll.config').set_mappings(t)
-
