@@ -10,8 +10,7 @@ vim.opt.foldlevel = 10
 vim.opt.lazyredraw = true
 vim.opt.encoding = "UTF-8"
 vim.opt.showmatch = true
-vim.opt.listchars = { tab = ">>>", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
-vim.opt.fillchars = { vert = ' '}
+--vim.opt.fillchars = { vert = ' '}
 vim.opt.hlsearch = true
 
 wo.number = true
