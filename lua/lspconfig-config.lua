@@ -5,13 +5,13 @@ local on_attach = function(client, bufnr)
 	client.resolved_capabilities.document_formatting = false
 
 	require'lsp_signature'.on_attach {
-		bind = true, 
+		bind = true,
 		doc_lines = 2,
-		floating_window = true,
-		hint_enable = true,
+		floating_window = false,
+		hint_enable = false,
 		hint_prefix = "🌟 ",
 		hint_scheme = "String",
-		use_lspsaga = true,
+		use_lspsaga = false,
 		hi_parameter = "Search",
 		max_height = 12,
 		max_width = 120,
@@ -19,6 +19,7 @@ local on_attach = function(client, bufnr)
 			border = "shadow", -- double, single, shadow, none
 		},
 		extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
+		toggle_key = '<M-x>'
 	}
 
 	local ts_utils = require('nvim-lsp-ts-utils')
@@ -104,9 +105,9 @@ require'lspconfig'.tsserver.setup {
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-		signs = true,
-    underline = false,
-		virtual_text = false
+		signs = false,
+    underline = true,
+		virtual_text = false,
     -- virtual_text = {
     --   spacing = 4,
     --   prefix = ''
