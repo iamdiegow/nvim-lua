@@ -56,7 +56,7 @@ local on_attach = function(client, bufnr)
 		update_imports_on_move = false,
 		require_confirmation_on_move = false,
 		watch_dir = nil,
-		}
+	}
 
 		-- required to fix code action ranges
 		ts_utils.setup_client(client)
@@ -105,15 +105,25 @@ require'lspconfig'.tsserver.setup {
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-		signs = false,
+		signs = true,
     underline = true,
 		virtual_text = false,
+		severity_sort = true,
+		update_in_insert = true
     -- virtual_text = {
     --   spacing = 4,
     --   prefix = ''
     -- }
   }
 )
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "single"
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = "single"
+})
 
 vim.cmd([[
   nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
