@@ -32,5 +32,3 @@ require('compe-config')
 require('lspconfig-config')
 require('lspsaga-config')
 
-vim.wo.scroll = 5
-vim.wo.scrolloff = 5
