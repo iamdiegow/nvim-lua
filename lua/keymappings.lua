@@ -12,12 +12,13 @@ map('n', 'Q', '<Nop>', options )
 vim.g.mapleader = ' '
 map('n', '<Space>', '<NOP>', options )
 -- better movement
--- map('n', '<C-j>', '5j', options )
--- map('n', '<C-k>', '5k', options )
+map('n', '<C-j>', '5j', options )
+map('n', '<C-k>', '5k', options )
 -- map('n', '<C-l>', '$', options )
 -- map('n', '<C-h>', '0', options )
-map('n', '<C-j>', '<C-w>j', options )
-map('n', '<C-k>', '<C-w>k', options )
+-- window movement
+-- map('n', '<C-j>', '<C-w>j', options )
+-- map('n', '<C-k>', '<C-w>k', options )
 map('n', '<C-l>', '<C-w>l', options )
 map('n', '<C-h>', '<C-w>h', options )
 -- better yank
