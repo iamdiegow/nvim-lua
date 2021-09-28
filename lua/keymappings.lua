@@ -7,10 +7,13 @@ map('n', '<c-z>', '<Nop>', options )
 -- Disable ex mode
 map('n', 'Q', '<Nop>', options )
 
+
 -- NORMAL MODE ----------
 -- set LEADER key to space
 vim.g.mapleader = ' '
 map('n', '<Space>', '<NOP>', options )
+-- LSP
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', options )
 -- better movement
 map('n', '<C-j>', '5j', options )
 map('n', '<C-k>', '5k', options )
