@@ -55,8 +55,6 @@ require("telescope").setup {
   },
 }
 
-require'telescope'.load_extension('gh')
-
 local M = {}
 
 function M.nvim_config()

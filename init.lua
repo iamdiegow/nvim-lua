@@ -24,11 +24,9 @@ require('which-key-config')
 require('trouble-config')
 require('dashboard-config')
 require('nvim-web-devicons-config')
---require('nvim-dap-config')
 
 -- LSP
 require('lsp')
 require('compe-config')
 require('lspconfig-config')
-require('lspsaga-config')
 

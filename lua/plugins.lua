@@ -11,17 +11,11 @@ end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 	-- Colorschemes
-  use {'dracula/vim', as = 'dracula'}
-	use 'marko-cerovac/material.nvim'
-	use 'sainnhe/everforest'
-	use {'nxvu699134/vn-night.nvim'}
 	use 'Mofiqul/vscode.nvim'
-	use "rafamadriz/neon"
 	-- Lsp
   use 'neovim/nvim-lspconfig'
 	use 'kabouzeid/nvim-lspinstall'
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-	use 'glepnir/lspsaga.nvim'
 	use 'onsails/lspkind-nvim'
 	use {
   "ray-x/lsp_signature.nvim",
@@ -54,7 +48,6 @@ return require('packer').startup(function(use)
 	use 'p00f/nvim-ts-rainbow'
 	use {"akinsho/nvim-toggleterm.lua"}
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
-	use 'nvim-telescope/telescope-github.nvim'
 	use 'vim-test/vim-test'
 	use {
   'lewis6991/gitsigns.nvim',
@@ -63,8 +56,6 @@ return require('packer').startup(function(use)
   	}
 	}
 	use 'moll/vim-node'
-	use 'mfussenegger/nvim-dap'
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use 'folke/which-key.nvim'
 	use {
 		"folke/trouble.nvim",
@@ -72,6 +63,5 @@ return require('packer').startup(function(use)
 	}
 	use 'glepnir/dashboard-nvim'
 	use 'vimwiki/vimwiki'
-	use "rafamadriz/friendly-snippets"
 end)
 
