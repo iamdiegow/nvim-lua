@@ -7,6 +7,7 @@ local tree_cb = tree_c.nvim_tree_callback
 
 local g = vim.g
 
+-- default keymappings
 local nvim_tree_bindings = {
     {key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit")},
     {key = {"<2-RightMouse>", "<C-]>"}, cb = tree_cb("cd")},
@@ -42,39 +43,7 @@ local nvim_tree_bindings = {
     {key = "g?", cb = tree_cb("toggle_help")}
 }
 
-require('nvim-tree').setup {
-  disable_netrw       = true,
-  hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
-	auto_open = true,
-  auto_close          = true,
-  open_on_tab         = false,
-  update_to_buf_dir   = true,
-  hijack_cursor       = false,
-  update_cwd          = true,
-  lsp_diagnostics     = true,
-  update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
-    ignore_list = {}
-  },
-  system_open = {
-    cmd  = nil,
-    args = {}
-  },
-
-  view = {
-    width = 10,
-    side = 'bottom',
-    auto_resize = false,
-    mappings = {
-      custom_only = false,
-      list = nvim_tree_bindings
-    }
-  }
-}
-
+-- options that are not migrated yet
 
 g.nvim_tree_ignore = {".git", ".cache", "node_modules"}
 g.nvim_tree_gitignore = 1
@@ -87,7 +56,6 @@ g.nvim_tree_highlight_opened_files = 0
 g.nvim_tree_root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"}
 g.nvim_tree_allow_resize = 1
 g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
-
 g.nvim_tree_show_icons = {
     git = 1,
     folders = 1,
@@ -115,6 +83,38 @@ g.nvim_tree_icons = {
     }
 }
 
+require('nvim-tree').setup {
+  disable_netrw       = true,
+  hijack_netrw        = true,
+  open_on_setup       = false,
+  ignore_ft_on_setup  = {},
+	auto_open = true,
+  auto_close          = true,
+  open_on_tab         = false,
+  update_to_buf_dir   = true,
+  hijack_cursor       = false,
+  update_cwd          = true,
+  lsp_diagnostics     = true,
+  update_focused_file = {
+    enable      = false,
+    update_cwd  = false,
+    ignore_list = {}
+  },
+  system_open = {
+    cmd  = nil,
+    args = {}
+  },
+
+  view = {
+    width = 20,
+    side = 'left',
+    auto_resize = false,
+    mappings = {
+      custom_only = false,
+      list = nvim_tree_bindings
+    }
+  }
+}
 
 -- hide statusline when nvim tree is opened
 vim.cmd [[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif]]
