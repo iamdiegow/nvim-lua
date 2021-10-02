@@ -17,9 +17,6 @@ return require('packer').startup(function(use)
 	use 'kabouzeid/nvim-lspinstall'
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 	use 'onsails/lspkind-nvim'
-	use {
-  "ray-x/lsp_signature.nvim",
-	}
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
 	use {
