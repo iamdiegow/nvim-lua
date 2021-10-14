@@ -91,10 +91,12 @@ require('nvim-tree').setup {
 	auto_open = true,
   auto_close          = true,
   open_on_tab         = false,
-  update_to_buf_dir   = true,
+  update_to_buf_dir   = {
+		enable = true,
+		auto_open = false
+	},
   hijack_cursor       = false,
   update_cwd          = true,
-  lsp_diagnostics     = true,
   update_focused_file = {
     enable      = false,
     update_cwd  = false,
@@ -104,7 +106,15 @@ require('nvim-tree').setup {
     cmd  = nil,
     args = {}
   },
-
+	diagnostics         = {
+		enable = true,
+		icons = {
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
+		}
+	},
   view = {
     width = 30,
     side = 'left',
