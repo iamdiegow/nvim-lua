@@ -27,6 +27,6 @@ require('nvim-web-devicons-config')
 
 -- LSP
 require('lsp')
-require('compe-config')
+require('nvim-cmp-config')
 require('lspconfig-config')
 

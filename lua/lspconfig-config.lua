@@ -1,6 +1,8 @@
 vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#1f2335]]
 vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 -- TYPESCRIPT LSP
 local on_attach = function(client, bufnr)
 	client.resolved_capabilities.document_formatting = false
@@ -55,6 +57,7 @@ local on_attach = function(client, bufnr)
 end
 
 require'lspconfig'.tsserver.setup {
+	capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" }
 }
@@ -91,21 +94,28 @@ vim.cmd([[
 ]])
 
 -- YAML yarn global add yaml-language-server
-require'lspconfig'.yamlls.setup{}
+require'lspconfig'.yamlls.setup{
+	capabilities = capabilities
+}
 -- CSS npm i -g vscode-langservers-extracted
-require'lspconfig'.cssls.setup{}
--- HTML npm i -g vscode-langservers-extracted
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+require'lspconfig'.cssls.setup{
+	capabilities = capabilities
+}
 
+-- HTML npm i -g vscode-langservers-extracted
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
+
 -- DOCKER npm install -g dockerfile-language-server-nodejs
-require'lspconfig'.dockerls.setup{}
+require'lspconfig'.dockerls.setup{
+	capabilities = capabilities
+}
 -- JSON npm i -g vscode-langservers-extracted
 require'lspconfig'.jsonls.setup({
- commands = {
+	capabilities = capabilities,
+  commands = {
 		Format = {
 			function()
 				vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})

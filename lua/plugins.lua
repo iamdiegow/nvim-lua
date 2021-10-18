@@ -17,13 +17,15 @@ return require('packer').startup(function(use)
 	use 'kabouzeid/nvim-lspinstall'
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 	use 'onsails/lspkind-nvim'
-  use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
 	use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
   }
 	-- Workflow
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/nvim-cmp'
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
