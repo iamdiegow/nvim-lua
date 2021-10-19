@@ -56,6 +56,8 @@ return require('packer').startup(function(use)
 	}
 	use 'moll/vim-node'
 	use 'folke/which-key.nvim'
+	use 'folke/zen-mode.nvim'
+	use 'folke/twilight.nvim'
 	use {
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",

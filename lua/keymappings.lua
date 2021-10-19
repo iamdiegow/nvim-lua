@@ -11,6 +11,7 @@ map('n', 'Q', '<Nop>', options )
 -- NORMAL MODE ----------
 -- set LEADER key to space
 vim.g.mapleader = ' '
+map('n', '<C-z>', ':ZenMode<CR>', options)
 map('n', '<Space>', '<NOP>', options )
 -- LSP
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', options )
