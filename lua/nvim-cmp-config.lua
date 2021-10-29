@@ -24,18 +24,11 @@ cmp.setup({
 		['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
 	},
 	sources = {
-		{ name = 'nvim_lsp' },
-		{ name = 'buffer' },
-		{ name = 'vsnip' }
+		{ name = 'nvim_lsp', max_item_count = 6 },
+		{ name = 'buffer', keyword_length = 5, max_item_count = 3 },
+		{ name = 'vsnip', max_item_count = 5 }
 	},
 	formatting ={
 		format = lspkind.cmp_format({with_text = true, maxwidth = 500})
 	}
 })
-
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
