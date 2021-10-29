@@ -25,10 +25,18 @@ cmp.setup({
 	},
 	sources = {
 		{ name = 'nvim_lsp', max_item_count = 6 },
-		{ name = 'buffer', keyword_length = 5, max_item_count = 3 },
-		{ name = 'vsnip', max_item_count = 5 }
+		{ name = 'vsnip', max_item_count = 5 },
+		{ name = 'buffer', keyword_length = 5, max_item_count = 3 }
 	},
 	formatting ={
-		format = lspkind.cmp_format({with_text = true, maxwidth = 500})
+		format = lspkind.cmp_format({
+			with_text = true,
+			maxwidth = 500,
+			menu = {
+				buffer = "[buf]",
+				nvim_lsp = "[LSP]",
+				vsnip = "[snip]"
+			}
+		})
 	}
 })
