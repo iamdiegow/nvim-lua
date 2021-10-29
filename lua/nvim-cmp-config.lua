@@ -28,7 +28,7 @@ cmp.setup({
 		{ name = 'vsnip', max_item_count = 5 },
 		{ name = 'buffer', keyword_length = 5, max_item_count = 3 }
 	},
-	formatting ={
+	formatting = {
 		format = lspkind.cmp_format({
 			with_text = true,
 			maxwidth = 500,
@@ -38,5 +38,9 @@ cmp.setup({
 				vsnip = "[snip]"
 			}
 		})
+	},
+	experimental = {
+		native_menu = false,
+		ghost_text = true
 	}
 })
