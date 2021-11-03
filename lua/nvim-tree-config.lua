@@ -45,12 +45,10 @@ local nvim_tree_bindings = {
 
 -- options that are not migrated yet
 
-g.nvim_tree_ignore = {".git", ".cache", "node_modules"}
 g.nvim_tree_gitignore = 1
 g.nvim_tree_auto_ignore_ft = {"dashboard"}
 g.nvim_tree_quit_on_open = 0 -- closes tree when file's opened
 g.nvim_tree_indent_markers = 0
-g.nvim_tree_hide_dotfiles = 1
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 0
 g.nvim_tree_root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"}
@@ -116,14 +114,21 @@ require('nvim-tree').setup {
 		}
 	},
   view = {
-    width = 30,
+    width = 25,
     side = 'left',
     auto_resize = false,
     mappings = {
       custom_only = false,
       list = nvim_tree_bindings
     }
-  }
+  },
+	filters = {
+		dotfiles = true,
+		custom = {
+			"node_modules",
+			".git"
+		}
+	}
 }
 
 -- hide statusline when nvim tree is opened
