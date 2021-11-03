@@ -50,6 +50,8 @@ bo.autoindent = false
 
 vim.cmd([[set shortmess+=c]])
 
+vim.cmd([[ let g:vimwiki_global_ext = 0]])
+
 -- vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
 -- vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
 -- vim.cmd("au ColorScheme * hi NormalNC ctermbg=none guibg=none")
