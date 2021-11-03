@@ -28,8 +28,8 @@ local conditions = {
 require("lualine").setup({
   options = {
     icons_enabled = true,
-		-- "vscode" | "everforest" | "material" | "neon"
-    theme = "vscode",
+		-- "vscode" | "moonfly"
+    theme = "moonfly",
 		-- component_separators = {'', ''},
 		-- section_separators = {'', ''},
 		section_separators = {' ', ' '},

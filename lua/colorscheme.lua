@@ -6,4 +6,14 @@ local vscodeTheme = function()
 	vim.cmd[[colorscheme vscode]]
 end
 
-vscodeTheme()
+local moonflyTheme = function()
+	vim.g.moonflyCursorColor = 1
+	vim.g.moonflyItalics = 1
+	vim.g.moonflyUnderlineMatchingParen = 1
+	vim.cmd([[
+		colorscheme moonfly
+	]])
+end
+
+-- vscodeTheme()
+moonflyTheme()

@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 	-- Colorschemes
 	use 'Mofiqul/vscode.nvim'
+	use 'bluz71/vim-moonfly-colors'
 	-- Lsp
   use 'neovim/nvim-lspconfig'
 	use 'kabouzeid/nvim-lspinstall'
