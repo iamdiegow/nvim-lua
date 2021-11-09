@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
 	use 'kabouzeid/nvim-lspinstall'
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'onsails/lspkind-nvim'
   use 'hrsh7th/vim-vsnip'
 	use {

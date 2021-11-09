@@ -25,12 +25,12 @@ local on_attach = function(client, bufnr)
 		import_all_select_source = false,
 
 		-- eslint
-		eslint_enable_code_actions = true,
-		eslint_enable_disable_comments = true,
-		eslint_bin = "eslint",
+		eslint_enable_code_actions = false,
+		eslint_enable_disable_comments = false,
+		eslint_bin = "eslint_d",
 		eslint_config_fallback = nil,
-		eslint_enable_diagnostics = false,
-		eslint_show_rule_id = false,
+		eslint_enable_diagnostics = true,
+		eslint_show_rule_id = true,
 
 		-- formatting
 		enable_formatting = false,
@@ -55,6 +55,9 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", options)
 
 end
+
+require('null-ls').config()
+require('lspconfig')['null-ls'].setup({})
 
 require'lspconfig'.tsserver.setup {
 	capabilities = capabilities,
