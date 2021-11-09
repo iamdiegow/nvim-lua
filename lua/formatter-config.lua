@@ -5,7 +5,7 @@ require('formatter').setup({
 			function()
 				return {
 					exe = "prettier",
-					args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
+					args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
 					stdin = true
 				}
 			end
@@ -14,7 +14,7 @@ require('formatter').setup({
 		  function()
 				return {
 					exe = "prettier",
-					args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
+					args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
 					stdin = true
 				}
 			end
@@ -23,7 +23,7 @@ require('formatter').setup({
 		  function()
 				return {
 					exe = "prettier",
-					args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
+					args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
 					stdin = true
 				}
 			end
@@ -31,18 +31,18 @@ require('formatter').setup({
     javascriptreact = {
       function()
           return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
-            stdin = true
+						exe = "prettier",
+						args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
+						stdin = true
           }
         end
     },
     typescriptreact = {
         function()
           return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
-            stdin = true
+						exe = "prettier",
+						args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
+						stdin = true
           }
         end
     }
@@ -50,9 +50,9 @@ require('formatter').setup({
 })
 
 -- Format on save
-vim.api.nvim_exec([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.js,*.jsx,*.json,*.ts,*.tsx FormatWrite
-augroup END
-]], true)
+-- vim.api.nvim_exec([[
+-- augroup FormatAutogroup
+--   autocmd!
+--   autocmd BufWritePost *.js,*.jsx,*.json,*.ts,*.tsx FormatWrite
+-- augroup END
+-- ]], true)

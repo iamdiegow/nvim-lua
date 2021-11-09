@@ -13,6 +13,8 @@ map('n', 'Q', '<Nop>', options )
 vim.g.mapleader = ' '
 map('n', '<C-z>', ':ZenMode<CR>', options)
 map('n', '<Space>', '<NOP>', options )
+-- Format file
+map('n', '<C-f>', ':Format<CR>', options)
 -- LSP
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', options )
 -- better movement
