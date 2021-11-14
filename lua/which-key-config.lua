@@ -148,7 +148,8 @@ local normal_mappings = {
 			"Document Diagnostics",
 		},
 		l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics"},
-		t = { "<cmd>lua vim.lsp.diagnostic.clear()<CR>", "Clear Diagnostics"},
+		h = { "<cmd>lua vim.diagnostic.hide()<CR>", "Hide Diagnostics"},
+		t = { "<cmd>lua vim.diagnostic.show()<CR>", "Show Diagnostics"},
 		w = {
 			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
 			"Workspace Diagnostics",
