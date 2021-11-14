@@ -198,6 +198,7 @@ local normal_mappings = {
 		["3"] = { '<cmd>3ToggleTerm<CR>', "Toggle Terminal 3" },
 		a = { '<cmd>ToggleTermOpenAll<CR>', "Open All Terminals" },
 		q = { '<cmd>ToggleTermCloseAll<CR>', "Close All Terminals" },
+		x = { '<cmd>exec "!node %"<CR>', "Execute file with node" }
 	},
 	-- VIM TEST
 	[";"] = {
