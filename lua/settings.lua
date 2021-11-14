@@ -42,7 +42,7 @@ o.showmode = false
 o.backup = false
 o.writebackup = false
 o.cursorline = true
-o.cursorcolumn = true
+o.cursorcolumn = false
 o.termguicolors = true
 
 bo.tabstop = 2
@@ -55,6 +55,7 @@ vim.cmd([[ let g:vimwiki_global_ext = 0]])
 
 vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
 vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
+vim.cmd("au ColorScheme * hi LineNr ctermbg=none guibg=none")
 vim.cmd("au ColorScheme * hi NormalNC ctermbg=none guibg=none")
 vim.cmd("au ColorScheme * hi MsgArea ctermbg=none guibg=none")
 vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
