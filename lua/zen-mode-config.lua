@@ -5,13 +5,13 @@ require('zen-mode').setup({
 		height = 1,
 		options = {
 			number = false,
-			cursorline = true,
-			cursorcolumn = true
+			cursorline = false,
+			cursorcolumn = false
 		}
 	},
 	plugins = {
 		twilight = { enabled = false },
-		gitsigns = { enabled = false }
+		gitsigns = { enabled = true }
 	}
 })
 
