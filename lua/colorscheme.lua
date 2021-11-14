@@ -15,5 +15,5 @@ local moonflyTheme = function()
 	]])
 end
 
--- vscodeTheme()
-moonflyTheme()
+vscodeTheme()
+-- moonflyTheme()
