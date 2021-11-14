@@ -57,8 +57,6 @@ map('n', '<C-s>', '<cmd>w!<CR>', options )
 -- INSERT MODE ----------
 -- exit insert mode
 map('i', 'jj', '<Esc>', options )
-map('i', 'jk', '<Esc>', options )
-map('i', 'kj', '<Esc>', options )
 
 -- move current line
 map('i', '<A-j>', '<Esc>:m .+1<CR>==gi', options )
