@@ -29,7 +29,7 @@ require("lualine").setup({
   options = {
     icons_enabled = true,
 		-- "vscode" | "moonfly"
-    theme = "vscode",
+    theme = "moonfly",
 		-- component_separators = {'', ''},
 		-- section_separators = {'', ''},
 		section_separators = {' ', ' '},

@@ -15,5 +15,11 @@ local moonflyTheme = function()
 	]])
 end
 
-vscodeTheme()
--- moonflyTheme()
+local envMachine = os.getenv("MACHINE")
+
+if envMachine == "home-linux" then
+  moonflyTheme()
+else
+  vscodeTheme()
+end
+
