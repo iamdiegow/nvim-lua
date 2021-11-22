@@ -14,6 +14,7 @@ vim.opt.showmatch = true
 vim.opt.hlsearch = true
 
 wo.number = true
+wo.numberwidth = 4
 wo.relativenumber = false
 
 o.swapfile = true
@@ -23,7 +24,7 @@ o.smartcase = true
 o.hlsearch = true
 o.incsearch = true
 o.ignorecase = true
-o.scrolloff = 5
+o.scrolloff = 8
 o.colorcolumn = "80"
 o.syntax = 'enable'
 o.hidden = true
@@ -44,6 +45,7 @@ o.writebackup = false
 o.cursorline = true
 o.cursorcolumn = false
 o.termguicolors = true
+o.wrap = true
 
 bo.tabstop = 2
 bo.shiftwidth = 2
@@ -53,10 +55,13 @@ vim.cmd([[set shortmess+=c]])
 
 vim.cmd([[ let g:vimwiki_global_ext = 0]])
 
-vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
-vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
-vim.cmd("au ColorScheme * hi LineNr ctermbg=none guibg=none")
-vim.cmd("au ColorScheme * hi NormalNC ctermbg=none guibg=none")
-vim.cmd("au ColorScheme * hi MsgArea ctermbg=none guibg=none")
-vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
-vim.cmd("au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none")
+print(vim.g.transparent_window)
+if vim.g.transparent_window then
+	vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
+	vim.cmd("au ColorScheme * hi SignColumn ctermbg=none guibg=none")
+	vim.cmd("au ColorScheme * hi LineNr ctermbg=none guibg=none")
+	vim.cmd("au ColorScheme * hi NormalNC ctermbg=none guibg=none")
+	vim.cmd("au ColorScheme * hi MsgArea ctermbg=none guibg=none")
+	vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
+	vim.cmd("au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none")
+end

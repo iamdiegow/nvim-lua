@@ -1,4 +1,5 @@
 vim.g.start_time = vim.fn.reltime()
+vim.g.transparent_window = true
 
 -- Core
 require('plugins')
@@ -35,3 +36,4 @@ local envMachine = os.getenv("MACHINE")
 if envMachine == "home-linux" then
 	require('lsp')
 end
+
