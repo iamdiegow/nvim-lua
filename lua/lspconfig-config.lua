@@ -68,11 +68,11 @@ require'lspconfig'.tsserver.setup {
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
 		signs = false,
-    underline = false,
+    underline = true,
 		severity_sort = false,
 		update_in_insert = true,
     virtual_text = {
-      spacing = 4,
+      spacing = 8,
       prefix = ''
     }
   }
