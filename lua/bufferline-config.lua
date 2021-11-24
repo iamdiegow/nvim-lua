@@ -29,7 +29,8 @@ require("bufferline").setup{
     show_close_icon = true,
     show_tab_indicators = true,
     persist_buffer_sort = true,
-    separator_style = "thick",
+    -- separator_style = "thick",
+    separator_style = {"", ""},
     enforce_regular_tabs = false,
     always_show_bufferline = true,
     sort_by = 'id',
@@ -88,7 +89,7 @@ vim.api.nvim_set_keymap('n', '<S-h>', ':bprevious<CR>', { noremap = true, silent
 local M = {}
 
 M.closeBuffer = function()
-	 local treeView = require('nvim-tree.view')
+	local treeView = require('nvim-tree.view')
   local bufferline = require('bufferline')
 
   -- check if NvimTree window was open
