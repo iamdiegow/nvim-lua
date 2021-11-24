@@ -1,4 +1,4 @@
-local execute = vim.api.nvim_command
+	local execute = vim.api.nvim_command
 local fn = vim.fn
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -32,6 +32,10 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
   }
+	use {
+		'luukvbaal/stabilize.nvim',
+		config = function() require('stabilize').setup() end
+	}
 	use 'hoob3rt/lualine.nvim'
 	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 	use {
@@ -47,7 +51,7 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-surround'
 	use { 'phaazon/hop.nvim', as = 'hop' }
 	use 'p00f/nvim-ts-rainbow'
-	use {"akinsho/nvim-toggleterm.lua"}
+	use {'akinsho/nvim-toggleterm.lua'}
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
 	use 'vim-test/vim-test'
 	use {
@@ -61,8 +65,8 @@ return require('packer').startup(function(use)
 	use 'folke/zen-mode.nvim'
 	use 'folke/twilight.nvim'
 	use {
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
+		'folke/trouble.nvim',
+		requires = 'kyazdani42/nvim-web-devicons',
 	}
 	use 'glepnir/dashboard-nvim'
 	use 'vimwiki/vimwiki'
