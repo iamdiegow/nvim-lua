@@ -14,6 +14,12 @@ require("telescope").setup {
     },
 		-- border = {},
     -- borderchars = { "─", "│", "─", "│", "+", "+", "+", "+" },
+    borderchars = {
+			{"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
+      prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
+      results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
+      preview = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"}
+		},
     -- prompt_prefix = "❯ ",
     -- selection_caret = "❯ ",
 		prompt_prefix = " ",
