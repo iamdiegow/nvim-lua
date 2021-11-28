@@ -1,6 +1,8 @@
 vim.g.start_time = vim.fn.reltime()
 vim.g.transparent_window = true
 vim.g.format_on_save = false
+-- 'vscode' | 'moonfly' | 'tokyonight'
+vim.g.color_theme = 'tokyonight'
 
 -- Core
 require('plugins')

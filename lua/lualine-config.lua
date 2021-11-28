@@ -28,8 +28,7 @@ local conditions = {
 require("lualine").setup({
   options = {
     icons_enabled = true,
-		-- "vscode" | "moonfly"
-    theme = "moonfly",
+    theme = vim.g.color_theme,
 		-- component_separators = {'', ''},
 		-- section_separators = {'', ''},
 		section_separators = {' ', ' '},
