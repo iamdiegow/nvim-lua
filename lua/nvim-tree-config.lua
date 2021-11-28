@@ -45,7 +45,6 @@ local nvim_tree_bindings = {
 
 -- options that are not migrated yet
 
-g.nvim_tree_gitignore = 1
 g.nvim_tree_auto_ignore_ft = {"dashboard"}
 g.nvim_tree_quit_on_open = 0 -- closes tree when file's opened
 g.nvim_tree_indent_markers = 0
@@ -128,6 +127,9 @@ require('nvim-tree').setup {
 			"node_modules",
 			".git"
 		}
+	},
+	git = {
+		ignore = true
 	}
 }
 
