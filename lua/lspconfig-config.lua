@@ -98,7 +98,15 @@ vim.cmd([[
 
 -- YAML yarn global add yaml-language-server
 require'lspconfig'.yamlls.setup{
-	capabilities = capabilities
+	capabilities = capabilities,
+	settings = {
+		yaml = {
+			schemas = {
+				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+			}
+		}
+	}
+
 }
 -- CSS npm i -g vscode-langservers-extracted
 require'lspconfig'.cssls.setup{
