@@ -12,16 +12,7 @@ require("telescope").setup {
       "--smart-case",
       "--hidden",
     },
-		-- border = {},
-    -- borderchars = { "─", "│", "─", "│", "+", "+", "+", "+" },
-    borderchars = {
-			{"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
-      prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
-      results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
-      preview = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"}
-		},
-    -- prompt_prefix = "❯ ",
-    -- selection_caret = "❯ ",
+		border = {},
 		prompt_prefix = " ",
 		selection_caret = " ",
 		initial_mode = "insert",
@@ -45,7 +36,7 @@ require("telescope").setup {
 				preview_cutoff = 0.20,
         width_padding = 0.05,
         height_padding = 1,
-        preview_height = 0.4,
+        preview_height = 0.6,
     		miror = false
       },
     },
@@ -59,6 +50,14 @@ require("telescope").setup {
 			}
     },
   },
+	pickers = {
+		find_files = {
+			theme = "ivy"
+		},
+		buffers = {
+			theme = "ivy"
+		}
+	}
 }
 
 local M = {}
