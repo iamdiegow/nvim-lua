@@ -114,7 +114,9 @@ require('nvim-tree').setup {
 	},
   view = {
     width = 25,
-    side = 'left',
+		height = 10,
+    side = 'bottom',
+		hide_root_folder = true,
     auto_resize = false,
     mappings = {
       custom_only = false,
@@ -130,6 +132,10 @@ require('nvim-tree').setup {
 	},
 	git = {
 		ignore = true
+	},
+	trash = {
+		cmd = "trash",
+		require_confirm = true
 	}
 }
 
