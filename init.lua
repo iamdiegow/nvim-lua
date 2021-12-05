@@ -29,6 +29,7 @@ require('trouble-config')
 require('dashboard-config')
 require('nvim-web-devicons-config')
 require('zen-mode-config')
+require('stabilize-config')
 
 -- LSP
 require('nvim-cmp-config')

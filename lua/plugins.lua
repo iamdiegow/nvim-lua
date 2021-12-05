@@ -34,8 +34,7 @@ return require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons'
   }
 	use {
-		'luukvbaal/stabilize.nvim',
-		config = function() require('stabilize').setup() end
+		'luukvbaal/stabilize.nvim'
 	}
 	use 'hoob3rt/lualine.nvim'
 	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
