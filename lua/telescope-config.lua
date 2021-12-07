@@ -1,5 +1,13 @@
 local actions = require('telescope.actions')
 
+local ivyConfig = {
+	theme = "ivy",
+	layout_config = {
+		prompt_position = "bottom",
+		height = 10,
+	}
+}
+
 require("telescope").setup {
   defaults = {
     vimgrep_arguments = {
@@ -12,33 +20,40 @@ require("telescope").setup {
       "--smart-case",
       "--hidden",
     },
+		selection_strategy = "reset",
+    sorting_strategy = "descending",
+		scroll_strategy = "cycle",
 		border = {},
 		prompt_prefix = " ",
 		selection_caret = " ",
 		initial_mode = "insert",
 		use_less = false,
 		set_env = { ["COLORTERM"] = "truecolor" },
-		selection_strategy = "reset",
-    sorting_strategy = "descending",
     color_devicons = true,
 		winblend = 0,
-		layout_strategy = "vertical",
+		-- 'flex' | 'horizontal' | 'vertical' | 'bottom_pane'
+		layout_strategy = "flex",
     layout_config = {
       prompt_position = "top",
       horizontal = {
+				prompt_position = "bottom",
 				preview_cutoff = 0.20,
-        width_padding = 0.04,
-        height_padding = 0.1,
-        preview_width = 0.5,
+				preview_width = 0.6,
     		mirror = false
       },
       vertical = {
+				prompt_position = "bottom",
+				preview_cutoff = 0.20,
+        preview_height = 0.5,
+    		mirror = false
+      },
+			center = {
 				preview_cutoff = 0.20,
         width_padding = 0.05,
         height_padding = 1,
-        preview_height = 0.6,
-    		miror = false
-      },
+        preview_height = 0.8,
+    		mirror = true
+			}
     },
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
@@ -51,12 +66,8 @@ require("telescope").setup {
     },
   },
 	pickers = {
-		find_files = {
-			theme = "ivy"
-		},
-		buffers = {
-			theme = "ivy"
-		}
+		find_files = ivyConfig,
+		buffers = ivyConfig
 	}
 }
 
