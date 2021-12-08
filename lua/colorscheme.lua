@@ -37,11 +37,4 @@ local selectTheme = {
 	tokyonight = tokyonightTheme
 }
 
-local envMachine = os.getenv("MACHINE")
-
-if envMachine == "home-linux" then
-	selectTheme[vim.g.color_theme]()
-else
-	selectTheme['vscode']()
-end
-
+selectTheme[vim.g.color_theme]()
