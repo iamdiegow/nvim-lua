@@ -5,7 +5,8 @@ local ivyConfig = {
 	layout_config = {
 		prompt_position = "bottom",
 		height = 10,
-	}
+	},
+	previewer = false
 }
 
 require("telescope").setup {
