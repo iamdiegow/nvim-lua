@@ -53,7 +53,6 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "qq", ":TSLspFixCurrent<CR>", options)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", options)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", options)
-
 end
 
 require('null-ls').config()
@@ -67,20 +66,32 @@ require'lspconfig'.tsserver.setup {
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-		signs = false,
-    underline = false,
-		severity_sort = false,
-		update_in_insert = false,
+		signs = {
+			severity = {
+				min = vim.diagnostic.severity.INFO
+			}
+		},
+    underline = {
+			severity = {
+				min = vim.diagnostic.severity.WARN
+			}
+		},
+		severity_sort = true,
+		update_in_insert = true,
     virtual_text = {
-      spacing = 10,
-      prefix = ''
+      spacing = 15,
+      prefix = ' ',
     }
   }
 )
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {})
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "rounded"
+})
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = "rounded"
+})
 
 vim.cmd([[
   nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
