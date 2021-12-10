@@ -50,7 +50,7 @@ require("lualine").setup({
     lualine_a = {{"mode"}, "paste" },
     lualine_b = {
       { "diagnostics",
-				sources = { "nvim_lsp" },
+				sources = { "nvim_diagnostic" },
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 				color = {},
 				condition = conditions.hide_in_width
