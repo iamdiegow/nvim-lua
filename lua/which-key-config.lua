@@ -147,7 +147,7 @@ local normal_mappings = {
 			"<cmd>Telescope lsp_document_diagnostics<cr>",
 			"Document Diagnostics",
 		},
-		l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics"},
+		l = { "<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics"},
 		h = { "<cmd>lua vim.diagnostic.hide()<CR>", "Hide Diagnostics"},
 		t = { "<cmd>lua vim.diagnostic.show()<CR>", "Show Diagnostics"},
 		w = {
@@ -157,15 +157,15 @@ local normal_mappings = {
 		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
+			"<cmd>lua vim.diagnostic.goto_next()<cr>",
 			"Next Diagnostic",
 		},
 		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+			"<cmd>lua vim.diagnostic.goto_prev()<cr>",
 			"Prev Diagnostic",
 		},
 		p = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
-		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+		q = { "<cmd>lua vim.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
