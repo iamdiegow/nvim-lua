@@ -55,6 +55,12 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", options)
 end
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 require('null-ls').setup({
 	sources = {
 		require('null-ls').builtins.diagnostics.eslint.with({
@@ -73,7 +79,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
 		signs = {
 			severity = {
-				min = vim.diagnostic.severity.INFO
+				min = vim.diagnostic.severity.HINT
 			}
 		},
     underline = {
