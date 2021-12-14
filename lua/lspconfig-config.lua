@@ -55,7 +55,13 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", options)
 end
 
-require('null-ls').setup({})
+require('null-ls').setup({
+	sources = {
+		require('null-ls').builtins.diagnostics.eslint.with({
+			prefer_local = "node_modules/.bin"
+		})
+	}
+})
 
 require'lspconfig'.tsserver.setup {
 	capabilities = capabilities,
