@@ -55,8 +55,7 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", options)
 end
 
-require('null-ls').config()
-require('lspconfig')['null-ls'].setup({})
+require('null-ls').setup({})
 
 require'lspconfig'.tsserver.setup {
 	capabilities = capabilities,
@@ -100,13 +99,6 @@ vim.cmd([[
   nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 ]])
 
-vim.cmd([[
-  autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-  autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-  autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
-  autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
-]])
-
 -- YAML yarn global add yaml-language-server
 require'lspconfig'.yamlls.setup{
 	capabilities = capabilities,
@@ -117,7 +109,6 @@ require'lspconfig'.yamlls.setup{
 			}
 		}
 	}
-
 }
 -- CSS npm i -g vscode-langservers-extracted
 require'lspconfig'.cssls.setup{
