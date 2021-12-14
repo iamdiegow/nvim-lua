@@ -144,7 +144,7 @@ local normal_mappings = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
-			"<cmd>Telescope lsp_document_diagnostics<cr>",
+			"<cmd>Telescope diagnostics bufrn=0<CR>",
 			"Document Diagnostics",
 		},
 		l = { "<cmd>lua vim.diagnostic.open_float(0, {scope = 'line', border = 'double'})<CR>", "Show Line Diagnostics"},
@@ -227,7 +227,6 @@ local normal_mappings = {
 	--     q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
 	--     L = { "<cmd>lua require'nvim-dap-config'.launch()<CR>", "Launch" },
 	-- }
-	
 }
 
 -- NORMAL MODE KEYBINDINGS
