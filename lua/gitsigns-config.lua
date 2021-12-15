@@ -1,4 +1,9 @@
-require('gitsigns').setup {
+local status_ok, gitsigns = pcall(require, 'gitsigns')
+if not status_ok then
+	return
+end
+
+gitsigns.setup {
   signs = {
 		add = {
 			hl = "GitSignsAdd",
@@ -46,6 +51,13 @@ require('gitsigns').setup {
 		virt_text = true,
 		virt_text_pos = 'eol',
 		delay = 500
+	},
+	preview_config = {
+		border = 'single',
+		style = 'minimal',
+		relative = 'cursor',
+		row = 0,
+		col = 1
 	},
   sign_priority = 6,
   update_debounce = 100,
