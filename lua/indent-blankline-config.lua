@@ -1,3 +1,8 @@
+local status_ok, indent_blankline = pcall(require, 'indent_blankline')
+if not status_ok then
+	return
+end
+
 vim.opt.termguicolors = true
 -- vim.cmd [[highlight IndentBlanklineIndent1 guifg=gold blend=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent2 guifg=orchid blend=nocombine]]
@@ -6,16 +11,18 @@ vim.opt.termguicolors = true
 -- vim.cmd [[highlight IndentBlanklineIndent5 guifg=pink blend=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent6 guifg=dodgerblue blend=nocombine]]
 
-vim.opt.listchars = {
-	tab = "  ",
-	trail = "·",
-	precedes = "←",
-	extends = "→",
-	eol = "↲",
-	nbsp = "␣"
+vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
+vim.g.indent_blankline_filetype_exclude = {
+	"help",
+	"startify",
+	"dashboard",
+	"packer",
+	"neogitstatus",
+	"NvimTree",
+	"Trouble",
 }
 
-require("indent_blankline").setup {
+indent_blankline.setup {
 	space_char_blankline = " ",
 	buftype_exclude = {"terminal"},
 	filetype_exclude = {"help", "dashboard", "terminal", "NvimTree"},
