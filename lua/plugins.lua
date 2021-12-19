@@ -21,13 +21,16 @@ return require('packer').startup(function(use)
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'onsails/lspkind-nvim'
   use 'hrsh7th/vim-vsnip'
+	use "rafamadriz/friendly-snippets"
 	use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
   }
 	-- Workflow
 	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/nvim-cmp'
   use {
     'kyazdani42/nvim-tree.lua',
