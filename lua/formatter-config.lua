@@ -14,6 +14,7 @@ local commonFT = {
   "html",
   "java",
   "javascript",
+  "javascriptreact",
   "typescript",
   "typescriptreact",
   "markdown",
