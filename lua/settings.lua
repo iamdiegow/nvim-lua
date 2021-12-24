@@ -12,6 +12,7 @@ vim.opt.encoding = "UTF-8"
 vim.opt.showmatch = true
 --vim.opt.fillchars = { vert = ' '}
 vim.opt.hlsearch = true
+vim.opt.termguicolors = true
 
 wo.number = true
 wo.numberwidth = 4
@@ -42,9 +43,8 @@ o.signcolumn = "yes"
 o.showmode = false
 o.backup = false
 o.writebackup = false
-o.cursorline = true
+o.cursorline = false
 o.cursorcolumn = false
-o.termguicolors = true
 o.wrap = true
 
 bo.tabstop = 2
