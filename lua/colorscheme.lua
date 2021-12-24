@@ -1,19 +1,14 @@
--- VSCODE
 local vscodeTheme = function()
 	-- 'light' | 'dark'
 	vim.g.vscode_style = "dark"
-	vim.cmd([[
-		colorscheme vscode
-	]])
+	vim.cmd([[ colorscheme vscode ]])
 end
 
 local moonflyTheme = function()
 	vim.g.moonflyCursorColor = 1
 	vim.g.moonflyItalics = 1
 	vim.g.moonflyUnderlineMatchingParen = 1
-	vim.cmd([[
-		colorscheme moonfly
-	]])
+	vim.cmd([[ colorscheme moonfly ]])
 end
 
 local tokyonightTheme = function()
@@ -26,9 +21,7 @@ local tokyonightTheme = function()
 	vim.g.tokyonight_italic_variables = false
 	vim.g.tokyonight_dark_sidebar = true
 	vim.g.tokyonight_lualine_bold = true
-	vim.cmd([[
-		colorscheme tokyonight
-	]])
+	vim.cmd([[ colorscheme tokyonight ]])
 end
 
 local darkplusTheme = function()
