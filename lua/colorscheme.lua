@@ -31,10 +31,15 @@ local tokyonightTheme = function()
 	]])
 end
 
+local darkplusTheme = function()
+	vim.cmd([[ colorscheme darkplus ]])
+end
+
 local selectTheme = {
 	moonfly = moonflyTheme,
 	vscode = vscodeTheme,
-	tokyonight = tokyonightTheme
+	tokyonight = tokyonightTheme,
+	darkplus = darkplusTheme
 }
 
 selectTheme[vim.g.color_theme]()
