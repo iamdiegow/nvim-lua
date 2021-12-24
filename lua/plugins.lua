@@ -36,14 +36,12 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
   }
-	use {
-		'luukvbaal/stabilize.nvim'
-	}
+	use 'luukvbaal/stabilize.nvim'
 	use 'hoob3rt/lualine.nvim'
-	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+	use { 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' }
 	use {
-  'nvim-telescope/telescope.nvim',
-  requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  	'nvim-telescope/telescope.nvim',
+  	requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
 	use 'famiu/bufdelete.nvim'
 	use 'terrortylor/nvim-comment'
@@ -54,13 +52,13 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-surround'
 	use { 'phaazon/hop.nvim', as = 'hop' }
 	use 'p00f/nvim-ts-rainbow'
-	use {'akinsho/nvim-toggleterm.lua'}
+	use 'akinsho/nvim-toggleterm.lua'
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
 	use 'vim-test/vim-test'
 	use {
-  'lewis6991/gitsigns.nvim',
-  requires = {
-    'nvim-lua/plenary.nvim'
+  	'lewis6991/gitsigns.nvim',
+  	requires = {
+			'nvim-lua/plenary.nvim'
   	}
 	}
 	use 'moll/vim-node'
