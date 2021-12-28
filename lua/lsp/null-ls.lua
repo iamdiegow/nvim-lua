@@ -11,9 +11,6 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({
-			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" }
-		}),
 		diagnostics.eslint_d.with({
 			only_local = "node_modules/.bin"
 		})

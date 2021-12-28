@@ -89,7 +89,7 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
 		local status_ok, ts_utils = pcall(require, 'nvim-lsp-ts-utils')
-		if ts_utils then
+		if status_ok and ts_utils then
 			ts_utils.setup {
 				eslint_enable_code_actions = false,
 				eslint_enable_disable_comments = false,
