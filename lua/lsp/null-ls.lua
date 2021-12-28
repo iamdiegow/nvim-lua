@@ -11,8 +11,6 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		diagnostics.eslint_d.with({
-			only_local = "node_modules/.bin"
-		})
+		diagnostics.eslint_d
 	},
 })
