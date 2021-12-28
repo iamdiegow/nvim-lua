@@ -33,11 +33,4 @@ require('stabilize-config')
 
 -- LSP
 require('nvim-cmp-config')
-require('lspconfig-config')
-
-local envMachine = os.getenv("MACHINE")
-
-if envMachine == "home-linux" then
-	require('lsp')
-end
-
+require('lsp')
