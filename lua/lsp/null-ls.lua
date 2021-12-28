@@ -14,6 +14,8 @@ null_ls.setup({
 		formatting.prettier.with({ 
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" }
 		}),
-		diagnostics.eslint_d
+		diagnostics.eslint_d.with({
+			only_local = "node_modules/.bin"
+		})
 	},
 })
