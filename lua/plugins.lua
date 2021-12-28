@@ -43,7 +43,7 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
 	-- Lsp
   use 'neovim/nvim-lspconfig'
-	use 'kabouzeid/nvim-lspinstall'
+	use 'williamboman/nvim-lsp-installer'
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'onsails/lspkind-nvim'
