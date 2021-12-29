@@ -1,4 +1,4 @@
-vim.g.start_time = vim.fn.reltime()
+-- vim.g.start_time = vim.fn.reltime()
 vim.g.transparent_window = true
 vim.g.format_on_save = false
 -- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus'
@@ -27,7 +27,6 @@ require('nvim-toggleterm-config')
 require('gitsigns-config')
 require('which-key-config')
 require('trouble-config')
-require('dashboard-config')
 require('nvim-web-devicons-config')
 require('zen-mode-config')
 require('stabilize-config')

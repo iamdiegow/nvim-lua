@@ -72,7 +72,10 @@ lualine.setup({
 		section_separators = {' ', ' '},
 		component_separators = {' ', ' '},
 		left_padding = 1,
-		right_padding = 1
+		right_padding = 1,
+		disabled_filetypes = {
+			""
+		}
   },
   sections = {
     lualine_a = {{"mode"}, "paste" },

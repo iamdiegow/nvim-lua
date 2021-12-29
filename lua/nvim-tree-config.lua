@@ -84,7 +84,7 @@ g.nvim_tree_icons = {
 require('nvim-tree').setup {
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = false,
+  open_on_setup       = true,
   ignore_ft_on_setup  = {},
 	auto_open = true,
   auto_close          = true,
@@ -93,7 +93,7 @@ require('nvim-tree').setup {
 		enable = true,
 		auto_open = false
 	},
-  hijack_cursor       = false,
+  hijack_cursor       = true,
   update_cwd          = true,
   update_focused_file = {
     enable      = false,
@@ -116,7 +116,7 @@ require('nvim-tree').setup {
   view = {
     width = 25,
 		height = 20,
-    side = 'bottom',
+    side = 'left',
 		hide_root_folder = true,
     auto_resize = false,
     mappings = {

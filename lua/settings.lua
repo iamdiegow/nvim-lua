@@ -52,7 +52,7 @@ bo.tabstop = 2
 bo.shiftwidth = 2
 bo.autoindent = false
 
-vim.cmd([[ set shortmess+=c ]])
+vim.cmd([[ set shortmess+=I ]])
 
 vim.cmd([[ let g:vimwiki_global_ext = 0 ]])
 
