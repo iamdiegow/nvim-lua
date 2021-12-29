@@ -26,6 +26,7 @@ o.hlsearch = true
 o.incsearch = true
 o.ignorecase = true
 o.scrolloff = 0
+o.scroll = 5
 o.colorcolumn = "80"
 o.syntax = 'enable'
 o.hidden = true
@@ -51,9 +52,9 @@ bo.tabstop = 2
 bo.shiftwidth = 2
 bo.autoindent = false
 
-vim.cmd([[set shortmess+=c]])
+vim.cmd([[ set shortmess+=c ]])
 
-vim.cmd([[ let g:vimwiki_global_ext = 0]])
+vim.cmd([[ let g:vimwiki_global_ext = 0 ]])
 
 if vim.g.transparent_window then
 	vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
