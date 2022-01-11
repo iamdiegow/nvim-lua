@@ -1,6 +1,7 @@
 -- vim.g.start_time = vim.fn.reltime()
 vim.g.transparent_window = true
 vim.g.format_on_save = false
+
 -- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus'
 vim.g.color_theme = 'darkplus'
 vim.g.highlight_document = false
