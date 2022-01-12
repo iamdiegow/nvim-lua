@@ -160,9 +160,12 @@ local schemas = {
     fileMatch = { "resume.json" },
     url = "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   },
+	{
+		description = "Nodemon json config",
+		fileMatch = { "nodemon.json" },
+		url = "https://json.schemastore.org/nodemon.json"
+	}
 }
-
-
 
 local opts = {
   settings = {
