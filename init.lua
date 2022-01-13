@@ -3,7 +3,7 @@ vim.g.transparent_window = true
 vim.g.format_on_save = false
 
 -- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus'
-vim.g.color_theme = 'darkplus'
+vim.g.color_theme = 'tokyonight'
 vim.g.highlight_document = false
 
 -- Core
