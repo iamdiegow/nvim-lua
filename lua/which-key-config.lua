@@ -177,9 +177,11 @@ local normal_mappings = {
 		name = "Hop & Highlight",
 		h = { '<cmd>let @/=""<CR>', "No Highlight" },
 		w = { '<cmd>HopWord<CR>', "Hop Word" },
+		l = { '<cmd>HopLineStart<CR>', "Hop Line Start" },
+		d = { '<cmd>HopLine<CR>', "Hop Line" },
+		p = { '<cmd>HopPattern<CR>', "Hop Pattern" },
 		a = { '<cmd>HopChar1<CR>', "Hop Char 1" },
 		s = { '<cmd>HopChar2<CR>', "Hop Char 2" },
-		d = { '<cmd>HopChar2<CR>', "Hop Line" },
 	},
 	-- TROUBLE
 	t = {
