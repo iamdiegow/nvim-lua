@@ -28,7 +28,7 @@ indent_blankline.setup {
 	filetype_exclude = {"help", "dashboard", "terminal", "NvimTree"},
 	show_current_context = false,
 	show_trailing_blankline_indent = false,
-	show_first_indent_level = true,
+	show_first_indent_level = false,
 	show_char_blankline = " ",
 	-- char_highlight_list = {
 	-- 		"IndentBlanklineIndent1",
