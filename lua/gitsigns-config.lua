@@ -43,7 +43,7 @@ gitsigns.setup {
     noremap = true,
 		buffer = true,
   },
-  watch_index = {
+  watch_gitdir = {
     interval = 1000,
     follow_files = true
   },
