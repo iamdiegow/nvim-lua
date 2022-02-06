@@ -30,6 +30,7 @@ require("telescope").setup {
 		initial_mode = "insert",
 		use_less = false,
 		set_env = { ["COLORTERM"] = "truecolor" },
+		file_ignore_patterns = {"node_modules"},
     color_devicons = true,
 		winblend = 0,
 		-- 'flex' | 'horizontal' | 'vertical' | 'bottom_pane'
