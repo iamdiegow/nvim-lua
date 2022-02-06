@@ -1,12 +1,12 @@
 vim.g.symbols_outline = {
-	 highlight_hovered_item = false,
+	 	highlight_hovered_item = false,
     show_guides = false,
     auto_preview = false,
     position = 'right',
     relative_width = true,
-    width = 50,
+    width = 60,
     auto_close = true,
-    show_numbers = false,
+    show_numbers = true,
     show_relative_numbers = false,
     show_symbol_details = false,
     preview_bg_highlight = 'Pmenu',
@@ -50,3 +50,5 @@ vim.g.symbols_outline = {
         TypeParameter = {icon = "蘒", hl = "TSParameter"}
     }
 }
+
+vim.api.nvim_set_keymap('n', '<C-o>', '<cmd>SymbolsOutline<cr>',{noremap = true, silent = true})

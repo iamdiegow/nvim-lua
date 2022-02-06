@@ -74,7 +74,7 @@ lualine.setup({
 		left_padding = 1,
 		right_padding = 1,
 		disabled_filetypes = {
-			""
+			"Outline"
 		}
   },
   sections = {
