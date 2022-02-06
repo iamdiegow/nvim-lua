@@ -137,7 +137,11 @@ local normal_mappings = {
 		u = {
 			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
 			"Undo Stage Hunk",
-		}, --gu
+		},
+		w = { "<cmd>Gitsigns toggle_word_diff<cr>", "Toggle Word Diff" },
+		e = { "<cmd>Gitsigns toggle_linehl<cr>", "Toggle Line Highlight" },
+		q = { "<cmd>Gitsigns toggle_numhl<cr>", "Toggle Number Highlight" },
+		b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Line Blame" },
 	},
 	-- LSP
 	l = {
