@@ -68,6 +68,7 @@ local normal_mappings = {
 	-- ["c"] = { "<cmd>BufferLinePickClose<CR>", "Close Buffer Pick" },
 	["c"] = { "<cmd>lua require('bufferline-config').closeBuffer()<CR>", "Close Buffer Pick" },
 	["s"] = { "<cmd>luafile %<CR>", "Source File" },
+	["o"] = { "<cmd>SymbolsOutline<CR>", "Toggle Symbols Outline" },
 	["j"] = { "5j", "Move 5 down" },
 	["k"] = { "5k", "Move 5 up" },
 	-- NVIM Tree
