@@ -28,11 +28,16 @@ local darkplusTheme = function()
 	vim.cmd([[ colorscheme darkplus ]])
 end
 
+local draculaTheme = function()
+	vim.cmd([[ colorscheme dracula ]])
+end
+
 local selectTheme = {
 	moonfly = moonflyTheme,
 	vscode = vscodeTheme,
 	tokyonight = tokyonightTheme,
-	darkplus = darkplusTheme
+	darkplus = darkplusTheme,
+	dracula = draculaTheme
 }
 
 selectTheme[vim.g.color_theme]()

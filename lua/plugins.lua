@@ -38,6 +38,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 	-- Colorschemes
 	use 'Mofiqul/vscode.nvim'
+	use 'Mofiqul/dracula.nvim'
 	use 'bluz71/vim-moonfly-colors'
 	use 'folke/tokyonight.nvim'
   use "lunarvim/darkplus.nvim"
