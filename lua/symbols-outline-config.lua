@@ -50,5 +50,3 @@ vim.g.symbols_outline = {
         TypeParameter = {icon = "蘒", hl = "TSParameter"}
     }
 }
-
-vim.api.nvim_set_keymap('n', '<C-o>', '<cmd>SymbolsOutline<cr>',{noremap = true, silent = true})
