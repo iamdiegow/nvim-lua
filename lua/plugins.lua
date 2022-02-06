@@ -64,6 +64,7 @@ return packer.startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
   }
+	use 'simrat39/symbols-outline.nvim'
 	use 'luukvbaal/stabilize.nvim'
 	use 'hoob3rt/lualine.nvim'
 	use { 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' }

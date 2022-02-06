@@ -31,6 +31,7 @@ require('trouble-config')
 require('nvim-web-devicons-config')
 require('zen-mode-config')
 require('stabilize-config')
+require('symbols-outline-config')
 
 -- LSP
 require('nvim-cmp-config')
