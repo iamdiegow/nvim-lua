@@ -5,7 +5,18 @@ end
 
 vim.opt.termguicolors = true
 
+vim.cmd[[
+  set listchars=eol:↲,tab:→→\,space:•
+]]
+
+vim.cmd[[
+	highlight IndentBlanklineContextStart guisp=#00FF00 gui=bold
+	highlight IndentBlanklineContextChar guifg=#FFFFFF gui=bold
+]]
+
+
 indent_blankline.setup {
+	enabled = true,
 	char = "┆",
 	context_char = "┆",
 	buftype_exclude = {"terminal", "nofile"},

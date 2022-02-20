@@ -216,24 +216,13 @@ local normal_mappings = {
 		l = { '<cmd>TestLast -strategy=neovim<CR>', "Test Last" },
 		v = { '<cmd>TestVisit -strategy=neovim<CR>', "Test Visit" },
 	},
-	-- NVIM DAP (DEBUGGER)
-	-- d = {
-	-- 	name = "Debugger (nvim-dap)",
-	--     d = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-	--     b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-	--     c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-	--     C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-	--     t = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-	--     g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-	--     l = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-	--     j = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-	--     k = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-	--     p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
-	--     r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-	--     s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-	--     q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-	--     L = { "<cmd>lua require'nvim-dap-config'.launch()<CR>", "Launch" },
-	-- }
+	-- Indent Blankline and char rendering
+	["i"] = {
+		i = { "<cmd>set invlist<CR>", "Toggle white space and tabs" },
+		g = { "<cmd>IndentBlanklineToggle<CR>", "Toggle Indent Blanklie" },
+		d = { "<cmd>IndentBlanklineDisable<CR><cmd>set nolist<CR>", "Disable all" },
+		e = { "<cmd>IndentBlanklineEnable<CR><cmd>set list<CR>", "Enable all" }
+	}
 }
 
 -- NORMAL MODE KEYBINDINGS
