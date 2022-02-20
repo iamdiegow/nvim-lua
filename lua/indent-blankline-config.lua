@@ -6,7 +6,7 @@ end
 vim.opt.termguicolors = true
 
 vim.cmd[[
-  set listchars=eol:↲,tab:→→\,space:•
+	set listchars=tab:▒░,trail:▓,nbsp:░,eol:↲,space:•
 ]]
 
 vim.cmd[[
