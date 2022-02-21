@@ -10,13 +10,14 @@ vim.cmd[[
 ]]
 
 vim.cmd[[
-	highlight IndentBlanklineContextStart guisp=#00FF00 gui=bold
+	highlight IndentBlanklineContextStart guisp=#FFFFFF gui=bold
+	highlight IndentBlanklineContextStart guisp=#FFFFFF gui=underline
 	highlight IndentBlanklineContextChar guifg=#FFFFFF gui=bold
 ]]
 
 
 indent_blankline.setup {
-	enabled = true,
+	enabled = false,
 	char = "┆",
 	context_char = "┆",
 	buftype_exclude = {"terminal", "nofile"},
