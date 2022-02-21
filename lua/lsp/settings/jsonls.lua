@@ -164,6 +164,11 @@ local schemas = {
 		description = "Nodemon json config",
 		fileMatch = { "nodemon.json" },
 		url = "https://json.schemastore.org/nodemon.json"
+	},
+	{
+		description = "Turborepo json config",
+		fileMatch = { "turbo.json" },
+		url = "https://turborepo.org/schema.json"
 	}
 }
 
