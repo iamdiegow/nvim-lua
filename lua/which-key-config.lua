@@ -79,7 +79,6 @@ local normal_mappings = {
 		a = { "<cmd>Telescope file_browser<CR>", "Browse Files" }, --fa
 		f = { "<cmd>Telescope find_files<CR>", "Find Files" }, --ff
 		r = { "<cmd>Telescope live_grep<CR>", "Live Grep"}, --fr
-		b = { "<cmd>Telescope buffers<CR>", "Buffers"}, --fb
 		c = { "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<CR>", "Colorschemes"}, --fc
 		h = { "<cmd>Telescope help_tags<CR>", "Help Tags"}, --fh
 		o = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files"}, --fo
@@ -100,7 +99,7 @@ local normal_mappings = {
 	b = {
 		name = "Buffers",
 		j = { "<cmd>BufferLinePick<cr>", "Jump to buffer" }, --bj
-		f = { "<cmd>Telescope buffers<cr>", "Find buffer" }, --bf
+		b = { "<cmd>Telescope buffers<CR>", "Buffers"}, --fb
 		w = { "<cmd>Bwipeout<cr>", "Wipeout buffer" }, --bw
 		h = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" }, --bh
 		l = {

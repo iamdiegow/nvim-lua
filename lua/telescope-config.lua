@@ -76,15 +76,14 @@ require("telescope").setup {
 local M = {}
 
 function M.nvim_config()
-  require("telescope.builtin").file_browser {
+  require("telescope.builtin").find_files {
     prompt_title = " NVim Config Browse",
-    cwd = "~/.config/nvim/",
-    layout_strategy = "vertical",
+    cwd = "~/.config/nvim/"
   }
 end
 
 function M.file_explorer()
-  require("telescope.builtin").file_browser {
+  require("telescope.builtin").find_files {
     prompt_title = " File Browser",
     path_display = { "shorten" },
     cwd = "~",
