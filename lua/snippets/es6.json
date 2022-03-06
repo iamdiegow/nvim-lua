@@ -221,5 +221,15 @@
     "prefix": "cte",
     "body": "console.timeEnd(${1:object});",
     "description": "Sets end point for execution time measurement"
-  }
+  },
+	"createJsdoc": {
+  "prefix": "jsdoc",
+  "body": [
+    "/**",
+    " * ${1:comment}",
+    " *",
+    " */"
+  ],
+  "description": "Create jsdoc comment"
+}
 }
