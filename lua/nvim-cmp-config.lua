@@ -12,11 +12,7 @@ if not snip_status_ok then
   return
 end
 
-luasnip.filetype_set("typescript", {"javascript"})
-luasnip.filetype_set("typescriptreact", {"javascript"})
-luasnip.filetype_set("javascriptreact", {"javascript"})
-
-require("luasnip/loaders/from_vscode").load({ paths = "./snippets"})
+require("luasnip/loaders/from_vscode").lazy_load({ paths = "./lua/snippets" })
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
