@@ -12,6 +12,11 @@ if not snip_status_ok then
   return
 end
 
+luasnip.filetype_set("typescript", {"javascript"})
+luasnip.filetype_set("typescriptreact", {"javascript"})
+luasnip.filetype_set("javascriptreact", {"javascript"})
+
+require("luasnip/loaders/from_vscode").load({ paths = "./snippets"})
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -98,7 +103,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = 'nvim_lsp', keyword_length = 2, max_item_count = 15 },
-    { name = 'luasnip', max_item_count = 4 },
+    { name = 'luasnip', max_item_count = 15 },
 		{ name = 'buffer', keyword_length = 5, max_item_count = 3 },
 		{ name = 'path', max_item_count = 3 }
 	},
