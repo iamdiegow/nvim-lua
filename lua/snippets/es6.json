@@ -231,5 +231,12 @@
     " */"
   ],
   "description": "Create jsdoc comment"
-}
+	},
+	"inlineJsdoc": {
+  "prefix": "ijsdoc",
+  "body": [
+    "/** ${1:comment} */"
+  ],
+  "description": "inlineJsdoc"
+	}
 }
