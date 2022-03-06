@@ -41,7 +41,6 @@ local nvim_tree_bindings = {
 -- options that are not migrated yet
 
 g.nvim_tree_auto_ignore_ft = { "dashboard" }
-g.nvim_tree_quit_on_open = 0 -- closes tree when file's opened
 g.nvim_tree_indent_markers = 1
 g.nvim_tree_icon_padding = " "
 g.nvim_tree_git_hl = 1
@@ -80,6 +79,7 @@ require('nvim-tree').setup {
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = true,
+  quit_on_open        = true,
   ignore_ft_on_setup  = {},
 	auto_open = true,
   auto_close          = true,
