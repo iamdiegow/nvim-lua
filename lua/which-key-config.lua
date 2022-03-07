@@ -76,23 +76,24 @@ local normal_mappings = {
 	-- TELESCOPE
 	f = {
 		name = "Telescope",
-		a = { "<cmd>Telescope file_browser<CR>", "Browse Files" }, --fa
-		f = { "<cmd>Telescope find_files<CR>", "Find Files" }, --ff
-		r = { "<cmd>Telescope live_grep<CR>", "Live Grep"}, --fr
-		c = { "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<CR>", "Colorschemes"}, --fc
-		h = { "<cmd>Telescope help_tags<CR>", "Help Tags"}, --fh
-		o = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files"}, --fo
-		R = { "<cmd>Telescope registers<CR>", "Open Registers"}, --fR
-		s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols"}, --fs
-		k = { "<cmd>Telescope keymaps<CR>", "Keymaps"}, --fk
+		a = { "<cmd>Telescope file_browser<CR>", "Browse Files" },
+		f = { "<cmd>Telescope find_files<CR>", "Find Files" },
+		r = { "<cmd>Telescope live_grep<CR>", "Live Grep"},
+		c = { "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<CR>", "Colorschemes"},
+		h = { "<cmd>Telescope help_tags<CR>", "Help Tags"},
+		o = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files"},
+		R = { "<cmd>Telescope registers<CR>", "Open Registers"},
+		s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols"},
+		k = { "<cmd>Telescope keymaps<CR>", "Keymaps"},
 		n = { "<cmd>lua require('telescope-config').nvim_config()<CR>", "Search Nvim Config Folder"}, --fn
-		p = { "<cmd>lua require('telescope-config').grep_prompt()<CR>", "Grep Propmpt"}, --fp
+		p = { "<cmd>lua require('telescope-config').grep_prompt()<CR>", "Grep Propmpt"},
+		S = { "<cmd>lua require('telescope-config').snippets()<CR>", "Browse snippets"},
 		g = {
 			name = "Telescope Git",
-			s = { "<cmd>Telescope git_status<CR>", "Git Status"}, --fgs
-			c = { "<cmd>Telescope git_commits<CR>", "Git Commits"}, --fgc
-			f = { "<cmd>Telescope git_files<CR>", "Git Files"}, --fgc
-			b = { "<cmd>Telescope git_branches<CR>", "Git Branches"}, --fgb
+			s = { "<cmd>Telescope git_status<CR>", "Git Status"},
+			c = { "<cmd>Telescope git_commits<CR>", "Git Commits"},
+			f = { "<cmd>Telescope git_files<CR>", "Git Files"},
+			b = { "<cmd>Telescope git_branches<CR>", "Git Branches"}
 		}
 	},
 	-- BUFFERS

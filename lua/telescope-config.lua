@@ -82,6 +82,13 @@ function M.nvim_config()
   }
 end
 
+function M.snippets()
+  require("telescope.builtin").find_files {
+    prompt_title = " Browse custom snippets",
+    cwd = "~/.config/nvim/lua/snippets"
+  }
+end
+
 function M.file_explorer()
   require("telescope.builtin").find_files {
     prompt_title = " File Browser",
