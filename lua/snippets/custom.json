@@ -1,0 +1,9 @@
+{
+	"requireDestructured": {
+	"prefix": "reqd",
+	"body": [
+		"const { ${1:name} } = require('${2:pkg}');"
+	],
+	"description": "requireDestructured"
+	}
+}

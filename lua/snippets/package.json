@@ -12,6 +12,15 @@
 					"javascript",
 					"javascriptreact"
         ],
+        "path": "./custom.json"
+			},
+			{
+				 "language": [
+          "typescript",
+          "typescriptreact",
+					"javascript",
+					"javascriptreact"
+        ],
         "path": "./jest.json"
 			},
 			{
