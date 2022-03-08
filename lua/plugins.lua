@@ -55,6 +55,7 @@ return packer.startup(function(use)
         run = ':TSUpdate'
   }
 	-- Workflow
+	use 'norcalli/nvim-colorizer.lua'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
