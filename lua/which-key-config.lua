@@ -71,6 +71,7 @@ local normal_mappings = {
 	["o"] = { "<cmd>SymbolsOutline<CR>", "Toggle Symbols Outline" },
 	["j"] = { "5j", "Move 5 down" },
 	["k"] = { "5k", "Move 5 up" },
+	["="] = { "<cmd>:ColorizerToggle<CR>", "Toggle Colorizer" },
 	-- NVIM Tree
 	e = {"<cmd>:NvimTreeToggle<CR>", "Open Explorer"},
 	-- TELESCOPE
