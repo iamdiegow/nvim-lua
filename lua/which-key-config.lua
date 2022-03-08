@@ -187,6 +187,9 @@ local normal_mappings = {
 		p = { '<cmd>HopPattern<CR>', "Hop Pattern" },
 		a = { '<cmd>HopChar1<CR>', "Hop Char 1" },
 		s = { '<cmd>HopChar2<CR>', "Hop Char 2" },
+		t = { '<cmd>lua require("utils").toggleCursorHighlight()<CR>', 'Toggle Cursor Highlight'},
+		c = { '<cmd>lua require("utils").toggleCursorLine()<CR>', 'Toggle Cursor Line'},
+		v = { '<cmd>lua require("utils").toggleCursorColumn()<CR>', 'Toggle Cursor Column'}
 	},
 	-- TROUBLE
 	t = {
