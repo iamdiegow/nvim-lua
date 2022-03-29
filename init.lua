@@ -3,7 +3,7 @@ vim.g.transparent_window = false
 vim.g.format_on_save = false
 
 -- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula'
-vim.g.color_theme = 'darkplus'
+vim.g.color_theme = 'dracula'
 vim.g.highlight_document = false
 
 -- Core

@@ -19,7 +19,6 @@ bufferline.setup {
     max_name_length = 20,
     max_prefix_length = 13,
     tab_size = 20,
-		view = "default",
 		offsets = {{
 			filetype = "NvimTree",
 			text = "File Explorer",
