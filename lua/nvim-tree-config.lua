@@ -39,34 +39,34 @@ g.nvim_tree_icons = {
 
 require('nvim-tree').setup {
 	auto_reload_on_write = true,
-  disable_netrw = true,
-  hijack_netrw = false,
-  open_on_setup = true, -- open the tree if no file is provided
-  quit_on_open = true,
-  ignore_ft_on_setup = {},
+	disable_netrw = true,
+	hijack_netrw = false,
+	open_on_setup = true, -- open the tree if no file is provided
+	quit_on_open = true,
+	ignore_ft_on_setup = {},
 	auto_open = true,
-  auto_close = true,
-  open_on_tab = false,
-  update_to_buf_dir = {
+	auto_close = true,
+	open_on_tab = false,
+	update_to_buf_dir = {
 		enable = true,
 		auto_open = false
 	},
-  hijack_cursor = true,
+	hijack_cursor = true,
 	hijack_unnamed_buffer_when_opening = true,
-  hijack_directories = {
-    enable = true,
-    auto_open = true,
-  },
-  update_cwd = true,
-  update_focused_file = {
-    enable = false,
-    update_cwd = false,
-    ignore_list = {}
-  },
-  system_open = {
-    cmd  = nil,
-    args = {}
-  },
+	hijack_directories = {
+		enable = true,
+		auto_open = true,
+	},
+	update_cwd = true,
+	update_focused_file = {
+		enable = false,
+		update_cwd = false,	
+		ignore_list = {}
+	},
+	system_open = {
+		cmd  = nil,
+		args = {}
+	},
 	diagnostics = {
 		enable = true,
 		show_on_dirs = true,
@@ -77,15 +77,21 @@ require('nvim-tree').setup {
 			error = "",
 		}
 	},
-  view = {
+	view = {
 		hide_root_folder = true,
-    width = 25,
+		width = 25,
 		height = 20,
-    side = 'left',
-    auto_resize = true,
+		side = 'left',
+		auto_resize = true,
 		number = false,
-		signcolumn = "yes"
-  },
+		signcolumn = "yes",
+		mappings = {
+			list = {
+				{ key = "l", action = "edit" },
+				{ key = "h", action = "close_node" }
+			}
+		}
+	},
 	filters = {
 		dotfiles = false,
 		custom = {
