@@ -1,6 +1,6 @@
 require'trouble'.setup {
 	position = "bottom", -- position of the list can be: bottom, top, left, right
-	height = 10, -- height of the trouble list when position is top or bottom
+	height = 7, -- height of the trouble list when position is top or bottom
 	width = 50, -- width of the list when position is left or right
 	icons = true, -- use devicons for filenames
 	fold_open = "", -- icon used for open folds
@@ -32,12 +32,11 @@ require'trouble'.setup {
 	auto_preview = true, -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window
 	auto_fold = false, -- automatically fold a file trouble list at creation
 	signs = {
-			-- icons / text used for a diagnostic
 			error = "",
 			warning = "",
 			hint = "",
 			information = "",
 			other = "﫠"
 	},
-	use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
+	use_diagnostic_signs = true -- enabling this will use the signs defined in your lsp client
 }
