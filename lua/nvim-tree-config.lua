@@ -39,28 +39,28 @@ g.nvim_tree_icons = {
 
 require('nvim-tree').setup {
 	auto_reload_on_write = true,
-  disable_netrw       = true,
-  hijack_netrw        = false,
-  open_on_setup       = true, -- open the tree if no file is provided
-  quit_on_open        = true,
-  ignore_ft_on_setup  = {},
-	auto_open 					= true,
-  auto_close          = true,
-  open_on_tab         = false,
-  update_to_buf_dir   = {
+  disable_netrw = true,
+  hijack_netrw = false,
+  open_on_setup = true, -- open the tree if no file is provided
+  quit_on_open = true,
+  ignore_ft_on_setup = {},
+	auto_open = true,
+  auto_close = true,
+  open_on_tab = false,
+  update_to_buf_dir = {
 		enable = true,
 		auto_open = false
 	},
-  hijack_cursor       = true,
+  hijack_cursor = true,
 	hijack_unnamed_buffer_when_opening = true,
-  hijack_directories   = {
+  hijack_directories = {
     enable = true,
     auto_open = true,
   },
-  update_cwd          = true,
+  update_cwd = true,
   update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
+    enable = false,
+    update_cwd = false,
     ignore_list = {}
   },
   system_open = {
