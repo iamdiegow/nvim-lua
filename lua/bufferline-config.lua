@@ -23,7 +23,7 @@ bufferline.setup {
 			filetype = "NvimTree",
 			text = "File Explorer",
 			text_align = "left",
-			padding = 1
+			padding = 0
 		}},
 		diagnostics = false,
     show_buffer_icons = true,
