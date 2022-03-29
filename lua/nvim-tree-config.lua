@@ -84,6 +84,7 @@ require('nvim-tree').setup {
     side = 'left',
     auto_resize = true,
 		number = false,
+		signcolumn = "yes"
   },
 	filters = {
 		dotfiles = false,
