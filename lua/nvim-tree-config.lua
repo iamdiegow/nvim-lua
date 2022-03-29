@@ -45,7 +45,6 @@ require('nvim-tree').setup {
 	quit_on_open = true,
 	ignore_ft_on_setup = {},
 	auto_open = true,
-	auto_close = true,
 	open_on_tab = false,
 	update_to_buf_dir = {
 		enable = true,
