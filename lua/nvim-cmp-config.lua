@@ -50,6 +50,9 @@ local kind_icons = {
 }
 
 cmp.setup({
+	completion = {
+		autocomplete = vim.g.autocomplete
+	},
 	snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
