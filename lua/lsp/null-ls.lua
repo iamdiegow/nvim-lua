@@ -7,15 +7,19 @@ end
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
+local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
+	debounce = 1000,
 	debug = false,
+	diagnostics_format = "[#{c}] #{m} (#{s})",
 	sources = {
 		diagnostics.eslint_d.with({
 			condition = function(utils)
 				return utils.root_has_file({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" })
 			end
-		})
+		}),
+		code_actions.eslint_d
 	},
-	update_in_insert = false
+	update_in_insert = true
 })

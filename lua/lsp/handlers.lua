@@ -94,8 +94,8 @@ M.on_attach = function(client, bufnr)
 		local status_ok, ts_utils = pcall(require, 'nvim-lsp-ts-utils')
 		if status_ok and ts_utils then
 			ts_utils.setup {
-				eslint_enable_code_actions = false,
-				eslint_enable_disable_comments = false,
+				eslint_enable_code_actions = true,
+				eslint_enable_disable_comments = true,
 				eslint_bin = "eslint_d",
 				eslint_config_fallback = nil,
 				eslint_enable_diagnostics = true,
