@@ -15,7 +15,7 @@ require'nvim-treesitter.configs'.setup({
     enable = false,
   },
   rainbow = {
-    enable = true,
+    enable = vim.g.rainbow,
 		disable = { "tsx" },
     extended_mode = true,
     max_file_lines = 1000,

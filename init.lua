@@ -1,9 +1,10 @@
 -- vim.g.start_time = vim.fn.reltime()
 vim.g.transparent_window = false
 vim.g.format_on_save = false
+vim.g.rainbow = false
 
 -- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula'
-vim.g.color_theme = 'dracula'
+vim.g.color_theme = 'vscode'
 vim.g.highlight_document = false
 
 -- Core
