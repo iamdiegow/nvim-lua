@@ -19,7 +19,22 @@ null_ls.setup({
 				return utils.root_has_file({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" })
 			end
 		}),
-		code_actions.eslint_d
+		code_actions.eslint_d,
+		formatting.prettier.with({
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"css",
+				"scss",
+				"html",
+				"json",
+				"yaml",
+				"graphql"
+			},
+			prefer_local = "node_modules/.bin"
+		})
 	},
 	update_in_insert = true
 })

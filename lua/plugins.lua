@@ -76,7 +76,7 @@ return packer.startup(function(use)
 	}
 	use 'famiu/bufdelete.nvim'
 	use 'terrortylor/nvim-comment'
-	use 'mhartington/formatter.nvim'
+	-- use 'mhartington/formatter.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'windwp/nvim-autopairs'
 	use 'windwp/nvim-ts-autotag'

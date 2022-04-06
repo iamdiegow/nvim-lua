@@ -14,7 +14,7 @@ vim.g.mapleader = ' '
 map('n', '<C-z>', ':ZenMode<CR>', options)
 map('n', '<Space>', '<NOP>', options )
 -- Format file
-map('n', '<C-f>', ':Format<CR>', options)
+map('n', '<C-f>', '<cmd>lua vim.lsp.buf.formatting()<cr>', options)
 -- LSP
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', options )
 -- better movement
