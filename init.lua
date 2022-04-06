@@ -37,6 +37,7 @@ require('zen-mode-config')
 require('stabilize-config')
 require('symbols-outline-config')
 require('nvim-colorizer-config')
+require('pounce-config')
 
 -- LSP
 require('nvim-cmp-config')

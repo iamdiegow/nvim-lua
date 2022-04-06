@@ -1,4 +1,6 @@
-require'hop'.setup()
+require'hop'.setup({
+	keys = 'asdfhjklwqeryuio'
+})
 
 -- VISUAL MODE
 vim.api.nvim_set_keymap('x', '<Leader>ww', "<cmd>lua require'hop'.hint_words()<cr>", {})

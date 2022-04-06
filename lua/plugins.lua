@@ -82,6 +82,7 @@ return packer.startup(function(use)
 	use 'windwp/nvim-ts-autotag'
 	use 'tpope/vim-surround'
 	use { 'phaazon/hop.nvim', as = 'hop' }
+	use 'rlane/pounce.nvim'
 	use 'p00f/nvim-ts-rainbow'
 	use 'akinsho/nvim-toggleterm.lua'
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
