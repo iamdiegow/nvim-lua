@@ -78,9 +78,9 @@ local normal_mappings = {
 	-- TELESCOPE
 	f = {
 		name = "Telescope",
-		a = { "<cmd>Telescope file_browser<CR>", "Browse Files" },
 		f = { "<cmd>Telescope find_files<CR>", "Find Files" },
 		r = { "<cmd>Telescope live_grep<CR>", "Live Grep"},
+		b = { "<cmd>Telescope buffers<CR>", "Live Grep"},
 		c = { "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<CR>", "Colorschemes"},
 		h = { "<cmd>Telescope help_tags<CR>", "Help Tags"},
 		o = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files"},

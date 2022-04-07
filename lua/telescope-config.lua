@@ -4,9 +4,10 @@ local ivyConfig = {
 	theme = "ivy",
 	layout_config = {
 		prompt_position = "bottom",
-		height = 10,
+		height = 15,
 	},
-	previewer = false
+	previewer = false,
+	winblend = 20
 }
 
 require("telescope").setup {
@@ -69,7 +70,8 @@ require("telescope").setup {
   },
 	pickers = {
 		find_files = ivyConfig,
-		buffers = ivyConfig
+		buffers = ivyConfig,
+		oldfiles = ivyConfig
 	}
 }
 
