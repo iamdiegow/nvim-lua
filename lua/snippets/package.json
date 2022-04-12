@@ -17,6 +17,13 @@
 			{
 				 "language": [
           "typescript",
+					"javascript"
+        ],
+        "path": "./cypress.json"
+			},
+			{
+				 "language": [
+          "typescript",
           "typescriptreact",
 					"javascript",
 					"javascriptreact"
