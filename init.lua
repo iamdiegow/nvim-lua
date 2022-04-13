@@ -2,7 +2,7 @@
 vim.g.transparent_window = false
 vim.g.format_on_save = false
 vim.g.autocomplete = false
-vim.g.rainbow = false
+vim.g.rainbow = true
 vim.g.current_context = false
 
 -- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula'
