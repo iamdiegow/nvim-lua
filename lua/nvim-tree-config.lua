@@ -3,7 +3,6 @@ local g = vim.g
 -- options that are not migrated yet
 
 g.nvim_tree_auto_ignore_ft = { "dashboard" }
-g.nvim_tree_indent_markers = 1
 g.nvim_tree_icon_padding = " "
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 0
@@ -46,6 +45,7 @@ require('nvim-tree').setup {
 	ignore_ft_on_setup = {},
 	auto_open = true,
 	open_on_tab = false,
+	sort_by = "modification_time",
 	update_to_buf_dir = {
 		enable = true,
 		auto_open = false
@@ -58,7 +58,7 @@ require('nvim-tree').setup {
 	},
 	update_cwd = true,
 	update_focused_file = {
-		enable = false,
+		enable = true,
 		update_cwd = false,	
 		ignore_list = {}
 	},
@@ -74,6 +74,16 @@ require('nvim-tree').setup {
 			info = "",
 			warning = "",
 			error = "",
+		}
+	},
+	renderer = {
+		indent_markers = {
+			enable = true,
+			icons = {
+				corner = "└ ",
+				edge = "│ ",
+				none = "  "
+			}
 		}
 	},
 	view = {
@@ -92,10 +102,13 @@ require('nvim-tree').setup {
 		}
 	},
 	filters = {
-		dotfiles = false,
+		dotfiles = true,
 		custom = {
-			"node_modules",
-			".git"
+			".git",
+		},
+		exclude = {
+			".github",
+			"node_modules"
 		}
 	},
 	git = {
