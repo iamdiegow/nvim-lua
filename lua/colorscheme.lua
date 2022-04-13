@@ -13,16 +13,15 @@ end
 
 local tokyonightTheme = function()
 	-- 'night' | 'storm' | 'day'
-	vim.g.tokyonight_style = "storm"
+	vim.g.tokyonight_style = "night"
 	vim.g.tokyonight_terminal_colors = true
-	vim.g.tokyonight_italic_comments = false
+	vim.g.tokyonight_italic_comments = true
 	vim.g.tokyonight_italic_keywords = false
-	vim.g.tokyonight_italic_variables = false
 	vim.g.tokyonight_italic_variables = false
 	vim.g.tokyonight_dark_sidebar = false
 	vim.g.tokyonight_dark_float = false
-	vim.g.tokyonight_lualine_bold = true
-	vim.g.tokyonight_sidebars = {"NvimTree", "vista_kind", "terminal", "packer"}
+	vim.g.tokyonight_lualine_bold = false
+	vim.g.tokyonight_sidebars = {"NvimTree", "terminal", "packer"}
 	vim.cmd([[ colorscheme tokyonight ]])
 end
 
