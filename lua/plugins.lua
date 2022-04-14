@@ -94,6 +94,7 @@ return packer.startup(function(use)
 			'nvim-lua/plenary.nvim'
   	}
 	}
+	use 'tpope/vim-fugitive'
 	use 'moll/vim-node'
 	use 'folke/which-key.nvim'
 	use 'folke/zen-mode.nvim'
