@@ -14,7 +14,11 @@ require("luasnip/loaders/from_vscode").lazy_load({ paths = "./lua/snippets" })
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
---   פּ ﯟ   some other good icons
+local check_backspace = function()
+  local col = vim.fn.col "." - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+end
+
 local kind_icons = {
   Text = "",
   Method = "m",
