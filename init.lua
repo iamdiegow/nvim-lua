@@ -5,8 +5,8 @@ vim.g.autocomplete = false
 vim.g.rainbow = true
 vim.g.current_context = false
 
--- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula' | 'github'
-vim.g.color_theme = 'github'
+-- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula' | 'github_dimmed'
+vim.g.color_theme = 'github_dimmed'
 vim.g.highlight_document = false
 vim.g.diagnostics_hover_window = false
 

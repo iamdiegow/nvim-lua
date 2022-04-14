@@ -43,7 +43,7 @@ local selectTheme = {
 	tokyonight = tokyonightTheme,
 	darkplus = darkplusTheme,
 	dracula = draculaTheme,
-	github = githubTheme
+	github_dimmed = githubTheme
 }
 
 selectTheme[vim.g.color_theme]()
