@@ -23,7 +23,6 @@ require('nvim-tree-config')
 require('treesitter-config')
 require('telescope-config')
 require('nvim-comment-config')
--- require('formatter-config') -- using null-ls instead.
 require('indent-blankline-config')
 require('nvim-autopairs-config')
 require('nvim-ts-autotag-config')
