@@ -130,6 +130,8 @@ local normal_mappings = {
 	-- GITSIGNS
 	g = {
 		name = "Git",
+		g = { "<cmd>G<CR>", "Open Vim Fugitive"},
+		c = { "<cmd>Gdiffsplit<CR>", "Open Diff Split"},
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" }, --g
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" }, --gk
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" }, --gl
@@ -223,10 +225,16 @@ local normal_mappings = {
 	},
 	-- Indent Blankline and char rendering
 	["i"] = {
+		name = "Chars & indent guides",
 		i = { "<cmd>set invlist<CR>", "Toggle white space and tabs" },
 		g = { "<cmd>IndentBlanklineToggle<CR>", "Toggle Indent Blanklie" },
 		d = { "<cmd>IndentBlanklineDisable<CR><cmd>set nolist<CR>", "Disable all" },
 		e = { "<cmd>IndentBlanklineEnable<CR><cmd>set list<CR>", "Enable all" }
+	},
+	["n"] = {
+		name = "Number & relative number",
+		r = { "<cmd>set relativenumber!<CR>", "Toogle relative number"},
+		n = { "<cmd>set number!<CR>", "Toogle relative number"}
 	}
 }
 

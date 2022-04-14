@@ -65,3 +65,11 @@ if vim.g.transparent_window then
 	vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
 	vim.cmd("au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none")
 end
+
+vim.cmd([[
+	augroup AuYank
+		autocmd!
+		autocmd TextYankPost *
+			\ lua vim.highlight.on_yank{higroup="IncSearch", timeout=300, on_visual=true}
+	augroup END
+]])
