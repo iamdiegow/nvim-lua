@@ -54,6 +54,9 @@ map('n', 'j', 'gj', options )
 map('n', 'k', 'gk', options )
 
 map('n', '<C-s>', '<cmd>w!<CR>', options )
+
+-- Pounce - movement
+map('n', '<C-p>', '<cmd>Pounce<CR>', options)
 -- INSERT MODE ----------
 -- exit insert mode
 map('i', 'jj', '<Esc>', options )
