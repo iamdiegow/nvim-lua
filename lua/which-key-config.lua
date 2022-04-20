@@ -33,7 +33,7 @@ wk.setup {
   window = {
     border = "single",
     position = "top",
-    margin = { 1, 0, 1, 0 },
+    margin = { 1, 2, 0, 4 },
     padding = { 2, 2, 2, 2 },
 		winblend = 0
   },
