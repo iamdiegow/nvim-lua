@@ -140,7 +140,5 @@ require('nvim-tree').setup {
 	}
 }
 
-vim.o.splitright = true
-
 -- hide statusline when nvim tree is opened
 vim.cmd [[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree_1" | set laststatus=0 | else | set laststatus=2 | endif]]

@@ -15,6 +15,7 @@ require('plugins')
 require('keymappings')
 require('settings')
 require('colorscheme')
+require('autocommands')
 
 -- Plugin config
 require('lualine-config')

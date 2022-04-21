@@ -31,6 +31,7 @@ o.colorcolumn = "80"
 o.syntax = 'enable'
 o.hidden = true
 o.splitbelow = true
+o.splitright = true
 o.clipboard = 'unnamedplus'
 o.timeoutlen = 300
 o.updatetime = 300
