@@ -41,15 +41,9 @@ require('nvim-tree').setup {
 	disable_netrw = true,
 	hijack_netrw = false,
 	open_on_setup = true, -- open the tree if no file is provided
-	quit_on_open = true,
 	ignore_ft_on_setup = {},
-	auto_open = true,
 	open_on_tab = false,
 	sort_by = "modification_time",
-	update_to_buf_dir = {
-		enable = true,
-		auto_open = false
-	},
 	hijack_cursor = true,
 	hijack_unnamed_buffer_when_opening = true,
 	hijack_directories = {
@@ -59,7 +53,7 @@ require('nvim-tree').setup {
 	update_cwd = true,
 	update_focused_file = {
 		enable = true,
-		update_cwd = false,	
+		update_cwd = false,
 		ignore_list = {}
 	},
 	system_open = {
@@ -91,7 +85,6 @@ require('nvim-tree').setup {
 		width = 25,
 		height = 20,
 		side = 'left',
-		auto_resize = true,
 		number = false,
 		signcolumn = "yes",
 		mappings = {
@@ -127,7 +120,7 @@ require('nvim-tree').setup {
 		},
 		open_file = {
 			quit_on_open = false,
-			resize_window = true,
+			resize_window = false,
 			window_picker = {
 				enable = true,
 				chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
