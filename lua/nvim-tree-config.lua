@@ -78,6 +78,9 @@ require('nvim-tree').setup {
 				edge = "│ ",
 				none = "  "
 			}
+		},
+		icons = {
+			webdev_colors = true
 		}
 	},
 	view = {
@@ -87,6 +90,7 @@ require('nvim-tree').setup {
 		side = 'left',
 		number = false,
 		signcolumn = "yes",
+		preserve_window_proportions = true,
 		mappings = {
 			list = {
 				{ key = "l", action = "edit" },
@@ -116,11 +120,12 @@ require('nvim-tree').setup {
 	actions = {
 		change_dir = {
 			enable = true,
-			global = false
+			global = false,
+			restrict_above_cwd = false
 		},
 		open_file = {
 			quit_on_open = false,
-			resize_window = false,
+			resize_window = true,
 			window_picker = {
 				enable = true,
 				chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
