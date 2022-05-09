@@ -35,6 +35,28 @@ bufferline.setup {
     enforce_regular_tabs = true,
     always_show_bufferline = true,
     sort_by = 'insert_after_current',
+		custom_areas = {
+			right = function()
+				local result = {}
+				local seve = vim.diagnostic.severity
+				local error = #vim.diagnostic.get(0, {severity = seve.ERROR})
+				local warning = #vim.diagnostic.get(0, {severity = seve.WARN})
+				local hint = #vim.diagnostic.get(0, {severity = seve.HINT})
+
+				if error ~= 0 then
+					table.insert(result, {text = "  " .. error, guifg = "#EC5241"})
+				end
+
+				if warning ~= 0 then
+					table.insert(result, {text = "  " .. warning, guifg = "#EFB839"})
+				end
+
+				if hint ~= 0 then
+					table.insert(result, {text = "  " .. hint, guifg = "#A3BA5E"})
+				end
+				return result
+			end,
+		}
   }
 }
 
