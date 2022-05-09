@@ -1,5 +1,5 @@
 -- vim.g.start_time = vim.fn.reltime()
-vim.g.transparent_window = true
+vim.g.transparent_window = false
 vim.g.format_on_save = false
 vim.g.autocomplete = false
 vim.g.rainbow = true

@@ -25,7 +25,7 @@ bufferline.setup {
 			text_align = "left",
 			padding = 0
 		}},
-		diagnostics = "nvim_lsp",
+		diagnostics = false,
     show_buffer_icons = false,
     show_buffer_close_icons = false,
     show_close_icon = false,
