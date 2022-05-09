@@ -63,7 +63,6 @@ local normal_mode_options= {
 }
 
 local normal_mappings = {
-	-- ["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
 	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer Pick" },
@@ -120,25 +119,25 @@ local normal_mappings = {
 	-- PACKER
 	p = {
 		name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" }, --pc
-		i = { "<cmd>PackerInstall<cr>", "Install" }, --pi
-		r = { "<cmd>lua require('utils').reload_lv_config()<cr>", "Reload" }, --pr
-		s = { "<cmd>PackerSync<cr>", "Sync" }, --ps
-		S = { "<cmd>PackerStatus<cr>", "Status" }, --pS
-		u = { "<cmd>PackerUpdate<cr>", "Update" }, --pu
+		c = { "<cmd>PackerCompile<cr>", "Compile" },
+		i = { "<cmd>PackerInstall<cr>", "Install" },
+		r = { "<cmd>lua require('utils').reload_lv_config()<cr>", "Reload" },
+		s = { "<cmd>PackerSync<cr>", "Sync" },
+		S = { "<cmd>PackerStatus<cr>", "Status" },
+		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 	-- GITSIGNS
 	g = {
 		name = "Git",
 		g = { "<cmd>G<CR>", "Open Vim Fugitive"},
 		c = { "<cmd>Gdiffsplit<CR>", "Open Diff Split"},
-		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" }, --g
-		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" }, --gk
-		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" }, --gl
-		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" }, --gp
-		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" }, --gr
-		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" }, --gR
-		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" }, --gs
+		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 		u = {
 			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
 			"Undo Stage Hunk",
@@ -212,7 +211,8 @@ local normal_mappings = {
 		f = { '<cmd>3ToggleTerm direction=float<CR>', "Toggle Terminal 3" },
 		a = { '<cmd>ToggleTermOpenAll<CR>', "Open All Terminals" },
 		q = { '<cmd>ToggleTermCloseAll<CR>', "Close All Terminals" },
-		x = { '<cmd>exec "!node %"<CR>', "Execute file with node" }
+		x = { '<cmd>exec "!node %"<CR>', "Execute file with node" },
+		g = { '<cmd>exec "!go run %"<CR>', "Execute file with go compiler" }
 	},
 	-- VIM TEST
 	[";"] = {
