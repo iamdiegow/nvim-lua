@@ -25,16 +25,16 @@ bufferline.setup {
 			text_align = "left",
 			padding = 0
 		}},
-		diagnostics = false,
-    show_buffer_icons = true,
+		diagnostics = "nvim_lsp",
+    show_buffer_icons = false,
     show_buffer_close_icons = false,
     show_close_icon = false,
     show_tab_indicators = false,
     persist_buffer_sort = true,
     separator_style = {"", ""},
-    enforce_regular_tabs = false,
+    enforce_regular_tabs = true,
     always_show_bufferline = true,
-    sort_by = 'id',
+    sort_by = 'insert_after_current',
   }
 }
 

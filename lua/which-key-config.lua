@@ -66,7 +66,6 @@ local normal_mappings = {
 	-- ["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
-	-- ["c"] = { "<cmd>BufferLinePickClose<CR>", "Close Buffer Pick" },
 	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer Pick" },
 	["s"] = { "<cmd>luafile %<CR>", "Source File" },
 	["o"] = { "<cmd>SymbolsOutline<CR>", "Toggle Symbols Outline" },
@@ -101,21 +100,22 @@ local normal_mappings = {
 	-- BUFFERS
 	b = {
 		name = "Buffers",
-		j = { "<cmd>BufferLinePick<cr>", "Jump to buffer" }, --bj
-		b = { "<cmd>Telescope buffers<CR>", "Buffers"}, --fb
-		w = { "<cmd>Bwipeout<cr>", "Wipeout buffer" }, --bw
-		h = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" }, --bh
+		c = { "<cmd>BufferLinePickClose<cr>", "Pick and close" },
+		j = { "<cmd>BufferLinePick<cr>", "Jump to buffer" },
+		b = { "<cmd>Telescope buffers<CR>", "Buffers"},
+		w = { "<cmd>Bwipeout<cr>", "Wipeout buffer" },
+		h = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
 		l = {
-			"<cmd>BufferLineCycleNext<cr>", "Next Buffer"}, --bl
-		H = { "<cmd>BufferLineCloseRight<cr>", "Close all buffers left" }, --bH
+			"<cmd>BufferLineCycleNext<cr>", "Next Buffer"},
+		H = { "<cmd>BufferLineCloseRight<cr>", "Close all buffers left" },
 		L = {
-			"<cmd>BufferLineCloseLeft<cr>", "close all BufferLines right"}, --bL
+			"<cmd>BufferLineCloseLeft<cr>", "close all BufferLines right"},
 		S = {
 			"<cmd>BufferLineSortByExtension<cr>",
 			"sort BufferLines automatically by language",
-		}, --bS
-		["["] = { "<cmd>BufferLineMovePrev<cr>", "Move Buffer Left" }, --b[
-		["]"] = { "<cmd>BufferLineMoveNext<cr>", "Move Buffer Right" }, --b]
+		},
+		["["] = { "<cmd>BufferLineMovePrev<cr>", "Move Buffer Left" },
+		["]"] = { "<cmd>BufferLineMoveNext<cr>", "Move Buffer Right" },
 	},
 	-- PACKER
 	p = {
