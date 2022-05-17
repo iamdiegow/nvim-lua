@@ -6,7 +6,7 @@ vim.g.rainbow = true
 vim.g.current_context = false
 
 -- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula'
-vim.g.color_theme = 'tokyonight'
+vim.g.color_theme = 'dracula'
 vim.g.highlight_document = false
 vim.g.diagnostics_hover_window = false
 

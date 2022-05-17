@@ -95,6 +95,7 @@ return packer.startup(function(use)
 	}
 	use 'tpope/vim-fugitive'
 	use 'moll/vim-node'
+	use 'moll/vim-bbye'
 	use 'folke/which-key.nvim'
 	use 'folke/zen-mode.nvim'
 	use 'folke/twilight.nvim'
