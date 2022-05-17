@@ -71,8 +71,8 @@ return packer.startup(function(use)
 	use 'hoob3rt/lualine.nvim'
 	use { 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' }
 	use {
-  	'nvim-telescope/telescope.nvim',
-  	requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+	  	'nvim-telescope/telescope.nvim',
+	  	requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
 	use 'famiu/bufdelete.nvim'
 	use 'terrortylor/nvim-comment'
