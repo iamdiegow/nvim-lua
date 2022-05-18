@@ -27,36 +27,36 @@ map('n', '<C-k>', '5k', options )
 -- map('n', '<C-k>', '<C-w>k', options )
 map('n', '<C-l>', '<C-w>l', options )
 map('n', '<C-h>', '<C-w>h', options )
+-- Buffer cycle
+map('n', '<S-l>', ':BufferLineCycleNext<CR>', options )
+map('n', '<S-h>', ':BufferLineCyclePrev<CR>', options )
+-- Tab switch buffer
+map('n', '<TAB>', ':BufferLineCycleNext<CR>', options )
+map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', options )
 -- better yank
 map('n', 'Y', 'y$', options )
 -- search and center
 map('n', 'n', 'nzzzv', options )
 map('n', 'N', 'Nzzzv', options )
--- Tab switch buffer
-map('n', '<TAB>', ':bnext<CR>', options )
-map('n', '<S-TAB>', ':bprevious<CR>', options )
 -- Resize buffers with arrows
 map('n', '<C-Up>', ':resize -2<CR>', options )
 map('n', '<C-Down>', ':resize +2<CR>', options )
 map('n', '<C-Left>', ':vertical resize -2<CR>', options )
 map('n', '<C-Right>', ':vertical resize +2<CR>', options )
-
 -- quickfix list
 map('n', '<]q>', ':cnext<CR>', options )
 map('n', '<[q>', 'cprev<CR>', options )
 map('n', '<C-q>', ':TroubleToggle<CR>', options )
-
 -- Telescope Fuzzy find file
 map('n', '<C-_>', ':lua require("telescope-config").fuzzy_find_file()<CR>', options )
---
 -- move around wrap text with j-k
 map('n', 'j', 'gj', options )
 map('n', 'k', 'gk', options )
-
+-- save file
 map('n', '<C-s>', '<cmd>w!<CR>', options )
-
 -- Pounce - movement
 map('n', '<C-p>', '<cmd>Pounce<CR>', options)
+
 -- INSERT MODE ----------
 -- exit insert mode
 map('i', 'jj', '<Esc>', options )
