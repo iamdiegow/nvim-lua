@@ -10,7 +10,8 @@ bufferline.setup {
     right_mouse_command = "bdelete! %d",
     left_mouse_command = "buffer %d",
     middle_mouse_command = nil,
-    indicator_icon = '▎',
+		--"⎟ ⎜ ⎢ ⎜ ▏ ▊ ▋ ▉ ▎ ▍ ▋ ▍ ▎ "
+		indicator_icon = '▉',
 		buffer_close_icon = "",
     modified_icon = "",
     close_icon = "",
