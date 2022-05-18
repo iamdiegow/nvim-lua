@@ -13,9 +13,10 @@ vim.opt.showmatch = true
 --vim.opt.fillchars = { vert = ' '}
 vim.opt.hlsearch = true
 vim.opt.termguicolors = true
+vim.opt.ruler = false
 
-wo.number = true
-wo.numberwidth = 4
+wo.number = false
+wo.numberwidth = 2
 wo.relativenumber = false
 
 o.swapfile = true
@@ -53,7 +54,7 @@ bo.tabstop = 2
 bo.shiftwidth = 2
 bo.autoindent = false
 
-vim.cmd([[ set shortmess+=I ]])
+vim.cmd([[ set shortmess+=sI ]])
 
 vim.cmd([[ let g:vimwiki_global_ext = 0 ]])
 

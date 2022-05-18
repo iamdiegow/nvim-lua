@@ -68,11 +68,9 @@ local normal_mappings = {
 	["c"] = { "<cmd>Bwipeout<CR>", "Close Buffer" },
 	["s"] = { "<cmd>luafile %<CR>", "Source File" },
 	["o"] = { "<cmd>SymbolsOutline<CR>", "Toggle Symbols Outline" },
-	["j"] = { "5j", "Move 5 down" },
-	["k"] = { "5k", "Move 5 up" },
 	["="] = { "<cmd>:ColorizerToggle<CR>", "Toggle Colorizer" },
 	-- NVIM Tree
-	e = {"<cmd>:NvimTreeToggle<CR>", "Open Explorer"},
+	e = { "<cmd>:NvimTreeToggle<CR>", "Open Explorer" },
 	-- TELESCOPE
 	f = {
 		name = "Telescope",
@@ -104,15 +102,11 @@ local normal_mappings = {
 		b = { "<cmd>Telescope buffers<CR>", "Buffers"},
 		w = { "<cmd>Bwipeout<cr>", "Wipeout buffer" },
 		h = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
-		l = {
-			"<cmd>BufferLineCycleNext<cr>", "Next Buffer"},
-		H = { "<cmd>BufferLineCloseRight<cr>", "Close all buffers left" },
-		L = {
-			"<cmd>BufferLineCloseLeft<cr>", "close all BufferLines right"},
-		S = {
-			"<cmd>BufferLineSortByExtension<cr>",
-			"sort BufferLines automatically by language",
-		},
+		l = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
+		H = { "<cmd>BufferLineCloseLeft<cr>", "Close all buffers left" },
+		L = { "<cmd>BufferLineCloseRight<CR>", "close all buffers right" },
+		S = { "<cmd>BufferLineSortByExtension<cr>", "sort BufferLines automatically by language" },
+		d = { "<cmd>BufferLineSortByDirectory<cr>", "sort BufferLines automatically by directory" },
 		["["] = { "<cmd>BufferLineMovePrev<cr>", "Move Buffer Left" },
 		["]"] = { "<cmd>BufferLineMoveNext<cr>", "Move Buffer Right" },
 	},

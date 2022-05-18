@@ -65,6 +65,12 @@ map('i', 'jj', '<Esc>', options )
 map('i', '<A-j>', '<Esc>:m .+1<CR>==gi', options )
 map('i', '<A-k>', '<Esc>:m .-2<CR>==gi', options )
 
+-- navigate within insert mode
+map('i', '<C-h>', '<Left>', options )
+map('i', '<C-l>', '<Right>', options )
+map('i', '<C-j>', '<Down>', options )
+map('i', '<C-k>', '<Up>', options )
+
 -- VISUAL MODE -----------
 -- better indenting
 map('v', '<', '<gv', options )
