@@ -33,12 +33,25 @@ local draculaTheme = function()
 	vim.cmd([[ colorscheme dracula ]])
 end
 
+local githubTheme = function()
+	require('github-theme').setup({
+		comment_style = "none",
+		keyword_style = "none",
+		function_style = "none",
+		variable_style = "none",
+	 	transparent = true,
+		dark_sidebar = false,
+		dark_float = false
+	})
+end
+
 local selectTheme = {
 	moonfly = moonflyTheme,
 	vscode = vscodeTheme,
 	tokyonight = tokyonightTheme,
 	darkplus = darkplusTheme,
 	dracula = draculaTheme,
+	github_dark = githubTheme
 }
 
 selectTheme[vim.g.color_theme]()

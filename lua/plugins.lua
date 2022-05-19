@@ -41,7 +41,9 @@ return packer.startup(function(use)
 	use 'Mofiqul/dracula.nvim'
 	use 'bluz71/vim-moonfly-colors'
 	use 'folke/tokyonight.nvim'
-  use "lunarvim/darkplus.nvim"
+  use 'lunarvim/darkplus.nvim'
+	use 'projekt0n/github-nvim-theme'
+
 	-- Lsp
   use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
