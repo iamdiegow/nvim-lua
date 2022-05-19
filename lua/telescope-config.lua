@@ -7,7 +7,7 @@ local ivyConfig = {
 		height = 15,
 	},
 	previewer = false,
-	winblend = 20
+	winblend = 5
 }
 
 require("telescope").setup {

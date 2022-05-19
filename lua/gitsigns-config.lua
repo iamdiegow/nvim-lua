@@ -7,13 +7,13 @@ gitsigns.setup {
   signs = {
 		add = {
 			hl = "GitSignsAdd",
-			text = "▎",
+			text = "▋",
 			numhl = "GitSignsAddNr",
 			linehl = "GitSignsAddLn",
 		},
 		change = {
 			hl = "GitSignsChange",
-			text = "▎",
+			text = "▋",
 			numhl = "GitSignsChangeNr",
 			linehl = "GitSignsChangeLn",
 		},
@@ -31,7 +31,7 @@ gitsigns.setup {
 		},
 		changedelete = {
 			hl = "GitSignsChange",
-			text = "▎",
+			text = "▋",
 			numhl = "GitSignsChangeNr",
 			linehl = "GitSignsChangeLn",
 		},
