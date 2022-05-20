@@ -7,10 +7,10 @@ map('n', '<c-z>', '<Nop>', options )
 -- Disable ex mode
 map('n', 'Q', '<Nop>', options )
 
-
 -- NORMAL MODE ----------
 -- set LEADER key to space
 vim.g.mapleader = ' '
+
 map('n', '<C-z>', ':ZenMode<CR>', options)
 map('n', '<Space>', '<NOP>', options )
 -- Format file
@@ -56,6 +56,8 @@ map('n', 'k', 'gk', options )
 map('n', '<C-s>', '<cmd>w!<CR>', options )
 -- Pounce - movement
 map('n', '<C-p>', '<cmd>Pounce<CR>', options)
+-- Hop
+map('n', 'f', '<cmd>HopChar1<CR>', options)
 
 -- INSERT MODE ----------
 -- exit insert mode

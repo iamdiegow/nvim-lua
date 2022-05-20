@@ -5,5 +5,6 @@ end
 
 pounce.setup({
 	accept_keys = "ASDFHJKLQWERYUIO",
-	accept_best_key = "<enter>"
+	accept_best_key = "<enter>",
+	multi_window = false
 })
