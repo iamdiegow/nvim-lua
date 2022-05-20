@@ -64,17 +64,5 @@ require'nvim-treesitter.configs'.setup({
         comment = '// %s'
 			}
 		}
-	},
-	tree_docs = {
-		enable = true,
-		spec_config = {
-			jsdoc = {
-				slots = {
-					class = {
-						author = false
-					}
-				}
-			}
-		}
 	}
 })

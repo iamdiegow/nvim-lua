@@ -58,7 +58,6 @@ return packer.startup(function(use)
   }
 	-- Workflow
 	use 'norcalli/nvim-colorizer.lua'
-	use 'nvim-treesitter/nvim-tree-docs'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
