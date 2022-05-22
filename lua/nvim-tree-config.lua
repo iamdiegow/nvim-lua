@@ -9,32 +9,6 @@ g.nvim_tree_highlight_opened_files = 0
 g.nvim_tree_root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"}
 g.nvim_tree_allow_resize = 1
 g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
-g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows= 1
-}
-g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    git = {
-        unstaged = "✗",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "★",
-        deleted = "",
-        ignored = "◌"
-    },
-    folder = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink_open = ""
-    }
-}
 
 require('nvim-tree').setup {
 	auto_reload_on_write = true,
@@ -72,7 +46,7 @@ require('nvim-tree').setup {
 	},
 	renderer = {
 		indent_markers = {
-			enable = true,
+			enable = false,
 			icons = {
 				corner = "└ ",
 				edge = "│ ",
@@ -89,7 +63,7 @@ require('nvim-tree').setup {
 		height = 20,
 		side = 'left',
 		number = false,
-		signcolumn = "yes",
+		signcolumn = "no",
 		preserve_window_proportions = true,
 		mappings = {
 			list = {
@@ -118,13 +92,14 @@ require('nvim-tree').setup {
 		require_confirm = true
 	},
 	actions = {
+		use_system_clipboard = true,
 		change_dir = {
 			enable = true,
 			global = false,
 			restrict_above_cwd = false
 		},
 		open_file = {
-			quit_on_open = false,
+			quit_on_open = true,
 			resize_window = true,
 			window_picker = {
 				enable = true,
@@ -140,3 +115,5 @@ require('nvim-tree').setup {
 
 -- hide statusline when nvim tree is opened
 vim.cmd [[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree_1" | set laststatus=0 | else | set laststatus=2 | endif]]
+vim.cmd[[ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]]
+

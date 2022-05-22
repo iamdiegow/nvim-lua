@@ -226,9 +226,11 @@ local normal_mappings = {
 		e = { "<cmd>IndentBlanklineEnable<CR><cmd>set list<CR>", "Enable all" }
 	},
 	["n"] = {
-		name = "Number & relative number",
+		name = "Numbers and nvim-tree",
 		r = { "<cmd>set relativenumber!<CR>", "Toogle relative number"},
-		n = { "<cmd>set number!<CR>", "Toogle relative number"}
+		n = { "<cmd>set number!<CR>", "Toogle relative number"},
+		l = { "<cmd>NvimTreeResize +5<CR>", "Increase size of nvim-tree"},
+		h = { "<cmd>NvimTreeResize -5<CR>", "Increase size of nvim-tree"},
 	}
 }
 
