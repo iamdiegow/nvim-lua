@@ -1,4 +1,5 @@
 local actions = require('telescope.actions')
+local actions_layout = require('telescope.actions.layout')
 
 local ivyConfig = {
 	theme = "ivy",
@@ -65,6 +66,7 @@ require("telescope").setup {
 				["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-c>"] = actions.close,
+				["<M-p>"] = actions_layout.toggle_preview
 			}
     },
   },
