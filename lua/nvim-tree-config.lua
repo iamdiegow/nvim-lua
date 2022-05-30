@@ -1,14 +1,9 @@
 local g = vim.g
 
 -- options that are not migrated yet
-
-g.nvim_tree_auto_ignore_ft = { "dashboard" }
-g.nvim_tree_icon_padding = " "
-g.nvim_tree_git_hl = 1
-g.nvim_tree_highlight_opened_files = 0
-g.nvim_tree_root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"}
-g.nvim_tree_allow_resize = 1
-g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
+-- g.nvim_tree_root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"}
+-- g.nvim_tree_allow_resize = 1
+-- g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
 
 require('nvim-tree').setup {
 	auto_reload_on_write = true,
@@ -45,6 +40,9 @@ require('nvim-tree').setup {
 		}
 	},
 	renderer = {
+		highlight_opened_files = "all",
+		root_folder_modifier = ":~",
+		add_trailing = false,
 		indent_markers = {
 			enable = false,
 			icons = {
@@ -54,7 +52,39 @@ require('nvim-tree').setup {
 			}
 		},
 		icons = {
-			webdev_colors = true
+			webdev_colors = true,
+			git_placement = "before",
+			padding = " ",
+			symlink_arrow = " ➛ ",
+			show = {
+				file = true,
+				folder = true,
+				folder_arrow = true,
+				git = true
+			},
+			glyphs = {
+				default = "",
+				symlink = "",
+				folder = {
+					arrow_closed = "",
+					arrow_open = "",
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+					symlink_open = "",
+				},
+				git = {
+					unstaged = "✗",
+					staged = "✓",
+					unmerged = "",
+					renamed = "➜",
+					untracked = "★",
+					deleted = "",
+					ignored = "◌",
+				},
+          },
 		}
 	},
 	view = {
