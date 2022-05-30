@@ -40,6 +40,8 @@ require('nvim-tree').setup {
 		}
 	},
 	renderer = {
+		highlight_git = true,
+		group_empty = false,
 		highlight_opened_files = "all",
 		root_folder_modifier = ":~",
 		add_trailing = false,
