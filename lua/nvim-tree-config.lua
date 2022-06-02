@@ -149,6 +149,9 @@ require('nvim-tree').setup {
 		expand_all = {
 			max_folder_discovery = 300
 		}
+	},
+	live_filter = {
+		always_show_folders = true
 	}
 }
 
