@@ -90,6 +90,7 @@ require('nvim-tree').setup {
 		}
 	},
 	view = {
+		adaptive_size = true,
 		hide_root_folder = true,
 		width = 25,
 		height = 20,
