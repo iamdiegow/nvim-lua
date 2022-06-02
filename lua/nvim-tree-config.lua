@@ -142,6 +142,12 @@ require('nvim-tree').setup {
 					buftype = { "nofile", "terminal", "help" },
 				}
 			}
+		},
+		remove_file = {
+			close_window = true
+		},
+		expand_all = {
+			max_folder_discovery = 300
 		}
 	}
 }
