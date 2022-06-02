@@ -1,10 +1,3 @@
-local g = vim.g
-
--- options that are not migrated yet
--- g.nvim_tree_root_folder_modifier = table.concat {":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??"}
--- g.nvim_tree_allow_resize = 1
--- g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
-
 require('nvim-tree').setup {
 	auto_reload_on_write = true,
 	disable_netrw = true,
