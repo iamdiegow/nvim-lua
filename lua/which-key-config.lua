@@ -201,10 +201,9 @@ local normal_mappings = {
 	x = {
 		name = "Terminal",
 		v = { '<cmd>1ToggleTerm size=40 direction=vertical<CR>', "Toggle Vertical 1" },
-		s = { '<cmd>2ToggleTerm size=10 direction=horizontal<CR>', "Toggle Horizontal 2" },
-		f = { '<cmd>3ToggleTerm direction=float<CR>', "Toggle Terminal 3" },
-		a = { '<cmd>ToggleTermOpenAll<CR>', "Open All Terminals" },
-		q = { '<cmd>ToggleTermCloseAll<CR>', "Close All Terminals" },
+		s = { '<cmd>2ToggleTerm size=15 direction=horizontal<CR>', "Toggle Horizontal 2" },
+		f = { '<cmd>3ToggleTerm direction=float<CR>', "Toggle Float 3" },
+		t = { '<cmd>4ToggleTerm direction=tab<CR>', "Toggle Tab 4" },
 		x = { '<cmd>exec "!node %"<CR>', "Execute file with node" },
 		g = { '<cmd>exec "!go run %"<CR>', "Execute file with go compiler" }
 	},
