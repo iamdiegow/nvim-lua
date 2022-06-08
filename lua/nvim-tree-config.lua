@@ -42,6 +42,7 @@ require('nvim-tree').setup {
 			enable = false,
 			icons = {
 				corner = "└ ",
+				item = "├─",
 				edge = "│ ",
 				none = "  "
 			}
@@ -84,6 +85,7 @@ require('nvim-tree').setup {
 	},
 	view = {
 		adaptive_size = true,
+		centralize_selection = true,
 		hide_root_folder = true,
 		width = 25,
 		height = 20,
