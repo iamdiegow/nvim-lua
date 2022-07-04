@@ -18,15 +18,16 @@ M.setup = function()
   end
 
   local config = {
-    virtual_text = {
-			space = 16,
-			format = function(diagnostic)
-			 if diagnostic.severity == vim.diagnostic.severity.ERROR then
-				 return string.format("E: %s", diagnostic.message)
-			 end
-			 return diagnostic.message
-		 end
-		},
+		--     virtual_text = {
+		-- 	space = 16,
+		-- 	format = function(diagnostic)
+		-- 	 if diagnostic.severity == vim.diagnostic.severity.ERROR then
+		-- 		 return string.format("E: %s", diagnostic.message)
+		-- 	 end
+		-- 	 return diagnostic.message
+		--  end
+		-- },
+		virtual_text = false,
     signs = {
       active = signs,
     },
