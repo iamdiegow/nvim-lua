@@ -27,6 +27,8 @@ map('n', '<C-k>', '5k', options )
 -- map('n', '<C-k>', '<C-w>k', options )
 map('n', '<C-l>', '<C-w>l', options )
 map('n', '<C-h>', '<C-w>h', options )
+-- tabs
+map('n', 'tt', ':tab split<CR>', options)
 -- Buffer cycle
 map('n', '<S-l>', ':BufferLineCycleNext<CR>', options )
 map('n', '<S-h>', ':BufferLineCyclePrev<CR>', options )
