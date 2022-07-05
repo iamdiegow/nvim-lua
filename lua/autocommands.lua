@@ -27,3 +27,11 @@ vim.cmd([[
 			\ lua vim.highlight.on_yank{higroup="IncSearch", timeout=300, on_visual=true}
 	augroup END
 ]])
+
+vim.cmd([[
+	augroup CursorLineOnlyInActiveWindow
+		autocmd!
+		autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+		autocmd WinLeave * setlocal nocursorline
+	augroup END
+]])

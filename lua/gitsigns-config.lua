@@ -3,17 +3,20 @@ if not status_ok then
 	return
 end
 
+--"⎟ ⎜ ⎢ ⎜ ▏ ▊ ▋ ▉ ▎ ▍ ▋ ▍ ▎ "
+local text1 = "▍"
+
 gitsigns.setup {
   signs = {
 		add = {
 			hl = "GitSignsAdd",
-			text = "▋",
+			text = text1,
 			numhl = "GitSignsAddNr",
 			linehl = "GitSignsAddLn",
 		},
 		change = {
 			hl = "GitSignsChange",
-			text = "▋",
+			text = text1,
 			numhl = "GitSignsChangeNr",
 			linehl = "GitSignsChangeLn",
 		},
@@ -31,7 +34,7 @@ gitsigns.setup {
 		},
 		changedelete = {
 			hl = "GitSignsChange",
-			text = "▋",
+			text = text1,
 			numhl = "GitSignsChangeNr",
 			linehl = "GitSignsChangeLn",
 		},
