@@ -38,6 +38,8 @@ require('stabilize-config')
 require('symbols-outline-config')
 require('nvim-colorizer-config')
 require('pounce-config')
+require('dap/dap-config')
+require('focus-config')
 
 -- LSP
 require('nvim-cmp-config')

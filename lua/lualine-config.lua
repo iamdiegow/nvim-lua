@@ -75,10 +75,12 @@ lualine.setup({
 		right_padding = 1,
 		disabled_filetypes = {
 			"Outline"
-		}
+		},
+		always_divide_middle = false,
+		globalstatus = true
   },
   sections = {
-    lualine_a = {{"mode"}, "paste" },
+    lualine_a = { {"mode"}, "paste" },
     lualine_b = diagnostics,
 		lualine_c = {
 			filetype
@@ -110,3 +112,7 @@ lualine.setup({
   tabline = {},
   extensions = {},
 })
+
+vim.cmd([[
+ au BufEnter * :set laststatus=3
+]])

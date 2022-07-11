@@ -57,6 +57,8 @@ return packer.startup(function(use)
         run = ':TSUpdate'
   }
 	-- Workflow
+	use 'mfussenegger/nvim-dap'
+	use 'beauwilliams/focus.nvim'
 	use 'norcalli/nvim-colorizer.lua'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
