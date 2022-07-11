@@ -22,7 +22,7 @@ wo.relativenumber = false
 o.swapfile = true
 o.dir = '/tmp'
 o.smartcase = true
--- o.laststatus = 0
+o.laststatus = 3
 o.hlsearch = true
 o.incsearch = true
 o.ignorecase = true
@@ -67,3 +67,7 @@ if vim.g.transparent_window then
 	vim.cmd("au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none")
 	vim.cmd("au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none")
 end
+
+vim.cmd([[
+ highlight WinSeparator guibg=None
+]])

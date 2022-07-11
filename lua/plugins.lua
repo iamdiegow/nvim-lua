@@ -57,6 +57,15 @@ return packer.startup(function(use)
         run = ':TSUpdate'
   }
 	-- Workflow
+	use {
+  'nvim-neo-tree/neo-tree.nvim',
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
 	use 'mfussenegger/nvim-dap'
 	use 'beauwilliams/focus.nvim'
 	use 'norcalli/nvim-colorizer.lua'
@@ -65,10 +74,10 @@ return packer.startup(function(use)
 	use 'hrsh7th/cmp-path'
   use 'saadparwaiz1/cmp_luasnip'
 	use 'hrsh7th/nvim-cmp'
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'
-  }
+  -- use {
+  --   'kyazdani42/nvim-tree.lua',
+  --   requires = 'kyazdani42/nvim-web-devicons'
+  -- }
 	use 'simrat39/symbols-outline.nvim'
 	use 'luukvbaal/stabilize.nvim'
 	use 'hoob3rt/lualine.nvim'
