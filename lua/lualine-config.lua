@@ -96,7 +96,7 @@ lualine.setup({
     lualine_c = {},
     lualine_x = { branch },
 		lualine_y = { diff },
-    lualine_z = { diagnostics }
+    lualine_z = { diagnostics, "progress" }
   },
   inactive_sections = {
     lualine_a = {},
