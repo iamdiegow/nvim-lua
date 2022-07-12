@@ -58,6 +58,7 @@ return packer.startup(function(use)
   }
 	-- Workflow
 	use 'ghillb/cybu.nvim'
+	use 'karb94/neoscroll.nvim'
 	use 'mfussenegger/nvim-dap'
 	use 'norcalli/nvim-colorizer.lua'
 	use 'hrsh7th/cmp-nvim-lsp'

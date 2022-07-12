@@ -40,6 +40,7 @@ require('nvim-colorizer-config')
 require('pounce-config')
 require('dap/dap-config')
 require('cybu-config')
+require('neoscroll-config')
 
 -- LSP
 require('nvim-cmp-config')
