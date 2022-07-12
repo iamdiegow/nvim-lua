@@ -5,6 +5,6 @@ end
 
 focus.setup({
 	enable = true,
-	hybridnumber = true,
+	hybridnumber = false,
 	excluded_filetypes = { 'toggleterm' }
 })
