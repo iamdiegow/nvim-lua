@@ -111,6 +111,30 @@ local icons = {
 		color = colors.blue,
 		name = "lua",
 	},
+  sh = {
+    icon = "",
+    color = "#1DC123",
+    cterm_color = "59",
+    name = "Sh",
+  },
+  [".gitattributes"] = {
+    icon = "",
+    color = "#e24329",
+    cterm_color = "59",
+    name = "GitAttributes",
+  },
+  [".gitconfig"] = {
+    icon = "",
+    color = "#e24329",
+    cterm_color = "59",
+    name = "GitConfig",
+  },
+  [".gitignore"] = {
+    icon = "",
+    color = "#e24329",
+    cterm_color = "59",
+    name = "GitIgnore",
+  },
 }
 
 for key, value in pairs(icons) do
