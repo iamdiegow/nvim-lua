@@ -39,6 +39,7 @@ gitsigns.setup {
 			linehl = "GitSignsChangeLn",
 		},
   },
+	signcolumn = true,
   numhl = false,
   linehl = false,
   keymaps = {
@@ -56,7 +57,7 @@ gitsigns.setup {
 		delay = 500
 	},
 	preview_config = {
-		border = 'single',
+		border = 'rounded',
 		style = 'minimal',
 		relative = 'cursor',
 		row = 0,
