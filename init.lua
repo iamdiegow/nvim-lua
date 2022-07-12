@@ -20,7 +20,7 @@ require('autocommands')
 -- Plugin config
 require('lualine-config')
 require('bufferline-config')
--- require('nvim-tree-config')
+require('nvim-tree-config')
 require('treesitter-config')
 require('telescope-config')
 require('nvim-comment-config')
@@ -40,7 +40,6 @@ require('nvim-colorizer-config')
 require('pounce-config')
 require('dap/dap-config')
 require('focus-config')
-require('neotree-config')
 
 -- LSP
 require('nvim-cmp-config')
