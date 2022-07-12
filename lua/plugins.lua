@@ -58,7 +58,6 @@ return packer.startup(function(use)
   }
 	-- Workflow
 	use 'mfussenegger/nvim-dap'
-	use 'beauwilliams/focus.nvim'
 	use 'norcalli/nvim-colorizer.lua'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
@@ -111,4 +110,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-
