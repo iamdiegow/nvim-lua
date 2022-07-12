@@ -32,7 +32,7 @@ M.setup = function()
       active = signs,
     },
     update_in_insert = false,
-    underline = false,
+    underline = true,
     severity_sort = true,
     float = {
       focusable = false,
@@ -48,10 +48,12 @@ M.setup = function()
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",
+		width = 60
   })
 
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
+		width = 60
   })
 end
 

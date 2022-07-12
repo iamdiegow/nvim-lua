@@ -42,6 +42,7 @@ require('dap/dap-config')
 require('cybu-config')
 require('neoscroll-config')
 require('browse-config')
+require('fidget-config')
 
 -- LSP
 require('nvim-cmp-config')

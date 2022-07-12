@@ -59,9 +59,10 @@ return packer.startup(function(use)
         run = ':TSUpdate'
   }
 	-- Workflow
+	use 'j-hui/fidget.nvim'
 	use({
-		"lalitmee/browse.nvim",
-		requires = { "nvim-telescope/telescope.nvim" },
+		'lalitmee/browse.nvim',
+		requires = { 'nvim-telescope/telescope.nvim' },
 	})
 	use 'ghillb/cybu.nvim'
 	use 'karb94/neoscroll.nvim'
