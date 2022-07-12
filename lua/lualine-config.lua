@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local window_width_limit = 80
+local window_width_limit = 60
 
 local function diff_source()
   local gitsigns = vim.b.gitsigns_status_dict
@@ -31,39 +31,50 @@ local conditions = {
 
 local filetype = {
  "filetype",
-	condition = conditions.hide_in_width
+	cond = conditions.hide_in_width,
+	icon_only = true,
+	icon = {
+		align = "left"
+	}
 }
 
 local diagnostics = {
-	{ "diagnostics",
-		sources = { "nvim_diagnostic" },
-		sections = {"error", "warn"},
-		symbols = { error = " ", warn = " " },
-		color = {},
-		condition = conditions.hide_in_width,
-		colored = false,
-		always_visible = true
-	},
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	sections = {"error", "warn"},
+	symbols = { error = " ", warn = " " },
+	colored = false,
+	cond = conditions.hide_in_width,
+	always_visible = true
 }
 
 local diff = {
 	"diff",
 	source = diff_source,
 	symbols = { added = "  ", modified = "柳", removed = " " },
-	color_added = "#a7c080",
-	color_modified = "#ffdf1b",
-	color_removed = "#ff6666",
+	colored = true,
 	color = {},
 	cond = hide_in_width,
 }
+
 
 local branch = {
 	"branch",
 	"b:gitsigns_head",
 	icons_enabled = true,
 	icon = "",
-	color = {gui = "bold"}
+	color = { gui = "bold" }
 }
+
+local filename = {
+	"filename",
+	path = 1,
+	shorting_target = 30
+}
+
+local spaces = function()
+  return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+end
 
 lualine.setup({
   options = {
@@ -71,41 +82,27 @@ lualine.setup({
     theme = vim.g.color_theme,
 		section_separators = {' ', ' '},
 		component_separators = {' ', ' '},
-		left_padding = 1,
-		right_padding = 1,
+		left_padding = 0,
+		right_padding = 0,
 		disabled_filetypes = {
 			"Outline"
 		},
-		always_divide_middle = false,
+		always_divide_middle = true,
 		globalstatus = true
   },
   sections = {
     lualine_a = { {"mode"}, "paste" },
-    lualine_b = diagnostics,
-		lualine_c = {
-			filetype
-		},
-    lualine_x = {
-			"filename"
-		},
-    lualine_y = {
- 			branch,
-      diff
-  	},
-			-- { "diff", color_added = "#a7c080", color_modified = "#ffdf1b", color_removed = "#ff6666" },
-    lualine_z = {
-      {
-        "location",
-        icon = "",
-				cond = hide_in_width
-      },
-    },
+		lualine_b = { filename, filetype },
+    lualine_c = {},
+    lualine_x = { branch },
+		lualine_y = { diff },
+    lualine_z = { diagnostics }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {{ "filename", cond = hide_in_width }},
-    lualine_x = { "location" },
+    lualine_c = {},
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {},
   },
