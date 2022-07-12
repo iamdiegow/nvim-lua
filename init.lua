@@ -5,8 +5,8 @@ vim.g.autocomplete = false
 vim.g.rainbow = true
 vim.g.current_context = false
 
--- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula' | 'github'
-vim.g.color_theme = 'github_dark'
+-- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula' | 'github_dark' | 'cobalt2'
+vim.g.color_theme = 'cobalt2'
 vim.g.highlight_document = false
 vim.g.diagnostics_hover_window = false
 
@@ -41,6 +41,7 @@ require('pounce-config')
 require('dap/dap-config')
 require('cybu-config')
 require('neoscroll-config')
+require('browse-config')
 
 -- LSP
 require('nvim-cmp-config')

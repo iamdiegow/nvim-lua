@@ -43,6 +43,8 @@ return packer.startup(function(use)
 	use 'folke/tokyonight.nvim'
   use 'lunarvim/darkplus.nvim'
 	use 'projekt0n/github-nvim-theme'
+	use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
+
 
 	-- Lsp
   use 'neovim/nvim-lspconfig'
@@ -57,6 +59,10 @@ return packer.startup(function(use)
         run = ':TSUpdate'
   }
 	-- Workflow
+	use({
+		"lalitmee/browse.nvim",
+		requires = { "nvim-telescope/telescope.nvim" },
+	})
 	use 'ghillb/cybu.nvim'
 	use 'karb94/neoscroll.nvim'
 	use 'mfussenegger/nvim-dap'

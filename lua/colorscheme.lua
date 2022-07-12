@@ -45,13 +45,18 @@ local githubTheme = function()
 	})
 end
 
+local cobalt2Theme = function()
+	require('colorbuddy').colorscheme('cobalt2')
+end
+
 local selectTheme = {
 	moonfly = moonflyTheme,
 	vscode = vscodeTheme,
 	tokyonight = tokyonightTheme,
 	darkplus = darkplusTheme,
 	dracula = draculaTheme,
-	github_dark = githubTheme
+	github_dark = githubTheme,
+	cobalt2 = cobalt2Theme
 }
 
 selectTheme[vim.g.color_theme]()
