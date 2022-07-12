@@ -14,12 +14,14 @@ vim.opt.showmatch = true
 vim.opt.hlsearch = true
 vim.opt.termguicolors = true
 vim.opt.ruler = false
+vim.opt.pumheight = 10
+vim.opt.scrolloff = 8
 
 wo.number = false
 wo.numberwidth = 2
 wo.relativenumber = false
 
-o.swapfile = true
+o.swapfile = false
 o.dir = '/tmp'
 o.smartcase = true
 o.laststatus = 3

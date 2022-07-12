@@ -39,6 +39,7 @@ require('symbols-outline-config')
 require('nvim-colorizer-config')
 require('pounce-config')
 require('dap/dap-config')
+require('cybu-config')
 
 -- LSP
 require('nvim-cmp-config')

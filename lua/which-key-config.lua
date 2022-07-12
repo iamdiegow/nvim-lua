@@ -70,6 +70,8 @@ local normal_mappings = {
 	["o"] = { "<cmd>SymbolsOutline<CR>", "Toggle Symbols Outline" },
 	["="] = { "<cmd>:ColorizerToggle<CR>", "Toggle Colorizer" },
 	["e"] = { "<cmd>:NvimTreeToggle<CR>", "Open Explorer" },
+	["j"] = { "<Plug>(CybuNext)", "CybuNext" },
+	["k"] = { "<Plug>(CybuPrev)", "CybuPrev" },
 	-- TELESCOPE
 	f = {
 		name = "Telescope",

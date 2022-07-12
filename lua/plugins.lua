@@ -57,6 +57,7 @@ return packer.startup(function(use)
         run = ':TSUpdate'
   }
 	-- Workflow
+	use 'ghillb/cybu.nvim'
 	use 'mfussenegger/nvim-dap'
 	use 'norcalli/nvim-colorizer.lua'
 	use 'hrsh7th/cmp-nvim-lsp'
