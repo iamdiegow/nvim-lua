@@ -51,20 +51,6 @@ dap.configurations.typescript = {
 vim.fn.sign_define('DapBreakpoint', {text='', texthl='LspDiagnosticsError', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', {text='', texthl='LspDiagnosticsInformation', linehl='', numhl=''})
 
-vim.keymap.set('n', '<leader>db', function() require"dap".toggle_breakpoint() end)
-vim.keymap.set('n', '<leader>dB', function() require"dap".clear_breakpoints() end)
-vim.keymap.set('n', '<leader>dl', function() require"dap".step_out() end)
-vim.keymap.set('n', "<leader>dk", function() require"dap".step_into() end)
-vim.keymap.set('n', '<leader>dj', function() require"dap".step_over() end)
-vim.keymap.set('n', '<leader>dc', function() require"dap".run_to_cursor() end)
-vim.keymap.set('n', '<leader>dt', function() require"dap".terminate() end)
-vim.keymap.set('n', '<leader>di', function() require"dap.ui.widgets".hover() end)
-vim.keymap.set('n', '<leader>d?', function() local widgets=require"dap.ui.widgets";widgets.centered_float(widgets.scopes) end)
-vim.keymap.set('n', '<leader>dK', ':lua require"dap".up()<CR>zz')
-vim.keymap.set('n', '<leader>dJ', ':lua require"dap".down()<CR>zz')
-vim.keymap.set('n', '<leader>dn', function() require"dap".run_to_cursor() end)
-vim.keymap.set('n', '<leader>dr', function() require"dap".repl.open() end)
-
 local M = {}
 
 function M.reload_continue()
