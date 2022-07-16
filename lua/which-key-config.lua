@@ -248,7 +248,10 @@ local normal_mappings = {
 		K = { "<cmd>lua require'dap'.up()<CR>", "Go up" },
 		J = { "<cmd>lua require'dap'.down()<CR>", "Go down" },
 		r = { "<cmd>lua require'dap'.repl.open()<CR>", "Open REPL" },
-		h = { "<cmd>lua require'dap/dap-config'.reload_continue()<CR>", "Continue"}
+		h = { "<cmd>lua require'dap'.continue()<CR>", "Continue"},
+		d = { "<cmd>lua require'dap/dap-config'.reload_continue()<CR>", "Continue and reload configurations"},
+		S = { "<cmd>lua require'dapui'.toggle('sidebar')<CR>", "Toggle Dapui Sidebar"},
+		T = { "<cmd>lua require'dapui'.toggle('tray')<CR>", "Toggle Dapui Tray"}
 	}
 }
 

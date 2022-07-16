@@ -19,7 +19,7 @@ vim.cmd([[
 	augroup END
 ]])
 
--- Highlight yank -----
+-- Highlight yank
 vim.cmd([[
 	augroup AuYank
 		autocmd!
@@ -28,6 +28,7 @@ vim.cmd([[
 	augroup END
 ]])
 
+-- Set cursorline on active buffer
 vim.cmd([[
 	augroup CursorLineOnlyInActiveWindow
 		autocmd!
@@ -35,3 +36,14 @@ vim.cmd([[
 		autocmd WinLeave * setlocal nocursorline
 	augroup END
 ]])
+
+-- Use 'q' to quit from common plugins
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
+  callback = function()
+    vim.cmd [[
+      nnoremap <silent> <buffer> q :close<CR>
+      set nobuflisted
+    ]]
+  end,
+})
