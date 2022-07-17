@@ -8,6 +8,11 @@ if not dap_ui_status_ok then
   return
 end
 
+local dap_ui_status_ok, dapVirtualText = pcall(require, "nvim-dap-virtual-text")
+if not dap_ui_status_ok then
+  return
+end
+
 -- DAP UI
 dapui.setup {
 	icons = { expanded = "▾", collapsed = "▸" },
@@ -52,6 +57,9 @@ dapui.setup {
   }
 }
 
+-- Enable virtual text
+vim.g.dap_virtual_text = true
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end
@@ -86,6 +94,7 @@ dap.configurations.javascript = {
     cwd = vim.fn.getcwd(),
     sourceMaps = true,
     protocol = 'inspector',
+		skipFiles = {'<node_internals>/**', 'node_modules/**'},
     console = 'integratedTerminal',
   },
   {
@@ -95,7 +104,7 @@ dap.configurations.javascript = {
     request = 'attach',
 		protocol = 'inspector',
 		sourceMaps = true,
-		skipFiles = {'<node_internals>/**/*.js', '${workspaceFolder}/node_modules/**'},
+		skipFiles = {'<node_internals>/**', 'node_modules/**'},
     -- processId = require'dap.utils'.pick_process,
 		port = 9229,
 		console = 'integratedTerminal'
@@ -105,18 +114,58 @@ dap.configurations.javascript = {
 dap.configurations.typescript = {
   {
     -- For this to work you need to make sure the node process is started with the `--inspect` flag.
+    name = 'Launch Typescript Program (ts-node)',
+    type = 'node2',
+    request = 'launch',
+		cwd = vim.loop.cwd(),
+		protocol = 'inspector',
+		sourceMaps = true,
+		runtimeArgs = { "-r", "ts-node/register" },
+		runtimeExecutable = "node",
+		args = { "--inspect", "${file}" },
+		skipFiles = {'<node_internals>/**', 'node_modules/**'},
+  },
+  {
+    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
     name = 'Attach to process',
     type = 'node2',
     request = 'attach',
 		protocol = 'inspector',
 		sourceMaps = true,
-		skipFiles = {'<node_internals>/**/*.js', '${workspaceFolder}/node_modules/**'},
-    -- processId = require'dap.utils'.pick_process,
+		skipFiles = {'<node_internals>/**', 'node_modules/**'},
 		port = 9229,
 		console = 'integratedTerminal'
-  }
+  },
+	{
+		name = "Jest (Node2 with ts-node)",
+		type = "node2",
+		request = "launch",
+		cwd = vim.loop.cwd(),
+		runtimeArgs = {"--inspect-brk", "${workspaceFolder}/node_modules/.bin/jest"},
+		runtimeExecutable = "node",
+		args = {"${file}", "--runInBand", "--coverage", "false"},
+		sourceMaps = true,
+		port = 9229,
+		skipFiles = { "<node_internals>/**", "node_modules/**" },
+	},
 }
 
+-- Virtual Text
+dapVirtualText.setup({
+	enabled = true,
+	enabled_commands = true, -- creates DapVirtualTextEnable, DapVirtualTextDisable, DapVirtualTextToggle
+	highlight_changed_variables = true,
+	highlight_new_as_changed = false,
+	show_stop_reason = true,
+	commented = true,
+	only_first_definition = true,
+	all_references = false,
+	filter_references_pattern = '<module',
+	virt_text_pos = 'eol',
+	all_frames = false,
+	virt_lines = false,
+	virt_text_win_col = nil
+})
 
 local M = {}
 

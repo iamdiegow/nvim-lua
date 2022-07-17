@@ -6,7 +6,7 @@ end
 vim.go.scrolloff = 5
 
 neoscroll.setup {
-  mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+  mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
   hide_cursor = false,
   stop_eof = true,
   use_local_scrolloff = false,

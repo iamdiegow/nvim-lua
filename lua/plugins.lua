@@ -68,6 +68,7 @@ return packer.startup(function(use)
 	use 'karb94/neoscroll.nvim'
 	use 'mfussenegger/nvim-dap'
 	use { 'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'} }
+	use 'theHamsta/nvim-dap-virtual-text'
 	use 'norcalli/nvim-colorizer.lua'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
