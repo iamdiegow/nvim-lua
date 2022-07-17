@@ -43,6 +43,7 @@ require('cybu-config')
 require('neoscroll-config')
 require('browse-config')
 require('fidget-config')
+require('dressing-config')
 
 -- LSP
 require('nvim-cmp-config')

@@ -44,7 +44,7 @@ return packer.startup(function(use)
   use 'lunarvim/darkplus.nvim'
 	use 'projekt0n/github-nvim-theme'
 	use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
-
+  use {'stevearc/dressing.nvim'}
 
 	-- Lsp
   use 'neovim/nvim-lspconfig'
