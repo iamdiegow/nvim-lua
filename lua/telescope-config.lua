@@ -73,7 +73,8 @@ require("telescope").setup {
 	pickers = {
 		find_files = ivyConfig,
 		buffers = ivyConfig,
-		oldfiles = ivyConfig
+		oldfiles = ivyConfig,
+		lsp_document_symbols = ivyConfig
 	}
 }
 

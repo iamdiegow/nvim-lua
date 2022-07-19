@@ -1,4 +1,4 @@
--- vim.g.start_time = vim.fn.reltime()
+-- Global variables
 vim.g.transparent_window = true
 vim.g.format_on_save = false
 vim.g.autocomplete = false
