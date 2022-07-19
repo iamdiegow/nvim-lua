@@ -80,8 +80,10 @@ require('nvim-tree').setup {
 					deleted = "",
 					ignored = "◌",
 				},
-          },
-		}
+      },
+		},
+		special_files = {"README.md", "readme.md", "package.json"},
+		symlink_destination = true
 	},
 	view = {
 		adaptive_size = true,
