@@ -11,6 +11,19 @@ local ivyConfig = {
 	winblend = 5
 }
 
+local verticalConfig = {
+	layout_strategy = 'vertical',
+	layout_config = {
+		vertical = {
+			mirror = true,
+			prompt_position = 'top',
+			width = 90,
+			height = 10
+		},
+	},
+	previewer = false
+}
+
 require("telescope").setup {
   defaults = {
     vimgrep_arguments = {
@@ -71,8 +84,21 @@ require("telescope").setup {
     },
   },
 	pickers = {
-		find_files = ivyConfig,
-		buffers = ivyConfig,
+		find_files = vim.tbl_deep_extend("force", verticalConfig, {
+			layout_config = { vertical = { height = 15 }}
+		}),
+		buffers = vim.tbl_deep_extend("force", verticalConfig, {
+			show_all_buffers = true,
+			sort_lastused = true,
+			mappings = {
+				i = {
+					['<C-d>'] = 'delete_buffer'
+				},
+				n = {
+					['d'] = 'delete_buffer'
+				}
+			}
+		}),
 		oldfiles = ivyConfig,
 		lsp_document_symbols = ivyConfig
 	}
