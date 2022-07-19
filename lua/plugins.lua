@@ -92,7 +92,12 @@ return packer.startup(function(use)
 	-- use 'mhartington/formatter.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'windwp/nvim-autopairs'
-	use 'windwp/nvim-ts-autotag'
+	use {
+		'windwp/nvim-ts-autotag',
+		config = function()
+			require('nvim-ts-autotag').setup({ enable = true })
+		end
+	}
 	use 'tpope/vim-surround'
 	use { 'phaazon/hop.nvim', as = 'hop' }
 	use 'rlane/pounce.nvim'

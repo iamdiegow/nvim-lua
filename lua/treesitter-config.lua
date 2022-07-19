@@ -32,7 +32,7 @@ require'nvim-treesitter.configs'.setup({
   },
   rainbow = {
     enable = vim.g.rainbow,
-    extended_mode = true,
+    extended_mode = false,
     max_file_lines = 1000,
 		colors = {
 			"orchid",
@@ -43,9 +43,6 @@ require'nvim-treesitter.configs'.setup({
 	autopairs = {
 		enable = true
 	},
-	autotag = {
-     enable = true
-  },
 	context_commentstring = {
 		enable = true,
 		config = {
