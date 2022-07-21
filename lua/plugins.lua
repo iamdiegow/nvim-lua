@@ -59,7 +59,7 @@ return packer.startup(function(use)
         run = ':TSUpdate'
   }
 	-- Workflow
-	use 'j-hui/fidget.nvim'
+	use 'lewis6991/impatient.nvim'
 	use({
 		'lalitmee/browse.nvim',
 		requires = { 'nvim-telescope/telescope.nvim' },

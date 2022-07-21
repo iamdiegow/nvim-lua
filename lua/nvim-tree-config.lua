@@ -1,8 +1,8 @@
 require('nvim-tree').setup {
 	auto_reload_on_write = true,
 	disable_netrw = true,
-	hijack_netrw = false,
-	open_on_setup = true, -- open the tree if no file is provided
+	hijack_netrw = true,
+	open_on_setup = true,
 	ignore_ft_on_setup = {},
 	open_on_tab = false,
 	sort_by = "modification_time",

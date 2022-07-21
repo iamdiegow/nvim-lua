@@ -1,3 +1,5 @@
+require('impatient').enable_profile()
+
 -- Global variables
 vim.g.transparent_window = false
 vim.g.format_on_save = false
@@ -6,7 +8,7 @@ vim.g.rainbow = true
 vim.g.current_context = false
 
 -- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula' | 'github_dark' | 'cobalt2'
-vim.g.color_theme = 'tokyonight'
+vim.g.color_theme = 'github_dark'
 vim.g.highlight_document = false
 vim.g.diagnostics_hover_window = false
 
@@ -41,7 +43,6 @@ require('pounce-config')
 require('cybu-config')
 require('neoscroll-config')
 require('browse-config')
-require('fidget-config')
 require('dressing-config')
 
 -- LSP
