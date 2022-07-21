@@ -67,7 +67,6 @@ local normal_mappings = {
 	["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
 	["c"] = { "<cmd>Bwipeout<CR>", "Close Buffer" },
 	["s"] = { "<cmd>luafile %<CR>", "Source File" },
-	["o"] = { "<cmd>SymbolsOutline<CR>", "Toggle Symbols Outline" },
 	["="] = { "<cmd>:ColorizerToggle<CR>", "Toggle Colorizer" },
 	["e"] = { "<cmd>:NvimTreeToggle<CR>", "Open Explorer" },
 	["j"] = { "<Plug>(CybuNext)", "CybuNext" },
