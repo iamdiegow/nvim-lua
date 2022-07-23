@@ -18,21 +18,15 @@ M.setup = function()
   end
 
   local config = {
-		--     virtual_text = {
-		-- 	space = 16,
-		-- 	format = function(diagnostic)
-		-- 	 if diagnostic.severity == vim.diagnostic.severity.ERROR then
-		-- 		 return string.format("E: %s", diagnostic.message)
-		-- 	 end
-		-- 	 return diagnostic.message
-		--  end
-		-- },
-		virtual_text = false,
+		virtual_text = {
+			spacing = 20,
+			source = true,
+		},
     signs = {
       active = signs,
     },
     update_in_insert = true,
-    underline = false,
+    underline = true,
     severity_sort = true,
     float = {
       focusable = false,
@@ -48,12 +42,10 @@ M.setup = function()
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",
-		width = 60
   })
 
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
-		width = 60
   })
 end
 
