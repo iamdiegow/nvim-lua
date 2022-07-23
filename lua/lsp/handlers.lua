@@ -18,15 +18,12 @@ M.setup = function()
   end
 
   local config = {
-		virtual_text = {
-			spacing = 20,
-			source = true,
-		},
+		virtual_text = false,
     signs = {
       active = signs,
     },
     update_in_insert = true,
-    underline = true,
+    underline = false,
     severity_sort = true,
     float = {
       focusable = false,
@@ -121,5 +118,15 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+local diagnostics_visible = true
+M.toggle_diagnostics = function()
+	diagnostics_visible = not diagnostics_visible
+	if diagnostics_visible then
+		vim.diagnostic.hide(nil, 0)
+	else
+		vim.diagnostic.show(nil, 0)
+	end
+end
 
 return M
