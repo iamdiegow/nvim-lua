@@ -31,10 +31,9 @@ local conditions = {
 
 local filetype = {
  "filetype",
-	cond = conditions.hide_in_width,
 	icon_only = true,
 	icon = {
-		align = "left"
+		align = "right"
 	}
 }
 
@@ -53,7 +52,6 @@ local diff = {
 	source = diff_source,
 	symbols = { added = "  ", modified = "柳", removed = " " },
 	colored = true,
-	color = {},
 	cond = hide_in_width,
 }
 
@@ -80,8 +78,8 @@ lualine.setup({
   options = {
     icons_enabled = true,
     theme = vim.g.color_theme,
-		section_separators = {' ', ' '},
-		component_separators = {' ', ' '},
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
 		left_padding = 0,
 		right_padding = 0,
 		disabled_filetypes = {
@@ -91,7 +89,7 @@ lualine.setup({
 		globalstatus = true
   },
   sections = {
-    lualine_a = { {"mode"}, "paste" },
+    lualine_a = { { "mode" }, { "paste" } },
 		lualine_b = { filename, filetype },
     lualine_c = {},
     lualine_x = { branch },
