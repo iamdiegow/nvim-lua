@@ -123,7 +123,7 @@ local normal_mappings = {
 	-- GITSIGNS
 	g = {
 		name = "Git",
-		g = { "<cmd>G<CR>", "Open Vim Fugitive"},
+		g = { "<cmd>Neogit<CR>", "Open Neogit"},
 		c = { "<cmd>Gdiffsplit<CR>", "Open Diff Split"},
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -255,7 +255,8 @@ local normal_mappings = {
 		name = "Diffview and Neogit",
 		d = { "<cmd>DiffviewOpen<CR>", "Open Diffview" },
 		q = { "<cmd>DiffviewClose<CR>", "Close Diffview" },
-		h = { "<cmd>DiffviewFileHistory<CR>", "View File History" }
+		h = { "<cmd>DiffviewFileHistory<CR>", "View File History" },
+		g = { "<cmd>Neogit<CR>", "Open Neogit"}
 	}
 }
 
