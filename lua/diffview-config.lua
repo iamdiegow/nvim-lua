@@ -5,7 +5,7 @@ end
 
 local actions = require("diffview.actions")
 
-require("diffview").setup({
+diffview.setup({
   diff_binaries = false,    -- Show diffs for binaries
   enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
   git_cmd = { "git" },      -- The git executable followed by default args.
@@ -26,7 +26,7 @@ require("diffview").setup({
     },
     win_config = {                      -- See ':h diffview-config-win_config'
       position = "left",
-      width = 35,
+      width = 25,
     },
   },
   file_history_panel = {

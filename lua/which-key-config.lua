@@ -250,6 +250,12 @@ local normal_mappings = {
 		d = { "<cmd>lua require'dap-config.dap-adapters-configurations'.reload_continue()<CR>", "Continue and reload configurations"},
 		S = { "<cmd>lua require'dapui'.toggle('sidebar')<CR>", "Toggle Dapui Sidebar"},
 		T = { "<cmd>lua require'dapui'.toggle('tray')<CR>", "Toggle Dapui Tray"}
+	},
+	["v"] = {
+		name = "Diffview and Neogit",
+		d = { "<cmd>DiffviewOpen<CR>", "Open Diffview" },
+		q = { "<cmd>DiffviewClose<CR>", "Close Diffview" },
+		h = { "<cmd>DiffviewFileHistory<CR>", "View File History" }
 	}
 }
 
