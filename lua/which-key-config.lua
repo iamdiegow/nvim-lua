@@ -72,7 +72,7 @@ local normal_mappings = {
 	["j"] = { "<Plug>(CybuNext)", "CybuNext" },
 	["k"] = { "<Plug>(CybuPrev)", "CybuPrev" },
 	-- TELESCOPE
-	f = {
+	["f"] = {
 		name = "Telescope",
 		f = { "<cmd>Telescope find_files<CR>", "Find Files" },
 		r = { "<cmd>Telescope live_grep<CR>", "Live Grep"},
@@ -95,7 +95,7 @@ local normal_mappings = {
 		}
 	},
 	-- BUFFERS
-	b = {
+	["b"] = {
 		name = "Buffers",
 		c = { "<cmd>BufferLinePickClose<cr>", "Pick and close" },
 		j = { "<cmd>BufferLinePick<cr>", "Jump to buffer" },
@@ -111,7 +111,7 @@ local normal_mappings = {
 		["]"] = { "<cmd>BufferLineMoveNext<cr>", "Move Buffer Right" },
 	},
 	-- PACKER
-	p = {
+	["p"] = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
 		i = { "<cmd>PackerInstall<cr>", "Install" },
@@ -121,10 +121,9 @@ local normal_mappings = {
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 	-- GITSIGNS
-	g = {
-		name = "Git",
+	["g"] = {
+		name = "Git, (gitsigns, diffview, neogit)",
 		g = { "<cmd>Neogit<CR>", "Open Neogit"},
-		c = { "<cmd>Gdiffsplit<CR>", "Open Diff Split"},
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -140,9 +139,12 @@ local normal_mappings = {
 		e = { "<cmd>Gitsigns toggle_linehl<cr>", "Toggle Line Highlight" },
 		q = { "<cmd>Gitsigns toggle_numhl<cr>", "Toggle Number Highlight" },
 		b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Line Blame" },
+		d = { "<cmd>DiffviewOpen<CR>", "Open Diffview" },
+		q = { "<cmd>DiffviewClose<CR>", "Close Diffview" },
+		h = { "<cmd>DiffviewFileHistory<CR>", "View File History" },
 	},
 	-- LSP
-	l = {
+	["l"] = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
@@ -174,7 +176,7 @@ local normal_mappings = {
 			"Workspace Symbols",
 		},
 	},
-	h = {
+	["h"] = {
 		name = "Hop & Highlight",
 		h = { '<cmd>let @/=""<CR>', "No Highlight" },
 		w = { '<cmd>HopWord<CR>', "Hop Word" },
@@ -188,7 +190,7 @@ local normal_mappings = {
 		v = { '<cmd>lua require("utils").toggleCursorColumn()<CR>', 'Toggle Cursor Column'}
 	},
 	-- TROUBLE
-	t = {
+	["t"] = {
 		name = "Trouble quickfix list",
 		t = { '<cmd>TroubleToggle<CR>', "Open Trouble" },
 		w = { '<cmd>Trouble lsp_workspace_diagnostics<CR>', "Workspace diagnostics" },
@@ -197,7 +199,7 @@ local normal_mappings = {
 		r = { '<cmd>Trouble lsp_references<CR>', "Open Reference list" },
 	},
 	-- TERMINAL
-	x = {
+	["x"] = {
 		name = "Terminal",
 		v = { '<cmd>1ToggleTerm size=40 direction=vertical<CR>', "Toggle Vertical 1" },
 		s = { '<cmd>2ToggleTerm size=15 direction=horizontal<CR>', "Toggle Horizontal 2" },
@@ -250,13 +252,6 @@ local normal_mappings = {
 		d = { "<cmd>lua require'dap-config.dap-adapters-configurations'.reload_continue()<CR>", "Continue and reload configurations"},
 		S = { "<cmd>lua require'dapui'.toggle('sidebar')<CR>", "Toggle Dapui Sidebar"},
 		T = { "<cmd>lua require'dapui'.toggle('tray')<CR>", "Toggle Dapui Tray"}
-	},
-	["v"] = {
-		name = "Diffview and Neogit",
-		d = { "<cmd>DiffviewOpen<CR>", "Open Diffview" },
-		q = { "<cmd>DiffviewClose<CR>", "Close Diffview" },
-		h = { "<cmd>DiffviewFileHistory<CR>", "View File History" },
-		g = { "<cmd>Neogit<CR>", "Open Neogit"}
 	}
 }
 
