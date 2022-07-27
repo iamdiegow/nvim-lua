@@ -90,7 +90,7 @@ lualine.setup({
   },
   sections = {
     lualine_a = { { "mode" }, { "paste" } },
-		lualine_b = { filename, filetype },
+		lualine_b = { filename },
     lualine_c = {},
     lualine_x = { branch },
 		lualine_y = { diff },
