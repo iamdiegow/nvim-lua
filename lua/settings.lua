@@ -16,6 +16,7 @@ vim.opt.termguicolors = true
 vim.opt.ruler = false
 vim.opt.pumheight = 10
 vim.opt.scrolloff = 8
+vim.opt.guicursor = ""
 
 wo.number = false
 wo.numberwidth = 2
