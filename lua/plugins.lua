@@ -59,6 +59,8 @@ return packer.startup(function(use)
         run = ':TSUpdate'
   }
 	-- Workflow
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 	use 'lewis6991/impatient.nvim'
 	use({
 		'lalitmee/browse.nvim',
