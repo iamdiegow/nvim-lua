@@ -90,7 +90,6 @@ return packer.startup(function(use)
 	}
 	use 'famiu/bufdelete.nvim'
 	use 'terrortylor/nvim-comment'
-	-- use 'mhartington/formatter.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'windwp/nvim-autopairs'
 	use {
@@ -112,8 +111,6 @@ return packer.startup(function(use)
 			'nvim-lua/plenary.nvim'
   	}
 	}
-	use 'moll/vim-node'
-	use 'moll/vim-bbye'
 	use 'folke/which-key.nvim'
 	use 'folke/zen-mode.nvim'
 	use 'folke/twilight.nvim'
@@ -121,7 +118,6 @@ return packer.startup(function(use)
 		'folke/trouble.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
 	}
-	use 'vimwiki/vimwiki'
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
