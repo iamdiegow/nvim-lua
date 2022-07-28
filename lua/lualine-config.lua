@@ -31,9 +31,10 @@ local conditions = {
 
 local filetype = {
  "filetype",
+	colored = true,
 	icon_only = true,
 	icon = {
-		align = "right"
+		align = "left"
 	}
 }
 
@@ -42,7 +43,8 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = {"error", "warn"},
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	colored = true,
+	update_in_insert = false,
 	cond = conditions.hide_in_width,
 	always_visible = true
 }
@@ -50,7 +52,7 @@ local diagnostics = {
 local diff = {
 	"diff",
 	source = diff_source,
-	symbols = { added = "  ", modified = "柳", removed = " " },
+	symbols = { added = " ", modified = "柳", removed = " " },
 	colored = true,
 	cond = hide_in_width,
 }
@@ -66,8 +68,17 @@ local branch = {
 
 local filename = {
 	"filename",
-	path = 1,
-	shorting_target = 30
+	path = 0,
+	file_status = true,
+	shorting_target = 30,
+	fmt = function(str)
+		if(str == 'NvimTree_1[-]') then
+			return ''
+		else
+			return " " .. str
+		end
+	end,
+	component_separators = { left = '', right = '' },
 }
 
 local spaces = function()
@@ -78,8 +89,10 @@ lualine.setup({
   options = {
     icons_enabled = true,
     theme = vim.g.color_theme,
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
+    -- component_separators = { left = "", right = "" },
+    -- section_separators = { left = "", right = "" },
+		component_separators = { left = '', right = '' },
+		section_separators = { left = '', right = '' },
 		left_padding = 0,
 		right_padding = 0,
 		disabled_filetypes = {
@@ -90,11 +103,11 @@ lualine.setup({
   },
   sections = {
     lualine_a = { { "mode" }, { "paste" } },
-		lualine_b = { filename },
+		lualine_b = { filename, filetype },
     lualine_c = {},
     lualine_x = { branch },
 		lualine_y = { diff },
-    lualine_z = { diagnostics, "progress" }
+    lualine_z = { diagnostics }
   },
   inactive_sections = {
     lualine_a = {},
