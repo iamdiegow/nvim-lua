@@ -11,23 +11,27 @@ bufferline.setup {
     left_mouse_command = "buffer %d",
     middle_mouse_command = nil,
 		--"⎟ ⎜ ⎢ ⎜ ▏ ▊ ▋ ▉ ▎ ▍ ▋ ▍ ▎ "
-		indicator_icon = '▉',
+		indicator_icon = '',
 		buffer_close_icon = "",
     modified_icon = "",
     close_icon = "",
     left_trunc_marker = "",
     right_trunc_marker = "",
-    max_name_length = 20,
+    max_name_length = 25,
     max_prefix_length = 13,
-    tab_size = 20,
+    tab_size = 30,
 		offsets = {{
 			filetype = "NvimTree",
-			text = "Files",
+			text = function()
+				return vim.fn.getcwd()
+			end,
+			highlight = "Directory",
 			text_align = "left",
 			padding = 0
 		}},
 		diagnostics = false,
-    show_buffer_icons = false,
+		color_icons = true,
+    show_buffer_icons = true,
     show_buffer_close_icons = false,
     show_close_icon = false,
     show_tab_indicators = true,
@@ -58,5 +62,10 @@ bufferline.setup {
 				return result
 			end,
 		}
-  }
+  },
+	highlights = {
+		buffer_selected = {
+			gui = "bold"
+		}
+	}
 }
