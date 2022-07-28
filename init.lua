@@ -1,14 +1,14 @@
 require('impatient').enable_profile()
 
 -- Global variables
-vim.g.transparent_window = true
+vim.g.transparent_window = false
 vim.g.format_on_save = false
 vim.g.autocomplete = false
 vim.g.rainbow = true
 vim.g.current_context = false
 
--- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula' | 'github_dark' | 'cobalt2'
-vim.g.color_theme = 'cobalt2'
+-- 'vscode' | 'moonfly' | 'tokyonight' | 'darkplus' | 'dracula' | 'github_dark' | 'cobalt2' | 'material'
+vim.g.color_theme = 'material'
 vim.g.highlight_document = false
 vim.g.diagnostics_hover_window = false
 

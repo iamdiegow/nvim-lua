@@ -44,6 +44,35 @@ local githubTheme = function()
 	})
 end
 
+local materialTheme = function()
+	require('material').setup({
+		contrast = {
+			sidebars = true,
+			floating_windows = false,
+			cursor_line = false,
+			non_current_window = false
+		},
+		italics = {
+			comments = true,
+			variables = false,
+			keywords = true,
+			functions = false,
+			strings = false
+		},
+		high_visibility = {
+			darker = true
+		},
+		disable = {
+			colored_cursor = true,
+			borders = false
+		},
+		lualine_style = "stealth"
+	})
+	-- 'darker' | 'oceanic' | 'palenight' | 'deep ocean'
+	vim.g.material_style = 'darker'
+	vim.cmd([[ colorscheme material ]])
+end
+
 local cobalt2Theme = function()
 	require('colorbuddy').colorscheme('cobalt2')
 end
@@ -55,7 +84,8 @@ local selectTheme = {
 	darkplus = darkplusTheme,
 	dracula = draculaTheme,
 	github_dark = githubTheme,
-	cobalt2 = cobalt2Theme
+	cobalt2 = cobalt2Theme,
+	material = materialTheme
 }
 
 selectTheme[vim.g.color_theme]()
