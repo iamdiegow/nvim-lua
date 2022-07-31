@@ -1,7 +1,7 @@
 require('impatient').enable_profile()
 
 -- Global variables
-vim.g.transparent_window = false
+vim.g.transparent_window = true
 vim.g.format_on_save = false
 vim.g.autocomplete = false
 vim.g.rainbow = true
