@@ -72,7 +72,7 @@ require('nvim-tree').setup {
 					symlink_open = "",
 				},
 				git = {
-					unstaged = "✗",
+          unstaged = "",
 					staged = "✓",
 					unmerged = "",
 					renamed = "➜",
