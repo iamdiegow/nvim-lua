@@ -9,7 +9,7 @@ require("toggleterm").setup {
 	open_mapping = [[<c-x>]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_filetypes = {},
-  shade_terminals = false,
+  shade_terminals = true,
 	shading_factor = 1,
   start_in_insert = true,
   insert_mappings = true, -- whether or not the open mapping applies in insert mode
@@ -19,12 +19,8 @@ require("toggleterm").setup {
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'
   float_opts = {
-    border = "single",
-    winblend = 2,
-    highlights = {
-      border = "Normal",
-      background = "Normal",
-    }
+    border = "curved",
+    winblend = 0,
   }
 }
 
