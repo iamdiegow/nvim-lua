@@ -49,7 +49,7 @@ end
 
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
@@ -91,7 +91,7 @@ end
 
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
 
 		local status_ok, ts_utils = pcall(require, 'nvim-lsp-ts-utils')
 
@@ -109,6 +109,7 @@ M.on_attach = function(client, bufnr)
 		end
   end
 
+  vim.g.navic_silence = true
 	require'nvim-navic'.attach(client, bufnr)
 
   lsp_keymaps(bufnr)
