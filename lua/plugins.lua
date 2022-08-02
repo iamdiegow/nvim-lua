@@ -72,7 +72,6 @@ return packer.startup(function(use)
 		requires = { 'nvim-telescope/telescope.nvim' },
 	})
 	use 'ghillb/cybu.nvim'
-	use 'karb94/neoscroll.nvim'
 	use 'mfussenegger/nvim-dap'
 	use { 'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'} }
 	use 'theHamsta/nvim-dap-virtual-text'
