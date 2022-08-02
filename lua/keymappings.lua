@@ -8,11 +8,11 @@ map('n', '<c-z>', '<Nop>', options )
 map('n', 'Q', '<Nop>', options )
 
 -- NORMAL MODE ----------
--- set LEADER key to space
-vim.g.mapleader = ' '
 
 map('n', '<C-z>', ':ZenMode<CR>', options)
+-- set LEADER key to space
 map('n', '<Space>', '<NOP>', options )
+vim.g.mapleader = ' '
 -- Format file
 map('n', '<C-f>', '<cmd>lua vim.lsp.buf.format({ async = true })<cr>', options)
 -- LSP
