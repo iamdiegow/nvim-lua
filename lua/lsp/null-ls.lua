@@ -20,6 +20,7 @@ null_ls.setup({
 			end
 		}),
 		code_actions.eslint_d,
+    formatting.black.with { extra_args = { "--fast" } },
 		formatting.prettier.with({
 			filetypes = {
 				"javascript",

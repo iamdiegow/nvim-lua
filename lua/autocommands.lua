@@ -6,10 +6,17 @@ vim.api.nvim_exec([[
   augroup END
 ]], false)
 
--- Prevent new line to start with comment -----
-vim.cmd([[
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-]])
+-- -- Prevent new line to start with comment -----
+-- vim.cmd([[
+-- 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+-- ]])
+
+-- Fixes Autocomment
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  callback = function()
+    vim.cmd "set formatoptions-=cro"
+  end,
+})
 
 -- get to last cursor position -----
 vim.cmd([[
