@@ -92,7 +92,9 @@ end
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
+
 		local status_ok, ts_utils = pcall(require, 'nvim-lsp-ts-utils')
+
 		if status_ok and ts_utils then
 			ts_utils.setup {
 				eslint_enable_code_actions = true,
@@ -102,10 +104,15 @@ M.on_attach = function(client, bufnr)
 				eslint_enable_diagnostics = true,
 				eslint_show_rule_id = true,
 			}
+			-- null-ls config
 			ts_utils.setup_client(client)
 		end
   end
+
+	require'nvim-navic'.attach(client, bufnr)
+
   lsp_keymaps(bufnr)
+
 	if vim.g.highlight_document then
   	lsp_highlight_document(client)
 	end

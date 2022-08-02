@@ -48,6 +48,10 @@ return packer.startup(function(use)
   use {'stevearc/dressing.nvim'}
 
 	-- Lsp
+	use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
+	}
   use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
