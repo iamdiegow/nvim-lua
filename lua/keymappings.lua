@@ -48,7 +48,7 @@ map('n', '<C-Left>', ':vertical resize -2<CR>', options )
 map('n', '<C-Right>', ':vertical resize +2<CR>', options )
 -- quickfix list
 map('n', '<]q>', ':cnext<CR>', options )
-map('n', '<[q>', 'cprev<CR>', options )
+map('n', '<[q>', ':cprev<CR>', options )
 map('n', '<C-q>', ':TroubleToggle<CR>', options )
 -- Telescope Fuzzy find file
 map('n', '<C-_>', ':lua require("telescope-config").fuzzy_find_file()<CR>', options )
