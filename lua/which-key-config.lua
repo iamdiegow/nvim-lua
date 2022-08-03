@@ -179,15 +179,20 @@ local normal_mappings = {
 	["h"] = {
 		name = "Hop & Highlight",
 		h = { '<cmd>let @/=""<CR>', "No Highlight" },
+		t = { '<cmd>lua require("utils").toggleCursorHighlight()<CR>', 'Toggle Cursor Highlight'},
+		c = { '<cmd>lua require("utils").toggleCursorLine()<CR>', 'Toggle Cursor Line'},
+		v = { '<cmd>lua require("utils").toggleCursorColumn()<CR>', 'Toggle Cursor Column'}
+	},
+	-- HOP
+	["w"] = {
+		name = "Hop",
 		w = { '<cmd>HopWord<CR>', "Hop Word" },
-		l = { '<cmd>HopLineStart<CR>', "Hop Line Start" },
+		e = { '<cmd>HopLineStart<CR>', "Hop Line Start" },
+		e = { '<cmd>HopWordCurrentLine<CR>', "Hop Word Line" },
 		d = { '<cmd>HopLine<CR>', "Hop Line" },
 		p = { '<cmd>HopPattern<CR>', "Hop Pattern" },
 		a = { '<cmd>HopChar1<CR>', "Hop Char 1" },
 		s = { '<cmd>Pounce<CR>', "Hop Char 2" },
-		t = { '<cmd>lua require("utils").toggleCursorHighlight()<CR>', 'Toggle Cursor Highlight'},
-		c = { '<cmd>lua require("utils").toggleCursorLine()<CR>', 'Toggle Cursor Line'},
-		v = { '<cmd>lua require("utils").toggleCursorColumn()<CR>', 'Toggle Cursor Column'}
 	},
 	-- TROUBLE
 	["t"] = {
