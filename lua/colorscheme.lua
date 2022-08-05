@@ -1,6 +1,10 @@
 local vscodeTheme = function()
 	-- 'light' | 'dark'
-	vim.g.vscode_style = "dark"
+	vim.o.background = 'dark'
+	require('vscode').setup({
+		transparent = false,
+		italic_comments = true
+	})
 	vim.cmd([[ colorscheme vscode ]])
 end
 
@@ -34,13 +38,15 @@ end
 
 local githubTheme = function()
 	require('github-theme').setup({
-		comment_style = "none",
-		keyword_style = "none",
-		function_style = "none",
+		comment_style = "italic",
+		keyword_style = "bold",
+		function_style = "bold",
 		variable_style = "none",
+		msg_area_style = "italic,bold",
 	 	transparent = true,
-		dark_sidebar = false,
-		dark_float = false
+		dark_sidebar = true,
+		dark_float = true,
+		theme_style = "dimmed"
 	})
 end
 
