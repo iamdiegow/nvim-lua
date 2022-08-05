@@ -14,6 +14,7 @@ local bookmarks = {
 	"https://stackoverflow.com/",
 	"https://github.com/kyazdani42/nvim-tree.lua",
 	"https://github.com/hoob3rt/lualine.nvim",
+	"https://github.com/nvim-telescope/telescope.nvim",
   "https://github.com/rockerBOO/awesome-neovim"
 }
 

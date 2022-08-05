@@ -18,7 +18,7 @@ local verticalConfig = {
 			mirror = true,
 			prompt_position = 'top',
 			width = 90,
-			height = 10
+			height = 15
 		},
 	},
 	previewer = false
@@ -45,7 +45,7 @@ require("telescope").setup {
 		initial_mode = "insert",
 		use_less = false,
 		set_env = { ["COLORTERM"] = "truecolor" },
-		file_ignore_patterns = {"node_modules"},
+		file_ignore_patterns = {"node_modules", ".git/"},
     color_devicons = true,
 		winblend = 0,
 		-- 'flex' | 'horizontal' | 'vertical' | 'bottom_pane'
@@ -79,13 +79,25 @@ require("telescope").setup {
 				["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-c>"] = actions.close,
+				-- M is the Alt key
 				["<M-p>"] = actions_layout.toggle_preview
 			}
     },
   },
 	pickers = {
 		find_files = vim.tbl_deep_extend("force", verticalConfig, {
-			layout_config = { vertical = { height = 15 }}
+			prompt_title = " Project files",
+			layout_config = { vertical = { height = 15 }},
+			hidden = true,
+			find_command = {
+				"rg",
+				"--files",
+				"--hidden"
+			},
+			file_ignore_patterns = {
+				".git/",
+				"node_modules/"
+			}
 		}),
 		buffers = vim.tbl_deep_extend("force", verticalConfig, {
 			show_all_buffers = true,
@@ -99,7 +111,7 @@ require("telescope").setup {
 				}
 			}
 		}),
-		oldfiles = ivyConfig,
+		oldfiles = verticalConfig,
 		lsp_document_symbols = ivyConfig
 	}
 }
