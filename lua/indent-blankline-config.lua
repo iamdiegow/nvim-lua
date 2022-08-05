@@ -17,7 +17,9 @@ vim.cmd[[
 
 indent_blankline.setup {
 	enabled = false,
-	char = "┆",
+	-- char = "┆",
+	char = "▏",
+	char_blankline = "",
 	context_char = "|",
 	buftype_exclude = {"terminal", "nofile"},
 	filetype_exclude = {
