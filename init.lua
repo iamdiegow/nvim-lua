@@ -45,6 +45,7 @@ require('browse-config')
 require('dressing-config')
 require('diffview-config')
 require('neogit-config')
+require('rest-config')
 
 -- LSP
 require('dap-config')

@@ -110,6 +110,10 @@ return packer.startup(function(use)
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
 	use 'vim-test/vim-test'
 	use {
+		"NTBBloodbath/rest.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	}
+	use {
   	'lewis6991/gitsigns.nvim',
   	requires = {
 			'nvim-lua/plenary.nvim'
