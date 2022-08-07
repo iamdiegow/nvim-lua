@@ -57,8 +57,7 @@ return packer.startup(function(use)
     requires = "neovim/nvim-lspconfig"
 	}
   use 'neovim/nvim-lspconfig'
-	use 'williamboman/nvim-lsp-installer'
-	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+	use "jose-elias-alvarez/typescript.nvim"
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'onsails/lspkind-nvim'
   use 'L3MON4D3/LuaSnip'

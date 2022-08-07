@@ -24,7 +24,7 @@ M.setup = function()
     -- },
 		signs = false,
     update_in_insert = true,
-    underline = true,
+    underline = false,
     severity_sort = true,
     float = {
       focusable = true,
@@ -77,20 +77,10 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false
 
-		local status_ok, ts_utils = pcall(require, 'nvim-lsp-ts-utils')
-
-		if status_ok and ts_utils then
-			ts_utils.setup {
-				eslint_enable_code_actions = true,
-				eslint_enable_disable_comments = true,
-				eslint_bin = "eslint_d",
-				eslint_config_fallback = nil,
-				eslint_enable_diagnostics = true,
-				eslint_show_rule_id = true,
-			}
-			-- null-ls config
-			ts_utils.setup_client(client)
-		end
+		require('typescript').setup({
+	    disable_commands = false,
+			debug = false,
+		})
   end
 
   vim.g.navic_silence = true
