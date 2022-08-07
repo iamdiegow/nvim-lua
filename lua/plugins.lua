@@ -49,6 +49,10 @@ return packer.startup(function(use)
 
 	-- Lsp
 	use {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim"
+	}
+	use {
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig"
 	}

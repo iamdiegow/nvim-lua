@@ -21,7 +21,7 @@ null_ls.setup({
 		}),
 		code_actions.eslint_d,
     formatting.black.with { extra_args = { "--fast" } },
-		formatting.prettier.with({
+		formatting.prettierd.with({
 			filetypes = {
 				"javascript",
 				"javascriptreact",

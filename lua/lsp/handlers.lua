@@ -24,10 +24,10 @@ M.setup = function()
     -- },
 		signs = false,
     update_in_insert = true,
-    underline = false,
+    underline = true,
     severity_sort = true,
     float = {
-      focusable = false,
+      focusable = true,
       style = "minimal",
       border = "rounded",
       source = "always",
