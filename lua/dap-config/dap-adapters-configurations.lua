@@ -3,17 +3,23 @@ if not dap_status_ok then
   return
 end
 
+local masonPath = '/.local/share/nvim/mason/packages'
+
 -- ADAPTERS
 dap.adapters.node2 = {
   type = 'executable',
   command = 'node',
-  args = {os.getenv('HOME') .. '/dap/vscode-node-debug2/out/src/nodeDebug.js'}
+  args = {
+		os.getenv('HOME') .. masonPath .. '/node-debug2-adapter/out/src/nodeDebug.js'
+	}
 }
 
 dap.adapters.chrome = {
-    type = "executable",
-    command = "node",
-    args = {os.getenv("HOME") .. "/dap/vscode-chrome-debug/out/src/chromeDebug.js"}
+	type = "executable",
+	command = "node",
+	args = {
+		os.getenv("HOME") .. masonPath ..  "/chrome-debug-adapter/out/src/chromeDebug.js"
+	}
 }
 
 -- OPTIONS
