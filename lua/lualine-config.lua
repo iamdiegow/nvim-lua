@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local status_ok, navic = pcall(require, 'nvim-navic')
+local status_ok, nvim_navic = pcall(require, 'nvim-navic')
 if not status_ok then
 	return
 end
@@ -90,6 +90,8 @@ local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+local navic = { nvim_navic.get_location, cond = nvim_navic.is_available }
+
 lualine.setup({
   options = {
     icons_enabled = true,
@@ -110,7 +112,7 @@ lualine.setup({
     lualine_a = { { "mode" }, { "paste" } },
 		lualine_b = { filename, filetype },
     lualine_c = {},
-    lualine_x = {{ navic.get_location, cond = navic.is_available }, branch },
+    lualine_x = { navic, branch },
 		lualine_y = { diff },
     lualine_z = { diagnostics }
   },
