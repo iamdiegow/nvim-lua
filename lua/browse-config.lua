@@ -12,9 +12,14 @@ local bookmarks = {
 	"https://udemy.com",
 	"https://frontendmasters.com",
 	"https://stackoverflow.com/",
+	"https://you.com/code",
+	"https://www.reddit.com/r/neovim/",
+	"https://this-week-in-neovim.org/",
+	"https://dev.to/",
 	"https://github.com/kyazdani42/nvim-tree.lua",
 	"https://github.com/hoob3rt/lualine.nvim",
 	"https://github.com/nvim-telescope/telescope.nvim",
+	"https://github.com/hrsh7th/nvim-cmp",
   "https://github.com/rockerBOO/awesome-neovim"
 }
 
