@@ -3,6 +3,11 @@ if not status_ok then
 	return
 end
 
+local status_ok, navic = pcall(require, 'nvim-navic')
+if not status_ok then
+	return
+end
+
 local window_width_limit = 60
 
 local function diff_source()
@@ -105,7 +110,7 @@ lualine.setup({
     lualine_a = { { "mode" }, { "paste" } },
 		lualine_b = { filename, filetype },
     lualine_c = {},
-    lualine_x = { branch },
+    lualine_x = {{ navic.get_location, cond = navic.is_available }, branch },
 		lualine_y = { diff },
     lualine_z = { diagnostics }
   },
