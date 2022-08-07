@@ -17,7 +17,7 @@ dressing.setup({
     anchor = "SW",
     border = "rounded",
     -- 'editor' and 'win' will default to being centered
-    relative = "cursor",
+    relative = "editor",
     -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     prefer_width = 40,
     width = nil,
@@ -26,7 +26,7 @@ dressing.setup({
     max_width = { 140, 0.9 },
     min_width = { 20, 0.2 },
     -- Window transparency (0-100)
-    winblend = 10,
+    winblend = 0,
     -- Change default highlight groups (see :help winhl)
     winhighlight = "",
     override = function(conf)
@@ -62,7 +62,7 @@ dressing.setup({
         filetype = "DressingSelect",
       },
       win_options = {
-        winblend = 10,
+        winblend = 0,
       },
       max_width = 80,
       max_height = 40,
@@ -77,7 +77,7 @@ dressing.setup({
       -- 'editor' and 'win' will default to being centered
       relative = "editor",
       -- Window transparency (0-100)
-      winblend = 10,
+      winblend = 0,
       -- Change default highlight groups (see :help winhl)
       winhighlight = "",
       -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
