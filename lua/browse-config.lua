@@ -16,6 +16,7 @@ local bookmarks = {
 	"https://www.reddit.com/r/neovim/",
 	"https://this-week-in-neovim.org/",
 	"https://dev.to/",
+	"https://docs.nestjs.com/",
 	"https://github.com/kyazdani42/nvim-tree.lua",
 	"https://github.com/hoob3rt/lualine.nvim",
 	"https://github.com/nvim-telescope/telescope.nvim",
