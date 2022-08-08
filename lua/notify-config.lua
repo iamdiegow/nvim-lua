@@ -3,14 +3,12 @@ if not status_ok then
   return
 end
 
-local icons = require "user.icons"
-
 notify.setup {
   stages = "static",
   on_open = nil,
   on_close = nil,
   render = "minimal",
-  timeout = 150,
+  timeout = 4000,
   background_colour = "Normal",
   minimum_width = 10,
 }
