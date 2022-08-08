@@ -67,10 +67,10 @@ M.on_attach = function(client, bufnr)
 		})
 
 		local opts = { noremap = true, silent = true }
-		local map = vim.api.nvim_buf_set_keymap
-		map(bufnr, "n", "gM", "<cmd>TypescriptAddMissingImports<CR>", opts)
-		map(bufnr, "n", "gR", "<cmd>TypescriptRemoveUnused<CR>", opts)
-		map(bufnr, "n", "gO", "<cmd>TypescriptOrganizeImports<CR>", opts)
+		local map = vim.api.nvim_set_keymap
+		map("n", "gM", "<cmd>TypescriptAddMissingImports<CR>", opts)
+		map("n", "gR", "<cmd>TypescriptRemoveUnused<CR>", opts)
+		map("n", "gO", "<cmd>TypescriptOrganizeImports<CR>", opts)
   end
 
   vim.g.navic_silence = true
