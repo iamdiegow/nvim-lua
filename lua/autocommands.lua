@@ -46,7 +46,7 @@ vim.cmd([[
 
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "dap-float", "dap-repl" },
+  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "dap-float", "dap-repl", "httpResult" },
   callback = function()
     vim.cmd [[
       nnoremap <silent> <buffer> q :close<CR>

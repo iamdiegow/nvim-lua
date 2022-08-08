@@ -53,8 +53,8 @@ end
 local materialTheme = function()
 	require('material').setup({
 		contrast = {
-			sidebars = true,
-			floating_windows = false,
+			sidebars = false,
+			floating_windows = true,
 			cursor_line = false,
 			non_current_window = false
 		},
@@ -66,16 +66,16 @@ local materialTheme = function()
 			strings = false
 		},
 		high_visibility = {
-			darker = true
+			darker = false
 		},
 		disable = {
 			colored_cursor = true,
-			borders = false
+			borders = true
 		},
-		lualine_style = "stealth"
+		lualine_style = "default"
 	})
 	-- 'darker' | 'oceanic' | 'palenight' | 'deep ocean'
-	vim.g.material_style = 'oceanic'
+	vim.g.material_style = 'darker'
 	vim.cmd([[ colorscheme material ]])
 end
 
