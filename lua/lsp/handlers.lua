@@ -103,8 +103,10 @@ M.toggle_diagnostics = function()
 	diagnostics_visible = not diagnostics_visible
 	if diagnostics_visible then
 		vim.diagnostic.hide(nil, 0)
+		require'notify'('diagnostics off', 'error', { render = 'minimal' })
 	else
 		vim.diagnostic.show(nil, 0)
+		require'notify'('diagnostics on', 'info', { render = 'minimal' })
 	end
 end
 
