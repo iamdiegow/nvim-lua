@@ -76,13 +76,6 @@ local filename = {
 	path = 0,
 	file_status = true,
 	shorting_target = 30,
-	fmt = function(str)
-		if(str == 'NvimTree_1[-]') then
-			return ''
-		else
-			return " " .. str
-		end
-	end,
 	component_separators = { left = '', right = '' },
 }
 
@@ -103,7 +96,8 @@ lualine.setup({
 		left_padding = 0,
 		right_padding = 0,
 		disabled_filetypes = {
-			"Outline"
+			"Outline",
+			"NvimTree"
 		},
 		always_divide_middle = true,
 		globalstatus = true
