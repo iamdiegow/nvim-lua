@@ -112,7 +112,8 @@ require("telescope").setup {
 			}
 		}),
 		oldfiles = verticalConfig,
-		lsp_document_symbols = ivyConfig
+		lsp_document_symbols = ivyConfig,
+		lsp_references = ivyConfig
 	}
 }
 
