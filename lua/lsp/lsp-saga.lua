@@ -30,8 +30,8 @@ saga.init_lsp_saga({
 		split = "i",
 		tabe = "t",
 		quit = "q",
-		scroll_down = "<C-f>",
-		scroll_up = "<C-b>", -- quit can be a table
+		scroll_down = "<C-j>",
+		scroll_up = "<C-k>",
 	},
 	code_action_keys = {
 		quit = "q",
@@ -50,9 +50,9 @@ saga.init_lsp_saga({
 	show_outline = {
 		win_position = 'right',
 		win_with = '',
-		win_width = 30,
+		win_width = 25,
 		auto_enter = true,
-		auto_preview = true,
+		auto_preview = false,
 		virt_text = '┃',
 		jump_key = 'o',
 		auto_refresh = true,
