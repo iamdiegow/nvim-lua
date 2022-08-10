@@ -93,3 +93,13 @@ map('x', '<C-_>', ':CommentToggle<CR>', options )
 
 -- map("", "j", 'v:count ? "j" : "gj"', {expr = true})
 -- map("", "k", 'v:count ? "k" : "gk"', {expr = true})
+
+-- Autocommand keymappings
+
+-- Create only for Diffview filetype
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "DiffviewFiles",
+	callback = function()
+		map('n', 'Q', ':DiffviewClose<CR>', options)
+	end
+})

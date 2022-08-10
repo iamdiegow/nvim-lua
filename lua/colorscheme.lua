@@ -1,20 +1,3 @@
-local vscodeTheme = function()
-	-- 'light' | 'dark'
-	vim.o.background = 'dark'
-	require('vscode').setup({
-		transparent = false,
-		italic_comments = true
-	})
-	vim.cmd([[ colorscheme vscode ]])
-end
-
-local moonflyTheme = function()
-	vim.g.moonflyCursorColor = 1
-	vim.g.moonflyItalics = 1
-	vim.g.moonflyUnderlineMatchingParen = 1
-	vim.cmd([[ colorscheme moonfly ]])
-end
-
 local tokyonightTheme = function()
 	-- 'night' | 'storm' | 'day'
 	vim.g.tokyonight_style = "night"
@@ -83,6 +66,42 @@ local cobalt2Theme = function()
 	require('colorbuddy').colorscheme('cobalt2')
 end
 
+local catppuccinTheme = function()
+	require('catppuccin').setup({
+		transparent_background = false,
+		styles = {
+			comments = { "italic" },
+			conditionals = { "italic" },
+			loops = {},
+			functions = {},
+			keywords = { "bold" },
+			strings = { "bold" },
+			variables = {},
+			numbers = {},
+			booleans = { "bold" },
+			properties = {},
+			types = { "bold" },
+			operators = {}
+		},
+		integrations = {
+			nvimtree = {
+				enabled = true,
+				show_root = true,
+				transparent_panel = true
+			},
+			gitsigns = true,
+			lsp_trouble = true,
+			lsp_saga = true,
+			which_key = true,
+			neogit = true,
+			hop = true,
+			navic = true,
+			bufferline = false
+		}
+	})
+	vim.cmd([[colorscheme catppuccin]])
+end
+
 local selectTheme = {
 	moonfly = moonflyTheme,
 	vscode = vscodeTheme,
@@ -91,7 +110,8 @@ local selectTheme = {
 	dracula = draculaTheme,
 	github_dark = githubTheme,
 	cobalt2 = cobalt2Theme,
-	material = materialTheme
+	material = materialTheme,
+	catppuccin = catppuccinTheme
 }
 
 selectTheme[vim.g.color_theme]()

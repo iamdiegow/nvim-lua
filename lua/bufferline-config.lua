@@ -27,7 +27,7 @@ bufferline.setup {
 			end,
 			highlight = "Directory",
 			text_align = "left",
-			padding = 0
+			padding = 1
 		}},
 		diagnostics = false,
 		color_icons = true,

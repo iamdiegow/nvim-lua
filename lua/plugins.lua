@@ -38,14 +38,13 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 	use 'marko-cerovac/material.nvim'
 	-- Colorschemes
-	use 'Mofiqul/vscode.nvim'
 	use 'Mofiqul/dracula.nvim'
-	use 'bluz71/vim-moonfly-colors'
 	use 'folke/tokyonight.nvim'
   use 'lunarvim/darkplus.nvim'
 	use 'projekt0n/github-nvim-theme'
 	use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
   use {'stevearc/dressing.nvim'}
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- Lsp
 	use {

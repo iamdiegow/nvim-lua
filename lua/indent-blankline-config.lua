@@ -31,7 +31,7 @@ indent_blankline.setup {
 	},
 	show_current_context = vim.g.current_context,
 	show_current_context_start = vim.g.current_context,
-	show_trailing_blankline_indent = false,
+	show_trailing_blankline_indent = true,
 	show_first_indent_level = true,
 	space_char_blankline = " ",
 	show_end_of_line = true,
