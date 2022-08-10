@@ -9,7 +9,6 @@ map('n', 'Q', '<Nop>', options )
 map('n', 'gQ', '<Nop>', options )
 
 -- NORMAL MODE ----------
-
 map('n', '<C-z>', ':ZenMode<CR>', options)
 -- set LEADER key to space
 map('n', '<Space>', '<NOP>', options )
@@ -42,10 +41,10 @@ map('n', 'Y', 'y$', options )
 map('n', 'n', 'nzzzv', options )
 map('n', 'N', 'Nzzzv', options )
 -- Resize buffers with arrows
-map('n', '<C-Up>', ':resize -2<CR>', options )
-map('n', '<C-Down>', ':resize +2<CR>', options )
-map('n', '<C-Left>', ':vertical resize -2<CR>', options )
-map('n', '<C-Right>', ':vertical resize +2<CR>', options )
+map('n', '<C-Down>', ':resize -2<CR>', options )
+map('n', '<C-Up>', ':resize +2<CR>', options )
+map('n', '<C-Right>', ':vertical resize -2<CR>', options )
+map('n', '<C-Left>', ':vertical resize +2<CR>', options )
 -- quickfix list
 map('n', '<]q>', ':cnext<CR>', options )
 map('n', '<[q>', ':cprev<CR>', options )
