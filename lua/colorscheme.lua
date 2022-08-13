@@ -67,17 +67,18 @@ local cobalt2Theme = function()
 end
 
 local catppuccinTheme = function()
+	vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 	require('catppuccin').setup({
 		transparent_background = false,
 		styles = {
 			comments = { "italic" },
 			conditionals = { "italic" },
 			loops = {},
-			functions = {},
+			functions = { "bold" },
 			keywords = { "bold" },
 			strings = {},
 			variables = {},
-			numbers = {},
+			numbers = { "bold" },
 			booleans = { "bold" },
 			properties = {},
 			types = { "bold" },

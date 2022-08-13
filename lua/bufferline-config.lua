@@ -19,7 +19,7 @@ bufferline.setup {
     right_trunc_marker = "",
     max_name_length = 25,
     max_prefix_length = 13,
-    tab_size = 30,
+    tab_size = 10,
 		offsets = {{
 			filetype = "NvimTree",
 			text = function()
@@ -65,7 +65,8 @@ bufferline.setup {
   },
 	highlights = {
 		buffer_selected = {
-			gui = "bold"
-		}
+				bold = true,
+				italic = false,
+		},
 	}
 }
