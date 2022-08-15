@@ -67,7 +67,7 @@ local cobalt2Theme = function()
 end
 
 local catppuccinTheme = function()
-	vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+	vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 	local colors = require('catppuccin.palettes').get_palette()
 	colors.nono = "NONE"
 	require('catppuccin').setup({
@@ -78,7 +78,7 @@ local catppuccinTheme = function()
 			loops = {},
 			functions = { "bold" },
 			keywords = { "bold" },
-			strings = {},
+			strings = { "bold", "italic" },
 			variables = {},
 			numbers = { "bold" },
 			booleans = { "bold" },
