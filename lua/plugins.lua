@@ -78,7 +78,6 @@ return packer.startup(function(use)
 		'lalitmee/browse.nvim',
 		requires = { 'nvim-telescope/telescope.nvim' },
 	})
-	use 'ghillb/cybu.nvim'
 	use 'mfussenegger/nvim-dap'
 	use { 'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'} }
 	use 'theHamsta/nvim-dap-virtual-text'

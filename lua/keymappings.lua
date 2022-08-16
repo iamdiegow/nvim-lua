@@ -50,7 +50,7 @@ map('n', '<]q>', ':cnext<CR>', options )
 map('n', '<[q>', ':cprev<CR>', options )
 map('n', '<C-q>', ':TroubleToggle<CR>', options )
 -- Telescope Fuzzy find file
-map('n', '<C-_>', ':lua require("telescope-config").fuzzy_find_file()<CR>', options )
+map('n', '<C-/>', ':lua require("telescope-config").fuzzy_find_file()<CR>', options )
 -- move around wrap text with j-k
 map('n', 'j', 'gj', options )
 map('n', 'k', 'gk', options )
