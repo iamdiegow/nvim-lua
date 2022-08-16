@@ -68,7 +68,7 @@ local normal_mappings = {
 	["c"] = { "<cmd>Bwipeout<CR>", "Close Buffer" },
 	["s"] = { "<cmd>luafile %<CR>", "Source File" },
 	["="] = { "<cmd>:ColorizerToggle<CR>", "Toggle Colorizer" },
-	["e"] = { "<cmd>:NvimTreeToggle<CR>", "Open Explorer" }
+	["e"] = { "<cmd>:NvimTreeToggle<CR>", "Open Explorer" },
 	-- TELESCOPE
 	["f"] = {
 		name = "Telescope",
