@@ -72,7 +72,7 @@ require('nvim-tree').setup {
 					symlink_open = "",
 				},
 				git = {
-          unstaged = "",
+					unstaged = "",
 					staged = "✓",
 					unmerged = "",
 					renamed = "➜",
@@ -80,9 +80,9 @@ require('nvim-tree').setup {
 					deleted = "",
 					ignored = "◌",
 				},
-      },
+			},
 		},
-		special_files = {"README.md", "readme.md", "package.json"},
+		special_files = { "README.md", "readme.md", "package.json" },
 		symlink_destination = true
 	},
 	view = {
@@ -155,4 +155,3 @@ require('nvim-tree').setup {
 -- hide statusline when nvim tree is opened
 -- vim.cmd [[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree_1" | set laststatus=0 | else | set laststatus=3 | endif]]
 -- vim.cmd[[ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]]
-

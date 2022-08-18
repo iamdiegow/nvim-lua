@@ -13,9 +13,9 @@ vim.api.nvim_exec([[
 
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  callback = function()
-    vim.cmd "set formatoptions-=cro"
-  end,
+	callback = function()
+		vim.cmd "set formatoptions-=cro"
+	end,
 })
 
 -- get to last cursor position -----
@@ -46,7 +46,7 @@ vim.cmd([[
 
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = {
+	pattern = {
 		"qf",
 		"help",
 		"man",
@@ -58,24 +58,24 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"httpResult",
 		"lspsagaoutline"
 	},
-  callback = function()
-    vim.cmd [[
+	callback = function()
+		vim.cmd [[
       nnoremap <silent> <buffer> q :close<CR>
       set nobuflisted
     ]]
-  end,
+	end,
 })
 
 if vim.g.enable_winbar then
 	vim.api.nvim_create_autocmd(
-	{ "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
-	{
-		callback = function()
-			local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
-			if not status_ok then
-				require("winbar-config").get_winbar()
-			end
-		end,
-	}
-)
+		{ "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
+		{
+			callback = function()
+				local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
+				if not status_ok then
+					require("winbar-config").get_winbar()
+				end
+			end,
+		}
+	)
 end

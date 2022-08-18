@@ -10,7 +10,7 @@ vim.g.enable_winbar = false
 vim.g.diagnostics_hover_window = false
 
 -- |'tokyonight'|'darkplus'|'dracula'|'github_dark'|'cobalt2'|'material'|'catppuccin'
-vim.g.color_theme = 'catppuccin'
+vim.g.color_theme = 'material'
 
 -- Core
 require('plugins')
@@ -25,7 +25,7 @@ require('bufferline-config')
 require('nvim-tree-config')
 require('treesitter-config')
 require('telescope-config')
-require('nvim-comment-config')
+require('comment-config')
 require('indent-blankline-config')
 require('nvim-autopairs-config')
 require('nvim-ts-autotag-config')

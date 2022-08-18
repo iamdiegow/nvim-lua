@@ -5,11 +5,11 @@ end
 
 vim.opt.termguicolors = true
 
-vim.cmd[[
+vim.cmd [[
 	set listchars=tab:▒░,trail:▓,nbsp:░,eol:↲,space:•
 ]]
 
-vim.cmd[[
+vim.cmd [[
 	highlight IndentBlanklineContextStart guisp=#FFFFFF gui=bold
 	highlight IndentBlanklineContextChar guifg=#FFFFFF gui=bold
 ]]
@@ -21,7 +21,7 @@ indent_blankline.setup {
 	char = "▏",
 	char_blankline = "",
 	context_char = "|",
-	buftype_exclude = {"terminal", "nofile"},
+	buftype_exclude = { "terminal", "nofile" },
 	filetype_exclude = {
 		"help",
 		"dashboard",

@@ -6,63 +6,63 @@ if vim.g.diagnostics_hover_window == true then
 end
 
 M.setup = function()
-  local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
-  }
+	local signs = {
+		{ name = "DiagnosticSignError", text = "" },
+		{ name = "DiagnosticSignWarn", text = "" },
+		{ name = "DiagnosticSignHint", text = "" },
+		{ name = "DiagnosticSignInfo", text = "" },
+	}
 
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-  end
+	for _, sign in ipairs(signs) do
+		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+	end
 
-  local config = {
+	local config = {
 		virtual_text = false,
-    -- signs = {
-    --   active = signs,
-    -- },
+		-- signs = {
+		--   active = signs,
+		-- },
 		signs = false,
-    update_in_insert = true,
-    underline = false,
-    severity_sort = true,
-    float = {
-      focusable = true,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
-    },
-  }
+		update_in_insert = true,
+		underline = false,
+		severity_sort = true,
+		float = {
+			focusable = true,
+			style = "minimal",
+			border = "rounded",
+			source = "always",
+			header = "",
+			prefix = "",
+		},
+	}
 
-  vim.diagnostic.config(config)
+	vim.diagnostic.config(config)
 
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-  })
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+		border = "rounded",
+	})
 
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-  })
+	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+		border = "rounded",
+	})
 end
 
 local function lsp_keymaps(bufnr)
-  local opts = { noremap = true, silent = true }
+	local opts = { noremap = true, silent = true }
 	local map = vim.api.nvim_buf_set_keymap
-  map(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  map(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	map(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+	map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	map(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.server_capabilities.document_formatting = false
+	if client.name == "tsserver" then
+		client.server_capabilities.document_formatting = false
 
 		require('typescript').setup({
-	    disable_commands = false,
+			disable_commands = false,
 			debug = false,
 		})
 
@@ -71,19 +71,19 @@ M.on_attach = function(client, bufnr)
 		map("n", "gM", "<cmd>TypescriptAddMissingImports<CR>", opts)
 		map("n", "gR", "<cmd>TypescriptRemoveUnused<CR>", opts)
 		map("n", "gO", "<cmd>TypescriptOrganizeImports<CR>", opts)
-  end
+	end
 
-  vim.g.navic_silence = true
-	require'nvim-navic'.attach(client, bufnr)
+	vim.g.navic_silence = true
+	require 'nvim-navic'.attach(client, bufnr)
 
-  lsp_keymaps(bufnr)
+	lsp_keymaps(bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
-  return
+	return
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
@@ -93,10 +93,10 @@ M.toggle_diagnostics = function()
 	diagnostics_visible = not diagnostics_visible
 	if diagnostics_visible then
 		vim.diagnostic.hide(nil, 0)
-		require'notify'('diagnostics off', 'error', { render = 'minimal' })
+		require 'notify' ('diagnostics off', 'error', { render = 'minimal' })
 	else
 		vim.diagnostic.show(nil, 0)
-		require'notify'('diagnostics on', 'info', { render = 'minimal' })
+		require 'notify' ('diagnostics on', 'info', { render = 'minimal' })
 	end
 end
 

@@ -21,7 +21,7 @@ null_ls.setup({
 		}),
 		code_actions.eslint_d,
 		code_actions.gitsigns,
-    formatting.black.with { extra_args = { "--fast" } },
+		formatting.black.with { extra_args = { "--fast" } },
 		formatting.prettierd.with({
 			filetypes = {
 				"javascript",
@@ -36,7 +36,8 @@ null_ls.setup({
 				"graphql"
 			},
 			prefer_local = "node_modules/.bin"
-		})
+		}),
+		formatting.stylua
 	},
 	update_in_insert = true
 })

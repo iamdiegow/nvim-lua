@@ -11,14 +11,14 @@ end
 local window_width_limit = 60
 
 local function diff_source()
-  local gitsigns = vim.b.gitsigns_status_dict
-  if gitsigns then
-    return {
-      added = gitsigns.added,
-      modified = gitsigns.changed,
-      removed = gitsigns.removed,
-    }
-  end
+	local gitsigns = vim.b.gitsigns_status_dict
+	if gitsigns then
+		return {
+			added = gitsigns.added,
+			modified = gitsigns.changed,
+			removed = gitsigns.removed,
+		}
+	end
 end
 
 local hide_in_width = function()
@@ -26,16 +26,16 @@ local hide_in_width = function()
 end
 
 local conditions = {
-  buffer_not_empty = function()
-    return vim.fn.empty(vim.fn.expand "%:t") ~= 1
-  end,
-  hide_in_width = function()
-    return vim.fn.winwidth(0) > window_width_limit
-  end
+	buffer_not_empty = function()
+		return vim.fn.empty(vim.fn.expand "%:t") ~= 1
+	end,
+	hide_in_width = function()
+		return vim.fn.winwidth(0) > window_width_limit
+	end
 }
 
 local filetype = {
- "filetype",
+	"filetype",
 	colored = true,
 	icon_only = true,
 	icon = {
@@ -46,7 +46,7 @@ local filetype = {
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	sections = {"error", "warn"},
+	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
 	colored = true,
 	update_in_insert = false,
@@ -80,17 +80,17 @@ local filename = {
 }
 
 local spaces = function()
-  return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
 local navic = { nvim_navic.get_location, cond = nvim_navic.is_available }
 
 lualine.setup({
-  options = {
-    icons_enabled = true,
-    theme = vim.g.color_theme,
-    -- component_separators = { left = "", right = "" },
-    -- section_separators = { left = "", right = "" },
+	options = {
+		icons_enabled = true,
+		theme = vim.g.color_theme,
+		-- component_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
 		component_separators = { left = '', right = '' },
 		section_separators = { left = '', right = '' },
 		left_padding = 0,
@@ -101,25 +101,25 @@ lualine.setup({
 		},
 		always_divide_middle = true,
 		globalstatus = true
-  },
-  sections = {
-    lualine_a = { { "mode" }, { "paste" } },
+	},
+	sections = {
+		lualine_a = { { "mode" }, { "paste" } },
 		lualine_b = { filename, filetype },
-    lualine_c = {},
-    lualine_x = { navic, branch },
+		lualine_c = {},
+		lualine_x = { navic, branch },
 		lualine_y = { diff },
-    lualine_z = { diagnostics }
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
-  },
-  tabline = {},
-  extensions = {},
+		lualine_z = { diagnostics }
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {},
+	extensions = {},
 })
 
 vim.cmd([[

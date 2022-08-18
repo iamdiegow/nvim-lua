@@ -1,6 +1,6 @@
 local dap_ui_status_ok, dapVirtualText = pcall(require, "nvim-dap-virtual-text")
 if not dap_ui_status_ok then
-  return
+	return
 end
 
 -- Enable virtual text

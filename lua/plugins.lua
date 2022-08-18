@@ -99,8 +99,8 @@ return packer.startup(function(use)
 	  	requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
 	use 'famiu/bufdelete.nvim'
-	use 'terrortylor/nvim-comment'
 	use 'lukas-reineke/indent-blankline.nvim'
+	use 'numToStr/Comment.nvim'
 	use 'windwp/nvim-autopairs'
 	use {
 		'windwp/nvim-ts-autotag',

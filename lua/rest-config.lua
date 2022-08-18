@@ -1,6 +1,6 @@
 local status_ok, rest_nvim = pcall(require, "rest-nvim")
 if not status_ok then
-  return
+	return
 end
 
 rest_nvim.setup({
@@ -23,12 +23,11 @@ rest_nvim.setup({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "http",
-    callback = function ()
-        local buff = tonumber(vim.fn.expand("<abuf>"), 10)
-        vim.keymap.set("n", "<leader>l", rest_nvim.run, { noremap = true, buffer = buff })
-        vim.keymap.set("n", "<leader>h", rest_nvim.last, { noremap = true, buffer = buff })
-        vim.keymap.set("n", "<leader>p", function () rest_nvim.run(true) end, { noremap = true, buffer = buff })
-    end
+	pattern = "http",
+	callback = function()
+		local buff = tonumber(vim.fn.expand("<abuf>"), 10)
+		vim.keymap.set("n", "<leader>l", rest_nvim.run, { noremap = true, buffer = buff })
+		vim.keymap.set("n", "<leader>h", rest_nvim.last, { noremap = true, buffer = buff })
+		vim.keymap.set("n", "<leader>p", function() rest_nvim.run(true) end, { noremap = true, buffer = buff })
+	end
 })
-

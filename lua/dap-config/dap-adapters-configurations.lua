@@ -1,15 +1,15 @@
 local dap_status_ok, dap = pcall(require, "dap")
 if not dap_status_ok then
-  return
+	return
 end
 
 local masonPath = '/.local/share/nvim/mason/packages'
 
 -- ADAPTERS
 dap.adapters.node2 = {
-  type = 'executable',
-  command = 'node',
-  args = {
+	type = 'executable',
+	command = 'node',
+	args = {
 		os.getenv('HOME') .. masonPath .. '/node-debug2-adapter/out/src/nodeDebug.js'
 	}
 }
@@ -18,27 +18,27 @@ dap.adapters.chrome = {
 	type = "executable",
 	command = "node",
 	args = {
-		os.getenv("HOME") .. masonPath ..  "/chrome-debug-adapter/out/src/chromeDebug.js"
+		os.getenv("HOME") .. masonPath .. "/chrome-debug-adapter/out/src/chromeDebug.js"
 	}
 }
 
 -- OPTIONS
-vim.fn.sign_define('DapBreakpoint', {text='', texthl='LspDiagnosticsError', linehl='', numhl=''})
-vim.fn.sign_define('DapStopped', {text='', texthl='LspDiagnosticsInformation', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'LspDiagnosticsError', linehl = '', numhl = '' })
+vim.fn.sign_define('DapStopped', { text = '', texthl = 'LspDiagnosticsInformation', linehl = '', numhl = '' })
 dap.defaults.fallback.focus_terminal = true
 
 -- DAP CONFIGURATIONS
 
 -- NODE
 dap.configurations.javascript = {
-  {
-    name = 'Launch',
-    type = 'node2',
-    request = 'launch',
-    program = '${file}',
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = 'inspector',
+	{
+		name = 'Launch',
+		type = 'node2',
+		request = 'launch',
+		program = '${file}',
+		cwd = vim.fn.getcwd(),
+		sourceMaps = true,
+		protocol = 'inspector',
 		skipFiles = {
 			'<node_internals>/**',
 			'node_modules/**',
@@ -46,16 +46,16 @@ dap.configurations.javascript = {
 			'node_modules/**/*.js',
 			'<eval>/**/*.js'
 		},
-    console = 'integratedTerminal',
-  },
-  {
-    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-    name = 'Attach to process',
-    type = 'node2',
-    request = 'attach',
+		console = 'integratedTerminal',
+	},
+	{
+		-- For this to work you need to make sure the node process is started with the `--inspect` flag.
+		name = 'Attach to process',
+		type = 'node2',
+		request = 'attach',
 		protocol = 'inspector',
 		sourceMaps = true,
-    -- processId = require'dap.utils'.pick_process,
+		-- processId = require'dap.utils'.pick_process,
 		skipFiles = {
 			'<node_internals>/**',
 			'node_modules/**',
@@ -65,15 +65,15 @@ dap.configurations.javascript = {
 		},
 		port = 9229,
 		console = 'integratedTerminal'
-  }
+	}
 }
 
 dap.configurations.typescript = {
-  {
-    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-    name = 'Launch Typescript Program (ts-node)',
-    type = 'node2',
-    request = 'launch',
+	{
+		-- For this to work you need to make sure the node process is started with the `--inspect` flag.
+		name = 'Launch Typescript Program (ts-node)',
+		type = 'node2',
+		request = 'launch',
 		cwd = vim.loop.cwd(),
 		protocol = 'inspector',
 		sourceMaps = true,
@@ -87,12 +87,12 @@ dap.configurations.typescript = {
 			'node_modules/**/*.js',
 			'<eval>/**/*.js'
 		},
-  },
-  {
-    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-    name = 'Attach to process',
-    type = 'node2',
-    request = 'attach',
+	},
+	{
+		-- For this to work you need to make sure the node process is started with the `--inspect` flag.
+		name = 'Attach to process',
+		type = 'node2',
+		request = 'attach',
 		protocol = 'inspector',
 		sourceMaps = true,
 		skipFiles = {
@@ -104,15 +104,15 @@ dap.configurations.typescript = {
 		},
 		port = 9229,
 		console = 'integratedTerminal'
-  },
+	},
 	{
 		name = "Jest (Node2 with ts-node)",
 		type = "node2",
 		request = "launch",
 		cwd = vim.loop.cwd(),
-		runtimeArgs = {"--inspect-brk", "${workspaceFolder}/node_modules/.bin/jest"},
+		runtimeArgs = { "--inspect-brk", "${workspaceFolder}/node_modules/.bin/jest" },
 		runtimeExecutable = "node",
-		args = {"${file}", "--runInBand", "--coverage", "false"},
+		args = { "${file}", "--runInBand", "--coverage", "false" },
 		sourceMaps = true,
 		port = 9229,
 		skipFiles = {
@@ -173,13 +173,13 @@ dap.configurations.typescriptreact = { -- change to typescript if needed
 local M = {}
 
 function M.reload_continue()
-  package.loaded['dap/dap-config'] = nil
- 	require('dap/dap-config')
-  dap.continue()
+	package.loaded['dap/dap-config'] = nil
+	require('dap/dap-config')
+	dap.continue()
 end
 
 -- reload and then continue
 vim.keymap.set('n', '<Leader>dh',
-    '<cmd>lua require"dap/dap-config".reload_continue()<CR>', {noremap = false, silent = true})
+	'<cmd>lua require"dap/dap-config".reload_continue()<CR>', { noremap = false, silent = true })
 
 return M

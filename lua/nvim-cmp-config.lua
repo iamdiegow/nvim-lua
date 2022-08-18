@@ -7,7 +7,7 @@ end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
-  return
+	return
 end
 
 require("luasnip/loaders/from_vscode").lazy_load({ paths = "./lua/snippets" })
@@ -15,36 +15,36 @@ require("luasnip/loaders/from_vscode").lazy_load({ paths = "./lua/snippets" })
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+	local col = vim.fn.col "." - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
 local kind_icons = {
-  Text = "",
-  Method = "m",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
+	Text = "",
+	Method = "m",
+	Function = "",
+	Constructor = "",
+	Field = "",
+	Variable = "",
+	Class = "",
+	Interface = "",
+	Module = "",
+	Property = "",
+	Unit = "",
+	Value = "",
+	Enum = "",
+	Keyword = "",
+	Snippet = "",
+	Color = "",
+	File = "",
+	Reference = "",
+	Folder = "",
+	EnumMember = "",
+	Constant = "",
+	Struct = "",
+	Event = "",
+	Operator = "",
+	TypeParameter = "",
 }
 
 cmp.setup({
@@ -76,56 +76,56 @@ cmp.setup({
 		['<C-j>'] = cmp.mapping.select_next_item(),
 		['<C-k>'] = cmp.mapping.select_prev_item(),
 		['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.jumpable(1) then
-        luasnip.jump(1)
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif check_backspace() then
-        -- cmp.complete()
-        fallback()
-      else
-        fallback()
-      end
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.jumpable(1) then
+				luasnip.jump(1)
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			elseif luasnip.expandable() then
+				luasnip.expand()
+			elseif check_backspace() then
+				-- cmp.complete()
+				fallback()
+			else
+				fallback()
+			end
 		end),
 		['<S-Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
-					luasnip.jump(-1)
+				luasnip.jump(-1)
 			else
 				fallback()
 			end
-			end
+		end
 		),
 	}),
 	sources = cmp.config.sources({
-		{ name = 'nvim_lsp', keyword_length = 2 } ,
-    { name = 'luasnip' },
+		{ name = 'nvim_lsp', keyword_length = 2 },
+		{ name = 'luasnip' },
 		{ name = 'path', max_item_count = 3 }
 	}, {
 		{ name = 'buffer' },
 	}),
 	formatting = {
-    fields = { "menu", "kind", "abbr" },
-    format = function(entry, vim_item)
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      vim_item.menu = ({
-        nvim_lsp = "[lsp]",
-        luasnip = "[luasnip]",
-        buffer = "[buffer]",
-        path = "[path]",
-      })[entry.source.name]
-      return vim_item
-    end
+		fields = { "menu", "kind", "abbr" },
+		format = function(entry, vim_item)
+			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			vim_item.menu = ({
+				nvim_lsp = "[lsp]",
+				luasnip = "[luasnip]",
+				buffer = "[buffer]",
+				path = "[path]",
+			})[entry.source.name]
+			return vim_item
+		end
 	},
-  confirm_opts = {
-    behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
-  },
+	confirm_opts = {
+		behavior = cmp.ConfirmBehavior.Replace,
+		select = false,
+	},
 	experimental = {
 		ghost_text = false
 	}

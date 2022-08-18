@@ -6,17 +6,17 @@ end
 saga.init_lsp_saga({
 	border_style = "single",
 	saga_winblend = 0,
-	move_in_saga = { prev = '<C-k>',next = '<C-j>'},
+	move_in_saga = { prev = '<C-k>', next = '<C-j>' },
 	diagnostic_header = { " ", " ", " ", "ﴞ " },
 	show_diagnostic_source = true,
 	code_action_icon = "💡",
 	code_action_num_shortcut = true,
 	code_action_lightbulb = {
-    enable = true,
-    sign = false,
-    enable_in_insert = true,
-    sign_priority = 20,
-    virtual_text = true,
+		enable = true,
+		sign = false,
+		enable_in_insert = true,
+		sign_priority = 20,
+		virtual_text = true,
 	},
 	finder_icons = {
 		def = '  ',
@@ -41,11 +41,11 @@ saga.init_lsp_saga({
 	rename_in_select = true,
 	definition_preview_icon = "",
 	symbol_in_winbar = {
-			in_custom = false,
-			enable = false,
-			separator = ' ',
-			show_file = false,
-			click_support = false,
+		in_custom = false,
+		enable = false,
+		separator = ' ',
+		show_file = false,
+		click_support = false,
 	},
 	show_outline = {
 		win_position = 'right',
@@ -59,4 +59,3 @@ saga.init_lsp_saga({
 	},
 	server_filetype_map = {},
 })
-
