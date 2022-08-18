@@ -15,8 +15,8 @@ require("luasnip/loaders/from_vscode").lazy_load({ paths = "./lua/snippets" })
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
-	local col = vim.fn.col "." - 1
-	return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
 local kind_icons = {
@@ -49,7 +49,7 @@ local kind_icons = {
 
 cmp.setup({
 	completion = {
-		autocomplete = vim.g.autocomplete
+		autocomplete = vim.g.autocomplete,
 	},
 	snippet = {
 		expand = function(args)
@@ -63,19 +63,19 @@ cmp.setup({
 	view = {
 		entries = {
 			name = "custom",
-			selection_order = "near_cursor"
-		}
+			selection_order = "near_cursor",
+		},
 	},
 	mapping = cmp.mapping.preset.insert({
-		['<C-b>'] = cmp.mapping.scroll_docs(-2),
-		['<C-f>'] = cmp.mapping.scroll_docs(2),
-		['<C-Space>'] = cmp.mapping.complete(),
-		['<C-c>'] = cmp.mapping.abort(),
-		['<CR>'] = cmp.mapping.confirm({ select = true }),
-		['<C-l>'] = cmp.mapping.confirm({ select = true }),
-		['<C-j>'] = cmp.mapping.select_next_item(),
-		['<C-k>'] = cmp.mapping.select_prev_item(),
-		['<Tab>'] = cmp.mapping(function(fallback)
+		["<C-b>"] = cmp.mapping.scroll_docs(-2),
+		["<C-f>"] = cmp.mapping.scroll_docs(2),
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-c>"] = cmp.mapping.abort(),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<C-l>"] = cmp.mapping.confirm({ select = true }),
+		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-k>"] = cmp.mapping.select_prev_item(),
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.jumpable(1) then
@@ -91,7 +91,7 @@ cmp.setup({
 				fallback()
 			end
 		end),
-		['<S-Tab>'] = cmp.mapping(function(fallback)
+		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -99,15 +99,14 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end
-		),
+		end),
 	}),
 	sources = cmp.config.sources({
-		{ name = 'nvim_lsp', keyword_length = 2 },
-		{ name = 'luasnip' },
-		{ name = 'path', max_item_count = 3 }
+		{ name = "nvim_lsp", keyword_length = 2 },
+		{ name = "luasnip" },
+		{ name = "path", max_item_count = 3 },
 	}, {
-		{ name = 'buffer' },
+		{ name = "buffer" },
 	}),
 	formatting = {
 		fields = { "menu", "kind", "abbr" },
@@ -120,15 +119,15 @@ cmp.setup({
 				path = "[path]",
 			})[entry.source.name]
 			return vim_item
-		end
+		end,
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
 	experimental = {
-		ghost_text = false
-	}
+		ghost_text = false,
+	},
 })
 
 vim.cmd([[

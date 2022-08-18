@@ -1,9 +1,9 @@
-local status_ok, bufferline = pcall(require, 'bufferline')
+local status_ok, bufferline = pcall(require, "bufferline")
 if not status_ok then
 	return
 end
 
-bufferline.setup {
+bufferline.setup({
 	options = {
 		numbers = "none",
 		close_command = "bdelete! %d",
@@ -11,24 +11,26 @@ bufferline.setup {
 		left_mouse_command = "buffer %d",
 		middle_mouse_command = nil,
 		--"⎟ ⎜ ⎢ ⎜ ▏ ▊ ▋ ▉ ▎ ▍ ▋ ▍ ▎ "
-		indicator_icon = '',
+		indicator_icon = "",
 		buffer_close_icon = "",
 		modified_icon = "",
 		close_icon = "",
 		left_trunc_marker = "",
 		right_trunc_marker = "",
 		max_name_length = 25,
-		max_prefix_length = 13,
-		tab_size = 10,
-		offsets = { {
-			filetype = "NvimTree",
-			text = function()
-				return vim.fn.getcwd()
-			end,
-			highlight = "Directory",
-			text_align = "left",
-			padding = 1
-		} },
+		max_prefix_length = 15,
+		tab_size = 15,
+		offsets = {
+			{
+				filetype = "NvimTree",
+				text = function()
+					return vim.fn.getcwd()
+				end,
+				highlight = "Directory",
+				text_align = "left",
+				padding = 1,
+			},
+		},
 		diagnostics = false,
 		color_icons = true,
 		show_buffer_icons = true,
@@ -39,7 +41,7 @@ bufferline.setup {
 		separator_style = { "", "" },
 		enforce_regular_tabs = true,
 		always_show_bufferline = true,
-		sort_by = 'insert_after_current',
+		sort_by = "insert_after_current",
 		custom_areas = {
 			right = function()
 				local result = {}
@@ -61,12 +63,12 @@ bufferline.setup {
 				end
 				return result
 			end,
-		}
+		},
 	},
 	highlights = {
 		buffer_selected = {
 			bold = true,
 			italic = false,
 		},
-	}
-}
+	},
+})
