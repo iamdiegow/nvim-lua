@@ -1,5 +1,5 @@
-require'nvim-treesitter.configs'.setup({
-  ensure_installed = {
+require("nvim-treesitter.configs").setup({
+	ensure_installed = {
 		"javascript",
 		"typescript",
 		"css",
@@ -14,52 +14,52 @@ require'nvim-treesitter.configs'.setup({
 		"markdown",
 		"tsx",
 		"regex",
-		"yaml"
+		"yaml",
 	},
 	highlight = {
 		enable = true,
-		use_languagetree = true
-  },
+		use_languagetree = true,
+	},
 	indent = {
-    enable = true,
-		disable = {}
+		enable = true,
+		disable = {},
 	},
 	matchup = {
-    enable = false
-  },
+		enable = false,
+	},
 	select = {
-    enable = false,
-  },
-  rainbow = {
-    enable = vim.g.rainbow,
-    extended_mode = false,
-    max_file_lines = 1000,
+		enable = false,
+	},
+	rainbow = {
+		enable = vim.g.rainbow,
+		extended_mode = false,
+		max_file_lines = 1000,
 		colors = {
 			"orchid",
 			"lightskyblue",
-			"gold"
-		}
-  },
+			"gold",
+		},
+	},
 	autopairs = {
-		enable = true
+		enable = true,
 	},
 	context_commentstring = {
 		enable = true,
 		config = {
 			javascript = {
-        __default = '// %s',
-        jsx_element = '{/* %s */}',
-        jsx_fragment = '{/* %s */}',
-        jsx_attribute = '// %s',
-        comment = '// %s'
-      },
+				__default = "// %s",
+				jsx_element = "{/* %s */}",
+				jsx_fragment = "{/* %s */}",
+				jsx_attribute = "// %s",
+				comment = "// %s",
+			},
 			typescriptreact = {
-        __default = '// %s',
-        jsx_element = '{/* %s */}',
-        jsx_fragment = '{/* %s */}',
-        jsx_attribute = '// %s',
-        comment = '// %s'
-			}
-		}
-	}
+				__default = "// %s",
+				jsx_element = "{/* %s */}",
+				jsx_fragment = "{/* %s */}",
+				jsx_attribute = "// %s",
+				comment = "// %s",
+			},
+		},
+	},
 })
