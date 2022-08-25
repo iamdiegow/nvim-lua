@@ -58,7 +58,7 @@ local materialTheme = function()
 		lualine_style = "default"
 	})
 	-- 'darker' | 'oceanic' | 'palenight' | 'deep ocean'
-	vim.g.material_style = 'oceanic'
+	vim.g.material_style = 'palenight'
 	vim.cmd([[ colorscheme material ]])
 end
 
