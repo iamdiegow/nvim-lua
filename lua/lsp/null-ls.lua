@@ -20,7 +20,6 @@ null_ls.setup({
 			end
 		}),
 		code_actions.eslint_d,
-		code_actions.gitsigns,
 		formatting.black.with { extra_args = { "--fast" } },
 		formatting.prettierd.with({
 			filetypes = {
