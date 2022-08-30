@@ -20,71 +20,71 @@ local draculaTheme = function()
 end
 
 local githubTheme = function()
-	require('github-theme').setup({
+	require("github-theme").setup({
 		comment_style = "italic",
 		keyword_style = "bold",
 		function_style = "bold",
 		variable_style = "none",
 		msg_area_style = "italic,bold",
-	 	transparent = true,
+		transparent = true,
 		dark_sidebar = true,
 		dark_float = true,
-		theme_style = "dimmed"
+		theme_style = "dimmed",
 	})
 end
 
 local materialTheme = function()
-	require('material').setup({
+	require("material").setup({
 		contrast = {
 			sidebars = false,
 			floating_windows = true,
 			cursor_line = false,
-			non_current_window = false
+			non_current_window = false,
 		},
 		italics = {
 			comments = true,
 			variables = false,
 			keywords = true,
 			functions = false,
-			strings = false
+			strings = false,
 		},
 		high_visibility = {
-			darker = false
+			darker = false,
 		},
 		disable = {
 			colored_cursor = true,
-			borders = true
+			borders = true,
 		},
-		lualine_style = "default"
+		lualine_style = "default",
 	})
 	-- 'darker' | 'oceanic' | 'palenight' | 'deep ocean'
-	vim.g.material_style = 'palenight'
+	vim.g.material_style = "palenight"
 	vim.cmd([[ colorscheme material ]])
 end
 
 local cobalt2Theme = function()
-	require('colorbuddy').colorscheme('cobalt2')
+	require("colorbuddy").colorscheme("cobalt2")
 end
 
 local catppuccinTheme = function()
-	vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-	local colors = require('catppuccin.palettes').get_palette()
+	vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
+	local colors = require("catppuccin.palettes").get_palette()
 	colors.nono = "NONE"
-	require('catppuccin').setup({
+	require("catppuccin").setup({
 		transparent_background = true,
 		styles = {
 			comments = { "italic" },
-			conditionals = { "italic" },
+			conditionals = {},
 			loops = {},
 			functions = { "bold" },
 			keywords = { "bold" },
-			strings = { "bold", "italic" },
+			strings = {},
 			variables = {},
-			numbers = { "bold" },
-			booleans = { "bold" },
+			numbers = {},
+			booleans = {},
 			properties = {},
 			types = { "bold" },
-			operators = {}
+			operators = {},
 		},
 		integrations = {
 			nvimtree = {
@@ -99,7 +99,7 @@ local catppuccinTheme = function()
 			neogit = true,
 			hop = true,
 			navic = true,
-			bufferline = false
+			bufferline = false,
 		},
 		custom_highlights = {
 			Comment = { fg = colors.overlay1 },
@@ -110,7 +110,7 @@ local catppuccinTheme = function()
 			DiagnosticVirtualTextWarn = { bg = colors.none },
 			DiagnosticVirtualTextInfo = { bg = colors.none },
 			DiagnosticVirtualTextHint = { bg = colors.none },
-		}
+		},
 	})
 	vim.cmd([[colorscheme catppuccin]])
 end
@@ -122,7 +122,7 @@ local selectTheme = {
 	github_dark = githubTheme,
 	cobalt2 = cobalt2Theme,
 	material = materialTheme,
-	catppuccin = catppuccinTheme
+	catppuccin = catppuccinTheme,
 }
 
 selectTheme[vim.g.color_theme]()

@@ -106,7 +106,7 @@ lualine.setup({
 		lualine_a = { { "mode" }, { "paste" } },
 		lualine_b = { filename, filetype },
 		lualine_c = {},
-		lualine_x = { navic, branch },
+		lualine_x = { branch },
 		lualine_y = { diff },
 		lualine_z = { diagnostics }
 	},
