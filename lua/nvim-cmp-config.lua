@@ -77,7 +77,7 @@ cmp.setup({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.select_next_item()
+				cmp.confirm()
 			elseif luasnip.jumpable(1) then
 				luasnip.jump(1)
 			elseif luasnip.expand_or_jumpable() then
@@ -93,7 +93,7 @@ cmp.setup({
 		end),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.select_prev_item()
+				cmp.confirm()
 			elseif luasnip.jumpable(-1) then
 				luasnip.jump(-1)
 			else
