@@ -6,11 +6,11 @@ vim.g.format_on_save = false
 vim.g.autocomplete = false
 vim.g.rainbow = true
 vim.g.current_context = false
-vim.g.enable_winbar = true
+vim.g.enable_winbar = false
 vim.g.diagnostics_hover_window = false
 
 -- |'tokyonight'|'darkplus'|'dracula'|'github_dark'|'cobalt2'|'material'|'catppuccin'
-vim.g.color_theme = "cobalt2"
+vim.g.color_theme = "catppuccin"
 
 -- Core
 require("plugins")
