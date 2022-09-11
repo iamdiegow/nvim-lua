@@ -8,7 +8,6 @@ local ivyConfig = {
 		height = 15,
 	},
 	previewer = false,
-	winblend = 5
 }
 
 local verticalConfig = {
