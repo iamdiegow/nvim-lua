@@ -69,6 +69,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- Workflow
 	use("rcarriga/nvim-notify")
