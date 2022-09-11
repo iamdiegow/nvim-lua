@@ -31,8 +31,8 @@ wk.setup {
 		["<leader>"] = "LEADER"
 	},
 	window = {
-		border = "single",
-		position = "top",
+		border = "none",
+		position = "bottom",
 		margin = { 1, 2, 0, 4 },
 		padding = { 2, 2, 2, 2 },
 		winblend = 0

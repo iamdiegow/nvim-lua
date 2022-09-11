@@ -8,7 +8,6 @@ saga.init_lsp_saga({
 	saga_winblend = 0,
 	move_in_saga = { prev = '<C-k>', next = '<C-j>' },
 	diagnostic_header = { " ", " ", " ", "ﴞ " },
-	show_diagnostic_source = true,
 	code_action_icon = "💡",
 	code_action_num_shortcut = true,
 	code_action_lightbulb = {
@@ -39,7 +38,6 @@ saga.init_lsp_saga({
 	},
 	rename_action_quit = "<C-c>",
 	rename_in_select = true,
-	definition_preview_icon = "",
 	symbol_in_winbar = {
 		in_custom = false,
 		enable = false,
