@@ -49,16 +49,18 @@ local materialTheme = function()
 			strings = false,
 		},
 		high_visibility = {
-			darker = false,
+			darker = true,
 		},
 		disable = {
 			colored_cursor = true,
 			borders = true,
+			background = true,
+			term_colors = true
 		},
 		lualine_style = "default",
 	})
 	-- 'darker' | 'oceanic' | 'palenight' | 'deep ocean'
-	vim.g.material_style = "deep ocean"
+	vim.g.material_style = "oceanic"
 	vim.cmd([[ colorscheme material ]])
 end
 

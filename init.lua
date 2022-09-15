@@ -10,7 +10,7 @@ vim.g.enable_winbar = false
 vim.g.diagnostics_hover_window = false
 
 -- |'tokyonight'|'darkplus'|'dracula'|'github_dark'|'cobalt2'|'material'|'catppuccin'
-vim.g.color_theme = "catppuccin"
+vim.g.color_theme = "material"
 
 -- Core
 require("plugins")

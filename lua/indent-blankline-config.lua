@@ -1,21 +1,23 @@
-local status_ok, indent_blankline = pcall(require, 'indent_blankline')
+local status_ok, indent_blankline = pcall(require, "indent_blankline")
 if not status_ok then
 	return
 end
 
 vim.opt.termguicolors = true
 
-vim.cmd [[
-	set listchars=tab:▒░,trail:▓,nbsp:░,eol:↲,space:•
-]]
+--vim.cmd [[
+--	set listchars=tab:▒░,trail:▓,nbsp:░,eol:↲,space:•
+--]]
+vim.cmd([[
+	set listchars=tab:▸\ ,trail:▓,nbsp:░,eol:↲,space:•
+]])
 
-vim.cmd [[
+vim.cmd([[
 	highlight IndentBlanklineContextStart guisp=#FFFFFF gui=bold
 	highlight IndentBlanklineContextChar guifg=#FFFFFF gui=bold
-]]
+]])
 
-
-indent_blankline.setup {
+indent_blankline.setup({
 	enabled = false,
 	-- char = "┆",
 	char = "▏",
@@ -35,5 +37,5 @@ indent_blankline.setup {
 	show_first_indent_level = true,
 	space_char_blankline = " ",
 	show_end_of_line = true,
-	use_treesitter = true
-}
+	use_treesitter = true,
+})
