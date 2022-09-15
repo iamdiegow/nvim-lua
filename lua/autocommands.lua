@@ -36,13 +36,13 @@ vim.cmd([[
 ]])
 
 -- Set cursorline on active buffer
-vim.cmd([[
-	augroup CursorLineOnlyInActiveWindow
-		autocmd!
-		autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-		autocmd WinLeave * setlocal nocursorline
-	augroup END
-]])
+-- vim.cmd([[
+-- 	augroup CursorLineOnlyInActiveWindow
+-- 		autocmd!
+-- 		autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+-- 		autocmd WinLeave * setlocal nocursorline
+-- 	augroup END
+-- ]])
 
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {

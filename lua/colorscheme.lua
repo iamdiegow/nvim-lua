@@ -1,13 +1,21 @@
 local tokyonightTheme = function()
-	-- 'night' | 'storm' | 'day'
-	vim.g.tokyonight_style = "night"
-	vim.g.tokyonight_terminal_colors = false
-	vim.g.tokyonight_italic_comments = false
-	vim.g.tokyonight_italic_keywords = false
-	vim.g.tokyonight_italic_variables = false
-	vim.g.tokyonight_dark_sidebar = false
-	vim.g.tokyonight_dark_float = false
-	vim.g.tokyonight_lualine_bold = false
+	vim.g.tokyonight_style = "storm"
+	require("tokyonight").setup({
+		style = "night", -- 'night' | 'storm' | 'day'
+		transparent = true,
+		terminal_colors = true,
+		styles = {
+			comments = { italic = true },
+			keywords = { italic = true },
+			functions = { bold = true },
+			variables = { bold = false },
+			sidebars = "transparent", -- style for sidebars, see below
+			floats = "transparent", -- style for floating windows
+		},
+		sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+		dim_inactive = false, -- dims inactive windows
+		lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
+	})
 	vim.cmd([[ colorscheme tokyonight ]])
 end
 
@@ -55,7 +63,7 @@ local materialTheme = function()
 			colored_cursor = true,
 			borders = true,
 			background = true,
-			term_colors = true
+			term_colors = true,
 		},
 		lualine_style = "default",
 	})

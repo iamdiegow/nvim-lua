@@ -72,6 +72,7 @@ local normal_mappings = {
 	["f"] = {
 		name = "Telescope",
 		f = { "<cmd>Telescope find_files<CR>", "Find Files" },
+		["/"] = { "<cmd>lua require('telescope-config').fuzzy_find_file()<CR>", "Find Files" },
 		r = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
 		b = { "<cmd>Telescope buffers<CR>", "List Buffers" },
 		h = { "<cmd>Telescope help_tags<CR>", "Help Tags" },
