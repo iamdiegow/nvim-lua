@@ -45,6 +45,7 @@ require("diffview-config")
 require("neogit-config")
 require("rest-config")
 require("notify-config")
+require("neotest-config")
 
 -- LSP
 require("dap-config")

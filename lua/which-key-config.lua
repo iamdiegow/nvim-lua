@@ -1,6 +1,6 @@
-local wk = require 'which-key'
+local wk = require("which-key")
 
-wk.setup {
+wk.setup({
 	plugins = {
 		marks = true,
 		registers = true,
@@ -28,14 +28,14 @@ wk.setup {
 		["<space>"] = "SPC",
 		["<cr>"] = "RET",
 		["<tab>"] = "TAB",
-		["<leader>"] = "LEADER"
+		["<leader>"] = "LEADER",
 	},
 	window = {
 		border = "none",
 		position = "bottom",
 		margin = { 1, 2, 0, 4 },
 		padding = { 2, 2, 2, 2 },
-		winblend = 0
+		winblend = 0,
 	},
 	layout = {
 		height = { min = 4, max = 25 },
@@ -51,7 +51,7 @@ wk.setup {
 		i = { "j", "k" },
 		v = { "j", "k" },
 	},
-}
+})
 
 local normal_mode_options = {
 	mode = "n",
@@ -88,8 +88,8 @@ local normal_mappings = {
 			s = { "<cmd>Telescope git_status<CR>", "Git Status" },
 			c = { "<cmd>Telescope git_commits<CR>", "Git Commits" },
 			f = { "<cmd>Telescope git_files<CR>", "Git Files" },
-			b = { "<cmd>Telescope git_branches<CR>", "Git Branches" }
-		}
+			b = { "<cmd>Telescope git_branches<CR>", "Git Branches" },
+		},
 	},
 	-- BUFFERS
 	["b"] = {
@@ -148,7 +148,10 @@ local normal_mappings = {
 			"<cmd>Telescope diagnostics bufrn=0<CR>",
 			"Document Diagnostics",
 		},
-		l = { "<cmd>lua vim.diagnostic.open_float(0, {scope = 'line', border = 'double'})<CR>", "Show Line Diagnostics" },
+		l = {
+			"<cmd>lua vim.diagnostic.open_float(0, {scope = 'line', border = 'double'})<CR>",
+			"Show Line Diagnostics",
+		},
 		t = { "<cmd>lua require'lsp.handlers'.toggle_diagnostics()<CR>", "Toggle Diagnostics (Show/Hide)" },
 		w = {
 			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
@@ -185,48 +188,55 @@ local normal_mappings = {
 	["h"] = {
 		name = "Hop & Highlight",
 		h = { '<cmd>let @/=""<CR>', "No Highlight" },
-		t = { '<cmd>lua require("utils").toggleCursorHighlight()<CR>', 'Toggle Cursor Highlight' },
-		c = { '<cmd>lua require("utils").toggleCursorLine()<CR>', 'Toggle Cursor Line' },
-		v = { '<cmd>lua require("utils").toggleCursorColumn()<CR>', 'Toggle Cursor Column' }
+		t = { '<cmd>lua require("utils").toggleCursorHighlight()<CR>', "Toggle Cursor Highlight" },
+		c = { '<cmd>lua require("utils").toggleCursorLine()<CR>', "Toggle Cursor Line" },
+		v = { '<cmd>lua require("utils").toggleCursorColumn()<CR>', "Toggle Cursor Column" },
 	},
 	-- HOP
 	["w"] = {
 		name = "Hop",
-		w = { '<cmd>HopWord<CR>', "Hop Word" },
-		e = { '<cmd>HopLineStart<CR>', "Hop Line Start" },
-		l = { '<cmd>HopWordCurrentLine<CR>', "Hop Word Line" },
-		d = { '<cmd>HopLine<CR>', "Hop Line" },
-		p = { '<cmd>HopPattern<CR>', "Hop Pattern" },
-		a = { '<cmd>HopChar1<CR>', "Hop Char 1" },
-		s = { '<cmd>Pounce<CR>', "Hop Char 2" },
+		w = { "<cmd>HopWord<CR>", "Hop Word" },
+		e = { "<cmd>HopLineStart<CR>", "Hop Line Start" },
+		l = { "<cmd>HopWordCurrentLine<CR>", "Hop Word Line" },
+		d = { "<cmd>HopLine<CR>", "Hop Line" },
+		p = { "<cmd>HopPattern<CR>", "Hop Pattern" },
+		a = { "<cmd>HopChar1<CR>", "Hop Char 1" },
+		s = { "<cmd>Pounce<CR>", "Hop Char 2" },
 	},
 	-- TROUBLE
 	["t"] = {
 		name = "Trouble quickfix list",
-		t = { '<cmd>TroubleToggle<CR>', "Open Trouble" },
-		w = { '<cmd>Trouble lsp_workspace_diagnostics<CR>', "Workspace diagnostics" },
-		d = { '<cmd>Trouble lsp_document_diagnostics<CR>', "Document diagnostics" },
-		q = { '<cmd>Trouble quickfix<CR>', "Open quickfix list" },
-		r = { '<cmd>Trouble lsp_references<CR>', "Open Reference list" },
+		t = { "<cmd>TroubleToggle<CR>", "Open Trouble" },
+		w = { "<cmd>Trouble lsp_workspace_diagnostics<CR>", "Workspace diagnostics" },
+		d = { "<cmd>Trouble lsp_document_diagnostics<CR>", "Document diagnostics" },
+		q = { "<cmd>Trouble quickfix<CR>", "Open quickfix list" },
+		r = { "<cmd>Trouble lsp_references<CR>", "Open Reference list" },
 	},
 	-- TERMINAL
 	["x"] = {
 		name = "Terminal",
-		v = { '<cmd>1ToggleTerm size=40 direction=vertical<CR>', "Toggle Vertical 1" },
-		s = { '<cmd>2ToggleTerm size=15 direction=horizontal<CR>', "Toggle Horizontal 2" },
-		f = { '<cmd>3ToggleTerm direction=float<CR>', "Toggle Float 3" },
-		t = { '<cmd>4ToggleTerm direction=tab<CR>', "Toggle Tab 4" },
+		v = { "<cmd>1ToggleTerm size=40 direction=vertical<CR>", "Toggle Vertical 1" },
+		s = { "<cmd>2ToggleTerm size=15 direction=horizontal<CR>", "Toggle Horizontal 2" },
+		f = { "<cmd>3ToggleTerm direction=float<CR>", "Toggle Float 3" },
+		t = { "<cmd>4ToggleTerm direction=tab<CR>", "Toggle Tab 4" },
 		x = { '<cmd>exec "!node %"<CR>', "Execute file with node" },
-		g = { '<cmd>exec "!go run %"<CR>', "Execute file with go compiler" }
+		g = { '<cmd>exec "!go run %"<CR>', "Execute file with go compiler" },
 	},
 	-- VIM TEST
 	[";"] = {
-		name = "Vim Test",
-		n = { '<cmd>TestNearest -strategy=neovim<CR>', "Test Nearest" },
-		f = { '<cmd>TestFile -strategy=neovim<CR>', "Test File" },
-		s = { '<cmd>TestSuite -strategy=neovim<CR>', "Test Suite" },
-		l = { '<cmd>TestLast -strategy=neovim<CR>', "Test Last" },
-		v = { '<cmd>TestVisit -strategy=neovim<CR>', "Test Visit" },
+		name = "Vim NeoTest",
+		-- n = { "<cmd>TestNearest -strategy=neovim<CR>", "Test Nearest" },
+		-- f = { "<cmd>TestFile -strategy=neovim<CR>", "Test File" },
+		-- d = { "<cmd>TestSuite -strategy=neovim<CR>", "Test Suite" },
+		-- l = { "<cmd>TestLast -strategy=neovim<CR>", "Test Last" },
+		v = { "<cmd>TestVisit -strategy=neovim<CR>", "Test Visit" },
+		o = { '<cmd>lua require("neotest").output.open()<CR>', "Open Test Output" },
+		[";"] = { '<cmd>lua require("neotest").summary.toggle()<CR>', "Open Test Summary" },
+		f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>', "Test Run File" },
+		n = { '<cmd>lua require("neotest").run.run()<CR>', "Test Run Neareast" },
+		l = { '<cmd>lua require("neotest").run.run_last()<CR>', "Test Run Last" },
+		k = { '<cmd>lua require("neotest").jump.prev()<CR>', "Test Jump Previous" },
+		j = { '<cmd>lua require("neotest").jump.next()<CR>', "Test Jump Next" },
 	},
 	-- Indent Blankline and char rendering
 	["i"] = {
@@ -234,7 +244,7 @@ local normal_mappings = {
 		i = { "<cmd>set invlist<CR>", "Toggle white space and tabs" },
 		g = { "<cmd>IndentBlanklineToggle<CR>", "Toggle Indent Blanklie" },
 		d = { "<cmd>IndentBlanklineDisable<CR><cmd>set nolist<CR>", "Disable all" },
-		e = { "<cmd>IndentBlanklineEnable<CR><cmd>set list<CR>", "Enable all" }
+		e = { "<cmd>IndentBlanklineEnable<CR><cmd>set list<CR>", "Enable all" },
 	},
 	["n"] = {
 		name = "Numbers, nvim-tree and browse ",
@@ -255,16 +265,21 @@ local normal_mappings = {
 		c = { "<cmd>lua require'dap'.run_to_cursor()<CR>", "Run into cursor" },
 		t = { "<cmd>lua require'dap'.terminate()<CR>", "Terminate" },
 		i = { "<cmd>lua require'dap.ui.widgets'.hover()<CR>", "Hover" },
-		["?"] = { "<cmd>lua require'dap.ui.widgets'.centered_float(require'dap.ui.widgets'.scopes)<CR>", "Open centered float" },
+		["?"] = {
+			"<cmd>lua require'dap.ui.widgets'.centered_float(require'dap.ui.widgets'.scopes)<CR>",
+			"Open centered float",
+		},
 		K = { "<cmd>lua require'dap'.up()<CR>", "Go up" },
 		J = { "<cmd>lua require'dap'.down()<CR>", "Go down" },
 		r = { "<cmd>lua require'dap'.repl.open()<CR>", "Open REPL" },
 		h = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
-		d = { "<cmd>lua require'dap-config.dap-adapters-configurations'.reload_continue()<CR>",
-			"Continue and reload configurations" },
+		d = {
+			"<cmd>lua require'dap-config.dap-adapters-configurations'.reload_continue()<CR>",
+			"Continue and reload configurations",
+		},
 		S = { "<cmd>lua require'dapui'.toggle('sidebar')<CR>", "Toggle Dapui Sidebar" },
-		T = { "<cmd>lua require'dapui'.toggle('tray')<CR>", "Toggle Dapui Tray" }
-	}
+		T = { "<cmd>lua require'dapui'.toggle('tray')<CR>", "Toggle Dapui Tray" },
+	},
 }
 
 -- NORMAL MODE KEYBINDINGS
