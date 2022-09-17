@@ -30,14 +30,14 @@ end
 local githubTheme = function()
 	require("github-theme").setup({
 		comment_style = "italic",
-		keyword_style = "bold",
-		function_style = "bold",
+		keyword_style = "none",
+		function_style = "none",
 		variable_style = "none",
 		msg_area_style = "italic,bold",
 		transparent = true,
-		dark_sidebar = true,
-		dark_float = true,
-		theme_style = "dimmed",
+		dark_sidebar = false,
+		dark_float = false,
+		theme_style = "dark",
 	})
 end
 
