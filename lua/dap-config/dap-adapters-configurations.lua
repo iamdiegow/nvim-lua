@@ -173,13 +173,13 @@ dap.configurations.typescriptreact = { -- change to typescript if needed
 local M = {}
 
 function M.reload_continue()
-	package.loaded['dap/dap-config'] = nil
-	require('dap/dap-config')
+	package.loaded['dap-config/dap-adapters-configurations'] = nil
+	require('dap-config/dap-adapters-configurations')
 	dap.continue()
 end
 
 -- reload and then continue
 vim.keymap.set('n', '<Leader>dh',
-	'<cmd>lua require"dap/dap-config".reload_continue()<CR>', { noremap = false, silent = true })
+	'<cmd>lua require"dap-config/dap-adapters-configurations".reload_continue()<CR>', { noremap = false, silent = true })
 
 return M
