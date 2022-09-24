@@ -47,6 +47,7 @@ require("rest-config")
 require("notify-config")
 require("neotest-config")
 require("neoscroll-config")
+require("autosession-config")
 
 -- LSP
 require("dap-config")

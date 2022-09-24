@@ -72,6 +72,8 @@ return packer.startup(function(use)
 	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- Workflow
+	use("rmagatti/auto-session")
+	use("rmagatti/session-lens")
 	use("rcarriga/nvim-notify")
 	use({
 		"nvim-neotest/neotest",
