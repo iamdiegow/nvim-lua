@@ -18,8 +18,8 @@ map('n', '<C-f>', '<cmd>lua vim.lsp.buf.format({ async = true })<cr>', options)
 -- LSP
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', options)
 -- better movement
-map('n', '<C-j>', '5j', options)
-map('n', '<C-k>', '5k', options)
+map('n', '<C-j>', '5gjzz', options)
+map('n', '<C-k>', '5gkzz', options)
 -- map('n', '<C-l>', '$', options )
 -- map('n', '<C-h>', '0', options )
 -- window movement
