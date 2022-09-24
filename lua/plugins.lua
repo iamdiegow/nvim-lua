@@ -36,8 +36,8 @@ packer.init({
 
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
-	use("marko-cerovac/material.nvim")
 	-- Colorschemes
+	use("marko-cerovac/material.nvim")
 	use("Mofiqul/dracula.nvim")
 	use("folke/tokyonight.nvim")
 	use("lunarvim/darkplus.nvim")

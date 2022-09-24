@@ -37,7 +37,7 @@ local githubTheme = function()
 		transparent = true,
 		dark_sidebar = false,
 		dark_float = false,
-		theme_style = "dark",
+		theme_style = "dimmed",
 	})
 end
 
@@ -65,10 +65,13 @@ local materialTheme = function()
 			background = true,
 			term_colors = true,
 		},
+		plugins = {
+			telescope = false
+		},
 		lualine_style = "default",
 	})
 	-- 'darker' | 'oceanic' | 'palenight' | 'deep ocean'
-	vim.g.material_style = "oceanic"
+	vim.g.material_style = "darker"
 	vim.cmd([[ colorscheme material ]])
 end
 
