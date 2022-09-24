@@ -1,4 +1,4 @@
-require('nvim-tree').setup {
+require("nvim-tree").setup({
 	auto_reload_on_write = true,
 	disable_netrw = true,
 	hijack_netrw = true,
@@ -7,7 +7,7 @@ require('nvim-tree').setup {
 	open_on_tab = false,
 	sort_by = "modification_time",
 	hijack_cursor = true,
-	hijack_unnamed_buffer_when_opening = false,
+	hijack_unnamed_buffer_when_opening = true,
 	hijack_directories = {
 		enable = true,
 		auto_open = true,
@@ -16,11 +16,11 @@ require('nvim-tree').setup {
 	update_focused_file = {
 		enable = true,
 		update_cwd = false,
-		ignore_list = {}
+		ignore_list = {},
 	},
 	system_open = {
-		cmd  = nil,
-		args = {}
+		cmd = nil,
+		args = {},
 	},
 	diagnostics = {
 		enable = true,
@@ -30,33 +30,34 @@ require('nvim-tree').setup {
 			info = "",
 			warning = "",
 			error = "",
-		}
+		},
 	},
 	renderer = {
-		highlight_git = false,
+		highlight_git = true,
 		group_empty = false,
 		highlight_opened_files = "none",
 		root_folder_modifier = ":~",
-		add_trailing = false,
+		add_trailing = true,
+		indent_width = 2,
 		indent_markers = {
 			enable = false,
 			icons = {
 				corner = "└ ",
 				item = "├─",
 				edge = "│ ",
-				none = "  "
-			}
+				none = "  ",
+			},
 		},
 		icons = {
 			webdev_colors = true,
-			git_placement = "before",
+			git_placement = "after",
 			padding = " ",
 			symlink_arrow = " ➛ ",
 			show = {
 				file = true,
 				folder = true,
 				folder_arrow = true,
-				git = true
+				git = true,
 			},
 			glyphs = {
 				default = "",
@@ -83,24 +84,34 @@ require('nvim-tree').setup {
 			},
 		},
 		special_files = { "README.md", "readme.md", "package.json" },
-		symlink_destination = true
+		symlink_destination = true,
 	},
 	view = {
 		adaptive_size = false,
 		centralize_selection = false,
 		hide_root_folder = true,
-		width = 25,
-		height = 20,
-		side = 'left',
+		width = 30,
+		side = "left",
 		number = false,
 		signcolumn = "no",
 		preserve_window_proportions = true,
 		mappings = {
 			list = {
 				{ key = "l", action = "edit" },
-				{ key = "h", action = "close_node" }
-			}
-		}
+				{ key = "h", action = "close_node" },
+			},
+		},
+		float = {
+			enable = true,
+			open_win_config = {
+				relative = "editor",
+				border = "none",
+				width = 100,
+				height = 100,
+				row = 1,
+				col = 1,
+			},
+		},
 	},
 	filters = {
 		dotfiles = false,
@@ -109,24 +120,24 @@ require('nvim-tree').setup {
 		},
 		exclude = {
 			".github",
-			"node_modules"
-		}
+			"node_modules",
+		},
 	},
 	git = {
 		enable = true,
 		ignore = true,
-		timeout = 1000
+		timeout = 1000,
 	},
 	trash = {
 		cmd = "trash",
-		require_confirm = true
+		require_confirm = true,
 	},
 	actions = {
 		use_system_clipboard = true,
 		change_dir = {
 			enable = true,
 			global = false,
-			restrict_above_cwd = false
+			restrict_above_cwd = false,
 		},
 		open_file = {
 			quit_on_open = false,
@@ -137,20 +148,20 @@ require('nvim-tree').setup {
 				exclude = {
 					filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
 					buftype = { "nofile", "terminal", "help" },
-				}
-			}
+				},
+			},
 		},
 		remove_file = {
-			close_window = true
+			close_window = true,
 		},
 		expand_all = {
-			max_folder_discovery = 300
-		}
+			max_folder_discovery = 300,
+		},
 	},
 	live_filter = {
-		always_show_folders = true
-	}
-}
+		always_show_folders = true,
+	},
+})
 
 -- hide statusline when nvim tree is opened
 -- vim.cmd [[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree_1" | set laststatus=0 | else | set laststatus=3 | endif]]
