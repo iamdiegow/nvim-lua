@@ -145,7 +145,6 @@ return packer.startup(function(use)
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 	})
-	use("karb94/neoscroll.nvim")
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
