@@ -3,28 +3,40 @@ if not dap_status_ok then
 	return
 end
 
-local masonPath = '/.local/share/nvim/mason/packages'
+local masonPath = "/.local/share/nvim/mason/packages"
 
 -- ADAPTERS
 dap.adapters.node2 = {
-	type = 'executable',
-	command = 'node',
+	type = "executable",
+	command = "node",
 	args = {
-		os.getenv('HOME') .. masonPath .. '/node-debug2-adapter/out/src/nodeDebug.js'
-	}
+		os.getenv("HOME") .. masonPath .. "/node-debug2-adapter/out/src/nodeDebug.js",
+	},
 }
 
 dap.adapters.chrome = {
 	type = "executable",
 	command = "node",
 	args = {
-		os.getenv("HOME") .. masonPath .. "/chrome-debug-adapter/out/src/chromeDebug.js"
-	}
+		os.getenv("HOME") .. masonPath .. "/chrome-debug-adapter/out/src/chromeDebug.js",
+	},
 }
 
 -- OPTIONS
-vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'LspDiagnosticsError', linehl = '', numhl = '' })
-vim.fn.sign_define('DapStopped', { text = '', texthl = 'LspDiagnosticsInformation', linehl = '', numhl = '' })
+vim.fn.sign_define("DapBreakpoint", {
+	text = "",
+	texthl = "LspDiagnosticsError",
+	linehl = "",
+	numhl = "",
+})
+
+vim.fn.sign_define("DapStopped", {
+	text = "",
+	texthl = "LspDiagnosticsInformation",
+	linehl = "Visual",
+	numhl = "LspDiagnosticsInformation",
+})
+
 dap.defaults.fallback.focus_terminal = true
 
 -- DAP CONFIGURATIONS
@@ -32,78 +44,78 @@ dap.defaults.fallback.focus_terminal = true
 -- NODE
 dap.configurations.javascript = {
 	{
-		name = 'Launch',
-		type = 'node2',
-		request = 'launch',
-		program = '${file}',
+		name = "Launch",
+		type = "node2",
+		request = "launch",
+		program = "${file}",
 		cwd = vim.fn.getcwd(),
 		sourceMaps = true,
-		protocol = 'inspector',
+		protocol = "inspector",
 		skipFiles = {
-			'<node_internals>/**',
-			'node_modules/**',
-			'<node_internals>/**/*.js',
-			'node_modules/**/*.js',
-			'<eval>/**/*.js'
+			"<node_internals>/**",
+			"node_modules/**",
+			"<node_internals>/**/*.js",
+			"node_modules/**/*.js",
+			"<eval>/**/*.js",
 		},
-		console = 'integratedTerminal',
+		console = "integratedTerminal",
 	},
 	{
 		-- For this to work you need to make sure the node process is started with the `--inspect` flag.
-		name = 'Attach to process',
-		type = 'node2',
-		request = 'attach',
-		protocol = 'inspector',
+		name = "Attach to process",
+		type = "node2",
+		request = "attach",
+		protocol = "inspector",
 		sourceMaps = true,
 		-- processId = require'dap.utils'.pick_process,
 		skipFiles = {
-			'<node_internals>/**',
-			'node_modules/**',
-			'<node_internals>/**/*.js',
-			'node_modules/**/*.js',
-			'<eval>/**/*.js'
+			"<node_internals>/**",
+			"node_modules/**",
+			"<node_internals>/**/*.js",
+			"node_modules/**/*.js",
+			"<eval>/**/*.js",
 		},
 		port = 9229,
-		console = 'integratedTerminal'
-	}
+		console = "integratedTerminal",
+	},
 }
 
 dap.configurations.typescript = {
 	{
 		-- For this to work you need to make sure the node process is started with the `--inspect` flag.
-		name = 'Launch Typescript Program (ts-node)',
-		type = 'node2',
-		request = 'launch',
+		name = "Launch Typescript Program (ts-node)",
+		type = "node2",
+		request = "launch",
 		cwd = vim.loop.cwd(),
-		protocol = 'inspector',
+		protocol = "inspector",
 		sourceMaps = true,
 		runtimeArgs = { "-r", "ts-node/register" },
 		runtimeExecutable = "node",
 		args = { "--inspect", "${file}" },
 		skipFiles = {
-			'<node_internals>/**',
-			'node_modules/**',
-			'<node_internals>/**/*.js',
-			'node_modules/**/*.js',
-			'<eval>/**/*.js'
+			"<node_internals>/**",
+			"node_modules/**",
+			"<node_internals>/**/*.js",
+			"node_modules/**/*.js",
+			"<eval>/**/*.js",
 		},
 	},
 	{
 		-- For this to work you need to make sure the node process is started with the `--inspect` flag.
-		name = 'Attach to process',
-		type = 'node2',
-		request = 'attach',
-		protocol = 'inspector',
+		name = "Attach to process",
+		type = "node2",
+		request = "attach",
+		protocol = "inspector",
 		sourceMaps = true,
 		skipFiles = {
-			'<node_internals>/**',
-			'node_modules/**',
-			'<node_internals>/**/*.js',
-			'node_modules/**/*.js',
-			'<eval>/**/*.js'
+			"<node_internals>/**",
+			"node_modules/**",
+			"<node_internals>/**/*.js",
+			"node_modules/**/*.js",
+			"<eval>/**/*.js",
 		},
 		port = 9229,
-		console = 'integratedTerminal'
+		console = "integratedTerminal",
 	},
 	{
 		name = "Jest (Node2 with ts-node)",
@@ -116,11 +128,11 @@ dap.configurations.typescript = {
 		sourceMaps = true,
 		port = 9229,
 		skipFiles = {
-			'<node_internals>/**',
-			'node_modules/**',
-			'<node_internals>/**/*.js',
-			'node_modules/**/*.js',
-			'<eval>/**/*.js'
+			"<node_internals>/**",
+			"node_modules/**",
+			"<node_internals>/**/*.js",
+			"node_modules/**/*.js",
+			"<eval>/**/*.js",
 		},
 	},
 }
@@ -142,8 +154,8 @@ dap.configurations.javascriptreact = { -- change this to javascript if needed
 			"${workSpaceFolder}/node_modules/**",
 			"<node_internals>/**/*.js",
 			"${workSpaceFolder}/node_modules/**/*.js",
-			"<eval>/**/*.js"
-		}
+			"<eval>/**/*.js",
+		},
 	},
 }
 
@@ -163,8 +175,8 @@ dap.configurations.typescriptreact = { -- change to typescript if needed
 			"${workSpaceFolder}/node_modules/**",
 			"<node_internals>/**/*.js",
 			"${workSpaceFolder}/node_modules/**/*.js",
-			"<eval>/**/*.js"
-		}
+			"<eval>/**/*.js",
+		},
 	},
 }
 
@@ -173,13 +185,17 @@ dap.configurations.typescriptreact = { -- change to typescript if needed
 local M = {}
 
 function M.reload_continue()
-	package.loaded['dap-config/dap-adapters-configurations'] = nil
-	require('dap-config/dap-adapters-configurations')
+	package.loaded["dap-config/dap-adapters-configurations"] = nil
+	require("dap-config/dap-adapters-configurations")
 	dap.continue()
 end
 
 -- reload and then continue
-vim.keymap.set('n', '<Leader>dh',
-	'<cmd>lua require"dap-config/dap-adapters-configurations".reload_continue()<CR>', { noremap = false, silent = true })
+vim.keymap.set(
+	"n",
+	"<Leader>dh",
+	'<cmd>lua require"dap-config/dap-adapters-configurations".reload_continue()<CR>',
+	{ noremap = false, silent = true }
+)
 
 return M
