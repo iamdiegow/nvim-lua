@@ -24,7 +24,7 @@ M.setup = function()
 		-- },
 		signs = false,
 		update_in_insert = true,
-		underline = false,
+		underline = true,
 		severity_sort = true,
 		float = {
 			focusable = true,
