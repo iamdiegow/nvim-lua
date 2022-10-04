@@ -26,16 +26,16 @@ dapui.setup {
 				{ id = "scopes", size = 0.25 },
 				{ id = "breakpoints", size = 0.25 }
 			},
-			size = 30,
-			position = "left",
+			size = 40,
+			position = "right",
 		},
 		{
 			elements = {
 				"repl",
 				"console",
 			},
-			size = 0.15, -- 25% of total lines
-			position = "bottom",
+			size = 0.25,
+			position = "bottom"
 		},
 	},
 	floating = {
