@@ -19,14 +19,6 @@ local tokyonightTheme = function()
 	vim.cmd([[ colorscheme tokyonight ]])
 end
 
-local darkplusTheme = function()
-	vim.cmd([[ colorscheme darkplus ]])
-end
-
-local draculaTheme = function()
-	vim.cmd([[ colorscheme dracula ]])
-end
-
 local githubTheme = function()
 	require("github-theme").setup({
 		comment_style = "italic",
@@ -39,40 +31,6 @@ local githubTheme = function()
 		dark_float = false,
 		theme_style = "dimmed",
 	})
-end
-
-local materialTheme = function()
-	require("material").setup({
-		contrast = {
-			sidebars = false,
-			floating_windows = true,
-			cursor_line = false,
-			non_current_window = false,
-		},
-		italics = {
-			comments = true,
-			variables = false,
-			keywords = true,
-			functions = false,
-			strings = false,
-		},
-		high_visibility = {
-			darker = true,
-		},
-		disable = {
-			colored_cursor = true,
-			borders = true,
-			background = true,
-			term_colors = true,
-		},
-		plugins = {
-			telescope = false
-		},
-		lualine_style = "default",
-	})
-	-- 'darker' | 'oceanic' | 'palenight' | 'deep ocean'
-	vim.g.material_style = "darker"
-	vim.cmd([[ colorscheme material ]])
 end
 
 local cobalt2Theme = function()
@@ -130,11 +88,8 @@ end
 
 local selectTheme = {
 	tokyonight = tokyonightTheme,
-	darkplus = darkplusTheme,
-	dracula = draculaTheme,
 	github_dark = githubTheme,
 	cobalt2 = cobalt2Theme,
-	material = materialTheme,
 	catppuccin = catppuccinTheme,
 }
 
