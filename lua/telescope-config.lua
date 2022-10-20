@@ -84,6 +84,9 @@ require("telescope").setup({
 				-- M is the Alt key
 				["<M-p>"] = actions_layout.toggle_preview,
 			},
+			n = {
+				["q"] = actions.close,
+			},
 		},
 	},
 	pickers = {
