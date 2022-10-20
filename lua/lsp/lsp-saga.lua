@@ -1,4 +1,4 @@
-local status_ok, saga = pcall(require, 'lspsaga')
+local status_ok, saga = pcall(require, "lspsaga")
 if not status_ok then
 	return
 end
@@ -6,21 +6,21 @@ end
 saga.init_lsp_saga({
 	border_style = "single",
 	saga_winblend = 0,
-	move_in_saga = { prev = '<C-k>', next = '<C-j>' },
+	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
 	diagnostic_header = { " ", " ", " ", "ﴞ " },
 	code_action_icon = "💡",
 	code_action_num_shortcut = true,
 	code_action_lightbulb = {
-		enable = true,
+		enable = false,
 		sign = false,
-		enable_in_insert = true,
+		enable_in_insert = false,
 		sign_priority = 20,
-		virtual_text = true,
+		virtual_text = false,
 	},
 	finder_icons = {
-		def = '  ',
-		ref = '諭 ',
-		link = '  ',
+		def = "  ",
+		ref = "諭 ",
+		link = "  ",
 	},
 	finder_request_timeout = 1500,
 	finder_action_keys = {
@@ -41,18 +41,18 @@ saga.init_lsp_saga({
 	symbol_in_winbar = {
 		in_custom = false,
 		enable = false,
-		separator = ' ',
+		separator = " ",
 		show_file = false,
 		click_support = false,
 	},
 	show_outline = {
-		win_position = 'right',
-		win_with = '',
+		win_position = "right",
+		win_with = "",
 		win_width = 25,
 		auto_enter = true,
 		auto_preview = false,
-		virt_text = '┃',
-		jump_key = 'o',
+		virt_text = "┃",
+		jump_key = "o",
 		auto_refresh = true,
 	},
 	server_filetype_map = {},
