@@ -1,12 +1,12 @@
 local tokyonightTheme = function()
 	vim.g.tokyonight_style = "storm"
 	require("tokyonight").setup({
-		style = "moon", -- 'night' | 'storm' | 'day' | 'moon'
+		style = "storm", -- 'night' | 'storm' | 'day' | 'moon'
 		transparent = true,
 		terminal_colors = true,
 		styles = {
-			comments = { italic = true },
-			keywords = { italic = true },
+			comments = { italic = false },
+			keywords = { italic = false, bold = true },
 			functions = { bold = false },
 			variables = { bold = false },
 			sidebars = "transparent", -- style for sidebars, see below
