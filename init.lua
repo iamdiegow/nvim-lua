@@ -9,8 +9,8 @@ vim.g.current_context = false
 vim.g.enable_winbar = false
 vim.g.diagnostics_hover_window = false
 
--- | 'tokyonight' | 'github_dark' | 'cobalt2' | 'catppuccin'
-vim.g.color_theme = "tokyonight"
+-- | 'tokyonight' | 'github_dark' | 'cobalt2' | 'catppuccin' | 'gruvbox'
+vim.g.color_theme = "gruvbox"
 
 -- Core
 require("plugins")

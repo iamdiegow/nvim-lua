@@ -38,6 +38,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
+	use({ "ellisonleao/gruvbox.nvim" })
 	use("projekt0n/github-nvim-theme")
 	use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.nvim" })
 	use({ "stevearc/dressing.nvim" })
