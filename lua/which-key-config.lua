@@ -168,7 +168,6 @@ local normal_mappings = {
 			"Prev Diagnostic",
 		},
 		p = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
-		q = { "<cmd>lua vim.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>Telescope lsp_references<cr>", "Lsp References(Telescope)" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols(Telescope)" },
 		S = {
@@ -181,9 +180,11 @@ local normal_mappings = {
 		A = { "<cmd>Lspsaga code_action<cr>", "Lspsaga Code_action" },
 		H = { "<cmd>Lspsaga signature_help<cr>", "Lspsaga Signature_help" },
 		P = { "<cmd>Lspsaga preview_definition<cr>", "Lspsaga Preview_definition" },
-		O = { "<cmd>LSoutlineToggle<cr>", "Lspsaga Toggle Outline" },
+		O = { "<cmd>Lspsaga outline<cr>", "Lspsaga Toggle Outline" },
 		F = { "<cmd>Lspsaga lsp_finder<cr>", "Lspsaga Lsp_finder" },
 		I = { "<cmd>Lspsaga implement<cr>", "Lspsaga implement" },
+		["]"] = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Lspsaga Diagnostic jump next" },
+		["["] = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Lspsaga Diagnostic jump prev" },
 	},
 	["h"] = {
 		name = "Hop & Highlight",

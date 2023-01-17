@@ -3,57 +3,66 @@ if not status_ok then
 	return
 end
 
-saga.init_lsp_saga({
-	border_style = "single",
-	saga_winblend = 0,
-	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
-	diagnostic_header = { " ", " ", " ", "ﴞ " },
-	code_action_icon = "💡",
-	code_action_num_shortcut = true,
-	code_action_lightbulb = {
-		enable = false,
-		sign = false,
-		enable_in_insert = false,
-		sign_priority = 20,
-		virtual_text = false,
+saga.setup({
+	preview = {
+		lines_above = 0,
+		lines_below = 10,
 	},
-	finder_icons = {
-		def = "  ",
-		ref = "諭 ",
-		link = "  ",
-	},
-	finder_request_timeout = 1500,
-	finder_action_keys = {
-		open = "o",
-		vsplit = "s",
-		split = "i",
-		tabe = "t",
-		quit = "q",
+	scroll_preview = {
 		scroll_down = "<C-j>",
 		scroll_up = "<C-k>",
 	},
-	code_action_keys = {
-		quit = "q",
+	request_timeout = 2000,
+	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
+	diagnostic_header = { " ", " ", " ", "ﴞ " },
+	finder = {
+		edit = { "o", "<CR>" },
+		vsplit = "s",
+		split = "i",
+		tabe = "t",
+		quit = { "q", "<ESC>" },
+	},
+	code_action = {
+		num_shortcut = true,
+		keys = {
+			quit = "q",
+			exec = "<CR>",
+		},
+	},
+	lightbulb = {
+		enable = true,
+		virtual_text = true,
+		sign = false,
+		enable_in_insert = false,
+	},
+	diagnostic = {
+		show_code_action = true,
+		show_source = true,
+		jump_num_shorcut = true,
+		keys = {
+			exec_action = "o",
+			quit = "q",
+			go_action = "g",
+		},
+	},
+	rename = {
+		quit = "<C-c>",
 		exec = "<CR>",
+		mark = "x",
+		confirm = "<CR>",
+		in_select = true,
+		whole_project = false,
 	},
-	rename_action_quit = "<C-c>",
-	rename_in_select = true,
-	symbol_in_winbar = {
-		in_custom = false,
-		enable = false,
-		separator = " ",
-		show_file = false,
-		click_support = false,
-	},
-	show_outline = {
+	outline = {
 		win_position = "right",
-		win_with = "",
-		win_width = 25,
-		auto_enter = true,
+		show_detail = true,
 		auto_preview = false,
-		virt_text = "┃",
-		jump_key = "o",
 		auto_refresh = true,
+		auto_close = true,
+		keys = {
+			jump = "o",
+			expand_collapse = "u",
+			quit = "q",
+		},
 	},
-	server_filetype_map = {},
 })
