@@ -65,4 +65,13 @@ saga.setup({
 			quit = "q",
 		},
 	},
+	symbol_in_winbar = {
+		enable = true,
+		separator = "  ",
+		hide_keyword = false,
+		show_file = true,
+		folder_level = 2,
+		respect_root = false,
+		color_mode = false,
+	},
 })
