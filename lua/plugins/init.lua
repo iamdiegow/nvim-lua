@@ -60,7 +60,6 @@ return {
 	"theHamsta/nvim-dap-virtual-text",
 	"norcalli/nvim-colorizer.lua",
 	"famiu/bufdelete.nvim",
-	"numToStr/Comment.nvim",
 	"windwp/nvim-autopairs",
 	{
 		"windwp/nvim-ts-autotag",
