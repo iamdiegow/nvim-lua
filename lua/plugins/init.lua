@@ -5,7 +5,6 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
-	"stevearc/dressing.nvim",
 
 	-- Performance
 	"lewis6991/impatient.nvim",
@@ -47,7 +46,7 @@ return {
 	},
 	{
 		"TimUntersberger/neogit",
-		requires = "nvim-lua/plenary.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
 	},
 	{
 		"lalitmee/browse.nvim",
