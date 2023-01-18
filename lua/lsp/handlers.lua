@@ -73,9 +73,6 @@ M.on_attach = function(client, bufnr)
 		map("n", "gO", "<cmd>TypescriptOrganizeImports<CR>", opts)
 	end
 
-	vim.g.navic_silence = true
-	require 'nvim-navic'.attach(client, bufnr)
-
 	lsp_keymaps(bufnr)
 end
 

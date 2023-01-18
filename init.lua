@@ -1,4 +1,19 @@
-require("impatient").enable_profile()
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " "
+
+require("lazy").setup("plugins")
 
 -- Global variables
 vim.g.transparent_window = false
@@ -6,17 +21,11 @@ vim.g.format_on_save = false
 vim.g.autocomplete = false
 vim.g.rainbow = true
 vim.g.current_context = false
-vim.g.enable_winbar = false
 vim.g.diagnostics_hover_window = false
 
--- | 'tokyonight' | 'github_dark' | 'cobalt2' | 'catppuccin' | 'gruvbox'
-vim.g.color_theme = "tokyonight"
-
 -- Core
-require("plugins")
 require("keymappings")
 require("settings")
-require("colorscheme")
 require("autocommands")
 
 -- Plugin config
@@ -29,7 +38,6 @@ require("comment-config")
 require("indent-blankline-config")
 require("nvim-autopairs-config")
 require("nvim-ts-autotag-config")
-require("hop-config")
 require("nvim-toggleterm-config")
 require("gitsigns-config")
 require("which-key-config")
@@ -38,20 +46,16 @@ require("nvim-web-devicons-config")
 require("zen-mode-config")
 require("stabilize-config")
 require("nvim-colorizer-config")
-require("pounce-config")
 require("browse-config")
 require("dressing-config")
 require("diffview-config")
 require("neogit-config")
-require("rest-config")
-require("notify-config")
 require("neotest-config")
 require("autosession-config")
 
 -- LSP
 require("dap-config")
-require("navic-config")
 require("nvim-cmp-config")
 require("lsp")
 
-
+vim.cmd([[ colorscheme tokyonight ]])
