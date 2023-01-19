@@ -33,7 +33,6 @@ require("settings")
 require("autocommands")
 
 -- Plugin config
-require("lualine-config")
 require("telescope-config")
 require("indent-blankline-config")
 require("nvim-autopairs-config")

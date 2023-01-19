@@ -84,7 +84,6 @@ return {
 
 	-- UI
 	"luukvbaal/stabilize.nvim",
-	"hoob3rt/lualine.nvim",
 	"akinsho/nvim-toggleterm.lua",
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
