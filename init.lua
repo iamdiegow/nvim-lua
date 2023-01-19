@@ -9,11 +9,16 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+	change_detection = {
+		notify = false
+	}
+})
 
 -- Global variables
 vim.g.transparent_window = false
@@ -31,7 +36,6 @@ require("autocommands")
 -- Plugin config
 require("lualine-config")
 require("bufferline-config")
-require("nvim-tree-config")
 require("treesitter-config")
 require("telescope-config")
 require("indent-blankline-config")

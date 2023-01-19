@@ -1,13 +1,15 @@
 return {
+	"folke/lazy.nvim",
+
 	-- Colorschemes
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
+		opts = {
+			style = "moon",
+		},
 	},
-
-	-- Performance
-	"lewis6991/impatient.nvim",
 
 	-- LSP
 	"williamboman/mason.nvim",
@@ -84,12 +86,6 @@ return {
 	"hrsh7th/cmp-path",
 	"saadparwaiz1/cmp_luasnip",
 	"hrsh7th/nvim-cmp",
-
-	-- File explorer
-	{
-		"kyazdani42/nvim-tree.lua",
-		dependencies = "kyazdani42/nvim-web-devicons",
-	},
 
 	-- UI
 	"luukvbaal/stabilize.nvim",
