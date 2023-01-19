@@ -24,7 +24,6 @@ require("lazy").setup("plugins", {
 vim.g.transparent_window = false
 vim.g.format_on_save = false
 vim.g.autocomplete = false
-vim.g.rainbow = true
 vim.g.current_context = false
 vim.g.diagnostics_hover_window = false
 
@@ -35,7 +34,6 @@ require("autocommands")
 
 -- Plugin config
 require("lualine-config")
-require("treesitter-config")
 require("telescope-config")
 require("indent-blankline-config")
 require("nvim-autopairs-config")

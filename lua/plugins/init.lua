@@ -25,11 +25,6 @@ return {
 		"folke/trouble.nvim",
 		dependencies = "kyazdani42/nvim-web-devicons",
 	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-	},
-	"nvim-treesitter/nvim-treesitter-context",
 
 	-- Workflow
 	"folke/which-key.nvim",
