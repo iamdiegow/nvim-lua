@@ -35,7 +35,6 @@ require("autocommands")
 
 -- Plugin config
 require("lualine-config")
-require("bufferline-config")
 require("treesitter-config")
 require("telescope-config")
 require("indent-blankline-config")
