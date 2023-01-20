@@ -1,7 +1,7 @@
 return {
 	"akinsho/nvim-bufferline.lua",
 	dependencies = "kyazdani42/nvim-web-devicons",
-	lazy = false,
+	event = "VeryLazy",
 	pin = true,
 	opts = {
 		options = {

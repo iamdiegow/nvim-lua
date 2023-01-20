@@ -24,7 +24,6 @@ require("lazy").setup("plugins", {
 vim.g.transparent_window = false
 vim.g.format_on_save = false
 vim.g.autocomplete = false
-vim.g.current_context = false
 vim.g.diagnostics_hover_window = false
 
 -- Core
@@ -34,7 +33,6 @@ require("autocommands")
 
 -- Plugin config
 require("telescope-config")
-require("indent-blankline-config")
 require("nvim-autopairs-config")
 require("nvim-ts-autotag-config")
 require("nvim-toggleterm-config")

@@ -239,13 +239,10 @@ local normal_mappings = {
 		k = { '<cmd>lua require("neotest").jump.prev()<CR>', "Test Jump Previous" },
 		j = { '<cmd>lua require("neotest").jump.next()<CR>', "Test Jump Next" },
 	},
-	-- Indent Blankline and char rendering
+	-- Char rendering
 	["i"] = {
 		name = "Chars & indent guides",
 		i = { "<cmd>set invlist<CR>", "Toggle white space and tabs" },
-		g = { "<cmd>IndentBlanklineToggle<CR>", "Toggle Indent Blanklie" },
-		d = { "<cmd>IndentBlanklineDisable<CR><cmd>set nolist<CR>", "Disable all" },
-		e = { "<cmd>IndentBlanklineEnable<CR><cmd>set list<CR>", "Enable all" },
 	},
 	["n"] = {
 		name = "Numbers, nvim-tree and browse ",
