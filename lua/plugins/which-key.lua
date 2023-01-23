@@ -124,7 +124,6 @@ return {
 			-- GITSIGNS
 			["g"] = {
 				name = "Git, (gitsigns, diffview, neogit)",
-				g = { "<cmd>Neogit<CR>", "Open Neogit" },
 				j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 				k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 				l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -140,9 +139,6 @@ return {
 				e = { "<cmd>Gitsigns toggle_linehl<cr>", "Toggle Line Highlight" },
 				n = { "<cmd>Gitsigns toggle_numhl<cr>", "Toggle Number Highlight" },
 				b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Line Blame" },
-				d = { "<cmd>DiffviewOpen<CR>", "Open Diffview" },
-				q = { "<cmd>DiffviewClose<CR>", "Close Diffview" },
-				h = { "<cmd>DiffviewFileHistory<CR>", "View File History" },
 			},
 			-- LSP
 			["l"] = {

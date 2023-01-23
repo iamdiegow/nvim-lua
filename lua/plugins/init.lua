@@ -11,17 +11,6 @@ return {
 		},
 	},
 
-	-- LSP
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
-	"jose-elias-alvarez/typescript.nvim",
-	"jose-elias-alvarez/null-ls.nvim",
-	"onsails/lspkind-nvim",
-	"glepnir/lspsaga.nvim",
-	"L3MON4D3/LuaSnip",
-	"rafamadriz/friendly-snippets",
-
 	-- Workflow
 	{
 		"nvim-neotest/neotest",
@@ -32,14 +21,6 @@ return {
 		},
 	},
 	"nvim-neotest/neotest-vim-test",
-	{
-		"sindrets/diffview.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
-	},
-	{
-		"TimUntersberger/neogit",
-		dependencies = "nvim-lua/plenary.nvim",
-	},
 	{
 		"lalitmee/browse.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim" },
@@ -63,12 +44,6 @@ return {
 	"p00f/nvim-ts-rainbow",
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"vim-test/vim-test",
-	{
-		"lewis6991/gitsigns.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
 
 	-- Completion
 	"hrsh7th/cmp-nvim-lsp",
