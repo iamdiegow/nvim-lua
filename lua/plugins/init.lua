@@ -12,19 +12,6 @@ return {
 	},
 
 	-- Workflow
-	{
-		"nvim-neotest/neotest",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			"antoinemadec/FixCursorHold.nvim",
-		},
-	},
-	"nvim-neotest/neotest-vim-test",
-	{
-		"lalitmee/browse.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-	},
 	"mfussenegger/nvim-dap",
 	{
 		"rcarriga/nvim-dap-ui",
@@ -53,7 +40,21 @@ return {
 	"hrsh7th/nvim-cmp",
 
 	-- UI
-	"luukvbaal/stabilize.nvim",
+	{
+		"luukvbaal/stabilize.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("stabilize").setup({
+				force = true,
+				forcemark = nil,
+				ignore = {
+					filetype = { "help", "list", "NvimTree" },
+					buftype = { "terminal", "quickfix", "loclist" },
+				},
+				nested = nil,
+			})
+		end,
+	},
 	"akinsho/nvim-toggleterm.lua",
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",

@@ -37,12 +37,7 @@ require("nvim-autopairs-config")
 require("nvim-ts-autotag-config")
 require("nvim-toggleterm-config")
 require("nvim-web-devicons-config")
-require("zen-mode-config")
-require("stabilize-config")
 require("nvim-colorizer-config")
-require("browse-config")
-require("neotest-config")
-require("autosession-config")
 
 -- LSP
 require("dap-config")
