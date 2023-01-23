@@ -21,13 +21,8 @@ return {
 	"glepnir/lspsaga.nvim",
 	"L3MON4D3/LuaSnip",
 	"rafamadriz/friendly-snippets",
-	{
-		"folke/trouble.nvim",
-		dependencies = "kyazdani42/nvim-web-devicons",
-	},
 
 	-- Workflow
-	"folke/which-key.nvim",
 	{
 		"nvim-neotest/neotest",
 		dependencies = {
@@ -95,5 +90,5 @@ return {
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-lua/plenary.nvim" },
 		},
-	}
+	},
 }
