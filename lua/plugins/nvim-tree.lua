@@ -93,7 +93,6 @@ return {
 					},
 				},
 			},
-			special_files = { "README.md", "readme.md", "package.json" },
 			symlink_destination = true,
 		},
 		view = {
