@@ -20,13 +20,6 @@ return {
 	"theHamsta/nvim-dap-virtual-text",
 	"norcalli/nvim-colorizer.lua",
 	"famiu/bufdelete.nvim",
-	"windwp/nvim-autopairs",
-	{
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup({ enable = true })
-		end,
-	},
 	"tpope/vim-surround",
 	"p00f/nvim-ts-rainbow",
 	"JoosepAlviste/nvim-ts-context-commentstring",

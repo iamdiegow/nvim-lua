@@ -32,8 +32,6 @@ require("autocommands")
 
 -- Plugin config
 require("telescope-config")
-require("nvim-autopairs-config")
-require("nvim-colorizer-config")
 
 -- LSP
 require("dap-config")

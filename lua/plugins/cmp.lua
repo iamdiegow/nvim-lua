@@ -54,7 +54,7 @@ return {
 			cmp.setup({
 				completion = {
 					completeopt = "menu,menuone,noselect,noinsert",
-					keyword_length = 2
+					keyword_length = 2,
 				},
 				snippet = {
 					expand = function(args)
@@ -136,6 +136,9 @@ return {
 					ghost_text = false,
 				},
 			})
+
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 			vim.cmd([[
 				" gray
