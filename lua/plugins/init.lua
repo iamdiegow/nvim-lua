@@ -32,13 +32,6 @@ return {
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"vim-test/vim-test",
 
-	-- Completion
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"saadparwaiz1/cmp_luasnip",
-	"hrsh7th/nvim-cmp",
-
 	-- UI
 	{
 		"luukvbaal/stabilize.nvim",

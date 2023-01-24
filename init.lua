@@ -23,7 +23,6 @@ require("lazy").setup("plugins", {
 -- Global variables
 vim.g.transparent_window = false
 vim.g.format_on_save = false
-vim.g.autocomplete = false
 vim.g.diagnostics_hover_window = false
 
 -- Core
@@ -41,7 +40,6 @@ require("nvim-colorizer-config")
 
 -- LSP
 require("dap-config")
-require("nvim-cmp-config")
 require("lsp")
 
 vim.cmd([[ colorscheme tokyonight ]])

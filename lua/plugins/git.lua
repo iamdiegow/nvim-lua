@@ -1,7 +1,6 @@
 return {
 	{
 		"sindrets/diffview.nvim",
-		event = "VeryLazy",
 		keys = {
 			{ "<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Open Diffview" },
 			{ "<leader>gq", "<cmd>DiffviewClose<CR>", desc = "Close Diffview" },
