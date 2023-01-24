@@ -48,7 +48,6 @@ return {
 			})
 		end,
 	},
-	"akinsho/nvim-toggleterm.lua",
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
 

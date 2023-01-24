@@ -34,7 +34,6 @@ require("autocommands")
 require("telescope-config")
 require("nvim-autopairs-config")
 require("nvim-ts-autotag-config")
-require("nvim-toggleterm-config")
 require("nvim-web-devicons-config")
 require("nvim-colorizer-config")
 

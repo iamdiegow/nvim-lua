@@ -204,32 +204,6 @@ return {
 				a = { "<cmd>HopChar1<CR>", "Hop Char 1" },
 				s = { "<cmd>Pounce<CR>", "Hop Char 2" },
 			},
-			-- TERMINAL
-			["x"] = {
-				name = "Terminal",
-				v = { "<cmd>1ToggleTerm size=40 direction=vertical<CR>", "Toggle Vertical 1" },
-				s = { "<cmd>2ToggleTerm size=15 direction=horizontal<CR>", "Toggle Horizontal 2" },
-				f = { "<cmd>3ToggleTerm direction=float<CR>", "Toggle Float 3" },
-				t = { "<cmd>4ToggleTerm direction=tab<CR>", "Toggle Tab 4" },
-				x = { '<cmd>exec "!node %"<CR>', "Execute file with node" },
-				g = { '<cmd>exec "!go run %"<CR>', "Execute file with go compiler" },
-			},
-			-- VIM TEST
-			[";"] = {
-				name = "Vim NeoTest",
-				-- n = { "<cmd>TestNearest -strategy=neovim<CR>", "Test Nearest" },
-				-- f = { "<cmd>TestFile -strategy=neovim<CR>", "Test File" },
-				-- d = { "<cmd>TestSuite -strategy=neovim<CR>", "Test Suite" },
-				-- l = { "<cmd>TestLast -strategy=neovim<CR>", "Test Last" },
-				v = { "<cmd>TestVisit -strategy=neovim<CR>", "Test Visit" },
-				o = { '<cmd>lua require("neotest").output.open()<CR>', "Open Test Output" },
-				[";"] = { '<cmd>lua require("neotest").summary.toggle()<CR>', "Open Test Summary" },
-				f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>', "Test Run File" },
-				n = { '<cmd>lua require("neotest").run.run()<CR>', "Test Run Neareast" },
-				l = { '<cmd>lua require("neotest").run.run_last()<CR>', "Test Run Last" },
-				k = { '<cmd>lua require("neotest").jump.prev()<CR>', "Test Jump Previous" },
-				j = { '<cmd>lua require("neotest").jump.next()<CR>', "Test Jump Next" },
-			},
 			-- Char rendering
 			["i"] = {
 				name = "Chars & indent guides",
