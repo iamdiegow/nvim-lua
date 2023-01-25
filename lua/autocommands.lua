@@ -6,11 +6,6 @@ vim.api.nvim_exec([[
   augroup END
 ]], false)
 
--- -- Prevent new line to start with comment -----
--- vim.cmd([[
--- 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
--- ]])
-
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	callback = function()
@@ -35,15 +30,6 @@ vim.cmd([[
 	augroup END
 ]])
 
--- Set cursorline on active buffer
--- vim.cmd([[
--- 	augroup CursorLineOnlyInActiveWindow
--- 		autocmd!
--- 		autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
--- 		autocmd WinLeave * setlocal nocursorline
--- 	augroup END
--- ]])
-
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = {
@@ -65,17 +51,3 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     ]]
 	end,
 })
-
-if vim.g.enable_winbar then
-	vim.api.nvim_create_autocmd(
-		{ "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
-		{
-			callback = function()
-				local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
-				if not status_ok then
-					require("winbar-config").get_winbar()
-				end
-			end,
-		}
-	)
-end

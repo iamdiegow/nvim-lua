@@ -86,16 +86,6 @@ return {
 				["["] = { "<cmd>BufferLineMovePrev<cr>", "Move Buffer Left" },
 				["]"] = { "<cmd>BufferLineMoveNext<cr>", "Move Buffer Right" },
 			},
-			-- PACKER
-			["p"] = {
-				name = "Packer",
-				c = { "<cmd>PackerCompile<cr>", "Compile" },
-				i = { "<cmd>PackerInstall<cr>", "Install" },
-				r = { "<cmd>lua require('utils').reload_lv_config()<cr>", "Reload" },
-				s = { "<cmd>PackerSync<cr>", "Sync" },
-				S = { "<cmd>PackerStatus<cr>", "Status" },
-				u = { "<cmd>PackerUpdate<cr>", "Update" },
-			},
 			-- GITSIGNS
 			["g"] = {
 				name = "Git, (gitsigns, diffview, neogit)",
@@ -148,22 +138,11 @@ return {
 				["["] = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Lspsaga Diagnostic jump prev" },
 			},
 			["h"] = {
-				name = "Hop & Highlight",
+				name = "Cursor lines & Highlight",
 				h = { '<cmd>let @/=""<CR>', "No Highlight" },
 				t = { '<cmd>lua require("utils").toggleCursorHighlight()<CR>', "Toggle Cursor Highlight" },
 				c = { '<cmd>lua require("utils").toggleCursorLine()<CR>', "Toggle Cursor Line" },
 				v = { '<cmd>lua require("utils").toggleCursorColumn()<CR>', "Toggle Cursor Column" },
-			},
-			-- HOP
-			["w"] = {
-				name = "Hop",
-				w = { "<cmd>HopWord<CR>", "Hop Word" },
-				e = { "<cmd>HopLineStart<CR>", "Hop Line Start" },
-				l = { "<cmd>HopWordCurrentLine<CR>", "Hop Word Line" },
-				d = { "<cmd>HopLine<CR>", "Hop Line" },
-				p = { "<cmd>HopPattern<CR>", "Hop Pattern" },
-				a = { "<cmd>HopChar1<CR>", "Hop Char 1" },
-				s = { "<cmd>Pounce<CR>", "Hop Char 2" },
 			},
 			-- Char rendering
 			["i"] = {
@@ -174,10 +153,6 @@ return {
 				name = "Numbers, nvim-tree and browse ",
 				r = { "<cmd>set relativenumber!<CR>", "Toogle relative number" },
 				n = { "<cmd>set number!<CR>", "Toogle relative number" },
-				l = { "<cmd>NvimTreeResize +5<CR>", "Increase size of nvim-tree" },
-				h = { "<cmd>NvimTreeResize -5<CR>", "Increase size of nvim-tree" },
-				b = { "<cmd>Browse<CR>", "Browse" },
-				i = { "<cmd>BrowseInputSearch<CR>", "Browse" },
 			},
 			["d"] = {
 				name = "Debugger",
