@@ -28,7 +28,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "582842c158968a59ed5acf9439bc6eaf637f1839" },
   "nvim-toggleterm.lua": { "branch": "main", "commit": "a54e6c471ce1cd8ef8357e34598a28a955297131" },
   "nvim-tree.lua": { "branch": "master", "commit": "7944e479c18b7e79ff88a74cd829cf716d92aea5" },
-  "nvim-treesitter": { "branch": "master", "commit": "ce6390393aaf250a6b0f513023899a342883d0df" },
+  "nvim-treesitter": { "branch": "master", "commit": "de459332e2b479d703421aebf63746660e1dc5f8" },
   "nvim-ts-autotag": { "branch": "main", "commit": "fdefe46c6807441460f11f11a167a2baf8e4534b" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "a0f89563ba36b3bacd62cf967b46beb4c2c29e52" },
   "nvim-ts-rainbow": { "branch": "master", "commit": "ef95c15a935f97c65a80e48e12fe72d49aacf9b9" },
@@ -42,7 +42,6 @@
   "twilight.nvim": { "branch": "main", "commit": "9410252bed96887ca5a86bf16435a3a51a0e6ce5" },
   "typescript.nvim": { "branch": "main", "commit": "f66d4472606cb24615dfb7dbc6557e779d177624" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
-  "vim-test": { "branch": "master", "commit": "ca2502545a8c563e15f556d0eb8a59e0f74d2864" },
   "which-key.nvim": { "branch": "main", "commit": "684e96c5e8477f1ee9b3f2e9a12d802fd12c5531" },
   "zen-mode.nvim": { "branch": "main", "commit": "2c8f9f3758a4c430ff867e547741424ac16208bb" }
 }

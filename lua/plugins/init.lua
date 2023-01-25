@@ -17,12 +17,8 @@ return {
 		dependencies = { "mfussenegger/nvim-dap" },
 	},
 	"theHamsta/nvim-dap-virtual-text",
-	"norcalli/nvim-colorizer.lua",
 	"famiu/bufdelete.nvim",
 	"tpope/vim-surround",
-	"p00f/nvim-ts-rainbow",
-	"JoosepAlviste/nvim-ts-context-commentstring",
-	"vim-test/vim-test",
 
 	-- UI
 	{
@@ -42,4 +38,6 @@ return {
 	},
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
+	"p00f/nvim-ts-rainbow",
+	"norcalli/nvim-colorizer.lua",
 }

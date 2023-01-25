@@ -1,8 +1,6 @@
 return {
 	"phaazon/hop.nvim",
-	opts = {
-		keys = "asdfhjklqweryuio",
-	},
+	event = "VeryLazy",
 	keys = {
 		{
 			"f",
@@ -47,4 +45,7 @@ return {
 			desc = "Hop T",
 		},
 	},
+	config = function()
+		require("hop").setup()
+	end,
 }
