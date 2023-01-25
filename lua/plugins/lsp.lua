@@ -77,8 +77,8 @@ return {
 				diagnostic_header = { " ", " ", " ", "ﴞ " },
 				finder = {
 					edit = { "o", "<CR>" },
-					vsplit = "s",
-					split = "i",
+					vsplit = "v",
+					split = "s",
 					tabe = "t",
 					quit = { "q", "<ESC>" },
 				},
@@ -100,7 +100,7 @@ return {
 					show_source = true,
 					jump_num_shorcut = true,
 					keys = {
-						exec_action = "o",
+						exec_action = "<CR>",
 						quit = "q",
 						go_action = "g",
 					},
@@ -115,12 +115,12 @@ return {
 				},
 				outline = {
 					win_position = "right",
-					show_detail = true,
+					show_detail = false,
 					auto_preview = false,
 					auto_refresh = true,
 					auto_close = true,
 					keys = {
-						jump = "o",
+						jump = "<CR>",
 						expand_collapse = "u",
 						quit = "q",
 					},
@@ -128,9 +128,8 @@ return {
 				symbol_in_winbar = {
 					enable = true,
 					separator = "  ",
-					hide_keyword = false,
-					show_file = true,
-					folder_level = 2,
+					hide_keyword = true,
+					show_file = false,
 					respect_root = false,
 					color_mode = false,
 				},
