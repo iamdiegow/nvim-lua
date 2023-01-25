@@ -71,36 +71,11 @@ return {
 			["c"] = { "<cmd>Bwipeout<CR>", "Close Buffer" },
 			["s"] = { "<cmd>luafile %<CR>", "Source File" },
 			["="] = { "<cmd>:ColorizerToggle<CR>", "Toggle Colorizer" },
-			-- ["e"] = { "<cmd>:NvimTreeToggle<CR>", "Open Explorer" },
-			-- TELESCOPE
-			["f"] = {
-				name = "Telescope",
-				f = { "<cmd>Telescope find_files<CR>", "Find Files" },
-				["/"] = { "<cmd>lua require('telescope-config').fuzzy_find_file()<CR>", "Find Files" },
-				r = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
-				b = { "<cmd>Telescope buffers<CR>", "List Buffers" },
-				h = { "<cmd>Telescope help_tags<CR>", "Help Tags" },
-				o = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files" },
-				R = { "<cmd>Telescope registers<CR>", "Open Registers" },
-				s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
-				k = { "<cmd>Telescope keymaps<CR>", "Keymaps" },
-				n = { "<cmd>lua require('telescope-config').nvim_config()<CR>", "Search Nvim Config Folder" }, --fn
-				p = { "<cmd>lua require('telescope-config').grep_prompt()<CR>", "Grep Propmpt" },
-				S = { "<cmd>lua require('telescope-config').snippets()<CR>", "Browse snippets" },
-				g = {
-					name = "Telescope Git",
-					s = { "<cmd>Telescope git_status<CR>", "Git Status" },
-					c = { "<cmd>Telescope git_commits<CR>", "Git Commits" },
-					f = { "<cmd>Telescope git_files<CR>", "Git Files" },
-					b = { "<cmd>Telescope git_branches<CR>", "Git Branches" },
-				},
-			},
 			-- BUFFERS
 			["b"] = {
 				name = "Buffers",
 				c = { "<cmd>BufferLinePickClose<cr>", "Pick and close" },
 				j = { "<cmd>BufferLinePick<cr>", "Jump to buffer" },
-				b = { "<cmd>Telescope buffers<CR>", "Buffers" },
 				w = { "<cmd>Bwipeout<cr>", "Wipeout buffer" },
 				h = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
 				l = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
@@ -144,19 +119,11 @@ return {
 			["l"] = {
 				name = "LSP",
 				a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-				d = {
-					"<cmd>Telescope diagnostics bufrn=0<CR>",
-					"Document Diagnostics",
-				},
 				l = {
 					"<cmd>lua vim.diagnostic.open_float(0, {scope = 'line', border = 'double'})<CR>",
 					"Show Line Diagnostics",
 				},
 				t = { "<cmd>lua require'lsp.handlers'.toggle_diagnostics()<CR>", "Toggle Diagnostics (Show/Hide)" },
-				w = {
-					"<cmd>Telescope lsp_workspace_diagnostics<cr>",
-					"Workspace Diagnostics",
-				},
 				f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 				i = { "<cmd>LspInfo<cr>", "Info" },
 				j = {
@@ -168,12 +135,6 @@ return {
 					"Prev Diagnostic",
 				},
 				p = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
-				r = { "<cmd>Telescope lsp_references<cr>", "Lsp References(Telescope)" },
-				s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols(Telescope)" },
-				S = {
-					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-					"Workspace Symbols",
-				},
 				-- Saga mappings
 				K = { "<cmd>Lspsaga hover_doc<CR>", "Lspsaga Hover_doc" },
 				R = { "<cmd>Lspsaga rename<cr>", "Lspsaga Rename" },

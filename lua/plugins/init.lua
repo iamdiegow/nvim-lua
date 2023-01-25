@@ -1,6 +1,5 @@
 return {
 	"folke/lazy.nvim",
-
 	-- Colorschemes
 	{
 		"folke/tokyonight.nvim",
@@ -43,13 +42,4 @@ return {
 	},
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
-
-	-- Telescope
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = {
-			{ "nvim-lua/popup.nvim" },
-			{ "nvim-lua/plenary.nvim" },
-		},
-	},
 }

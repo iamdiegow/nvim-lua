@@ -1,6 +1,5 @@
 return {
 	"phaazon/hop.nvim",
-	lazy = true,
 	opts = {
 		keys = "asdfhjklqweryuio",
 	},

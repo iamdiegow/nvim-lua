@@ -29,10 +29,6 @@ vim.g.diagnostics_hover_window = false
 require("keymappings")
 require("settings")
 require("autocommands")
-
--- Plugin config
-require("telescope-config")
-
 -- LSP
 require("dap-config")
 require("lsp")
