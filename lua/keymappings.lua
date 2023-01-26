@@ -12,6 +12,8 @@ map('n', 'gQ', '<Nop>', options)
 map('n', '<C-z>', ':ZenMode<CR>', options)
 -- set LEADER key to space
 map('n', '<Space>', '<NOP>', options)
+-- Disable highlight
+map('n', '<BS>', '<cmd>:noh<CR>', options)
 vim.g.mapleader = ' '
 -- Format file
 map('n', '<C-f>', '<cmd>lua vim.lsp.buf.format({ async = true })<cr>', options)
@@ -37,27 +39,30 @@ map('n', '<TAB>', ':BufferLineCycleNext<CR>', options)
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', options)
 -- better yank
 map('n', 'Y', 'y$', options)
--- search and center
+-- Center screen
 map('n', 'n', 'nzzzv', options)
 map('n', 'N', 'Nzzzv', options)
+map('n', '*', '*zzzv', options)
+map('n', '#', '#zzzv', options)
+map('n', '<C-o>', '<C-o>zz', options)
+map('n', '<C-i>', '<C-i>zz', options)
 -- Resize buffers with arrows
 map('n', '<C-Down>', ':resize -2<CR>', options)
 map('n', '<C-Up>', ':resize +2<CR>', options)
 map('n', '<C-Right>', ':vertical resize -2<CR>', options)
 map('n', '<C-Left>', ':vertical resize +2<CR>', options)
--- quickfix list
+-- Quickfix list
 map('n', '<]q>', ':cnext<CR>', options)
 map('n', '<[q>', ':cprev<CR>', options)
 map('n', '<C-q>', ':TroubleToggle<CR>', options)
--- move around wrap text with j-k
+-- Move around wrap text with j-k
 map('n', 'j', 'gj', options)
 map('n', 'k', 'gk', options)
--- save file
+-- Save file
 map('n', '<C-s>', '<cmd>w!<CR>', options)
--- Pounce - movement
-map('n', '<C-p>', '<cmd>Pounce<CR>', options)
--- Hop
-map('n', 'f', '<cmd>HopChar1<CR>', options)
+-- move current line
+map('n', '<A-j>', ':m .+1<CR>==', options)
+map('n', '<A-k>', ':m .-2<CR>==', options)
 
 -- INSERT MODE ----------
 -- exit insert mode
