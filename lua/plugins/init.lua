@@ -6,7 +6,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			style = "storm",
+			style = "night",
 		},
 	},
 
@@ -19,7 +19,6 @@ return {
 	"theHamsta/nvim-dap-virtual-text",
 	"famiu/bufdelete.nvim",
 	"tpope/vim-surround",
-	"MaxMEllon/vim-jsx-pretty",
 
 	-- UI
 	{

@@ -1,8 +1,9 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		version = false,
 		build = ":TSUpdate",
-		event = "BufReadPost",
+		 event = "BufReadPost",
 		opts = {
 			ensure_installed = {
 				"javascript",
@@ -24,16 +25,17 @@ return {
 			highlight = {
 				enable = true,
 				use_languagetree = true,
+				additional_vim_regex_highlighting = true
 			},
 			indent = {
 				enable = true,
 				disable = {},
 			},
 			matchup = {
-				enable = false,
+				enable = true,
 			},
 			select = {
-				enable = false,
+				enable = true,
 			},
 			rainbow = {
 				enable = true,
@@ -77,6 +79,9 @@ return {
 				},
 			},
 		},
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
+		end
 	},
 	"JoosepAlviste/nvim-ts-context-commentstring",
 }
