@@ -125,4 +125,18 @@ return {
 	},
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"nvim-treesitter/nvim-treesitter-textobjects",
+	{
+		"danymat/neogen",
+		keys = {
+			{
+				"<leader>nc",
+				function()
+					require("neogen").generate()
+				end,
+				desc = "add function comment (NEOGEN)",
+			},
+		},
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = true,
+	},
 }
