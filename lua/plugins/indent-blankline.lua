@@ -4,9 +4,9 @@ return {
 	keys = {
 		{
 			"<leader>ig",
-		 "<cmd>IndentBlanklineToggle<CR>",
-		 { desc = "Toggle indent line"}
-		}
+			"<cmd>IndentBlanklineToggle<CR>",
+			{ desc = "Toggle indent line" },
+		},
 	},
 	config = function()
 		local status_ok, indent_blankline = pcall(require, "indent_blankline")
@@ -39,10 +39,10 @@ return {
 				"NvimTree",
 				"Trouble",
 			},
-			show_current_context = vim.g.current_context,
-			show_current_context_start = vim.g.current_context,
+			show_current_context = false,
+			show_current_context_start = false,
 			show_trailing_blankline_indent = false,
-			show_first_indent_level = false,
+			show_first_indent_level = true,
 			space_char_blankline = " ",
 			show_end_of_line = true,
 			use_treesitter = true,
