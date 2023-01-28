@@ -5,7 +5,6 @@ return {
 	"jose-elias-alvarez/typescript.nvim",
 	"L3MON4D3/LuaSnip",
 	"rafamadriz/friendly-snippets",
-
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = "VeryLazy",
@@ -26,6 +25,7 @@ return {
 				debug = false,
 				diagnostics_format = "[#{c}] #{m} (#{s})",
 				sources = {
+					require("typescript.extensions.null-ls.code-actions"),
 					diagnostics.eslint_d.with({
 						condition = function(utils)
 							return utils.root_has_file({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" })
@@ -56,7 +56,7 @@ return {
 	},
 	{
 		"glepnir/lspsaga.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		config = function()
 			local status_ok, saga = pcall(require, "lspsaga")
 			if not status_ok then

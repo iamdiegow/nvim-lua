@@ -15,7 +15,7 @@ vim.opt.hlsearch = true
 vim.opt.termguicolors = true
 vim.opt.ruler = false
 vim.opt.pumheight = 10
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 5
 vim.opt.guicursor = ""
 
 wo.number = true
@@ -29,7 +29,7 @@ o.laststatus = 3
 o.hlsearch = true
 o.incsearch = true
 o.ignorecase = true
-o.scrolloff = 999
+o.scrolloff = 5
 o.scroll = 5
 -- o.colorcolumn = "80"
 o.syntax = 'enable'

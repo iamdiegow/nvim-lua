@@ -16,8 +16,8 @@ vim.g.mapleader = " "
 
 require("lazy").setup("plugins", {
 	change_detection = {
-		notify = false
-	}
+		notify = false,
+	},
 })
 
 -- Global variables
