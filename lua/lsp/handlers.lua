@@ -2,7 +2,7 @@ local M = {}
 
 if vim.g.diagnostics_hover_window == true then
 	vim.o.updatetime = 250
-	vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+	vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
 end
 
 M.setup = function()
@@ -61,7 +61,7 @@ M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.document_formatting = false
 
-		require('typescript').setup({
+		require("typescript").setup({
 			disable_commands = false,
 			debug = false,
 		})
@@ -71,6 +71,10 @@ M.on_attach = function(client, bufnr)
 		map("n", "gM", "<cmd>TypescriptAddMissingImports<CR>", opts)
 		map("n", "gR", "<cmd>TypescriptRemoveUnused<CR>", opts)
 		map("n", "gO", "<cmd>TypescriptOrganizeImports<CR>", opts)
+	end
+
+	if client.server_capabilities["documentSymbolProvider"] then
+		require("nvim-navic").attach(client, bufnr)
 	end
 
 	lsp_keymaps(bufnr)
@@ -90,10 +94,10 @@ M.toggle_diagnostics = function()
 	diagnostics_visible = not diagnostics_visible
 	if diagnostics_visible then
 		vim.diagnostic.hide(nil, 0)
-		require 'notify' ('diagnostics off', 'error', { render = 'minimal' })
+		require("notify")("diagnostics off", "error", { render = "minimal" })
 	else
 		vim.diagnostic.show(nil, 0)
-		require 'notify' ('diagnostics on', 'info', { render = 'minimal' })
+		require("notify")("diagnostics on", "info", { render = "minimal" })
 	end
 end
 
