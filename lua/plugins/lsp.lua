@@ -90,8 +90,8 @@ return {
 					},
 				},
 				lightbulb = {
-					enable = true,
-					virtual_text = true,
+					enable = false,
+					virtual_text = false,
 					sign = false,
 					enable_in_insert = false,
 				},
