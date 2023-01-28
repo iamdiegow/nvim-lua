@@ -85,6 +85,16 @@ return {
 				diagnostic = {
 					enabled = true,
 				},
+				floating = {
+					border = "single",
+					max_height = 0.6,
+					max_width = 0.6,
+					options = {},
+				},
+				quickfix = {
+					enabled = false,
+					open = false,
+				},
 				icons = {
 					child_indent = "│",
 					child_prefix = "├",
@@ -108,8 +118,8 @@ return {
 				summary = {
 					animated = true,
 					enabled = true,
-					expand_errors = true,
-					follow = true,
+					expand_errors = false,
+					follow = false,
 					mappings = {
 						attach = "a",
 						clear_marked = "M",

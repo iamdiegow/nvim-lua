@@ -92,8 +92,8 @@ return {
 							luasnip.expand_or_jump()
 						elseif luasnip.expandable() then
 							luasnip.expand()
-						-- elseif check_backspace() then
-						-- 	fallback()
+						elseif check_backspace() then
+							fallback()
 						else
 							fallback()
 						end

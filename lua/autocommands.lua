@@ -42,7 +42,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"dap-float",
 		"dap-repl",
 		"httpResult",
-		"lspsagaoutline"
+		"lspsagaoutline",
+		"neotest-summary",
+		"neotest-output",
+		"neotest-output-panel",
 	},
 	callback = function()
 		vim.cmd [[
