@@ -7,6 +7,7 @@ return {
 			"antoinemadec/FixCursorHold.nvim",
 			"vim-test/vim-test",
 			"nvim-neotest/neotest-vim-test",
+			"haydenmeade/neotest-jest",
 		},
 		keys = {
 			{
@@ -45,11 +46,25 @@ return {
 				desc = "Jump Previous (NEOTEST)",
 			},
 			{
-				"<leader>;",
+				"<leader>;j",
 				function()
 					require("neotest").jump.next()
 				end,
 				desc = "Jump Next (NEOTEST)",
+			},
+			{
+				"<leader>;o",
+				function()
+					require("neotest").output.open()
+				end,
+				desc = "Open Output (NEOTEST)",
+			},
+			{
+				"<leader>;p",
+				function()
+					require("neotest").output_panel.toggle()
+				end,
+				desc = "Open Output Panel (NEOTEST)",
 			},
 		},
 		config = function()
@@ -58,9 +73,17 @@ return {
 					require("neotest-vim-test")({
 						allow_file_types = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 					}),
+					require("neotest-jest")({
+						jestCommand = "npm test --",
+						jestConfigFile = "custom.jest.config.ts",
+						env = { CI = true },
+						cwd = function()
+							return vim.fn.getcwd()
+						end,
+					}),
 				},
 				diagnostic = {
-					enabled = false,
+					enabled = true,
 				},
 				icons = {
 					child_indent = "│",
@@ -83,7 +106,7 @@ return {
 					virtual_text = true,
 				},
 				summary = {
-					animated = false,
+					animated = true,
 					enabled = true,
 					expand_errors = true,
 					follow = true,
