@@ -7,6 +7,12 @@ return {
 		priority = 1000,
 		opts = {
 			style = "night",
+			styles = {
+				comments = { italic = false },
+				keywords = { italic = false, bold = false },
+				sidebars = "normal",
+				floats = "normal"
+			}
 		},
 	},
 
