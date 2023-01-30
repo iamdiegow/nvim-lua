@@ -11,8 +11,8 @@ return {
 				comments = { italic = false },
 				keywords = { italic = false, bold = false },
 				sidebars = "normal",
-				floats = "normal"
-			}
+				floats = "normal",
+			},
 		},
 	},
 
@@ -25,6 +25,7 @@ return {
 	"theHamsta/nvim-dap-virtual-text",
 	"famiu/bufdelete.nvim",
 	"tpope/vim-surround",
+	"rmagatti/auto-session",
 
 	-- UI
 	{

@@ -82,7 +82,7 @@ return {
 		lualine.setup({
 			options = {
 				icons_enabled = true,
-				theme = vim.g.color_theme,
+				theme = "tokyonight",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				left_padding = 0,
@@ -98,7 +98,10 @@ return {
 				lualine_a = { { "mode" }, { "paste" } },
 				lualine_b = { filename, filetype },
 				lualine_c = {},
-				lualine_x = { branch },
+				lualine_x = {
+					require('auto-session-library').current_session_name,
+					branch,
+				},
 				lualine_y = { diff },
 				lualine_z = { diagnostics },
 			},
