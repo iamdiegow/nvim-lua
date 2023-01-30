@@ -29,7 +29,7 @@ return {
 			enabled = false,
 			-- char = "┆",
 			char = "▏",
-			char_blankline = "",
+			char_blankline = "▏",
 			context_char = "|",
 			buftype_exclude = { "terminal", "nofile" },
 			filetype_exclude = {
