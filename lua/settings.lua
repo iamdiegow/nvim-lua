@@ -18,9 +18,9 @@ vim.opt.pumheight = 10
 vim.opt.scrolloff = 5
 vim.opt.guicursor = ""
 
-wo.number = true
+wo.number = false
 wo.numberwidth = 2
-wo.relativenumber = true
+wo.relativenumber = false
 
 o.swapfile = false
 o.dir = '/tmp'
