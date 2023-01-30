@@ -179,6 +179,15 @@ return {
 				S = { "<cmd>lua require'dapui'.toggle('sidebar')<CR>", "Toggle Dapui Sidebar" },
 				T = { "<cmd>lua require'dapui'.toggle('tray')<CR>", "Toggle Dapui Tray" },
 			},
+			f = {
+				name = "Telescope"
+			},
+			t = {
+				name = "Trouble Diagnostics"
+			},
+			[";"] = {
+				name = "Neotest"
+			}
 		}
 
 		-- NORMAL MODE KEYBINDINGS
