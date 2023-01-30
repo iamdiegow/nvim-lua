@@ -105,6 +105,6 @@ map('x', '<C-_>', ':CommentToggle<CR>', options)
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "DiffviewFiles",
 	callback = function()
-		map('n', 'Q', ':DiffviewClose<CR>', options)
+		map('n', 'q', ':DiffviewClose<CR>', options)
 	end
 })
