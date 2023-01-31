@@ -134,6 +134,8 @@ return {
 				O = { "<cmd>Lspsaga outline<cr>", "Lspsaga Toggle Outline" },
 				F = { "<cmd>Lspsaga lsp_finder<cr>", "Lspsaga Lsp_finder" },
 				I = { "<cmd>Lspsaga implement<cr>", "Lspsaga implement" },
+				L = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Lspsaga Line Diagnostics" },
+				C = { "<cmd>Lspsaga show_cursor_diagnostics<cr>", "Lspsaga Cursor Diagnostics" },
 				["]"] = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Lspsaga Diagnostic jump next" },
 				["["] = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Lspsaga Diagnostic jump prev" },
 			},
