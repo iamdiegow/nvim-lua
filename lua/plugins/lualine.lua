@@ -98,10 +98,7 @@ return {
 				lualine_a = { { "mode" }, { "paste" } },
 				lualine_b = { filename, filetype },
 				lualine_c = {},
-				lualine_x = {
-					require('auto-session-library').current_session_name,
-					branch,
-				},
+				lualine_x = { branch },
 				lualine_y = { diff },
 				lualine_z = { diagnostics },
 			},

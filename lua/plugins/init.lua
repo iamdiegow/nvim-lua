@@ -25,7 +25,6 @@ return {
 	"theHamsta/nvim-dap-virtual-text",
 	"famiu/bufdelete.nvim",
 	"tpope/vim-surround",
-	"rmagatti/auto-session",
 
 	-- UI
 	{

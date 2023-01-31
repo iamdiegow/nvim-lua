@@ -1,7 +1,6 @@
 return {
 	{
 		"sindrets/diffview.nvim",
-		event = "VeryLazy",
 		keys = {
 			{ "<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Open Diffview" },
 			{ "<leader>gq", "<cmd>DiffviewClose<CR>", desc = "Close Diffview" },
@@ -148,7 +147,7 @@ return {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "BufReadPre",
+		event = "BufWinEnter",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
