@@ -45,12 +45,12 @@ return {
 		renderer = {
 			highlight_git = true,
 			group_empty = false,
-			highlight_opened_files = "none",
+			highlight_opened_files = "all",
 			root_folder_modifier = ":~",
 			add_trailing = true,
 			indent_width = 2,
 			indent_markers = {
-				enable = true,
+				enable = false,
 				icons = {
 					corner = "└ ",
 					item = "├─",
@@ -112,6 +112,7 @@ return {
 			},
 			float = {
 				enable = true,
+				quit_on_focus_loss = false,
 				open_win_config = function()
 					local screen_w = vim.opt.columns:get()
 					local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
@@ -144,7 +145,7 @@ return {
 		},
 		git = {
 			enable = true,
-			ignore = true,
+			ignore = false,
 			timeout = 1000,
 		},
 		trash = {
