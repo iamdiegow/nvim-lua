@@ -141,6 +141,7 @@ return {
 			exclude = {
 				".github",
 				"node_modules",
+				".gitignore"
 			},
 		},
 		git = {
