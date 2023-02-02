@@ -64,10 +64,12 @@ return {
 				window = {
 					completion = cmp.config.window.bordered({
 						scrollbar = true,
-						side_padding = 1,
+						side_padding = 0,
 						col_offset = 1,
 					}),
-					documentation = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered({
+						scrollbar = true
+					}),
 				},
 				view = {
 					entries = {
@@ -109,16 +111,16 @@ return {
 					end),
 				}),
 				sources = cmp.config.sources({
-					{ name = "nvim_lsp", keyword_length = 2 },
 					{ name = "luasnip" },
+					{ name = "nvim_lsp", keyword_length = 5 },
 					{ name = "path", max_item_count = 3 },
-				}, {
-					{ name = "buffer" },
+					{ name = "buffer", keyword_length = 3 },
 				}),
 				formatting = {
-					fields = { "menu", "kind", "abbr" },
+					fields = { "abbr", "kind", "menu" },
 					format = function(entry, vim_item)
-						vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+						local kind = vim_item.kind
+						vim_item.kind = (kind_icons[kind] or "?") .. " " .. kind
 						vim_item.menu = ({
 							nvim_lsp = "[lsp]",
 							luasnip = "[luasnip]",
@@ -140,24 +142,24 @@ return {
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
-			vim.cmd([[
-				" gray
-				highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-				" blue
-				highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
-				highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-				" light blue
-				highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-				highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
-				highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
-				" pink
-				highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-				highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-				" front
-				highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-				highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-				highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
-			]])
+			-- vim.cmd([[
+			-- 	" gray
+			-- 	highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+			-- 	" blue
+			-- 	highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+			-- 	highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+			-- 	" light blue
+			-- 	highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+			-- 	highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
+			-- 	highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
+			-- 	" pink
+			-- 	highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+			-- 	highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+			-- 	" front
+			-- 	highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+			-- 	highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
+			-- 	highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+			-- ]])
 		end,
 	},
 	"hrsh7th/cmp-nvim-lsp",
