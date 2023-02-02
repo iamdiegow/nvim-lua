@@ -1,8 +1,7 @@
 return {
 	"akinsho/nvim-bufferline.lua",
 	dependencies = "kyazdani42/nvim-web-devicons",
-	event = "VeryLazy",
-	pin = true,
+	event = "BufReadPre",
 	opts = {
 		options = {
 			numbers = "none",
