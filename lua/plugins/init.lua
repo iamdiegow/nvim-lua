@@ -1,5 +1,6 @@
 return {
 	"folke/lazy.nvim",
+
 	-- Colorschemes
 	{
 		"folke/tokyonight.nvim",
@@ -48,8 +49,33 @@ return {
 			})
 		end,
 	},
-	"folke/zen-mode.nvim",
+	{
+
+		"folke/zen-mode.nvim",
+		cmd = "ZenMode",
+		keys = {
+			{
+				"<leader>z",
+				"<cmd>ZenMode<CR>",
+				desc = "Toggle Zen Mode"
+			}
+		},
+		opts = {
+			window = {
+				width = 80,
+				height = 1,
+				options = {
+					number = false,
+					relativenumber = false,
+					cursorline = true
+				}
+			},
+			plugins = {
+				twilight = { enabled = false }
+			},
+
+		},
+	},
 	"folke/twilight.nvim",
-	"p00f/nvim-ts-rainbow",
 	"norcalli/nvim-colorizer.lua",
 }
