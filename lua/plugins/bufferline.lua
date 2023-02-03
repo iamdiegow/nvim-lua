@@ -1,5 +1,6 @@
 return {
 	"akinsho/nvim-bufferline.lua",
+	enabled = false,
 	dependencies = "kyazdani42/nvim-web-devicons",
 	event = "BufReadPre",
 	opts = {

@@ -37,16 +37,6 @@ return {
 			select = {
 				enable = true,
 			},
-			rainbow = {
-				enable = false,
-				extended_mode = false,
-				max_file_lines = 1000,
-				colors = {
-					"orchid",
-					"lightskyblue",
-					"gold",
-				},
-			},
 			autopairs = {
 				enable = true,
 			},
@@ -125,6 +115,15 @@ return {
 	},
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"nvim-treesitter/nvim-treesitter-textobjects",
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "BufReadPre",
+    config = function()
+			require('treesitter-context').setup({
+				enable = true
+			})
+		end,
+  },
 	{
 		"danymat/neogen",
 		keys = {
