@@ -158,28 +158,6 @@ return {
 			},
 			["d"] = {
 				name = "Debugger",
-				b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle breakpoint" },
-				B = { "<cmd>lua require'dap'.clear_breakpoints()<CR>", "Clear breakpoints" },
-				l = { "<cmd>lua require'dap'.step_out()<CR>", "Step out" },
-				k = { "<cmd>lua require'dap'.step_into()<CR>", "Step into" },
-				j = { "<cmd>lua require'dap'.step_over()<CR>", "Step over" },
-				c = { "<cmd>lua require'dap'.run_to_cursor()<CR>", "Run into cursor" },
-				t = { "<cmd>lua require'dap'.terminate()<CR>", "Terminate" },
-				i = { "<cmd>lua require'dap.ui.widgets'.hover()<CR>", "Hover" },
-				["?"] = {
-					"<cmd>lua require'dap.ui.widgets'.centered_float(require'dap.ui.widgets'.scopes)<CR>",
-					"Open centered float",
-				},
-				K = { "<cmd>lua require'dap'.up()<CR>", "Go up" },
-				J = { "<cmd>lua require'dap'.down()<CR>", "Go down" },
-				r = { "<cmd>lua require'dap'.repl.open()<CR>", "Open REPL" },
-				h = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
-				d = {
-					"<cmd>lua require'dap-config.dap-adapters-configurations'.reload_continue()<CR>",
-					"Continue and reload configurations",
-				},
-				S = { "<cmd>lua require'dapui'.toggle('sidebar')<CR>", "Toggle Dapui Sidebar" },
-				T = { "<cmd>lua require'dapui'.toggle('tray')<CR>", "Toggle Dapui Tray" },
 			},
 			f = {
 				name = "Telescope"

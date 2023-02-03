@@ -57,7 +57,5 @@ vim.g.diagnostics_hover_window = false
 require("keymappings")
 require("settings")
 require("autocommands")
--- LSP
-require("dap-config")
 
 vim.cmd([[ colorscheme tokyonight ]])

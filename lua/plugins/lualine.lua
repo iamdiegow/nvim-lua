@@ -1,6 +1,6 @@
 return {
 	{
-		"hoob3rt/lualine.nvim",
+		"nvim-lualine/lualine.nvim",
 		pin = true,
 		event = "VeryLazy",
 		config = function()
