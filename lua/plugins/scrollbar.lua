@@ -1,25 +1,19 @@
 return {
 	"petertriho/nvim-scrollbar",
-	event = "VeryLazy",
+	event = "BufReadPost",
 	config = function()
-		require("scrollbar").setup({
-			show_in_active_only = true,
-			hide_if_all_visible = false,
+		local scrollbar = require("scrollbar")
+		local colors = require("tokyonight.colors").setup()
+		scrollbar.setup({
+			handle = { color = colors.bg_highlight },
+			excluded_filetypes = { "prompt", "TelescopePrompt", "noice", "notify" },
 			marks = {
-				Cursor = {
-					text = "─",
-					priority = 0,
-				},
-			},
-			excluded_filetypes = {
-				"prompt",
-				"TelescopePrompt",
-				"alpha",
-				"NvimTree",
-				"",
-			},
-			excluded_buftypes = {
-				"terminal",
+				Search = { color = colors.orange },
+				Error = { color = colors.error },
+				Warn = { color = colors.warning },
+				Info = { color = colors.info },
+				Hint = { color = colors.hint },
+				Misc = { color = colors.purple },
 			},
 		})
 	end,
