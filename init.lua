@@ -18,6 +18,34 @@ require("lazy").setup("plugins", {
 	change_detection = {
 		notify = false,
 	},
+	defaults = {
+		lazy = true,
+	},
+	install = { colorscheme = { "tokyonight" } },
+	checker = {
+		enabled = true,
+	},
+	diff = {
+		cmd = "terminal_git"
+	},
+	performance = {
+		cache = {
+			enabled = true,
+		},
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"matchit",
+				"matchparen",
+				"netrwPlugin",
+				"rplugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
 })
 
 -- Global variables
