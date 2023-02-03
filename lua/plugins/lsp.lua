@@ -1,7 +1,14 @@
 return {
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
+	{
+		"neovim/nvim-lspconfig",
+		event = "BufReadPre",
+		config = function()
+			require("lsp.mason")
+			require("lsp.handlers").setup()
+		end,
+	},
 	"jose-elias-alvarez/typescript.nvim",
 	"L3MON4D3/LuaSnip",
 	"rafamadriz/friendly-snippets",

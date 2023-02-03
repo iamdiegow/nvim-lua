@@ -31,6 +31,5 @@ require("settings")
 require("autocommands")
 -- LSP
 require("dap-config")
-require("lsp")
 
 vim.cmd([[ colorscheme tokyonight ]])
