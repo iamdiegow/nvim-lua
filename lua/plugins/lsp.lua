@@ -10,8 +10,6 @@ return {
 		end,
 	},
 	"jose-elias-alvarez/typescript.nvim",
-	"L3MON4D3/LuaSnip",
-	"rafamadriz/friendly-snippets",
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = "VeryLazy",
