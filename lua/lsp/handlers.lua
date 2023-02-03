@@ -73,10 +73,6 @@ M.on_attach = function(client, bufnr)
 		map("n", "gO", "<cmd>TypescriptOrganizeImports<CR>", opts)
 	end
 
-	if client.server_capabilities["documentSymbolProvider"] then
-		require("nvim-navic").attach(client, bufnr)
-	end
-
 	lsp_keymaps(bufnr)
 end
 
