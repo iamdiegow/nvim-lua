@@ -68,7 +68,7 @@ return {
 
 		local normal_mappings = {
 			["q"] = { "<cmd>q!<CR>", "Quit" },
-			["c"] = { "<cmd>Bwipeout<CR>", "Close Buffer" },
+			["c"] = { name = "Close Buffer" },
 			["s"] = { "<cmd>luafile %<CR>", "Source File" },
 			["="] = { "<cmd>:ColorizerToggle<CR>", "Toggle Colorizer" },
 			-- BUFFERS

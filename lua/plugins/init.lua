@@ -30,7 +30,19 @@ return {
 		dependencies = { "mfussenegger/nvim-dap" },
 	},
 	"theHamsta/nvim-dap-virtual-text",
-	"famiu/bufdelete.nvim",
+	{
+
+		"famiu/bufdelete.nvim",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>c",
+				"<cmd>Bwipeout<CR>",
+				desc = "Close Buffer"
+			}
+		}
+	},
+
 	"tpope/vim-surround",
 
 	-- UI
@@ -57,8 +69,8 @@ return {
 			{
 				"<leader>z",
 				"<cmd>ZenMode<CR>",
-				desc = "Toggle Zen Mode"
-			}
+				desc = "Toggle Zen Mode",
+			},
 		},
 		opts = {
 			window = {
@@ -67,13 +79,12 @@ return {
 				options = {
 					number = false,
 					relativenumber = false,
-					cursorline = true
-				}
+					cursorline = true,
+				},
 			},
 			plugins = {
-				twilight = { enabled = false }
+				twilight = { enabled = false },
 			},
-
 		},
 	},
 	"folke/twilight.nvim",
