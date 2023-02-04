@@ -49,7 +49,7 @@ o.signcolumn = "yes"
 o.showmode = false
 o.backup = false
 o.writebackup = false
-o.cursorline = false
+o.cursorline = true
 o.cursorcolumn = false
 o.wrap = true
 
