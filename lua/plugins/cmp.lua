@@ -125,12 +125,16 @@ return {
 							if kinds[entry:get_kind()] == "Snippet" then
 								local name = vim.split(entry.source:get_debug_name(), ":")[2]
 								if name == "emmet_ls" then
-									local ts_utils = require('nvim-treesitter.ts_utils')
+									local ts_utils = require("nvim-treesitter.ts_utils")
 									local node = ts_utils.get_node_at_cursor(0, true)
 									local nodeType = node:type()
-									if nodeType == "jsx_text" then
+									if
+										nodeType == "jsx_text"
+										or nodeType == "jsx_expression"
+										or nodeType == "parenthesized_expression"
+									then
 										return true
- 									else
+									else
 										return false
 									end
 								end
