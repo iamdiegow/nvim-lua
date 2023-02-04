@@ -150,7 +150,30 @@ return {
 							end
 						end,
 					},
-					{ name = "luasnip", max_item_count = 5 },
+					{
+						name = "luasnip",
+						max_item_count = 5,
+						entry_filter = function()
+							local filetype = vim.bo.filetype
+							if filetype ~= "javascriptreact" and filetype ~= "typescriptreact" then
+								return true
+							end
+
+							local ts_utils = require("nvim-treesitter.ts_utils")
+							local node = ts_utils.get_node_at_cursor(0, true)
+							local nodeType = node:type()
+							if
+								nodeType == "jsx_opening_element"
+								or nodeType == "jsx_element"
+								or nodeType == "jsx_text"
+								or nodeType == "jsx_expression"
+							then
+								return false
+							end
+
+							return true
+						end,
+					},
 					{ name = "path", max_item_count = 2 },
 					{ name = "buffer", keyword_length = 3 },
 				}),
