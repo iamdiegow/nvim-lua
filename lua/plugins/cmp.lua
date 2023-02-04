@@ -121,13 +121,22 @@ return {
 						name = "nvim_lsp",
 						entry_filter = function(entry)
 							local kinds = require("cmp.types").lsp.CompletionItemKind
-							local in_capture = require("cmp.config.context").in_treesitter_capture
+
 							if kinds[entry:get_kind()] == "Snippet" then
 								local name = vim.split(entry.source:get_debug_name(), ":")[2]
 								if name == "emmet_ls" then
-									return not in_capture("jsx_text")
+									local ts_utils = require('nvim-treesitter.ts_utils')
+									local node = ts_utils.get_node_at_cursor(0, true)
+									local nodeType = node:type()
+									if nodeType == "jsx_text" then
+										return true
+ 									else
+										return false
+									end
 								end
 							end
+
+							return true
 						end,
 					},
 					{ name = "luasnip", max_item_count = 5 },
