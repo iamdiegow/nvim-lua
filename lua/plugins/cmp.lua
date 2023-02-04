@@ -120,48 +120,31 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
-					-- ["<Tab>"] = cmp.mapping(function(fallback)
-					-- 	if cmp.visible() then
-					-- 		cmp.confirm()
-					-- 	elseif luasnip.jumpable(1) then
-					-- 		luasnip.jump(1)
-					-- 	elseif luasnip.expand_or_jumpable() then
-					-- 		luasnip.expand_or_jump()
-					-- 	elseif luasnip.expandable() then
-					-- 		luasnip.expand()
-					-- 	elseif check_backspace() then
-					-- 		fallback()
-					-- 	else
-					-- 		fallback()
-					-- 	end
-					-- end, { "i", "s" }),
-					-- ["<S-Tab>"] = cmp.mapping(function(fallback)
-					-- 	if cmp.visible() then
-					-- 		cmp.confirm()
-					-- 	elseif luasnip.jumpable(-1) then
-					-- 		luasnip.jump(-1)
-					-- 	else
-					-- 		fallback()
-					-- 	end
-					-- end),
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip", max_item_count = 5 },
-					{ name = "path", max_item_count = 3 },
+					{ name = "path", max_item_count = 2 },
 					{ name = "buffer", keyword_length = 3 },
 				}),
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
 					format = function(entry, vim_item)
 						local kind = vim_item.kind
+						local source = entry.source.name
+
 						vim_item.kind = (kind_icons[kind] or "?") .. " " .. kind
 						vim_item.menu = ({
 							nvim_lsp = "[lsp]",
 							luasnip = "[luasnip]",
 							buffer = "[buffer]",
 							path = "[path]",
-						})[entry.source.name]
+						})[source]
+
+						if source == "luasnip" or source == "nvim_lsp" then
+							vim_item.dup = 0
+						end
+
 						return vim_item
 					end,
 				},
