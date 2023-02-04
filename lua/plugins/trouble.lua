@@ -1,6 +1,7 @@
 return {
 	"folke/trouble.nvim",
 	dependencies = "kyazdani42/nvim-web-devicons",
+	cmd = { "TroubleToggle", "Trouble" },
 	keys = {
 		{
 			"<leader>tt",
@@ -9,12 +10,12 @@ return {
 		},
 		{
 			"<leader>tw",
-			"<cmd>Trouble lsp_workspace_diagnostics<CR>",
+			"<cmd>Trouble workspace_diagnostics<CR>",
 			desc = "Workspace diagnostics"
 		},
 		{
 			"<leader>td",
-			"<cmd>Trouble lsp_document_diagnostics<CR>",
+			"<cmd>Trouble document_diagnostics<CR>",
 			desc = "Document diagnostics"
 		},
 		{
