@@ -21,6 +21,7 @@ return {
 				"tsx",
 				"regex",
 				"yaml",
+				"fish"
 			},
 			highlight = {
 				enable = true,
