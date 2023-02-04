@@ -4,6 +4,9 @@ return {
 		version = false,
 		build = ":TSUpdate",
 		event = "BufReadPost",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 		opts = {
 			ensure_installed = {
 				"javascript",
@@ -22,7 +25,7 @@ return {
 				"regex",
 				"yaml",
 				"fish",
-				"help"
+				"help",
 			},
 			highlight = {
 				enable = true,
@@ -116,16 +119,15 @@ return {
 		end,
 	},
 	"JoosepAlviste/nvim-ts-context-commentstring",
-	"nvim-treesitter/nvim-treesitter-textobjects",
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    event = "BufReadPre",
-    config = function()
-			require('treesitter-context').setup({
-				enable = true
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		event = "BufReadPre",
+		config = function()
+			require("treesitter-context").setup({
+				enable = true,
 			})
 		end,
-  },
+	},
 	{
 		"danymat/neogen",
 		keys = {
