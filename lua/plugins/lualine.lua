@@ -74,7 +74,7 @@ return {
 
 			local filename = {
 				"filename",
-				path = 0,
+				path = 3,
 				file_status = true,
 				shorting_target = 30,
 				component_separators = { left = "", right = "" },
@@ -97,9 +97,9 @@ return {
 				},
 				sections = {
 					lualine_a = { { "mode" }, { "paste" } },
-					lualine_b = { filename, filetype },
+					lualine_b = { branch, filename },
 					lualine_c = {},
-					lualine_x = { branch },
+					lualine_x = {},
 					lualine_y = { diff },
 					lualine_z = { diagnostics, function()
 						return " " .. os.date("%R")
