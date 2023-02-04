@@ -53,11 +53,6 @@ return {
 
 			require("luasnip/loaders/from_vscode").lazy_load()
 
-			local check_backspace = function()
-				local col = vim.fn.col(".") - 1
-				return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-			end
-
 			local kind_icons = {
 				Text = "",
 				Method = "m",
@@ -122,7 +117,19 @@ return {
 					["<C-k>"] = cmp.mapping.select_prev_item(),
 				}),
 				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
+					{
+						name = "nvim_lsp",
+						entry_filter = function(entry)
+							local kinds = require("cmp.types").lsp.CompletionItemKind
+							local in_capture = require("cmp.config.context").in_treesitter_capture
+							if kinds[entry:get_kind()] == "Snippet" then
+								local name = vim.split(entry.source:get_debug_name(), ":")[2]
+								if name == "emmet_ls" then
+									return not in_capture("jsx_text")
+								end
+							end
+						end,
+					},
 					{ name = "luasnip", max_item_count = 5 },
 					{ name = "path", max_item_count = 2 },
 					{ name = "buffer", keyword_length = 3 },

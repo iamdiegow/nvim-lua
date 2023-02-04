@@ -6,6 +6,8 @@ return {
 		event = "BufReadPost",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			"windwp/nvim-ts-autotag",
 		},
 		opts = {
 			ensure_installed = {
@@ -41,6 +43,9 @@ return {
 			},
 			select = {
 				enable = true,
+			},
+			autotag = {
+				enable = true
 			},
 			autopairs = {
 				enable = true,
@@ -118,7 +123,6 @@ return {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
-	"JoosepAlviste/nvim-ts-context-commentstring",
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		event = "BufReadPre",
@@ -139,7 +143,6 @@ return {
 				desc = "add function comment (NEOGEN)",
 			},
 		},
-		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = true,
 	},
 }

@@ -1,6 +1,7 @@
 return {
 	{
 		"windwp/nvim-autopairs",
+		event = "InsertEnter",
 		config = function()
 			local status_ok, nvim_autopairs = pcall(require, "nvim-autopairs")
 			if not status_ok then
@@ -29,12 +30,6 @@ return {
 				return
 			end
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
-		end,
-	},
-	{
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup({ enable = true })
 		end,
 	},
 }
