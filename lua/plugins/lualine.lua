@@ -101,7 +101,9 @@ return {
 					lualine_c = {},
 					lualine_x = { branch },
 					lualine_y = { diff },
-					lualine_z = { diagnostics },
+					lualine_z = { diagnostics, function()
+						return " " .. os.date("%R")
+					end },
 				},
 				inactive_sections = {
 					lualine_a = {},
