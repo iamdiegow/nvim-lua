@@ -117,6 +117,7 @@ return {
 					["<C-k>"] = cmp.mapping.select_prev_item(),
 				}),
 				sources = cmp.config.sources({
+					{ name = "nvim_lua" },
 					{
 						name = "nvim_lsp",
 						entry_filter = function(entry)
@@ -162,21 +163,18 @@ return {
 							local ts_utils = require("nvim-treesitter.ts_utils")
 							local node = ts_utils.get_node_at_cursor(0, true)
 							local nodeType = node:type()
-							if
-								nodeType == "jsx_opening_element"
-								or nodeType == "jsx_element"
-								or nodeType == "jsx_text"
-								or nodeType == "jsx_expression"
-							then
+							if string.match(nodeType, "jsx") then
 								return false
 							end
 
 							return true
 						end,
 					},
+					{ name = "nvim_lsp_signature_help", max_item_count = 2 },
+					{ name = "nvim_lsp_document_symbol", max_item_count = 2 },
 					{ name = "path", max_item_count = 2 },
-					{ name = "buffer", keyword_length = 3 },
-				}),
+				{}
+				}, { name = "buffer" }),
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
 					format = function(entry, vim_item)
@@ -214,6 +212,8 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lsp-document-symbol",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"saadparwaiz1/cmp_luasnip",
 			"windwp/nvim-autopairs",
 		},
