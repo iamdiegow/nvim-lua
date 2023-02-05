@@ -3,6 +3,7 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	{
 		"neovim/nvim-lspconfig",
+		lazy = false,
 		event = "BufReadPre",
 		config = function()
 			require("lsp.mason")

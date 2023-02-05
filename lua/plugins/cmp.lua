@@ -37,6 +37,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		version = false,
+		lazy = false,
 		event = "InsertEnter",
 		config = function()
 			local cmp_status_ok, cmp = pcall(require, "cmp")
