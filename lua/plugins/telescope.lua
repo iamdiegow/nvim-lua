@@ -56,13 +56,18 @@ local keys = {
 	{ "<leader>fo", "<cmd>Telescope oldfiles<CR>", desc = "Find Old files (Telescope)" },
 	{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
+	{ "<leader>fl", "<cmd>Telescope lsp_references<CR>", desc = "Find Lsp References (Telescope)" },
+	{ "<leader>fd", "<cmd>Telescope lsp_definitions<CR>", desc = "Find Outgoing Calls (Telescope)" },
+	{ "<leader>fi", "<cmd>Telescope lsp_implementations<CR>", desc = "Find Implementations (Telescope)" },
 	{
 		"<leader>fk",
-		function() grep_prompt() end,
-		desc = "Find Keymaps (Telescope)"
+		function()
+			grep_prompt()
+		end,
+		desc = "Find Keymaps (Telescope)",
 	},
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
-	{ "<leader>fd", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
+	{ "<leader>ft", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
 	{ "<leader>fr", "<cmd>Telescope lsp_references<CR>", desc = "Find Document Diagnostics (Telescope)" },
 }
 
@@ -155,8 +160,10 @@ return {
 				}),
 				buffers = {
 					theme = "dropdown",
-					previewer = false,
-					initial_mode = "insert",
+					previewer = true,
+					initial_mode = "normal",
+					only_cwd = true,
+					sort_lastused = false,
 				},
 				oldfiles = verticalConfig,
 				lsp_document_symbols = ivyConfig,
