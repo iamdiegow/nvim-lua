@@ -170,8 +170,7 @@ return {
 							return true
 						end,
 					},
-					{ name = "nvim_lsp_signature_help", max_item_count = 2 },
-					{ name = "nvim_lsp_document_symbol", max_item_count = 2 },
+					{ name = "nvim_lsp_signature_help" },
 					{ name = "path", max_item_count = 2 },
 				{}
 				}, { name = "buffer" }),
