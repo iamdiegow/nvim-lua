@@ -60,19 +60,7 @@ end
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.document_formatting = false
-
-		require("typescript").setup({
-			disable_commands = false,
-			debug = false,
-		})
-
-		local opts = { noremap = true, silent = true }
-		local map = vim.api.nvim_set_keymap
-		map("n", "gM", "<cmd>TypescriptAddMissingImports<CR>", opts)
-		map("n", "gR", "<cmd>TypescriptRemoveUnused<CR>", opts)
-		map("n", "gO", "<cmd>TypescriptOrganizeImports<CR>", opts)
 	end
-
 	lsp_keymaps(bufnr)
 end
 
