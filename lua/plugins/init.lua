@@ -7,19 +7,14 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
+			transparent = false,
 			style = "night",
 			styles = {
-				comments = { italic = false },
+				comments = { italic = true },
 				keywords = { italic = false, bold = false },
 				sidebars = "normal",
 				floats = "normal",
-			},
-			on_highlights = function(hl, c)
-				hl.CursorLineNr = { fg = c.orange, bold = false }
-				hl.LineNr = { fg = c.orange, bold = true }
-				hl.LineNrAbove = { fg = c.fg_gutter }
-				hl.LineNrBelow = { fg = c.fg_gutter }
-			end,
+			}
 		},
 	},
 
