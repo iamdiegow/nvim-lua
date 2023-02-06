@@ -101,12 +101,6 @@ return {
 						scrollbar = true,
 					}),
 				},
-				view = {
-					entries = {
-						name = "custom",
-						selection_order = "near_cursor",
-					},
-				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-b>"] = cmp.mapping.scroll_docs(-2),
 					["<C-f>"] = cmp.mapping.scroll_docs(2),
@@ -200,7 +194,7 @@ return {
 					select = false,
 				},
 				experimental = {
-					ghost_text = false,
+					ghost_text = true,
 				},
 			})
 
