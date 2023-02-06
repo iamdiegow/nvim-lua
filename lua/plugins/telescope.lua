@@ -160,7 +160,7 @@ return {
 				}),
 				buffers = {
 					theme = "dropdown",
-					previewer = true,
+					previewer = false,
 					initial_mode = "normal",
 					only_cwd = true,
 					sort_lastused = false,
