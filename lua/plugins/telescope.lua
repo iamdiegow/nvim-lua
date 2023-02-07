@@ -163,7 +163,7 @@ return {
 				buffers = {
 					theme = "dropdown",
 					previewer = false,
-					initial_mode = "normal",
+					initial_mode = "insert",
 					only_cwd = true,
 					sort_lastused = false,
 				},
