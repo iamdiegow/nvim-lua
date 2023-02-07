@@ -1,6 +1,5 @@
 return {
 	"phaazon/mind.nvim",
-	event = "VeryLazy",
 	cmd = { "MindOpenMain" },
 	keys = {
 		{
