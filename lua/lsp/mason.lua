@@ -19,6 +19,7 @@ local servers = {
 	"pyright",
 	"yamlls",
 	"bashls",
+	"marksman"
 }
 
 local settings = {
