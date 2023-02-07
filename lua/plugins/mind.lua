@@ -1,26 +1,25 @@
+local isOpen = false
+
 return {
 	"phaazon/mind.nvim",
-	cmd = { "MindOpenMain" },
+	event = "VeryLazy",
 	keys = {
 		{
 			"<leader>oo",
-			"<cmd>:MindOpenMain<cr>",
+			function()
+				if isOpen == true then
+					vim.cmd("MindClose")
+				else
+					vim.cmd("MindOpenMain")
+				end
+				isOpen = not isOpen
+			end,
 			desc = "Mind Open Main Vault",
-		},
-		{
-			"<leader>ol",
-			"<cmd>:MindOpenProject<cr>",
-			desc = "Mind Open Project Vault",
 		},
 		{
 			"<leader>or",
 			"<cmd>:MindReloadState<cr>",
 			desc = "Mind Reload State",
-		},
-		{
-			"<leader>oc",
-			"<cmd>:MindClose<cr>",
-			desc = "Mind Close",
 		},
 	},
 	dependencies = {
