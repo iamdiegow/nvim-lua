@@ -168,7 +168,7 @@ return {
 				name = "Neotest"
 			},
 			o = {
-				name = "Peek (Markdown Preview)"
+				name = "Mind & Peek (Markdown)"
 			}
 		}
 

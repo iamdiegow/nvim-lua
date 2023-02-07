@@ -73,11 +73,13 @@ local keys = {
 
 return {
 	"nvim-telescope/telescope.nvim",
-	cmd = "Telescope",
+	event = "VeryLazy",
+	cmd = { "Telescope", "MindOpenMain" },
 	keys = keys,
 	dependencies = {
 		{ "nvim-lua/popup.nvim" },
 		{ "nvim-lua/plenary.nvim" },
+		{ "nvim-telescope/telescope-ui-select.nvim" }
 	},
 	config = function()
 		require("telescope").setup({
@@ -169,6 +171,12 @@ return {
 				lsp_document_symbols = ivyConfig,
 				lsp_references = ivyConfig,
 			},
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown()
+				}
+			}
 		})
+		require("telescope").load_extension("ui-select")
 	end,
 }
