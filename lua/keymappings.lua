@@ -32,11 +32,15 @@ map('n', '<C-h>', '<C-w>h', options)
 -- tabs
 map('n', 'tt', ':tab split<CR>', options)
 -- Buffer cycle
-map('n', '<S-l>', ':BufferLineCycleNext<CR>', options)
-map('n', '<S-h>', ':BufferLineCyclePrev<CR>', options)
+-- map('n', '<S-l>', ':BufferLineCycleNext<CR>', options)
+-- map('n', '<S-h>', ':BufferLineCyclePrev<CR>', options)
+map('n', '<S-l>', ':bnext<CR>', options)
+map('n', '<S-h>', ':bprev<CR>', options)
 -- Tab switch buffer
-map('n', '<TAB>', ':BufferLineCycleNext<CR>', options)
-map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', options)
+-- map('n', '<TAB>', ':BufferLineCycleNext<CR>', options)
+-- map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', options)
+map('n', '<TAB>', ':bnext<CR>', options)
+map('n', '<S-TAB>', ':bprev<CR>', options)
 -- better yank
 map('n', 'Y', 'y$', options)
 -- Center screen
