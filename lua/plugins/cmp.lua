@@ -166,8 +166,8 @@ return {
 					},
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "path", max_item_count = 2 },
-				{}
-				}, { name = "buffer" }),
+					{ name = "buffer", keyword_length = 5 },
+				}),
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
 					format = function(entry, vim_item)
