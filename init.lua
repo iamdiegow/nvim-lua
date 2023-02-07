@@ -28,6 +28,9 @@ require("lazy").setup("plugins", {
 	diff = {
 		cmd = "terminal_git",
 	},
+	ui = {
+		border = "single"
+	},
 	performance = {
 		cache = {
 			enabled = true,
