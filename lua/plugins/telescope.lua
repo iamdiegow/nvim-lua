@@ -31,14 +31,16 @@ local grep_prompt = function()
 end
 
 local fuzzy_find_file = function()
-	require("telescope.builtin").current_buffer_fuzzy_find({
+	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
 		prompt_title = " Fuzzy Find Buffer",
 		sorting_strategy = "ascending",
-		layout_strategy = "vertical",
 		layout_config = {
 			prompt_position = "top",
+			height = 15,
 		},
-	})
+		winblen = 0,
+		border = true,
+	}))
 end
 
 local keys = {
@@ -79,7 +81,7 @@ return {
 	dependencies = {
 		{ "nvim-lua/popup.nvim" },
 		{ "nvim-lua/plenary.nvim" },
-		{ "nvim-telescope/telescope-ui-select.nvim" }
+		{ "nvim-telescope/telescope-ui-select.nvim" },
 	},
 	config = function()
 		require("telescope").setup({
@@ -173,9 +175,9 @@ return {
 			},
 			extensions = {
 				["ui-select"] = {
-					require("telescope.themes").get_dropdown()
-				}
-			}
+					require("telescope.themes").get_dropdown(),
+				},
+			},
 		})
 		require("telescope").load_extension("ui-select")
 	end,
