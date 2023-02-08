@@ -21,7 +21,6 @@ return {
 	-- Workflow
 	{
 		"famiu/bufdelete.nvim",
-		event = "VeryLazy",
 		keys = {
 			{
 				"<leader>c",

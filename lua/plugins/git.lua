@@ -216,6 +216,7 @@ return {
 					row = 0,
 					col = 1,
 				},
+				trouble = false,
 				sign_priority = 6,
 				update_debounce = 100,
 				status_formatter = nil,
