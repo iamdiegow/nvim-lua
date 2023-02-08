@@ -2,7 +2,6 @@ local isOpen = false
 
 return {
 	"phaazon/mind.nvim",
-	event = "VeryLazy",
 	cmd = "MindOpenMain",
 	keys = {
 		{

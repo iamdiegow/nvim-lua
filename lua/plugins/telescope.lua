@@ -75,7 +75,6 @@ local keys = {
 
 return {
 	"nvim-telescope/telescope.nvim",
-	event = "VeryLazy",
 	cmd = { "Telescope" },
 	keys = keys,
 	dependencies = {
