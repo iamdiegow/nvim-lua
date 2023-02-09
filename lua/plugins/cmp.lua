@@ -48,8 +48,8 @@ return {
 
 			cmp.setup({
 				completion = {
-					completeopt = "menu,menuone,noselect,noinsert",
-					keyword_length = 2,
+					completeopt = "menu,menuone,noinsert",
+					autocomplete = false
 				},
 				snippet = {
 					expand = function(args)

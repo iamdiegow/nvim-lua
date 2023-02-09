@@ -138,11 +138,14 @@ return {
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<C-c>"] = require("telescope.actions").close,
+						["<CR>"] = require("telescope.actions").select_default + require("telescope.actions").center,
+						["<ESC>"] = require("telescope.actions").close,
 						-- M is the Alt key
 						["<M-p>"] = require("telescope.actions.layout").toggle_preview,
 					},
 					n = {
 						["q"] = require("telescope.actions").close,
+						["<M-p>"] = require("telescope.actions.layout").toggle_preview,
 					},
 				},
 			},
