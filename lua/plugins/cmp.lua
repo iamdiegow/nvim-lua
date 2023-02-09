@@ -1,40 +1,5 @@
 return {
 	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-		},
-		opts = {
-			history = true,
-			delete_check_events = "TextChanged",
-		},
-		keys = {
-			{
-				"<tab>",
-				function()
-					return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-				end,
-				expr = true,
-				silent = true,
-				mode = "i",
-			},
-			{
-				"<tab>",
-				function()
-					require("luasnip").jump(1)
-				end,
-				mode = "s",
-			},
-			{
-				"<s-tab>",
-				function()
-					require("luasnip").jump(-1)
-				end,
-				mode = { "i", "s" },
-			},
-		},
-	},
-	{
 		"hrsh7th/nvim-cmp",
 		version = false,
 		event = "InsertEnter",
@@ -114,6 +79,7 @@ return {
 					{ name = "nvim_lua" },
 					{
 						name = "nvim_lsp",
+						max_item_count = 10,
 						entry_filter = function(entry)
 							local kinds = require("cmp.types").lsp.CompletionItemKind
 
@@ -164,7 +130,7 @@ return {
 							return true
 						end,
 					},
-					{ name = "nvim_lsp_signature_help" },
+					{ name = "nvim_lsp_signature_help", max_item_count = 3 },
 					{ name = "path", max_item_count = 2 },
 					{ name = "buffer", keyword_length = 5 },
 				}),
@@ -208,6 +174,41 @@ return {
 			"hrsh7th/cmp-nvim-lsp-document-symbol",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"saadparwaiz1/cmp_luasnip",
+			{
+				"L3MON4D3/LuaSnip",
+				dependencies = {
+					"rafamadriz/friendly-snippets",
+				},
+				opts = {
+					history = true,
+					delete_check_events = "TextChanged",
+				},
+				keys = {
+					{
+						"<tab>",
+						function()
+							return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
+						end,
+						expr = true,
+						silent = true,
+						mode = "i",
+					},
+					{
+						"<tab>",
+						function()
+							require("luasnip").jump(1)
+						end,
+						mode = "s",
+					},
+					{
+						"<s-tab>",
+						function()
+							require("luasnip").jump(-1)
+						end,
+						mode = { "i", "s" },
+					},
+				},
+			},
 			{
 				"windwp/nvim-autopairs",
 				config = function()
