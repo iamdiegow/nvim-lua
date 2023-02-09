@@ -95,10 +95,12 @@ return {
 							end
 
 							local filetype = vim.bo.filetype
+
 							if filetype == "javascriptreact" or filetype == "typescriptreact" then
 								local ts_utils = require("nvim-treesitter.ts_utils")
 								local node = ts_utils.get_node_at_cursor(0, true)
 								local nodeType = node:type()
+
 								if
 									nodeType == "jsx_text"
 									or nodeType == "jsx_expression"
@@ -116,6 +118,7 @@ return {
 						max_item_count = 5,
 						entry_filter = function()
 							local filetype = vim.bo.filetype
+
 							if filetype ~= "javascriptreact" and filetype ~= "typescriptreact" then
 								return true
 							end
@@ -123,6 +126,7 @@ return {
 							local ts_utils = require("nvim-treesitter.ts_utils")
 							local node = ts_utils.get_node_at_cursor(0, true)
 							local nodeType = node:type()
+
 							if string.match(nodeType, "jsx") then
 								return false
 							end
@@ -130,7 +134,11 @@ return {
 							return true
 						end,
 					},
-					{ name = "nvim_lsp_signature_help", max_item_count = 3 },
+					{
+						name = "nvim_lsp_signature_help",
+						max_item_count = 3,
+						keyword_length = 3,
+					},
 					{ name = "path", max_item_count = 2 },
 					{ name = "buffer", keyword_length = 5 },
 				}),
