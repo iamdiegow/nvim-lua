@@ -1,60 +1,74 @@
 {
-  "name": "my-snippets",
-  "engines": {
-    "vscode": "^1.11.0"
-  },
-  "contributes": {
-    "snippets": [
+	"name": "my-snippets",
+	"engines": {
+		"vscode": "^1.11.0"
+	},
+	"contributes": {
+		"snippets": [
 			{
-				 "language": [
-          "typescript",
-          "typescriptreact",
-					"javascript",
-					"javascriptreact"
-        ],
-        "path": "./custom.json"
+				"language": [
+					"typescript",
+					"typescriptreact"
+				],
+				"path": "./nextjstypescript.json"
 			},
 			{
-				 "language": [
-          "typescript",
+				"language": [
+					"javascript",
+					"javascriptreact"
+				],
+				"path": "./nextjsjavascript.json"
+			},
+			{
+				"language": [
+					"typescript",
+					"typescriptreact",
+					"javascript",
+					"javascriptreact"
+				],
+				"path": "./custom.json"
+			},
+			{
+				"language": [
+					"typescript",
 					"javascript"
-        ],
-        "path": "./cypress.json"
+				],
+				"path": "./cypress.json"
 			},
 			{
-				 "language": [
-          "typescript",
-          "typescriptreact",
+				"language": [
+					"typescript",
+					"typescriptreact",
 					"javascript",
 					"javascriptreact"
-        ],
-        "path": "./jest.json"
+				],
+				"path": "./jest.json"
 			},
 			{
-				 "language": [
-          "typescript",
-          "typescriptreact",
+				"language": [
+					"typescript",
+					"typescriptreact",
 					"javascript",
 					"javascriptreact"
-        ],
-        "path": "./react-javascript.json"
+				],
+				"path": "./react-javascript.json"
 			},
 			{
-				 "language": [
-          "typescript",
-          "typescriptreact",
+				"language": [
+					"typescript",
+					"typescriptreact",
 					"javascript",
 					"javascriptreact"
-        ],
-        "path": "./es6.json"
+				],
+				"path": "./es6.json"
 			},
 			{
-				 "language": [
-          "typescript",
+				"language": [
+					"typescript",
 					"javascript"
-        ],
-        "path": "./node.json"
+				],
+				"path": "./node.json"
 			}
-    ]
-  }
+		]
+	}
 }
