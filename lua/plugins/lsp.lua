@@ -30,13 +30,17 @@ return {
 				debug = false,
 				diagnostics_format = "[#{c}] #{m} (#{s})",
 				sources = {
-					require("typescript.extensions.null-ls.code-actions"),
+					-- diagnostics
 					diagnostics.eslint_d.with({
 						condition = function(utils)
 							return utils.root_has_file({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" })
 						end,
 					}),
+					diagnostics.markdownlint,
+					-- code actions
 					code_actions.eslint_d,
+					require("typescript.extensions.null-ls.code-actions"),
+					-- formatting
 					formatting.black.with({ extra_args = { "--fast" } }),
 					formatting.prettierd.with({
 						filetypes = {
@@ -50,6 +54,7 @@ return {
 							"json",
 							"yaml",
 							"graphql",
+							"markdown"
 						},
 						prefer_local = "node_modules/.bin",
 					}),
