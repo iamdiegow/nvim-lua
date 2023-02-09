@@ -23,13 +23,6 @@ local verticalConfig = {
 	border = true,
 }
 
-local grep_prompt = function()
-	require("telescope.builtin").grep_string({
-		path_display = true,
-		search = vim.fn.input("Rg> "),
-	})
-end
-
 local fuzzy_find_file = function()
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
 		prompt_title = " Fuzzy Find Buffer",
@@ -57,17 +50,11 @@ local keys = {
 	{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help Tags (Telescope)" },
 	{ "<leader>fo", "<cmd>Telescope oldfiles<CR>", desc = "Find Old files (Telescope)" },
 	{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
+	{ "<leader>fS", "<cmd>Telescope git_status<CR>", desc = "Git Status (Telescope)" },
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
 	{ "<leader>fl", "<cmd>Telescope lsp_references<CR>", desc = "Find Lsp References (Telescope)" },
 	{ "<leader>fd", "<cmd>Telescope lsp_definitions<CR>", desc = "Find Outgoing Calls (Telescope)" },
 	{ "<leader>fi", "<cmd>Telescope lsp_implementations<CR>", desc = "Find Implementations (Telescope)" },
-	{
-		"<leader>fk",
-		function()
-			grep_prompt()
-		end,
-		desc = "Find Keymaps (Telescope)",
-	},
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
 	{ "<leader>ft", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
 	{ "<leader>fr", "<cmd>Telescope lsp_references<CR>", desc = "Find Document Diagnostics (Telescope)" },
@@ -139,7 +126,6 @@ return {
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<C-c>"] = require("telescope.actions").close,
 						["<CR>"] = require("telescope.actions").select_default + require("telescope.actions").center,
-						["<ESC>"] = require("telescope.actions").close,
 						-- M is the Alt key
 						["<M-p>"] = require("telescope.actions.layout").toggle_preview,
 					},
