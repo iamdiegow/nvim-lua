@@ -47,6 +47,7 @@ local keys = {
 		desc = "Fuzy find buffer (Telescope)",
 	},
 	{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep (Telescope)" },
+	{ "<leader>fc", "<cmd>Telescope grep_string<CR>", desc = "Search String (Telescope)" },
 	{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help Tags (Telescope)" },
 	{ "<leader>fo", "<cmd>Telescope oldfiles<CR>", desc = "Find Old files (Telescope)" },
 	{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
