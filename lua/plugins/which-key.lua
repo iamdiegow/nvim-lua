@@ -116,11 +116,11 @@ return {
 				f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 				i = { "<cmd>LspInfo<cr>", "Info" },
 				j = {
-					"<cmd>lua vim.diagnostic.goto_next()<cr>",
+					"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'single' }})<cr>",
 					"Next Diagnostic",
 				},
 				k = {
-					"<cmd>lua vim.diagnostic.goto_prev()<cr>",
+					"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'single' }})<cr>",
 					"Prev Diagnostic",
 				},
 				p = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
