@@ -109,7 +109,7 @@ return {
 				name = "LSP",
 				a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 				l = {
-					"<cmd>lua vim.diagnostic.open_float(0, {scope = 'line', border = 'double'})<CR>",
+					"<cmd>lua vim.diagnostic.open_float(0, {scope = 'cursor', border = 'single', source = true })<CR>",
 					"Show Line Diagnostics",
 				},
 				t = { "<cmd>lua require'lsp.handlers'.toggle_diagnostics()<CR>", "Toggle Diagnostics (Show/Hide)" },
@@ -159,17 +159,17 @@ return {
 				name = "Debugger",
 			},
 			f = {
-				name = "Telescope"
+				name = "Telescope",
 			},
 			t = {
-				name = "Trouble Diagnostics"
+				name = "Trouble Diagnostics",
 			},
 			[";"] = {
-				name = "Neotest"
+				name = "Neotest",
 			},
 			o = {
-				name = "Mind & Peek (Markdown)"
-			}
+				name = "Mind & Peek (Markdown)",
+			},
 		}
 
 		-- NORMAL MODE KEYBINDINGS
