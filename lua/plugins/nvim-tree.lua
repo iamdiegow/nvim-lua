@@ -1,13 +1,7 @@
 local function open_nvim_tree(data)
-	local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
 	local directory = vim.fn.isdirectory(data.file) == 1
 
-	if not no_name and not directory then
-		return
-	end
-
-	if no_name then
-		vim.cmd([[ Telescope oldfiles ]])
+	if not directory then
 		return
 	end
 
@@ -60,9 +54,9 @@ return {
 				},
 			},
 			renderer = {
-				highlight_git = true,
+				highlight_git = false,
 				group_empty = false,
-				highlight_opened_files = "all",
+				highlight_opened_files = "none",
 				root_folder_modifier = ":~",
 				add_trailing = true,
 				indent_width = 2,
@@ -113,7 +107,8 @@ return {
 				symlink_destination = true,
 			},
 			remove_keymaps = {
-				"<C-k>", "<C-l>"
+				"<C-k>",
+				"<C-l>",
 			},
 			view = {
 				adaptive_size = false,
@@ -205,5 +200,14 @@ return {
 		})
 
 		vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+		-- nvim-tree events
+		local api = require("nvim-tree.api")
+		local Event = api.events.Event
+
+		-- open file that was created
+		api.events.subscribe(Event.FileCreated, function(event)
+			vim.cmd("e " .. event.fname)
+		end)
 	end,
 }

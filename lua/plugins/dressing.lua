@@ -10,7 +10,7 @@ return {
 			start_in_insert = true,
 			border = "single",
 			relative = "editor",
-			prefer_width = 40
+			prefer_width = 60
 		},
 		select = {
 			enabled = true,
