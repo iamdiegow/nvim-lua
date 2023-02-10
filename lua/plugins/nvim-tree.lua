@@ -1,8 +1,8 @@
 local function open_nvim_tree(data)
-	local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+	-- local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
 	local directory = vim.fn.isdirectory(data.file) == 1
 
-	if not no_name and not directory then
+	if --[[ not no_name and ]] not directory then
 		return
 	end
 
@@ -106,6 +106,9 @@ return {
 					},
 				},
 				symlink_destination = true,
+			},
+			remove_keymaps = {
+				"<C-k>", "<C-l>"
 			},
 			view = {
 				adaptive_size = false,
