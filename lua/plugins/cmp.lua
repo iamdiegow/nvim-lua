@@ -49,7 +49,7 @@ return {
 			cmp.setup({
 				completion = {
 					completeopt = "menu,menuone,noinsert",
-					autocomplete = false
+					autocomplete = false,
 				},
 				snippet = {
 					expand = function(args)
@@ -65,6 +65,12 @@ return {
 					documentation = cmp.config.window.bordered({
 						scrollbar = true,
 					}),
+				},
+				duplicates = {
+					nvim_lsp = 1,
+					luasnip = 1,
+					buffer = 1,
+					path = 1,
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-b>"] = cmp.mapping.scroll_docs(-2),
