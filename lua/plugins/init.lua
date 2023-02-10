@@ -64,7 +64,8 @@ return {
 		},
 		opts = {
 			window = {
-				width = 80,
+				backdrop = 1,
+				width = 100,
 				height = 1,
 				options = {
 					number = false,
