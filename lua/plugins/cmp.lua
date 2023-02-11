@@ -48,8 +48,12 @@ return {
 
 			cmp.setup({
 				completion = {
-					completeopt = "menu,menuone,noinsert",
-					autocomplete = false,
+					completeopt = "menu,menuone,noinsert"
+				},
+				performance = {
+					debounce = 100,
+					throttle = 200,
+					fetching_timeout = 500
 				},
 				snippet = {
 					expand = function(args)
@@ -85,7 +89,7 @@ return {
 					{ name = "nvim_lua" },
 					{
 						name = "nvim_lsp",
-						max_item_count = 10,
+						max_item_count = 5,
 						entry_filter = function(entry)
 							local kinds = require("cmp.types").lsp.CompletionItemKind
 
@@ -121,7 +125,7 @@ return {
 					},
 					{
 						name = "luasnip",
-						max_item_count = 5,
+						max_item_count = 3,
 						entry_filter = function()
 							local filetype = vim.bo.filetype
 
@@ -140,13 +144,8 @@ return {
 							return true
 						end,
 					},
-					{
-						name = "nvim_lsp_signature_help",
-						max_item_count = 3,
-						keyword_length = 3,
-					},
 					{ name = "path", max_item_count = 2 },
-					{ name = "buffer", keyword_length = 5 },
+					{ name = "buffer", keyword_length = 5, max_item_count = 3 },
 				}),
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
