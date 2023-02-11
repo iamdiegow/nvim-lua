@@ -100,8 +100,8 @@ return {
 					lualine_b = { branch, filename },
 					lualine_c = {},
 					lualine_x = {},
-					lualine_y = { diff },
-					lualine_z = { diagnostics, function()
+					lualine_y = {},
+					lualine_z = { function()
 						return " " .. os.date("%R")
 					end },
 				},
