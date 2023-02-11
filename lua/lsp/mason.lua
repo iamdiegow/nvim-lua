@@ -68,6 +68,7 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "sumneko_lua" then
+		require("neodev").setup()
 		local sumneko_opts = require("lsp.settings.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end

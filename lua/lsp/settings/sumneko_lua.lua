@@ -7,6 +7,9 @@ return {
 			diagnostics = {
 				globals = { "vim" },
 			},
+			completion = {
+				callSnippet = "Replace"
+			},
       hint = {
         enable = true,
         arrayIndex = "Disable", -- "Enable", "Auto", "Disable"

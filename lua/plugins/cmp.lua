@@ -1,3 +1,24 @@
+local orderByKind = function(entry1, entry2)
+	local score = {
+		Variable = 1,
+		Method = 2,
+		Field = 3,
+		Class = 4,
+		Value = 5,
+		Keyword = 6,
+		Function = 7,
+		Property = 8,
+		Constant = 9,
+		Snippet = 10,
+	}
+	local itemKind = require("cmp.types").lsp.CompletionItemKind
+	local kind1 = score[itemKind[entry1:get_kind()]] or 100
+	local kind2 = score[itemKind[entry2:get_kind()]] or 100
+	if kind1 < kind2 then
+		return true
+	end
+end
+
 return {
 	{
 		"hrsh7th/nvim-cmp",
@@ -48,12 +69,12 @@ return {
 
 			cmp.setup({
 				completion = {
-					completeopt = "menu,menuone,noinsert"
+					completeopt = "menu,menuone,noinsert",
 				},
 				performance = {
-					debounce = 100,
-					throttle = 200,
-					fetching_timeout = 500
+					debounce = 200,
+					throttle = 500,
+					fetching_timeout = 700,
 				},
 				snippet = {
 					expand = function(args)
@@ -85,11 +106,14 @@ return {
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
 				}),
+				sorting = {
+					comparators = { orderByKind },
+				},
 				sources = cmp.config.sources({
 					{ name = "nvim_lua" },
 					{
 						name = "nvim_lsp",
-						max_item_count = 5,
+						max_item_count = 7,
 						entry_filter = function(entry)
 							local kinds = require("cmp.types").lsp.CompletionItemKind
 
@@ -108,8 +132,7 @@ return {
 
 							if filetype == "javascriptreact" or filetype == "typescriptreact" then
 								local ts_utils = require("nvim-treesitter.ts_utils")
-								local node = ts_utils.get_node_at_cursor(0, true)
-								local nodeType = node:type()
+								local nodeType = ts_utils.get_node_at_cursor(0, true):type()
 
 								if
 									nodeType == "jsx_text"
@@ -125,7 +148,7 @@ return {
 					},
 					{
 						name = "luasnip",
-						max_item_count = 3,
+						max_item_count = 5,
 						entry_filter = function()
 							local filetype = vim.bo.filetype
 
@@ -134,8 +157,7 @@ return {
 							end
 
 							local ts_utils = require("nvim-treesitter.ts_utils")
-							local node = ts_utils.get_node_at_cursor(0, true)
-							local nodeType = node:type()
+							local nodeType = ts_utils.get_node_at_cursor(0, true):type()
 
 							if string.match(nodeType, "jsx") then
 								return false
@@ -184,8 +206,6 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-nvim-lsp-document-symbol",
-			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"saadparwaiz1/cmp_luasnip",
 			{
 				"L3MON4D3/LuaSnip",

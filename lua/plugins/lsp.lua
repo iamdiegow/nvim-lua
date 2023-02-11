@@ -146,4 +146,7 @@ return {
 			})
 		end,
 	},
+	{
+		"folke/neodev.nvim"
+	}
 }
