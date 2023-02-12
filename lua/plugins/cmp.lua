@@ -1,14 +1,14 @@
 local orderByKind = function(entry1, entry2)
 	local score = {
 		Variable = 1,
-		Method = 2,
-		Field = 3,
-		Class = 4,
-		Value = 5,
-		Keyword = 6,
-		Function = 7,
-		Property = 8,
-		Constant = 9,
+		Constant = 2,
+		Method = 3,
+		Field = 4,
+		Class = 5,
+		Value = 6,
+		Keyword = 7,
+		Function = 8,
+		Property = 9,
 		Snippet = 10,
 	}
 	local itemKind = require("cmp.types").lsp.CompletionItemKind
@@ -72,8 +72,8 @@ return {
 					completeopt = "menu,menuone,noinsert",
 				},
 				performance = {
-					debounce = 200,
-					throttle = 500,
+					debounce = 500,
+					throttle = 1000,
 					fetching_timeout = 700,
 				},
 				snippet = {
@@ -107,13 +107,16 @@ return {
 					["<C-k>"] = cmp.mapping.select_prev_item(),
 				}),
 				sorting = {
-					comparators = { orderByKind },
+					comparators = {
+						orderByKind,
+					},
 				},
 				sources = cmp.config.sources({
 					{ name = "nvim_lua" },
 					{
 						name = "nvim_lsp",
-						max_item_count = 7,
+						max_item_count = 15,
+						keyword_length = 4,
 						entry_filter = function(entry)
 							local kinds = require("cmp.types").lsp.CompletionItemKind
 
@@ -167,8 +170,7 @@ return {
 						end,
 					},
 					{ name = "path", max_item_count = 2 },
-					{ name = "buffer", keyword_length = 5, max_item_count = 3 },
-				}),
+				}, { name = "buffer", keyword_length = 5, max_item_count = 3 }),
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
 					format = function(entry, vim_item)
