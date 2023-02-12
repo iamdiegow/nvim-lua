@@ -24,6 +24,7 @@ require("lazy").setup("plugins", {
 	install = { colorscheme = { "tokyonight" } },
 	checker = {
 		enabled = true,
+		notify = false
 	},
 	diff = {
 		cmd = "terminal_git",

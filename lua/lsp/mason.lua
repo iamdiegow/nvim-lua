@@ -14,12 +14,12 @@ local servers = {
 	"emmet_ls",
 	"html",
 	"jsonls",
-	"sumneko_lua",
+	"lua_ls",
 	"tsserver",
 	"pyright",
 	"yamlls",
 	"bashls",
-	"marksman"
+	"marksman",
 }
 
 local settings = {
@@ -53,6 +53,9 @@ for _, server in pairs(servers) do
 	opts = {
 		on_attach = require("lsp.handlers").on_attach,
 		capabilities = require("lsp.handlers").capabilities,
+		flags = {
+			allow_incremental_sync = true, debounce_text_changes = 200,
+		},
 	}
 
 	server = vim.split(server, "@")[1]
@@ -67,10 +70,10 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
 	end
 
-	if server == "sumneko_lua" then
+	if server == "lua_ls" then
 		require("neodev").setup()
-		local sumneko_opts = require("lsp.settings.sumneko_lua")
-		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+		local luals_opts = require("lsp.settings.lua_ls")
+		opts = vim.tbl_deep_extend("force", luals_opts, opts)
 	end
 
 	if server == "emmet_ls" then
