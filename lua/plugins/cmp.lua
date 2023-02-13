@@ -92,10 +92,10 @@ return {
 					}),
 				},
 				duplicates = {
-					nvim_lsp = 1,
-					luasnip = 1,
-					buffer = 1,
-					path = 1,
+					nvim_lsp = 0,
+					luasnip = 0,
+					buffer = 0,
+					path = 0,
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-b>"] = cmp.mapping.scroll_docs(-2),
@@ -112,11 +112,11 @@ return {
 					},
 				},
 				sources = cmp.config.sources({
-					{ name = "nvim_lua" },
+					{ name = "nvim_lua", keyword_length = 3 },
 					{
 						name = "nvim_lsp",
 						max_item_count = 15,
-						keyword_length = 4,
+						keyword_length = 3,
 						entry_filter = function(entry)
 							local kinds = require("cmp.types").lsp.CompletionItemKind
 
@@ -126,7 +126,7 @@ return {
 							end
 
 							-- filter emmet_ls only
-							local name = vim.split(entry.source:get_debug_name(), ":")[2]
+							local name = vim.split(entry.source:get_debug_name(), ":", {})[2]
 							if name ~= "emmet_ls" then
 								return true
 							end
@@ -176,19 +176,14 @@ return {
 					format = function(entry, vim_item)
 						local kind = vim_item.kind
 						local source = entry.source.name
-
+						local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
 						vim_item.kind = (kind_icons[kind] or "?") .. " " .. kind
 						vim_item.menu = ({
-							nvim_lsp = "[lsp]",
+							nvim_lsp = "[lsp:" .. lsp_name .. "]",
 							luasnip = "[luasnip]",
 							buffer = "[buffer]",
 							path = "[path]",
 						})[source]
-
-						if source == "luasnip" or source == "nvim_lsp" then
-							vim_item.dup = 0
-						end
-
 						return vim_item
 					end,
 				},
@@ -209,6 +204,7 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
+			"nvim-lua/plenary.nvim",
 			{
 				"L3MON4D3/LuaSnip",
 				dependencies = {
