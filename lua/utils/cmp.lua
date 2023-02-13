@@ -85,12 +85,21 @@ M.kind_icons = {
 	TypeParameter = "  ",
 }
 
+function trim(text)
+	local max = 40
+	if text and text:len() > max then
+		text = text:sub(1, max) .. "..."
+	end
+	return text
+end
+
 -- format cmp suggestions
 M.format = function(entry, vim_item)
 	local kind = vim_item.kind
 	local source = entry.source.name
 	local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
-	vim_item.abbr = " " .. vim_item.abbr
+
+	vim_item.abbr = trim(vim_item.abbr):match("[^(]+")
 	vim_item.kind = (M.kind_icons[kind] or "?") .. " " .. string.upper(kind)
 	vim_item.menu = ({
 		nvim_lsp = "[LSP:" .. string.upper(lsp_name) .. "]",
