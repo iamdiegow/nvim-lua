@@ -1,24 +1,3 @@
-local orderByKind = function(entry1, entry2)
-	local score = {
-		Variable = 1,
-		Constant = 2,
-		Method = 3,
-		Field = 4,
-		Value = 5,
-		Keyword = 6,
-		Class = 7,
-		Function = 8,
-		Property = 9,
-		Snippet = 10,
-	}
-	local itemKind = require("cmp.types").lsp.CompletionItemKind
-	local kind1 = score[itemKind[entry1:get_kind()]] or 100
-	local kind2 = score[itemKind[entry2:get_kind()]] or 100
-	if kind1 < kind2 then
-		return true
-	end
-end
-
 return {
 	{
 		"hrsh7th/nvim-cmp",
@@ -39,42 +18,13 @@ return {
 
 			require("luasnip/loaders/from_vscode").lazy_load()
 
-			local kind_icons = {
-				Text = "  ",
-				Method = "  ",
-				Function = "  ",
-				Constructor = "  ",
-				Field = "  ",
-				Variable = "",
-				Class = "  ",
-				Interface = "  ",
-				Module = "  ",
-				Property = "  ",
-				Unit = "  ",
-				Value = "  ",
-				Enum = "  ",
-				Keyword = "  ",
-				Snippet = "  ",
-				Color = "  ",
-				File = "  ",
-				Reference = "  ",
-				Folder = "  ",
-				EnumMember = "  ",
-				Constant = "  ",
-				Struct = "  ",
-				Event = "  ",
-				Operator = "  ",
-				TypeParameter = "  ",
-			}
-
 			cmp.setup({
 				completion = {
 					completeopt = "menu,menuone,noinsert",
 				},
 				performance = {
 					debounce = 500,
-					throttle = 1000,
-					fetching_timeout = 700,
+					throttle = 500,
 				},
 				snippet = {
 					expand = function(args)
@@ -108,7 +58,7 @@ return {
 				}),
 				sorting = {
 					comparators = {
-						orderByKind,
+						require("utils.cmp").order_by_kind_sorter,
 					},
 				},
 				sources = cmp.config.sources({
@@ -126,20 +76,7 @@ return {
 				}, { name = "buffer", keyword_length = 5, max_item_count = 3 }),
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
-					format = function(entry, vim_item)
-						local kind = vim_item.kind
-						local source = entry.source.name
-						local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
-						vim_item.abbr = " " .. vim_item.abbr
-						vim_item.kind = (kind_icons[kind] or "?") .. " " .. string.upper(kind)
-						vim_item.menu = ({
-							nvim_lsp = "[LSP:" .. string.upper(lsp_name) .. "]",
-							luasnip = "[LUASNIP]",
-							buffer = "[BUFFER]",
-							path = "[PATH]",
-						})[source]
-						return vim_item
-					end,
+					format = require("utils.cmp").format
 				},
 				confirm_opts = {
 					behavior = cmp.ConfirmBehavior.Replace,
