@@ -4,9 +4,9 @@ local orderByKind = function(entry1, entry2)
 		Constant = 2,
 		Method = 3,
 		Field = 4,
-		Class = 5,
-		Value = 6,
-		Keyword = 7,
+		Value = 5,
+		Keyword = 6,
+		Class = 7,
 		Function = 8,
 		Property = 9,
 		Snippet = 10,
@@ -40,31 +40,31 @@ return {
 			require("luasnip/loaders/from_vscode").lazy_load()
 
 			local kind_icons = {
-				Text = "",
-				Method = "m",
-				Function = "",
-				Constructor = "",
-				Field = "",
+				Text = "  ",
+				Method = "  ",
+				Function = "  ",
+				Constructor = "  ",
+				Field = "  ",
 				Variable = "",
-				Class = "",
-				Interface = "",
-				Module = "",
-				Property = "",
-				Unit = "",
-				Value = "",
-				Enum = "",
-				Keyword = "",
-				Snippet = "",
-				Color = "",
-				File = "",
-				Reference = "",
-				Folder = "",
-				EnumMember = "",
-				Constant = "",
-				Struct = "",
-				Event = "",
-				Operator = "",
-				TypeParameter = "",
+				Class = "  ",
+				Interface = "  ",
+				Module = "  ",
+				Property = "  ",
+				Unit = "  ",
+				Value = "  ",
+				Enum = "  ",
+				Keyword = "  ",
+				Snippet = "  ",
+				Color = "  ",
+				File = "  ",
+				Reference = "  ",
+				Folder = "  ",
+				EnumMember = "  ",
+				Constant = "  ",
+				Struct = "  ",
+				Event = "  ",
+				Operator = "  ",
+				TypeParameter = "  ",
 			}
 
 			cmp.setup({
@@ -117,57 +117,10 @@ return {
 						name = "nvim_lsp",
 						max_item_count = 15,
 						keyword_length = 3,
-						entry_filter = function(entry)
-							local kinds = require("cmp.types").lsp.CompletionItemKind
-
-							-- filter lsp snippets only
-							if kinds[entry:get_kind()] ~= "Snippet" then
-								return true
-							end
-
-							-- filter emmet_ls only
-							local name = vim.split(entry.source:get_debug_name(), ":", {})[2]
-							if name ~= "emmet_ls" then
-								return true
-							end
-
-							local filetype = vim.bo.filetype
-
-							if filetype == "javascriptreact" or filetype == "typescriptreact" then
-								local ts_utils = require("nvim-treesitter.ts_utils")
-								local nodeType = ts_utils.get_node_at_cursor(0, true):type()
-
-								if
-									nodeType == "jsx_text"
-									or nodeType == "jsx_expression"
-									or nodeType == "parenthesized_expression"
-								then
-									return true
-								else
-									return false
-								end
-							end
-						end,
 					},
 					{
 						name = "luasnip",
 						max_item_count = 5,
-						entry_filter = function()
-							local filetype = vim.bo.filetype
-
-							if filetype ~= "javascriptreact" and filetype ~= "typescriptreact" then
-								return true
-							end
-
-							local ts_utils = require("nvim-treesitter.ts_utils")
-							local nodeType = ts_utils.get_node_at_cursor(0, true):type()
-
-							if string.match(nodeType, "jsx") then
-								return false
-							end
-
-							return true
-						end,
 					},
 					{ name = "path", max_item_count = 2 },
 				}, { name = "buffer", keyword_length = 5, max_item_count = 3 }),
@@ -177,12 +130,13 @@ return {
 						local kind = vim_item.kind
 						local source = entry.source.name
 						local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
-						vim_item.kind = (kind_icons[kind] or "?") .. " " .. kind
+						vim_item.abbr = " " .. vim_item.abbr
+						vim_item.kind = (kind_icons[kind] or "?") .. " " .. string.upper(kind)
 						vim_item.menu = ({
-							nvim_lsp = "[lsp:" .. lsp_name .. "]",
-							luasnip = "[luasnip]",
-							buffer = "[buffer]",
-							path = "[path]",
+							nvim_lsp = "[LSP:" .. string.upper(lsp_name) .. "]",
+							luasnip = "[LUASNIP]",
+							buffer = "[BUFFER]",
+							path = "[PATH]",
 						})[source]
 						return vim_item
 					end,
