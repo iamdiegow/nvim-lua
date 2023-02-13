@@ -37,16 +37,16 @@ end
 
 M.order_by_kind_sorter = function(entry1, entry2)
 	local score = {
-			Variable = 1,
-			Constant = 2,
-			Method = 3,
-			Field = 4,
-			Value = 5,
-			Keyword = 6,
-			Class = 7,
-			Function = 8,
-			Property = 9,
-			Snippet = 10,
+		Variable = 1,
+		Constant = 2,
+		Method = 3,
+		Field = 4,
+		Value = 5,
+		Keyword = 6,
+		Class = 7,
+		Function = 8,
+		Property = 9,
+		Snippet = 10,
 	}
 	local itemKind = require("cmp.types").lsp.CompletionItemKind
 	local kind1 = score[itemKind[entry1:get_kind()]] or 100
@@ -58,31 +58,31 @@ end
 
 -- cmp icons
 M.kind_icons = {
-		Text = "  ",
-		Method = "  ",
-		Function = "  ",
-		Constructor = "  ",
-		Field = "  ",
-		Variable = "",
-		Class = "  ",
-		Interface = "  ",
-		Module = "  ",
-		Property = "  ",
-		Unit = "  ",
-		Value = "  ",
-		Enum = "  ",
-		Keyword = "  ",
-		Snippet = "  ",
-		Color = "  ",
-		File = "  ",
-		Reference = "  ",
-		Folder = "  ",
-		EnumMember = "  ",
-		Constant = "  ",
-		Struct = "  ",
-		Event = "  ",
-		Operator = "  ",
-		TypeParameter = "  ",
+	Text = "  ",
+	Method = "  ",
+	Function = "  ",
+	Constructor = "  ",
+	Field = "  ",
+	Variable = "",
+	Class = "  ",
+	Interface = "  ",
+	Module = "  ",
+	Property = "  ",
+	Unit = "  ",
+	Value = "  ",
+	Enum = "  ",
+	Keyword = "  ",
+	Snippet = "  ",
+	Color = "  ",
+	File = "  ",
+	Reference = "  ",
+	Folder = "  ",
+	EnumMember = "  ",
+	Constant = "  ",
+	Struct = "  ",
+	Event = "  ",
+	Operator = "  ",
+	TypeParameter = "  ",
 }
 
 -- format cmp suggestions
@@ -93,12 +93,18 @@ M.format = function(entry, vim_item)
 	vim_item.abbr = " " .. vim_item.abbr
 	vim_item.kind = (M.kind_icons[kind] or "?") .. " " .. string.upper(kind)
 	vim_item.menu = ({
-					nvim_lsp = "[LSP:" .. string.upper(lsp_name) .. "]",
-					luasnip = "[LUASNIP]",
-					buffer = "[BUFFER]",
-					path = "[PATH]",
-			})[source]
+		nvim_lsp = "[LSP:" .. string.upper(lsp_name) .. "]",
+		luasnip = "[LUASNIP]",
+		buffer = "[BUFFER]",
+		path = "[PATH]",
+	})[source]
 	return vim_item
+end
+
+M.has_words_before = function()
+	unpack = unpack or table.unpack
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
 return M

@@ -76,7 +76,7 @@ return {
 				}, { name = "buffer", keyword_length = 5, max_item_count = 3 }),
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
-					format = require("utils.cmp").format
+					format = require("utils.cmp").format,
 				},
 				confirm_opts = {
 					behavior = cmp.ConfirmBehavior.Replace,
