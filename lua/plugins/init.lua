@@ -4,6 +4,7 @@ return {
 	-- Colorschemes
 	{
 		"folke/tokyonight.nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {
@@ -16,6 +17,12 @@ return {
 				floats = "normal",
 			}
 		},
+	},
+
+	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = false,
+		priority = 1000,
 	},
 
 	-- Workflow
