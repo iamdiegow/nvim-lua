@@ -25,6 +25,9 @@ return {
 		priority = 1000,
 		opts = {
 			contrast = "dark",
+			overrides = {
+				Pmenu = { bg = "#1d2021" }
+			}
 		}
 	},
 
