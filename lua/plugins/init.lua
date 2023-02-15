@@ -23,6 +23,12 @@ return {
 		"ellisonleao/gruvbox.nvim",
 		lazy = false,
 		priority = 1000,
+		opts = {
+			contrast = "hard",
+			overrides = {
+				Pmenu = { bg = "#1d2021"}
+			}
+		}
 	},
 
 	-- Workflow
