@@ -24,10 +24,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			contrast = "hard",
-			overrides = {
-				Pmenu = { bg = "#1d2021"}
-			}
+			contrast = "soft",
 		}
 	},
 
