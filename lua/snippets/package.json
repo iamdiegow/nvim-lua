@@ -22,15 +22,6 @@
 			{
 				"language": [
 					"typescript",
-					"typescriptreact",
-					"javascript",
-					"javascriptreact"
-				],
-				"path": "./custom.json"
-			},
-			{
-				"language": [
-					"typescript",
 					"javascript"
 				],
 				"path": "./cypress.json"
