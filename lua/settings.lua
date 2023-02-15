@@ -31,7 +31,7 @@ o.incsearch = true
 o.ignorecase = true
 o.scrolloff = 5
 o.scroll = 5
-o.colorcolumn = "80"
+-- o.colorcolumn = "80"
 o.syntax = 'enable'
 o.hidden = true
 o.splitbelow = true
@@ -49,7 +49,7 @@ o.signcolumn = "yes"
 o.showmode = false
 o.backup = false
 o.writebackup = false
-o.cursorline = true
+o.cursorline = false
 o.cursorcolumn = false
 o.wrap = true
 

@@ -15,7 +15,7 @@ return {
 				keywords = { italic = false, bold = false },
 				sidebars = "normal",
 				floats = "normal",
-			}
+			},
 		},
 	},
 
@@ -23,12 +23,20 @@ return {
 		"ellisonleao/gruvbox.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {
-			contrast = "dark",
-			overrides = {
-				Pmenu = { bg = "#1d2021" }
-			}
-		}
+		config = function()
+			local colors = require("gruvbox.palette").colors
+			require("gruvbox").setup({
+				contrast = "dark",
+				overrides = {
+					Pmenu = { bg = colors.dark0_hard  },
+					SignColumn = { bg = colors.dark0_hard},
+					GitSignsAdd = { bg = colors.dark0_hard, fg = colors.bright_green },
+					GitSignsChange = { bg = colors.dark0_hard, fg = colors.bright_aqua },
+					GitSignsDelete = { bg = colors.dark0_hard, fg = colors.bright_red },
+
+				},
+			})
+		end,
 	},
 
 	-- Workflow
@@ -45,7 +53,7 @@ return {
 
 	{
 		"tpope/vim-surround",
-		lazy = false
+		lazy = false,
 	},
 
 	-- UI

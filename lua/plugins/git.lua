@@ -158,7 +158,7 @@ return {
 			end
 
 			--"⎟ ⎜ ⎢ ⎜ ▏ ▊ ▋ ▉ ▎ ▍ ▋ ▍ ▎ "
-			local text1 = "▉"
+			local text1 = "▍"
 
 			gitsigns.setup({
 				signs = {
