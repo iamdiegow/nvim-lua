@@ -33,6 +33,10 @@ return {
 					GitSignsAdd = { bg = colors.dark0_hard, fg = colors.bright_green },
 					GitSignsChange = { bg = colors.dark0_hard, fg = colors.bright_aqua },
 					GitSignsDelete = { bg = colors.dark0_hard, fg = colors.bright_red },
+					DiagnosticSignWarn = { bg = colors.dark0_hard, fg = colors.bright_yellow },
+					DiagnosticSignInfo = { bg = colors.dark0_hard, fg = colors.bright_blue },
+					DiagnosticSignHint = { bg = colors.dark0_hard, fg = colors.bright_aqua },
+					DiagnosticSignError = { bg = colors.dark0_hard, fg = colors.bright_red },
 
 				},
 			})
