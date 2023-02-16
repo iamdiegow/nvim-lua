@@ -26,7 +26,7 @@ return {
 			local code_actions = null_ls.builtins.code_actions
 
 			null_ls.setup({
-				debounce = 1000,
+				debounce = 2000,
 				debug = false,
 				diagnostics_format = "[#{c}] #{m} (#{s})",
 				sources = {
@@ -60,7 +60,7 @@ return {
 					}),
 					formatting.stylua,
 				},
-				update_in_insert = true,
+				update_in_insert = false,
 			})
 		end,
 	},
