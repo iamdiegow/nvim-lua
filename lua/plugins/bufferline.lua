@@ -11,14 +11,14 @@ return {
 			middle_mouse_command = nil,
 			--"⎟ ⎜ ⎢ ⎜ ▏ ▊ ▋ ▉ ▎ ▍ ▋ ▍ ▎ "
 			indicator = {
-				style = "none",
+				icon = "▊",
 			},
 			buffer_close_icon = "",
 			modified_icon = "",
 			close_icon = "",
 			left_trunc_marker = "",
 			right_trunc_marker = "",
-			max_name_length = 40,
+			max_name_length = 20,
 			max_prefix_length = 15,
 			truncate_names = true,
 			tab_size = 20,
@@ -48,7 +48,7 @@ return {
 		highlights = {
 			buffer_selected = {
 				bold = true,
-				italic = true,
+				italic = false,
 			},
 		},
 	},
