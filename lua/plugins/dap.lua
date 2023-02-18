@@ -14,7 +14,14 @@ return {
 				desc = "Toggle breakpoint",
 			},
 			{
-				"<leader>dB",
+				"<Leader>dB",
+				function()
+					require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+				end,
+				desc = "Set conditional breakpoint",
+			},
+			{
+				"<leader>dC",
 				"<cmd>lua require'dap'.clear_breakpoints()<CR>",
 				desc = "Clear breakpoints",
 			},
@@ -178,7 +185,7 @@ return {
 				adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
 			})
 
-			for _, language in ipairs({ "typescript", "javascript" }) do
+			for _, language in ipairs({ "typescript", "javascrip", "typescriptreact" }) do
 				require("dap").configurations[language] = {
 					{
 						type = "pwa-node",

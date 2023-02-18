@@ -1,6 +1,5 @@
 return {
 	"akinsho/nvim-bufferline.lua",
-	enabled = false,
 	dependencies = "kyazdani42/nvim-web-devicons",
 	event = "BufReadPre",
 	opts = {
@@ -21,6 +20,7 @@ return {
 			right_trunc_marker = "",
 			max_name_length = 40,
 			max_prefix_length = 15,
+			truncate_names = true,
 			tab_size = 20,
 			offsets = {
 				{
