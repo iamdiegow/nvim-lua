@@ -147,7 +147,7 @@ return {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -222,6 +222,10 @@ return {
 				status_formatter = nil,
 				word_diff = false,
 			})
+
+			vim.keymap.set("n", "<C-t>", function()
+				gitsigns.diffthis()
+			end, { desc = "Diff this file" })
 		end,
 	},
 }

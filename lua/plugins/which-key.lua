@@ -88,8 +88,8 @@ return {
 			-- GITSIGNS
 			["g"] = {
 				name = "Git, (gitsigns, diffview, neogit)",
-				j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-				k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+				j = { "<cmd>lua require 'gitsigns'.next_hunk({preview = true, foldopen = true})<cr>", "Next Hunk" },
+				k = { "<cmd>lua require 'gitsigns'.prev_hunk({preview = true, foldopen = true})<cr>", "Prev Hunk" },
 				l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 				p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 				r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
