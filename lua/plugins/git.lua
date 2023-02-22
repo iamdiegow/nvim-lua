@@ -210,7 +210,7 @@ return {
 					delay = 500,
 				},
 				preview_config = {
-					border = "rounded",
+					border = "single",
 					style = "minimal",
 					relative = "cursor",
 					row = 0,
@@ -222,10 +222,6 @@ return {
 				status_formatter = nil,
 				word_diff = false,
 			})
-
-			vim.keymap.set("n", "<C-t>", function()
-				gitsigns.diffthis()
-			end, { desc = "Diff this file" })
 		end,
 	},
 }
