@@ -3,7 +3,7 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	{
 		"neovim/nvim-lspconfig",
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufNewFile "},
 		config = function()
 			require("lsp.mason")
 			require("lsp.handlers").setup()
@@ -12,7 +12,7 @@ return {
 	"jose-elias-alvarez/typescript.nvim",
 	{
 		"jose-elias-alvarez/null-ls.nvim",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 			if not null_ls_status_ok then
