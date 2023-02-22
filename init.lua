@@ -55,7 +55,6 @@ require("lazy").setup("plugins", {
 vim.keymap.set("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Open Lazy", silent = true, noremap = true })
 
 -- Global variables
-vim.g.format_on_save = false
 vim.g.diagnostics_hover_window = false
 
 -- Core
