@@ -69,6 +69,7 @@ return {
 		{ "nvim-lua/popup.nvim" },
 		{ "nvim-lua/plenary.nvim" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
+		{ "folke/trouble.nvim" },
 	},
 	config = function()
 		require("telescope").setup({
@@ -123,6 +124,7 @@ return {
 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 				mappings = {
 					i = {
+						["<C-t>"] = require("trouble.providers.telescope").open_with_trouble,
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<C-c>"] = require("telescope.actions").close,
@@ -132,6 +134,7 @@ return {
 					},
 					n = {
 						["q"] = require("telescope.actions").close,
+						["<C-t>"] = require("trouble.providers.telescope").open_with_trouble,
 						["<M-p>"] = require("telescope.actions.layout").toggle_preview,
 					},
 				},
