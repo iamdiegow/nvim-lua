@@ -85,7 +85,35 @@ M.kind_icons = {
 	TypeParameter = "  ",
 }
 
-function trim(text)
+M.vscode_icons = {
+	Text = "  ",
+	Method = "  ",
+	Function = "  ",
+	Constructor = "  ",
+	Field = "  ",
+	Variable = "  ",
+	Class = "  ",
+	Interface = "  ",
+	Module = "  ",
+	Property = "  ",
+	Unit = "  ",
+	Value = "  ",
+	Enum = "  ",
+	Keyword = "  ",
+	Snippet = "  ",
+	Color = "  ",
+	File = "  ",
+	Reference = "  ",
+	Folder = "  ",
+	EnumMember = "  ",
+	Constant = "  ",
+	Struct = "  ",
+	Event = "  ",
+	Operator = "  ",
+	TypeParameter = "  ",
+}
+
+local function trim(text)
 	local max = 40
 	if text and text:len() > max then
 		text = text:sub(1, max) .. "..."
@@ -100,7 +128,7 @@ M.format = function(entry, vim_item)
 	local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
 
 	vim_item.abbr = trim(vim_item.abbr):match("[^(]+")
-	vim_item.kind = (M.kind_icons[kind] or "?") .. " " .. string.upper(kind)
+	vim_item.kind = (M.vscode_icons[kind] or "") .. string.upper(kind)
 	vim_item.menu = ({
 		nvim_lsp = "[LSP:" .. string.upper(lsp_name) .. "]",
 		luasnip = "[LUASNIP]",
@@ -115,5 +143,6 @@ M.has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
+
 
 return M

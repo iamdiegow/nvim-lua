@@ -75,7 +75,7 @@ return {
 					{ name = "path", max_item_count = 2 },
 				}, { name = "buffer", keyword_length = 5, max_item_count = 3 }),
 				formatting = {
-					fields = { "abbr", "kind", "menu" },
+					fields = { "kind",  "abbr", "menu" },
 					format = require("utils.cmp").format,
 				},
 				confirm_opts = {
