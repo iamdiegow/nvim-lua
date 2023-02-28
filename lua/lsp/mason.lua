@@ -52,7 +52,8 @@ for _, server in pairs(servers) do
 		on_attach = require("lsp.handlers").on_attach,
 		capabilities = require("lsp.handlers").capabilities,
 		flags = {
-			allow_incremental_sync = true, debounce_text_changes = 200,
+			allow_incremental_sync = true,
+			debounce_text_changes = 200,
 		},
 	}
 
@@ -102,6 +103,15 @@ for _, server in pairs(servers) do
 		::continue::
 	end
 
-	lspconfig[server].setup(opts)
+	lspconfig[server].setup(vim.tbl_deep_extend("force", opts, {
+		capabilities = {
+			textDocument = {
+				foldingRange = {
+					dynamicRegistration = false,
+					lineFoldingOnly = true,
+				},
+			},
+		},
+	}))
 	::continue::
 end

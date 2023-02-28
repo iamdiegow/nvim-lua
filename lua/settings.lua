@@ -23,7 +23,7 @@ wo.numberwidth = 2
 wo.relativenumber = false
 
 o.swapfile = false
-o.dir = '/tmp'
+o.dir = "/tmp"
 o.smartcase = true
 o.laststatus = 3
 o.hlsearch = true
@@ -32,17 +32,17 @@ o.ignorecase = true
 o.scrolloff = 5
 o.scroll = 5
 -- o.colorcolumn = "80"
-o.syntax = 'enable'
+o.syntax = "enable"
 o.hidden = true
 o.splitbelow = true
 o.splitright = true
-o.clipboard = 'unnamedplus'
+o.clipboard = "unnamedplus"
 o.timeoutlen = 300
 o.updatetime = 300
-o.background = 'dark'
+o.background = "dark"
 o.autoindent = true
 o.cmdheight = 1
-o.mouse = 'a'
+o.mouse = "a"
 o.tabstop = 2
 o.shiftwidth = 2
 o.signcolumn = "yes"
@@ -63,3 +63,14 @@ vim.cmd([[ set iskeyword+=- ]])
 vim.cmd([[
  highlight WinSeparator guibg=None
 ]])
+
+if vim.g.neovide then
+	vim.o.guifont = "Hack"
+	vim.g.neovide_floating_blur_amount_x = 2.0
+	vim.g.neovide_floating_blur_amount_y = 2.0
+	vim.g.neovide_transparency = 0.8
+	vim.g.neovide_scroll_animation_length = 0.2
+	vim.g.neovide_confirm_quit = true
+	vim.g.neovide_cursor_animation_length = 0.05
+	vim.g.neovide_cursor_trail_size = 0.3
+end
