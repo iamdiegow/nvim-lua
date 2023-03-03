@@ -8,6 +8,7 @@ return {
 			"vim-test/vim-test",
 			"nvim-neotest/neotest-vim-test",
 			"haydenmeade/neotest-jest",
+			"marilari88/neotest-vitest",
 		},
 		keys = {
 			{
@@ -81,6 +82,7 @@ return {
 							return vim.fn.getcwd()
 						end,
 					}),
+					require("neotest-vitest")
 				},
 				diagnostic = {
 					enabled = true,
