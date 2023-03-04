@@ -76,13 +76,12 @@ return {
 					}),
 					require("neotest-jest")({
 						jestCommand = "npm test --",
-						jestConfigFile = "custom.jest.config.ts",
-						env = { CI = true },
+						jestConfigFile = "jest.config.js",
 						cwd = function()
 							return vim.fn.getcwd()
 						end,
 					}),
-					require("neotest-vitest")
+					require("neotest-vitest"),
 				},
 				diagnostic = {
 					enabled = true,
