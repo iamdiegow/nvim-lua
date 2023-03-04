@@ -14,10 +14,10 @@ return {
 			"                                                     ",
 		}
 		dashboard.section.buttons.val = {
-			dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
-			dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("o", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-			dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
+			dashboard.button("f", " " .. " Find file", ":Telescope find_files<CR>"),
+			dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert<CR>"),
+			dashboard.button("o", " " .. " Recent files", ":lua require('telescope.builtin').oldfiles({ cwd = vim.fn.getcwd()})<CR>"),
+			dashboard.button("g", " " .. " Find text", ":Telescope live_grep<CR>"),
 			dashboard.button("l", "鈴" .. " Lazy", ":Lazy<CR>"),
 			dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 		}

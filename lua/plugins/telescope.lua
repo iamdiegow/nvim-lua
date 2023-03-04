@@ -49,7 +49,10 @@ local keys = {
 	{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep (Telescope)" },
 	{ "<leader>fc", "<cmd>Telescope grep_string<CR>", desc = "Search String (Telescope)" },
 	{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help Tags (Telescope)" },
-	{ "<leader>fo", "<cmd>Telescope oldfiles<CR>", desc = "Find Old files (Telescope)" },
+	{ "<leader>fo", function()
+			require('telescope.builtin').oldfiles({ cwd = vim.fn.getcwd()})
+		end, desc = "Find Old files in CWD (Telescope)" },
+	{ "<leader>fO", "<cmd>Telescope oldfiles<CR>", desc = "Find All Old Files (Telescope)" },
 	{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
 	{ "<leader>fS", "<cmd>Telescope git_status<CR>", desc = "Git Status (Telescope)" },
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
