@@ -67,6 +67,9 @@ map('n', '<C-s>', '<cmd>w!<CR>', options)
 -- move current line
 map('n', '<A-j>', ':m .+1<CR>==', options)
 map('n', '<A-k>', ':m .-2<CR>==', options)
+-- insert empty lines
+map('n', '<C-Enter>', '<cmd>call append(line("."), "")<CR>', options)
+map('n', '<C-BS>', '<cmd>call append(line(".")-1, "")<CR>', options)
 
 -- INSERT MODE ----------
 -- exit insert mode
@@ -84,6 +87,10 @@ map('i', '<C-l>', '<Right>', options)
 map('i', '<C-j>', '<Down>', options)
 map('i', '<C-k>', '<Up>', options)
 
+-- insert empty lines
+map('i', '<C-Enter>', '<cmd>call append(line("."), "")<CR>', options)
+map('i', '<C-BS>', '<cmd>call append(line(".")-1, "")<CR>', options)
+
 -- VISUAL MODE -----------
 -- better indenting
 map('v', '<', '<gv', options)
@@ -98,12 +105,6 @@ map('v', '<C-k>', '5k', options)
 -- VISUAL BLOCK MODE
 map('x', '<A-j>', ':m \'>+1<CR>gv-gv', options)
 map('x', '<A-k>', ':m \'<-2<CR>gv-gv', options)
-map('x', '<C-_>', ':CommentToggle<CR>', options)
-
--- map("", "j", 'v:count ? "j" : "gj"', {expr = true})
--- map("", "k", 'v:count ? "k" : "gk"', {expr = true})
-
--- Autocommand keymappings
 
 -- Create only for Diffview filetype
 vim.api.nvim_create_autocmd("FileType", {
