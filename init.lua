@@ -5,7 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -24,7 +24,7 @@ require("lazy").setup("plugins", {
 	install = { colorscheme = { "tokyonight" } },
 	checker = {
 		enabled = true,
-		notify = false
+		notify = false,
 	},
 	diff = {
 		cmd = "terminal_git",
@@ -54,12 +54,10 @@ require("lazy").setup("plugins", {
 
 vim.keymap.set("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Open Lazy", silent = true, noremap = true })
 
--- Global variables
 vim.g.diagnostics_hover_window = false
 
--- Core
 require("keymappings")
 require("settings")
 require("autocommands")
 
-vim.cmd([[ colorscheme gruvbox ]])
+vim.cmd([[ colorscheme tokyonight ]])

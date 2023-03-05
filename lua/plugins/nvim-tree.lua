@@ -22,18 +22,19 @@ return {
 	config = function()
 		require("nvim-tree").setup({
 			auto_reload_on_write = true,
+			select_prompts = true,
 			disable_netrw = true,
 			hijack_netrw = true,
 			ignore_ft_on_setup = {},
 			open_on_tab = false,
-			sort_by = "modification_time",
+			sort_by = "name",
 			hijack_cursor = true,
 			hijack_unnamed_buffer_when_opening = true,
 			hijack_directories = {
 				enable = true,
 				auto_open = true,
 			},
-			update_cwd = true,
+			sync_root_with_cwd = true,
 			update_focused_file = {
 				enable = true,
 				update_cwd = false,
@@ -46,6 +47,7 @@ return {
 			diagnostics = {
 				enable = true,
 				show_on_dirs = true,
+				debounce_delay = 200,
 				icons = {
 					hint = "",
 					info = "",
@@ -53,11 +55,15 @@ return {
 					error = "",
 				},
 			},
+			modified = {
+				enable = true,
+				show_on_dirs = true,
+				show_on_open_dirs = false,
+			},
 			renderer = {
-				highlight_git = false,
+				highlight_git = true,
 				group_empty = false,
-				highlight_opened_files = "none",
-				root_folder_modifier = ":~",
+				highlight_opened_files = "all",
 				add_trailing = true,
 				indent_width = 2,
 				indent_markers = {
@@ -112,9 +118,10 @@ return {
 			},
 			view = {
 				adaptive_size = false,
-				centralize_selection = false,
+				centralize_selection = true,
 				hide_root_folder = true,
-				width = 30,
+				cursorline = true,
+				width = 35,
 				side = "left",
 				number = false,
 				signcolumn = "no",
@@ -126,7 +133,7 @@ return {
 					},
 				},
 				float = {
-					enable = true,
+					enable = false,
 					quit_on_focus_loss = true,
 					open_win_config = function()
 						local screen_w = vim.opt.columns:get()

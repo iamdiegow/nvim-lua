@@ -3,7 +3,7 @@ return {
 	event = "BufReadPost",
 	config = function()
 		require("scrollbar").setup({
-			excluded_filetypes = { "prompt", "TelescopePrompt", "noice", "notify" },
+			excluded_filetypes = { "prompt", "TelescopePrompt", "noice", "notify", "NvimTree" },
 		})
 	end,
 }

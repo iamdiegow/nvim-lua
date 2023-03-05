@@ -1,23 +1,33 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+		enabled = true,
 		lazy = false,
 		priority = 1000,
 		opts = {
 			transparent = false,
-			style = "night",
+			style = "storm",
 			styles = {
 				comments = { italic = true },
-				keywords = { italic = false, bold = false },
-				sidebars = "normal",
+				keywords = { italic = false, bold = true },
+				sidebars = "dark",
 				floats = "normal",
 			},
+			sidebars = {
+				"NvimTree",
+				"terminal",
+				"qf",
+				"telescope",
+				"lazy"
+			},
+			dim_inactive = false,
+			hide_inactive_statusline = true,
+			lualine_bold = true
 		},
 	},
 	{
 		"ellisonleao/gruvbox.nvim",
-		enabled = true,
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		config = function()
