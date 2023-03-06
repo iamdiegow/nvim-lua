@@ -63,7 +63,7 @@ return {
 			renderer = {
 				highlight_git = true,
 				group_empty = false,
-				highlight_opened_files = "all",
+				highlight_opened_files = "none",
 				add_trailing = true,
 				indent_width = 2,
 				indent_markers = {
