@@ -22,7 +22,6 @@ return {
 	config = function()
 		require("nvim-tree").setup({
 			auto_reload_on_write = true,
-			select_prompts = true,
 			disable_netrw = true,
 			hijack_netrw = true,
 			ignore_ft_on_setup = {},
