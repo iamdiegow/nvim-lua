@@ -3,11 +3,6 @@ return {
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
 		config = function()
-			local status_ok, lualine = pcall(require, "lualine")
-			if not status_ok then
-				return
-			end
-
 			local branch = {
 				"branch",
 				"b:gitsigns_head",
@@ -24,7 +19,7 @@ return {
 				component_separators = { left = "", right = "" },
 			}
 
-			lualine.setup({
+			require("lualine").setup({
 				options = {
 					icons_enabled = true,
 					theme = "tokyonight",
@@ -40,7 +35,7 @@ return {
 					globalstatus = true,
 				},
 				sections = {
-					lualine_a = { { "mode" }, { "paste" } },
+					lualine_a = { { "mode" } },
 					lualine_b = { branch },
 					lualine_c = { filename },
 					lualine_x = {},
