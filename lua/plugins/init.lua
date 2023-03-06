@@ -16,7 +16,6 @@ return {
 		"tpope/vim-surround",
 		lazy = false,
 	},
-
 	-- UI
 	{
 		"luukvbaal/stabilize.nvim",

@@ -10,19 +10,7 @@ return {
 			styles = {
 				comments = { italic = true },
 				keywords = { italic = false, bold = true },
-				sidebars = "dark",
-				floats = "normal",
 			},
-			sidebars = {
-				"NvimTree",
-				"terminal",
-				"qf",
-				"telescope",
-				"lazy"
-			},
-			dim_inactive = false,
-			hide_inactive_statusline = true,
-			lualine_bold = true
 		},
 	},
 	{
@@ -35,8 +23,8 @@ return {
 			require("gruvbox").setup({
 				contrast = "dark",
 				overrides = {
-					Pmenu = { bg = colors.dark0_hard  },
-					SignColumn = { bg = colors.dark0_hard},
+					Pmenu = { bg = colors.dark0_hard },
+					SignColumn = { bg = colors.dark0_hard },
 					GitSignsAdd = { bg = colors.dark0_hard, fg = colors.bright_green },
 					GitSignsChange = { bg = colors.dark0_hard, fg = colors.bright_aqua },
 					GitSignsDelete = { bg = colors.dark0_hard, fg = colors.bright_red },
