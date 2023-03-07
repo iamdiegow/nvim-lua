@@ -2,21 +2,21 @@ return {
 	"windwp/nvim-spectre",
 	keys = {
 		{
-			"<leader>So",
+			"<leader>ss",
 			function()
 				require("spectre").open()
 			end,
 			desc = "Replace in files (Spectre)",
 		},
 		{
-			"<leader>Sw",
+			"<leader>sw",
 			function()
 				require("spectre").open_visual({ select_word = true })
 			end,
 			desc = "Open visual - select word (Spectre)",
 		},
 		{
-			"<leader>Sf",
+			"<leader>sf",
 			function()
 				require("spectre").open_file_search()
 			end,
