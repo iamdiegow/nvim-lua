@@ -8,7 +8,7 @@ local branch = {
 
 local filename = {
 	"filename",
-	path = 3,
+	path = 5,
 	file_status = true,
 	shorting_target = 30,
 	component_separators = { left = "", right = "" },
@@ -17,13 +17,13 @@ local filename = {
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		lazy = false,
+		event = "VimEnter",
 		opts = {
 			options = {
 				icons_enabled = true,
 				theme = "tokyonight",
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
+				component_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					"Outline",
 					"NvimTree",
@@ -32,9 +32,9 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { branch },
-				lualine_c = { filename },
+				lualine_c = {},
 				lualine_x = {},
-				lualine_y = {},
+				lualine_y = { filename },
 				lualine_z = {},
 			},
 		},
