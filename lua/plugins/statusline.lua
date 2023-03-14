@@ -17,7 +17,7 @@ local filename = {
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "VimEnter",
+		lazy = false,
 		opts = {
 			options = {
 				icons_enabled = true,
