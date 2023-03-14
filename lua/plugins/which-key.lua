@@ -156,6 +156,9 @@ return {
 			o = {
 				name = "Mind & Peek (Markdown)",
 			},
+			s = {
+				name = "Spectre",
+			},
 		}
 
 		-- NORMAL MODE KEYBINDINGS
