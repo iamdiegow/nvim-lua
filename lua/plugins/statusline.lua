@@ -1,3 +1,5 @@
+local colors = require("tokyonight.colors").default
+
 local branch = {
 	"branch",
 	"b:gitsigns_head",
@@ -8,25 +10,46 @@ local branch = {
 
 local filename = {
 	"filename",
-	path = 5,
+	path = 1,
 	file_status = true,
-	shorting_target = 30,
-	component_separators = { left = "", right = "" },
 }
 
-local colors = require("tokyonight.colors")
+local diff = {
+	"diff",
+	source = function()
+		local gitsigns = vim.b.gitsigns_status_dict
+		if gitsigns then
+			return {
+				added = gitsigns.added,
+				modified = gitsigns.changed,
+				removed = gitsigns.removed,
+			}
+		end
+	end,
+	symbols = {
+		added = " ",
+		modified = " ",
+		removed = " ",
+	},
+	padding = { left = 1, right = 1 },
+	diff_color = {
+		added = { fg = colors.green },
+		modified = { fg = colors.yellow },
+		removed = { fg = colors.red },
+	},
+	cond = nil,
+}
 
 return {
 	{
-		enabled = false,
 		"nvim-lualine/lualine.nvim",
 		lazy = false,
 		opts = {
 			options = {
 				icons_enabled = true,
 				theme = "tokyonight",
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
+				component_separators = "",
+				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					"Outline",
 					"NvimTree",
@@ -34,42 +57,11 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { branch },
-				lualine_c = {},
-				lualine_x = {},
-				lualine_y = { filename },
+				lualine_b = {},
+				lualine_c = { filename },
+				lualine_x = { diff },
+				lualine_y = { branch },
 				lualine_z = {},
-			},
-		},
-	},
-	{
-		"tamton-aquib/staline.nvim",
-		event = "BufReadPre",
-		opts = {
-			sections = {
-				left = { " ", "mode", " ", "lsp" },
-				mid = { "file_name" },
-				right = { "branch", " " },
-			},
-			mode_colors = {
-				i = colors.green,
-				n = colors.blue,
-				c = colors.yellow,
-				v = colors.orange,
-				V = colors.orange,
-			},
-			mode_icons = {
-				i = "INSERT",
-				n = "NORMAL",
-				c = "COMMAND",
-				v = "VISUAL",
-				V = "VISUAL",
-			},
-			defaults = {
-				true_colors = true,
-				full_path = true,
-				branch_symbol = " ",
-				mod_symbol = " ",
 			},
 		},
 	},
