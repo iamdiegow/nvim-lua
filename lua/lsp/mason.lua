@@ -18,6 +18,7 @@ local servers = {
 	"yamlls",
 	"bashls",
 	"marksman",
+	"prismals",
 }
 
 local settings = {
