@@ -43,7 +43,7 @@ local diff = {
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		lazy = false,
+		event = "VimEnter",
 		opts = {
 			options = {
 				icons_enabled = true,
