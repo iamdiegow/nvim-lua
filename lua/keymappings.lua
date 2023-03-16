@@ -88,8 +88,8 @@ map("i", "<C-j>", "<Down>", options)
 map("i", "<C-k>", "<Up>", options)
 
 -- insert empty lines
-map("i", "<C-Enter>", '<cmd>call append(line("."), "")<CR>', options)
-map("i", "<C-BS>", '<cmd>call append(line(".")-1, "")<CR>', options)
+map("i", "<C-Enter>", "<ESC>o", options)
+map("i", "<C-BS>", "<ESC>O", options)
 
 -- VISUAL MODE -----------
 -- better indenting
