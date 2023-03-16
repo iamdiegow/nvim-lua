@@ -22,10 +22,6 @@ return {
 				completion = {
 					completeopt = "menu,menuone,noinsert",
 				},
-				performance = {
-					debounce = 500,
-					throttle = 500,
-				},
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
@@ -48,7 +44,7 @@ return {
 					path = 0,
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-2),
+					["<C-b>"] = cmp.mapping.scroll_docs( -2),
 					["<C-f>"] = cmp.mapping.scroll_docs(2),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-c>"] = cmp.mapping.abort(),
@@ -65,17 +61,18 @@ return {
 					{ name = "nvim_lua", keyword_length = 3 },
 					{
 						name = "nvim_lsp",
-						max_item_count = 15,
+						max_item_count = 8,
 						keyword_length = 3,
 					},
 					{
 						name = "luasnip",
 						max_item_count = 5,
 					},
-					{ name = "path", max_item_count = 2 },
-				}, { name = "buffer", keyword_length = 5, max_item_count = 3 }),
+					{ name = "path",     max_item_count = 2 },
+					{ name = "buffer",   keyword_length = 5, max_item_count = 3 },
+				}),
 				formatting = {
-					fields = { "kind",  "abbr", "menu" },
+					fields = { "kind", "abbr", "menu" },
 					format = require("utils.cmp").format,
 				},
 				confirm_opts = {
@@ -125,7 +122,7 @@ return {
 					{
 						"<s-tab>",
 						function()
-							require("luasnip").jump(-1)
+							require("luasnip").jump( -1)
 						end,
 						mode = { "i", "s" },
 					},
