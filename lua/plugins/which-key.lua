@@ -81,6 +81,7 @@ return {
 				L = { "<cmd>BufferLineCloseRight<CR>", "close all buffers right" },
 				S = { "<cmd>BufferLineSortByExtension<cr>", "sort BufferLines automatically by language" },
 				d = { "<cmd>BufferLineSortByDirectory<cr>", "sort BufferLines automatically by directory" },
+				t = { "<cmd>BufferLineTogglePin<cr>", "toggle Buffer pin" },
 				["["] = { "<cmd>BufferLineMovePrev<cr>", "Move Buffer Left" },
 				["]"] = { "<cmd>BufferLineMoveNext<cr>", "Move Buffer Right" },
 			},
