@@ -3,7 +3,7 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	{
 		"neovim/nvim-lspconfig",
-		event = { "BufReadPre", "BufNewFile "},
+		event = { "BufReadPre", "BufNewFile " },
 		config = function()
 			require("lsp.mason")
 			require("lsp.handlers").setup()
@@ -24,11 +24,24 @@ return {
 			-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 			local diagnostics = null_ls.builtins.diagnostics
 			local code_actions = null_ls.builtins.code_actions
+			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 			null_ls.setup({
 				debounce = 2000,
 				debug = false,
 				diagnostics_format = "[#{c}] #{m} (#{s})",
+				on_attach = function(client, bufnr)
+					if client.supports_method("textDocument/formatting") then
+						vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							group = augroup,
+							buffer = bufnr,
+							callback = function()
+								vim.lsp.buf.format()
+							end,
+						})
+					end
+				end,
 				sources = {
 					-- diagnostics
 					diagnostics.eslint_d.with({
@@ -54,7 +67,7 @@ return {
 							"json",
 							"yaml",
 							"graphql",
-							"markdown"
+							"markdown",
 						},
 						prefer_local = "node_modules/.bin",
 					}),
@@ -65,6 +78,6 @@ return {
 		end,
 	},
 	{
-		"folke/neodev.nvim"
-	}
+		"folke/neodev.nvim",
+	},
 }
