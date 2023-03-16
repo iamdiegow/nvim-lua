@@ -8,36 +8,6 @@
 			{
 				"language": [
 					"typescript",
-					"typescriptreact"
-				],
-				"path": "./nextjstypescript.json"
-			},
-			{
-				"language": [
-					"javascript",
-					"javascriptreact"
-				],
-				"path": "./nextjsjavascript.json"
-			},
-			{
-				"language": [
-					"typescript",
-					"javascript"
-				],
-				"path": "./cypress.json"
-			},
-			{
-				"language": [
-					"typescript",
-					"typescriptreact",
-					"javascript",
-					"javascriptreact"
-				],
-				"path": "./jest.json"
-			},
-			{
-				"language": [
-					"typescript",
 					"typescriptreact",
 					"javascript",
 					"javascriptreact"
@@ -56,9 +26,11 @@
 			{
 				"language": [
 					"typescript",
-					"javascript"
+					"javascript",
+					"typescriptreact",
+					"javascriptreact"
 				],
-				"path": "./node.json"
+				"path": "./test.json"
 			}
 		]
 	}

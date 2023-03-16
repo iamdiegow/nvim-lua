@@ -74,33 +74,5 @@
 			"    ",
 			"  })"
 		]
-	},
-	"regex-test-digits": {
-		"prefix": "node-regex-test-digits",
-		"body": [
-			"const isMatch = /\\d+/.test('abc123')"
-		],
-		"description": "test if string contains digits, returns true/false"
-	},
-	"regex-test-word": {
-		"prefix": "node-regex-test-word",
-		"body": [
-			"const isMatch = /\\w+/.test('abc123')"
-		],
-		"description": "test if string contains a word boundary, returns true/false"
-	},
-	"regex-test-match": {
-		"prefix": "node-regex-match",
-		"body": [
-			"const [, extension] = 'file.txt'.match(/\\.(\\w+)/)"
-		],
-		"description": "matches a file extension"
-	},
-	"regex-test-match-named-group": {
-		"prefix": "node-regex-match-named-group",
-		"body": [
-			"const { groups: { extension } } = 'file.txt'.match(/\\.(?<extension>\\w+)/)"
-		],
-		"description": "matches a file extension, "
 	}
 }
