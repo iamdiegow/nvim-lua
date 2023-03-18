@@ -80,4 +80,23 @@ return {
 	{
 		"folke/neodev.nvim",
 	},
+	{
+		"stevearc/aerial.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		keys = {
+			{
+				"<leader>a",
+				"<cmd>AerialToggle! right<CR>",
+				desc = "Aerial Outline",
+			},
+		},
+		opts = {
+			attach_mode = "window",
+			backends = { "lsp", "markdown", "man" },
+			layout = { min_width = 28 },
+			show_guides = false,
+			lazy_load = true,
+			filter_kind = false,
+		},
+	},
 }
