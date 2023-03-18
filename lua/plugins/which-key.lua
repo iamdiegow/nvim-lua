@@ -149,7 +149,7 @@ return {
 				name = "Telescope",
 			},
 			t = {
-				name = "Trouble Diagnostics",
+				name = "Trouble Diagnostics & Terminal",
 			},
 			[";"] = {
 				name = "Neotest",
