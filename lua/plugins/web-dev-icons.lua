@@ -15,6 +15,7 @@ local colors = {
 
 return {
 	"kyazdani42/nvim-web-devicons",
+	lazy = false,
 	config = function()
 		local set_icon = require("nvim-web-devicons").set_icon
 		local icons = {

@@ -2,8 +2,8 @@ return {
 	{
 		"sindrets/diffview.nvim",
 		keys = {
-			{ "<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Open Diffview" },
-			{ "<leader>gq", "<cmd>DiffviewClose<CR>", desc = "Close Diffview" },
+			{ "<leader>gd", "<cmd>DiffviewOpen<CR>",        desc = "Open Diffview" },
+			{ "<leader>gq", "<cmd>DiffviewClose<CR>",       desc = "Close Diffview" },
 			{ "<leader>gh", "<cmd>DiffviewFileHistory<CR>", desc = "View File History" },
 		},
 		dependencies = "nvim-lua/plenary.nvim",
@@ -67,12 +67,18 @@ return {
 				keymaps = {
 					disable_defaults = false,
 					view = {
-						{ "n", "<leader>b", actions.focus_files, { desc = "Bring focus to the file panel" } },
+						{ "n", "<leader>b", actions.focus_files,  { desc = "Bring focus to the file panel" } },
 						{ "n", "<leader>e", actions.toggle_files, { desc = "Toggle the file panel" } },
 					},
 					file_panel = {
-						{ "n", "<leader>b", actions.focus_files, { desc = "Bring focus to the file panel" } },
+						{ "n", "<leader>b", actions.focus_files,  { desc = "Bring focus to the file panel" } },
 						{ "n", "<leader>e", actions.toggle_files, { desc = "Toggle the file panel" } },
+						{
+							"n",
+							"s",
+							actions.toggle_stage_entry,
+							{ desc = "Stage / unstage the selected entry." },
+						},
 					},
 				},
 			})
