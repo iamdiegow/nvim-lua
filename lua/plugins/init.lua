@@ -18,6 +18,19 @@ return {
 			require("nvim-surround").setup({})
 		end,
 	},
+	{
+		"epwalsh/obsidian.nvim",
+		lazy = false,
+		opts = {
+			dir = "~/obsidian-vault",
+			completion = {
+				nvim_cmp = true,
+			},
+			note_id_func = function(title)
+				return title
+			end,
+		},
+	},
 	-- UI
 	{
 		"luukvbaal/stabilize.nvim",
