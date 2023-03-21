@@ -160,6 +160,9 @@ return {
 			s = {
 				name = "Spectre",
 			},
+			v = {
+				name = "Virtual Notes",
+			},
 		}
 
 		-- NORMAL MODE KEYBINDINGS
