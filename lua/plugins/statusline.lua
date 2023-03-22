@@ -43,7 +43,7 @@ local diff = {
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		dependencies = {
 			"kyazdani42/nvim-web-devicons",
 		},
