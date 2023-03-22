@@ -1,6 +1,5 @@
 return {
 	"phaazon/hop.nvim",
-	event = "VeryLazy",
 	keys = {
 		{
 			"f",

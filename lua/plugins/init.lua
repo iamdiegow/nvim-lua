@@ -20,7 +20,11 @@ return {
 	},
 	{
 		"epwalsh/obsidian.nvim",
-		lazy = false,
+		cmd = {
+			"ObsidianNew",
+			"ObsidianSearch",
+			"ObsidianCheck",
+		},
 		opts = {
 			dir = "~/obsidian-vault",
 			completion = {
@@ -84,10 +88,13 @@ return {
 			},
 		},
 	},
-	"folke/twilight.nvim",
+	{
+		"folke/twilight.nvim",
+		cmd = "Twilight",
+	},
 	{
 		"norcalli/nvim-colorizer.lua",
-		event = "BufReadPre",
+		cmd = { "ColorizerToggle" },
 		opts = {
 			filetypes = { "*", "!lazy" },
 			buftype = { "*", "!prompt", "!nofile" },

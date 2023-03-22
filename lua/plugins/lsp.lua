@@ -82,7 +82,6 @@ return {
 	},
 	{
 		"stevearc/aerial.nvim",
-		event = { "BufReadPre", "BufNewFile" },
 		keys = {
 			{
 				"<leader>a",
