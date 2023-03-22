@@ -1,6 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	event = "BufReadPre",
+	event = "BufReadPost",
 	keys = {
 		{
 			"<leader>ig",
@@ -16,9 +16,12 @@ return {
 
 		vim.opt.termguicolors = true
 
+		-- 		vim.cmd([[
+		-- 	set listchars=tab:▸\ ,trail:▓,nbsp:░,eol:↲,space:•
+		-- ]])
 		vim.cmd([[
-	set listchars=tab:▸\ ,trail:▓,nbsp:░,eol:↲,space:•
-]])
+			set listchars=tab:▸\ ,trail:▓,nbsp:░,eol:↲
+		]])
 
 		vim.cmd([[
 	highlight IndentBlanklineContextStart guisp=#FFFFFF gui=bold
@@ -27,10 +30,7 @@ return {
 
 		indent_blankline.setup({
 			enabled = false,
-			-- char = "┆",
-			char = "▏",
-			char_blankline = "▏",
-			context_char = "|",
+			char = "│",
 			buftype_exclude = { "terminal", "nofile" },
 			filetype_exclude = {
 				"help",
@@ -39,9 +39,6 @@ return {
 				"NvimTree",
 				"Trouble",
 			},
-			show_current_context = false,
-			show_current_context_start = false,
-			show_trailing_blankline_indent = false,
 			show_first_indent_level = true,
 			space_char_blankline = " ",
 			show_end_of_line = true,
