@@ -6,20 +6,20 @@ return {
 
 		wk.setup({
 			plugins = {
-				marks = true,
+				marks = false,
 				registers = true,
 				spelling = {
 					enabled = false,
 					suggestions = 20,
 				},
 				presets = {
-					operators = true,
-					motions = true,
-					text_objects = true,
-					windows = true,
-					nav = true,
-					z = true,
-					g = true,
+					operators = false,
+					motions = false,
+					text_objects = false,
+					windows = false,
+					nav = false,
+					z = false,
+					g = false,
 				},
 			},
 			icons = {
@@ -28,6 +28,9 @@ return {
 				group = "+",
 			},
 			operators = { gc = "Comments" },
+			motions = {
+				count = false,
+			},
 			key_labels = {
 				["<space>"] = "SPC",
 				["<cr>"] = "RET",
@@ -35,7 +38,7 @@ return {
 				["<leader>"] = "LEADER",
 			},
 			window = {
-				border = "none",
+				border = "single",
 				position = "bottom",
 				margin = { 1, 2, 0, 4 },
 				padding = { 2, 2, 2, 2 },
@@ -49,7 +52,7 @@ return {
 			},
 			ignore_missing = false,
 			hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-			show_help = true,
+			show_help = false,
 			triggers = "auto",
 			triggers_blacklist = {
 				i = { "j", "k" },
