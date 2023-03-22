@@ -115,7 +115,7 @@ return {
 	},
 	{
 		"aaron-p1/virt-notes.nvim",
-		event = "BufReadPost",
+		event = "VeryLazy",
 		pin = true,
 		opts = {
 			notes_path = vim.fn.stdpath("data") .. "/virt_notes",
