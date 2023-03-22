@@ -129,21 +129,12 @@ return {
 		end,
 	},
 	{
-		"nvim-treesitter/nvim-treesitter-context",
-		event = "BufReadPre",
-		config = function()
-			require("treesitter-context").setup({
-				enable = true,
-			})
-		end,
-	},
-	{
 		"danymat/neogen",
 		keys = {
 			{
 				"<leader>nc",
 				function()
-					require("neogen").generate()
+					require("neogen").generate({})
 				end,
 				desc = "add function comment (NEOGEN)",
 			},
