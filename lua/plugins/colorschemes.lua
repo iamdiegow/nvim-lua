@@ -6,7 +6,7 @@ return {
 		priority = 1000,
 		opts = {
 			transparent = false,
-			style = "storm",
+			style = "moon",
 			styles = {
 				comments = { italic = true },
 				keywords = { italic = false, bold = true },
