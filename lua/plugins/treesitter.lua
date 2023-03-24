@@ -31,6 +31,7 @@ return {
 			},
 			highlight = {
 				enable = true,
+				extended_mode = true,
 				use_languagetree = true,
 				additional_vim_regex_highlighting = { "markdown" },
 			},
@@ -74,8 +75,7 @@ return {
 				keymaps = {
 					init_selection = "<C-space>",
 					node_incremental = "<C-space>",
-					scope_incremental = "<BS>",
-					node_decremental = "<BS>",
+					node_decremental = "<C-backspace>",
 				},
 			},
 			textobjects = {
