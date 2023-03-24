@@ -115,14 +115,11 @@ return {
 				"<C-l>",
 			},
 			view = {
-				adaptive_size = true,
+				adaptive_size = false,
 				centralize_selection = true,
 				hide_root_folder = true,
 				cursorline = false,
-				width = {
-					min = 20,
-					max = 25,
-				},
+				width = 25,
 				side = "left",
 				number = false,
 				signcolumn = "no",
