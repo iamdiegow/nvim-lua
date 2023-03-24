@@ -118,7 +118,7 @@ return {
 				adaptive_size = true,
 				centralize_selection = true,
 				hide_root_folder = true,
-				cursorline = true,
+				cursorline = false,
 				width = {
 					min = 20,
 					max = 25,
