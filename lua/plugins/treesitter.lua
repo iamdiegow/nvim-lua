@@ -8,7 +8,6 @@ return {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			"windwp/nvim-ts-autotag",
-			"HiPhish/nvim-ts-rainbow2",
 		},
 		opts = {
 			ensure_installed = {
@@ -50,10 +49,6 @@ return {
 			},
 			autopairs = {
 				enable = true,
-			},
-			rainbow = {
-				enable = true,
-				query = "rainbow-parens",
 			},
 			context_commentstring = {
 				enable = true,
