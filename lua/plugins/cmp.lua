@@ -44,7 +44,7 @@ return {
 					path = 0,
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs( -2),
+					["<C-b>"] = cmp.mapping.scroll_docs(-2),
 					["<C-f>"] = cmp.mapping.scroll_docs(2),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-c>"] = cmp.mapping.abort(),
@@ -68,8 +68,8 @@ return {
 						name = "luasnip",
 						max_item_count = 5,
 					},
-					{ name = "path",     max_item_count = 2 },
-					{ name = "buffer",   keyword_length = 5, max_item_count = 3 },
+					{ name = "path", max_item_count = 2 },
+					{ name = "buffer", keyword_length = 5, max_item_count = 3 },
 				}),
 				formatting = {
 					fields = { "kind", "abbr", "menu" },
@@ -95,6 +95,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			{
 				"L3MON4D3/LuaSnip",
+				event = "InsertEnter",
 				dependencies = {
 					"rafamadriz/friendly-snippets",
 				},
@@ -122,7 +123,7 @@ return {
 					{
 						"<s-tab>",
 						function()
-							require("luasnip").jump( -1)
+							require("luasnip").jump(-1)
 						end,
 						mode = { "i", "s" },
 					},
@@ -130,6 +131,7 @@ return {
 			},
 			{
 				"windwp/nvim-autopairs",
+				event = "InsertEnter",
 				config = function()
 					local status_ok, nvim_autopairs = pcall(require, "nvim-autopairs")
 					if not status_ok then
