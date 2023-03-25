@@ -126,7 +126,8 @@ return {
 					"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'single' }})<cr>",
 					"Prev Diagnostic",
 				},
-				p = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
+				r = { "<cmd>Telescope lsp_references <cr>", "Show References" },
+				d = { "<cmd>Telescope diagnostics bufrn=0<cr>", "Show Diagnostics" },
 			},
 			["h"] = {
 				name = "Cursor lines & Highlight",
