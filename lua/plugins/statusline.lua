@@ -27,9 +27,9 @@ local diff = {
 		end
 	end,
 	symbols = {
-		added = " ",
-		modified = " ",
-		removed = " ",
+		added = " ",
+		modified = " ",
+		removed = " ",
 	},
 	padding = { left = 1, right = 1 },
 	diff_color = {
