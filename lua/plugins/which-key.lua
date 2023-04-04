@@ -159,7 +159,7 @@ return {
 				name = "Neotest",
 			},
 			o = {
-				name = "Mind & Peek (Markdown)",
+				name = "Peek (Markdown) & Obsidian",
 			},
 			s = {
 				name = "Spectre",
