@@ -60,4 +60,4 @@ require("keymappings")
 require("settings")
 require("autocommands")
 
-vim.cmd([[ colorscheme onedark ]])
+vim.cmd([[ colorscheme tokyonight ]])
