@@ -25,17 +25,17 @@ return {
 			offsets = {
 				{
 					filetype = "NvimTree",
-					text = function()
-						return vim.fn.getcwd()
-					end,
+					-- text = function()
+					-- 	return vim.fn.getcwd()
+					-- end,
 					highlight = "Directory",
-					text_align = "left",
+					text_align = "right",
 					padding = 1,
 				},
 			},
 			diagnostics = false,
 			color_icons = true,
-			show_buffer_icons = false,
+			show_buffer_icons = true,
 			show_buffer_close_icons = false,
 			show_close_icon = false,
 			show_tab_indicators = true,
