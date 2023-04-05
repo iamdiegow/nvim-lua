@@ -21,18 +21,7 @@ return {
 			max_name_length = 15,
 			max_prefix_length = 15,
 			truncate_names = true,
-			tab_size = 15,
-			offsets = {
-				{
-					filetype = "NvimTree",
-					-- text = function()
-					-- 	return vim.fn.getcwd()
-					-- end,
-					highlight = "Directory",
-					text_align = "right",
-					padding = 1,
-				},
-			},
+			tab_size = 20,
 			diagnostics = false,
 			color_icons = true,
 			show_buffer_icons = true,
