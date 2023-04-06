@@ -32,6 +32,7 @@ return {
 						scrollbar = true,
 						side_padding = 0,
 						col_offset = 1,
+						winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:CursorLine,Search:None",
 					}),
 					documentation = cmp.config.window.bordered({
 						scrollbar = true,
