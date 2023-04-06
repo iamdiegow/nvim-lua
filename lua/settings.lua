@@ -18,7 +18,6 @@ vim.opt.pumheight = 10
 vim.opt.scrolloff = 5
 vim.opt.guicursor = ""
 vim.opt.confirm = true
-vim.opt.conceallevel = 3 -- Hide * markup for bold and italic
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 
