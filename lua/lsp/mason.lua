@@ -20,6 +20,8 @@ local servers = {
 	"marksman",
 	"prismals",
 	"eslint",
+	"docker_compose_language_service",
+	"dockerls",
 }
 
 local settings = {
