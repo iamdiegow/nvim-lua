@@ -26,6 +26,15 @@ return {
 			local code_actions = null_ls.builtins.code_actions
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+			local lsp_formatting = function(bufnr)
+				vim.lsp.buf.format({
+					filter = function(client)
+						return client.name == "null-ls"
+					end,
+					bufnr = bufnr,
+				})
+			end
+
 			null_ls.setup({
 				debounce = 2000,
 				debug = false,
@@ -37,7 +46,7 @@ return {
 							group = augroup,
 							buffer = bufnr,
 							callback = function()
-								vim.lsp.buf.format()
+								lsp_formatting(bufnr)
 							end,
 						})
 					end
