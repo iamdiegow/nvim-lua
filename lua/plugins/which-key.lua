@@ -117,7 +117,7 @@ return {
 				},
 				t = { "<cmd>lua require'lsp.handlers'.toggle_diagnostics()<CR>", "Toggle Diagnostics (Show/Hide)" },
 				f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
-				i = { "<cmd>LspInfo<cr>", "Info" },
+				i = { "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", "Show Implementation" },
 				j = {
 					"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'single' }})<cr>",
 					"Next Diagnostic",
@@ -128,6 +128,7 @@ return {
 				},
 				r = { "<cmd>Telescope lsp_references <cr>", "Show References" },
 				d = { "<cmd>Telescope diagnostics bufrn=0<cr>", "Show Diagnostics" },
+				s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 			},
 			["h"] = {
 				name = "Cursor lines & Highlight",

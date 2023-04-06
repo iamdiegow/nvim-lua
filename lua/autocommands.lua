@@ -1,15 +1,18 @@
 -- Remove all trailing whitespace before save -----
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+	[[
   augroup TrimWhiteSpace
     au!
     autocmd BufWritePre * :%s/\s\+$//e
   augroup END
-]], false)
+]],
+	false
+)
 
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	callback = function()
-		vim.cmd "set formatoptions-=cro"
+		vim.cmd("set formatoptions-=cro")
 	end,
 })
 
@@ -48,16 +51,25 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"neotest-output-panel",
 	},
 	callback = function()
-		vim.cmd [[
+		vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR>
       set nobuflisted
-    ]]
+    ]])
 	end,
 })
 
 -- Keep equal size buffers
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-  callback = function()
-    vim.cmd("tabdo wincmd =")
-  end,
+	callback = function()
+		vim.cmd("tabdo wincmd =")
+	end,
+})
+
+-- wrap and check for spell in text filetypes
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "gitcommit", "markdown" },
+	callback = function()
+		vim.opt_local.wrap = true
+		vim.opt_local.spell = true
+	end,
 })
