@@ -39,10 +39,10 @@ return {
 					}),
 				},
 				duplicates = {
-					nvim_lsp = 0,
-					luasnip = 0,
-					buffer = 0,
-					path = 0,
+					nvim_lsp = 1,
+					luasnip = 1,
+					buffer = 1,
+					path = 1,
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-b>"] = cmp.mapping.scroll_docs(-2),
@@ -52,6 +52,26 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
+					["<Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_next_item()
+						elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
+						elseif require("utils.cmp").has_words_before() then
+							cmp.complete()
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+					["<S-Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_prev_item()
+						elseif luasnip.jumpable(-1) then
+							luasnip.jump(-1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
 				}),
 				sorting = {
 					comparators = {
@@ -133,28 +153,21 @@ return {
 			{
 				"windwp/nvim-autopairs",
 				event = "InsertEnter",
-				config = function()
-					local status_ok, nvim_autopairs = pcall(require, "nvim-autopairs")
-					if not status_ok then
-						return
-					end
-
-					nvim_autopairs.setup({
-						check_ts = true,
-						disable_filetype = { "TelescopePrompt", "vim" },
-						ts_config = {
-							lua = { "string", "source" },
-							javascript = { "string", "template_string" },
-							java = false,
-						},
-						map_char = {
-							all = "(",
-							tex = "{",
-						},
-						ignored_next_char = string.gsub([[ [%w%%%'%[%"%.] ]], "%s+", ""),
-						enable_bracket_in_quote = false,
-					})
-				end,
+				opts = {
+					check_ts = true,
+					disable_filetype = { "TelescopePrompt", "vim" },
+					ts_config = {
+						lua = { "string", "source" },
+						javascript = { "string", "template_string" },
+						java = false,
+					},
+					map_char = {
+						all = "(",
+						tex = "{",
+					},
+					ignored_next_char = string.gsub([[ [%w%%%'%[%"%.] ]], "%s+", ""),
+					enable_bracket_in_quote = false,
+				},
 			},
 		},
 	},
