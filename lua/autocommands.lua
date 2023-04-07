@@ -1,13 +1,9 @@
 -- Remove all trailing whitespace before save -----
-vim.api.nvim_exec(
-	[[
-  augroup TrimWhiteSpace
-    au!
-    autocmd BufWritePre * :%s/\s\+$//e
-  augroup END
-]],
-	false
-)
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	callback = function()
+		vim.cmd([[ %s/\s\+$//e ]])
+	end,
+})
 
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
