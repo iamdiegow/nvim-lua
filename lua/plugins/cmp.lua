@@ -43,6 +43,7 @@ return {
 					luasnip = 1,
 					buffer = 1,
 					path = 1,
+					cmp_tabnine = 1,
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-b>"] = cmp.mapping.scroll_docs(-2),

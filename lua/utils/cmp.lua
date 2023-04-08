@@ -147,6 +147,8 @@ M.format = function(entry, vim_item)
 		if (entry.completion_item.data or {}).multiline then
 			vim_item.kind = vim_item.kind .. " " .. "[ML]"
 		end
+		local maxwidth = 80
+		vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
 	end
 
 	return vim_item
