@@ -6,6 +6,9 @@ require("cmp").setup.buffer({
 			keyword_length = 3,
 		},
 		{
+			name = "cmp_tabnine",
+		},
+		{
 			name = "luasnip",
 			max_item_count = 5,
 		},

@@ -56,6 +56,7 @@ return {
 				disabled_filetypes = {
 					"Outline",
 					"NvimTree",
+					"alpha",
 				},
 			},
 			sections = {
