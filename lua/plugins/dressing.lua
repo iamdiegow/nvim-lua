@@ -10,11 +10,18 @@ return {
 			start_in_insert = true,
 			border = "single",
 			relative = "editor",
-			prefer_width = 60
+			prefer_width = 60,
+			win_options = {
+				winblend = 0,
+				wrap = false,
+				list = true,
+				listchars = "precedes:…,extends:…",
+				sidescrolloff = 0,
+			},
 		},
 		select = {
 			enabled = true,
-			trim_prompt = true
-		}
-	}
+			trim_prompt = true,
+		},
+	},
 }
