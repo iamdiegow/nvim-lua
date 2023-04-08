@@ -84,6 +84,13 @@ return {
 						name = "nvim_lsp",
 						max_item_count = 8,
 						keyword_length = 3,
+						entry_filter = function(entry) -- (entry, ctx)
+							local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
+							if kind == "Text" then
+								return false
+							end
+							return true
+						end,
 					},
 					{
 						name = "luasnip",
