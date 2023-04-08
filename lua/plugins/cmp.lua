@@ -53,6 +53,26 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
+					["<Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_next_item()
+						elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
+						elseif require("utils.cmp").has_words_before() then
+							cmp.complete()
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+					["<S-Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_prev_item()
+						elseif luasnip.jumpable(-1) then
+							luasnip.jump(-1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
 				}),
 				sorting = {
 					comparators = {
@@ -128,33 +148,7 @@ return {
 					"rafamadriz/friendly-snippets",
 				},
 				opts = {
-					history = true,
-					delete_check_events = "TextChanged",
-				},
-				keys = {
-					{
-						"<tab>",
-						function()
-							return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-						end,
-						expr = true,
-						silent = true,
-						mode = "i",
-					},
-					{
-						"<tab>",
-						function()
-							require("luasnip").jump(1)
-						end,
-						mode = "s",
-					},
-					{
-						"<s-tab>",
-						function()
-							require("luasnip").jump(-1)
-						end,
-						mode = { "i", "s" },
-					},
+					history = false,
 				},
 			},
 			{

@@ -7,7 +7,6 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"JoosepAlviste/nvim-ts-context-commentstring",
-			"windwp/nvim-ts-autotag",
 		},
 		opts = {
 			ensure_installed = {
@@ -43,9 +42,6 @@ return {
 				enable = true,
 			},
 			select = {
-				enable = true,
-			},
-			autotag = {
 				enable = true,
 			},
 			autopairs = {
@@ -122,6 +118,11 @@ return {
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
 		end,
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		event = "BufReadPost",
+		opts = true,
 	},
 	{
 		"danymat/neogen",
