@@ -63,7 +63,7 @@ M.kind_icons = {
 	Function = "  ",
 	Constructor = "  ",
 	Field = "  ",
-	Variable = "",
+	Variable = "  ",
 	Class = "  ",
 	Interface = "  ",
 	Module = "  ",
@@ -128,7 +128,7 @@ M.format = function(entry, vim_item)
 	local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
 
 	vim_item.abbr = trim(vim_item.abbr):match("[^(]+")
-	vim_item.kind = (M.kind_icons[kind] or "") .. string.upper(kind)
+	vim_item.kind = (M.vscode_icons[kind] or "") .. string.upper(kind)
 	vim_item.menu = ({
 		nvim_lsp = "[LSP:" .. string.upper(lsp_name) .. "]",
 		luasnip = "[LUASNIP]",
