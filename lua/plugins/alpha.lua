@@ -20,7 +20,7 @@ return {
 				" " .. " Old files",
 				":lua require('telescope.builtin').oldfiles({ cwd = vim.fn.getcwd() })<CR>"
 			),
-			dashboard.button("r", " " .. " Restore session for CWD", ":lua require('persistence').load()<CR>"),
+			dashboard.button("r", "󰸧 " .. " Restore session for CWD", ":lua require('persistence').load()<CR>"),
 			dashboard.button("l", "鈴" .. " Lazy", ":Lazy<CR>"),
 			dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 		}
