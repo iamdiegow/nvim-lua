@@ -128,7 +128,7 @@ return {
 				},
 				r = { "<cmd>Telescope lsp_references <cr>", "Show References" },
 				d = { "<cmd>Telescope diagnostics bufrn=0<cr>", "Show Diagnostics" },
-				s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+				s = { "<cmd>Telescope lsp_document_symbols <cr>", "Show Document Symbols" },
 			},
 			["h"] = {
 				name = "Cursor lines & Highlight",

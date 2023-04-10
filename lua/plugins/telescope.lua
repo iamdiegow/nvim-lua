@@ -1,14 +1,3 @@
-local ivyConfig = {
-	theme = "ivy",
-	layout_config = {
-		prompt_position = "top",
-		height = 15,
-	},
-	previewer = false,
-	winblen = 0,
-	border = true,
-}
-
 local verticalConfig = {
 	layout_strategy = "vertical",
 	layout_config = {
@@ -37,7 +26,7 @@ local fuzzy_find_file = function()
 end
 
 local keys = {
-	{ "<leader>fb", "<cmd>Telescope buffers<CR>",    desc = "Find Buffers (Telescope)" },
+	{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffers (Telescope)" },
 	{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files (Telescope)" },
 	{
 		"<leader>f/",
@@ -46,9 +35,9 @@ local keys = {
 		end,
 		desc = "Fuzy find buffer (Telescope)",
 	},
-	{ "<leader>fg", "<cmd>Telescope live_grep<CR>",   desc = "Live Grep (Telescope)" },
+	{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep (Telescope)" },
 	{ "<leader>fc", "<cmd>Telescope grep_string<CR>", desc = "Search String (Telescope)" },
-	{ "<leader>fh", "<cmd>Telescope help_tags<CR>",   desc = "Find Help Tags (Telescope)" },
+	{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help Tags (Telescope)" },
 	{
 		"<leader>fo",
 		function()
@@ -56,16 +45,16 @@ local keys = {
 		end,
 		desc = "Find Old files in CWD (Telescope)",
 	},
-	{ "<leader>fO", "<cmd>Telescope oldfiles<CR>",             desc = "Find All Old Files (Telescope)" },
+	{ "<leader>fO", "<cmd>Telescope oldfiles<CR>", desc = "Find All Old Files (Telescope)" },
 	{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
-	{ "<leader>fS", "<cmd>Telescope git_status<CR>",           desc = "Git Status (Telescope)" },
-	{ "<leader>fk", "<cmd>Telescope keymaps<CR>",              desc = "Find Keymaps (Telescope)" },
-	{ "<leader>fl", "<cmd>Telescope lsp_references<CR>",       desc = "Find Lsp References (Telescope)" },
-	{ "<leader>fd", "<cmd>Telescope lsp_definitions<CR>",      desc = "Find Outgoing Calls (Telescope)" },
-	{ "<leader>fi", "<cmd>Telescope lsp_implementations<CR>",  desc = "Find Implementations (Telescope)" },
-	{ "<leader>fk", "<cmd>Telescope keymaps<CR>",              desc = "Find Keymaps (Telescope)" },
-	{ "<leader>ft", "<cmd>Telescope diagnostics bufrn=0<CR>",  desc = "Find Document Diagnostics (Telescope)" },
-	{ "<leader>fr", "<cmd>Telescope lsp_references<CR>",       desc = "Find Document Diagnostics (Telescope)" },
+	{ "<leader>fS", "<cmd>Telescope git_status<CR>", desc = "Git Status (Telescope)" },
+	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
+	{ "<leader>fl", "<cmd>Telescope lsp_references<CR>", desc = "Find Lsp References (Telescope)" },
+	{ "<leader>fd", "<cmd>Telescope lsp_definitions<CR>", desc = "Find Outgoing Calls (Telescope)" },
+	{ "<leader>fi", "<cmd>Telescope lsp_implementations<CR>", desc = "Find Implementations (Telescope)" },
+	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
+	{ "<leader>ft", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
+	{ "<leader>fr", "<cmd>Telescope lsp_references<CR>", desc = "Find Document Diagnostics (Telescope)" },
 }
 
 return {
@@ -168,8 +157,6 @@ return {
 					sort_lastused = false,
 				},
 				oldfiles = verticalConfig,
-				lsp_document_symbols = ivyConfig,
-				lsp_references = ivyConfig,
 			},
 			extensions = {
 				["ui-select"] = {
