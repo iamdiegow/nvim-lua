@@ -23,7 +23,6 @@ return {
 			auto_reload_on_write = true,
 			disable_netrw = true,
 			hijack_netrw = true,
-			ignore_ft_on_setup = {},
 			open_on_tab = false,
 			sort_by = "name",
 			hijack_cursor = true,
