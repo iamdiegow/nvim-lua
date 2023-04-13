@@ -112,4 +112,15 @@ return {
 		event = "LspAttach",
 		opts = true,
 	},
+	{
+		"j-hui/fidget.nvim",
+		event = "LspAttach",
+		config = function()
+			require("fidget").setup({
+				window = {
+					blend = 0,
+				},
+			})
+		end,
+	},
 }
