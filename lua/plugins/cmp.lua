@@ -170,11 +170,12 @@ return {
 					enable_bracket_in_quote = false,
 				},
 			},
+			{
+				"tzachar/cmp-tabnine",
+				event = "InsertEnter",
+				build = "./install.sh",
+			},
 		},
 	},
-	{
-		"tzachar/cmp-tabnine",
-		build = "./install.sh",
-		dependencies = "hrsh7th/nvim-cmp",
-	},
+	{},
 }
