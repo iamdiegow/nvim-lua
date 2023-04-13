@@ -59,6 +59,7 @@ return {
 			},
 			renderer = {
 				highlight_git = true,
+				root_folder_label = false,
 				group_empty = false,
 				highlight_opened_files = "none",
 				add_trailing = true,
@@ -116,7 +117,6 @@ return {
 			view = {
 				adaptive_size = false,
 				centralize_selection = true,
-				hide_root_folder = true,
 				cursorline = false,
 				width = 25,
 				side = "left",
