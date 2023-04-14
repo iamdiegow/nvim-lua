@@ -134,22 +134,7 @@ M.format_full = function(entry, vim_item)
 		luasnip = "[LUASNIP]",
 		buffer = "[BUFFER]",
 		path = "[PATH]",
-		cmp_tabnine = "[TABNINE]",
 	})[source]
-
-	if entry.source.name == "cmp_tabnine" then
-		local detail = (entry.completion_item.data or {}).detail
-		vim_item.kind = " 󱚣 " .. " TABNINE"
-		if detail and detail:find(".*%%.*") then
-			vim_item.kind = vim_item.kind .. " " .. detail
-		end
-
-		if (entry.completion_item.data or {}).multiline then
-			vim_item.kind = vim_item.kind .. " " .. "[ML]"
-		end
-		local maxwidth = 80
-		vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
-	end
 
 	return vim_item
 end
@@ -167,21 +152,9 @@ M.format = function(entry, vim_item)
 		luasnip = "[luasnip]",
 		buffer = "[buffer]",
 		path = "[path]",
-		cmp_tabnine = "[tabnine]",
 	})[source]
 
 	vim_item.menu = vim_item.menu .. " " .. kind:lower()
-
-	if entry.source.name == "cmp_tabnine" then
-		local detail = (entry.completion_item.data or {}).detail
-		vim_item.kind = " 󱚣 "
-		if detail and detail:find(".*%%.*") then
-			vim_item.kind = vim_item.kind .. " " .. detail
-		end
-
-		local maxwidth = 100
-		vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
-	end
 
 	return vim_item
 end
