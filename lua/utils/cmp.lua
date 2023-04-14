@@ -122,7 +122,7 @@ local function trim(text)
 end
 
 -- format cmp suggestions
-M.format = function(entry, vim_item)
+M.format_full = function(entry, vim_item)
 	local kind = vim_item.kind
 	local source = entry.source.name
 	local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
@@ -148,6 +148,38 @@ M.format = function(entry, vim_item)
 			vim_item.kind = vim_item.kind .. " " .. "[ML]"
 		end
 		local maxwidth = 80
+		vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
+	end
+
+	return vim_item
+end
+
+-- different format function
+M.format = function(entry, vim_item)
+	local kind = vim_item.kind
+	local source = entry.source.name
+	local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
+
+	vim_item.abbr = trim(vim_item.abbr):match("[^(]+")
+	vim_item.kind = (M.vscode_icons[kind] or ""):sub(1, -2)
+	vim_item.menu = ({
+		nvim_lsp = "[" .. lsp_name .. "]",
+		luasnip = "[luasnip]",
+		buffer = "[buffer]",
+		path = "[path]",
+		cmp_tabnine = "[tabnine]",
+	})[source]
+
+	vim_item.menu = vim_item.menu .. " " .. kind:lower()
+
+	if entry.source.name == "cmp_tabnine" then
+		local detail = (entry.completion_item.data or {}).detail
+		vim_item.kind = " 󱚣 "
+		if detail and detail:find(".*%%.*") then
+			vim_item.kind = vim_item.kind .. " " .. detail
+		end
+
+		local maxwidth = 100
 		vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
 	end
 
