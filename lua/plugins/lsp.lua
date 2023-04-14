@@ -87,9 +87,6 @@ return {
 		end,
 	},
 	{
-		"folke/neodev.nvim",
-	},
-	{
 		"stevearc/aerial.nvim",
 		keys = {
 			{

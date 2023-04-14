@@ -74,7 +74,6 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "lua_ls" then
-		require("neodev").setup()
 		local luals_opts = require("lsp.settings.lua_ls")
 		opts = vim.tbl_deep_extend("force", luals_opts, opts)
 	end
