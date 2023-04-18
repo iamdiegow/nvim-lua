@@ -7,7 +7,7 @@ return {
 		wk.setup({
 			plugins = {
 				marks = false,
-				registers = true,
+				registers = false,
 				spelling = {
 					enabled = false,
 					suggestions = 20,
