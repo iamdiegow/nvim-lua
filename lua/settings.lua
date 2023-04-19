@@ -66,3 +66,11 @@ vim.cmd([[ set iskeyword+=- ]])
 vim.cmd([[
  highlight WinSeparator guibg=None
 ]])
+
+vim.cmd([[
+ set listchars=tab:▸\ ,trail:▓,nbsp:░,eol:↲,space:•
+]])
+
+-- vim.cmd([[
+-- 	set listchars=tab:▸\ ,trail:▓,nbsp:░,eol:↲
+-- ]])

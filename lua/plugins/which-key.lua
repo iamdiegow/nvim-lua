@@ -126,6 +126,14 @@ return {
 					"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'single' }})<cr>",
 					"Prev Diagnostic",
 				},
+				e = {
+					"<cmd>ErrorLensToggle<cr>",
+					"Toggle ErrorLens",
+				},
+				E = {
+					"<cmd>ErrorLensTelescope<cr>",
+					"ErrorLens Telescope",
+				},
 				r = { "<cmd>Telescope lsp_references <cr>", "Show References" },
 				d = { "<cmd>Telescope diagnostics bufrn=0<cr>", "Show Diagnostics" },
 				s = { "<cmd>Telescope lsp_document_symbols <cr>", "Show Document Symbols" },
