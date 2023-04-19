@@ -107,4 +107,16 @@ return {
 			},
 		},
 	},
+	{
+		"axieax/urlview.nvim",
+		cmd = { "UrlView " },
+		keys = {
+			{
+				"<leader>lv",
+				"<cmd>UrlView<cr>",
+				desc = "View Links",
+			},
+		},
+		opts = true,
+	},
 }
