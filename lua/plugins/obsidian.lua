@@ -1,3 +1,18 @@
+local function zettelkastenId(title)
+	-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
+	local suffix = ""
+	if title ~= nil then
+		-- If title is given, transform it into valid file name.
+		suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+	else
+		-- If title is nil, just add 4 random uppercase letters to the suffix.
+		for _ = 1, 4 do
+			suffix = suffix .. string.char(math.random(65, 90))
+		end
+	end
+	return tostring(os.time()) .. "-" .. suffix
+end
+
 return {
 	"epwalsh/obsidian.nvim",
 	cmd = {
@@ -36,6 +51,18 @@ return {
 			"<CMD>ObsidianFollowLink<CR>",
 			desc = "Follow link (Obsidian)",
 		},
+		{
+			"<leader>oe",
+			"<CMD>NvimTreeOpen ~/obsidian-vault<CR>",
+			desc = "Open vault with NvimTree (Obsidian)",
+		},
+		{
+			"<leader>og",
+			function()
+				require("neogit").open({ cwd = "~/obsidian-vault" })
+			end,
+			desc = "Open Vault with Neogit (Obsidian)",
+		},
 	},
 	opts = {
 		dir = "~/obsidian-vault",
@@ -43,18 +70,7 @@ return {
 			nvim_cmp = true,
 		},
 		note_id_func = function(title)
-			-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-			local suffix = ""
-			if title ~= nil then
-				-- If title is given, transform it into valid file name.
-				suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-			else
-				-- If title is nil, just add 4 random uppercase letters to the suffix.
-				for _ = 1, 4 do
-					suffix = suffix .. string.char(math.random(65, 90))
-				end
-			end
-			return tostring(os.time()) .. "-" .. suffix
+			return title
 		end,
 	},
 }
