@@ -154,8 +154,6 @@ M.format = function(entry, vim_item)
 		path = "[path]",
 	})[source]
 
-	vim_item.menu = vim_item.menu .. " " .. kind:lower()
-
 	return vim_item
 end
 
