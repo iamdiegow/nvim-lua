@@ -80,10 +80,13 @@ end
 return {
 	"kyazdani42/nvim-tree.lua",
 	dependencies = "kyazdani42/nvim-web-devicons",
+	cmd = { "NvimTreeOpen", "NvimTreeToggle" },
 	keys = {
 		{
 			"<leader>e",
-			"<cmd>NvimTreeToggle<CR>",
+			function()
+				require("nvim-tree.api").tree.toggle({ path = vim.fn.getcwd() })
+			end,
 			desc = "Toggle Nvim Tree",
 		},
 	},
