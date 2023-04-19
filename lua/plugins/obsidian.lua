@@ -53,7 +53,7 @@ return {
 		},
 		{
 			"<leader>oe",
-			"<CMD>NvimTreeOpen ~/obsidian-vault<CR>",
+			"<CMD>NvimTreeToggle ~/obsidian-vault<CR>",
 			desc = "Open vault with NvimTree (Obsidian)",
 		},
 		{
