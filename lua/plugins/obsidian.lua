@@ -39,12 +39,14 @@ return {
 		{
 			"<leader>ol",
 			"<CMD>ObsidianLinkNew<CR>",
+			mode = "v",
 			desc = "Create new note from link (Obsidian)",
 		},
 		{
 			"<leader>ok",
 			"<CMD>ObsidianLink<CR>",
-			desc = "Link visual selection (Obsidian)",
+			mode = "v",
+			desc = "Link visual selection to existing note (Obsidian)",
 		},
 		{
 			"<leader>of",
