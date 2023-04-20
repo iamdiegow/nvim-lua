@@ -28,7 +28,11 @@ return {
 		},
 		{
 			"<leader>on",
-			"<CMD>ObsidianNew<CR>",
+			function()
+				vim.ui.input({ prompt = "Enter the new note name..." }, function(input)
+					vim.cmd("ObsidianNew " .. input)
+				end)
+			end,
 			desc = "Open new note without title (Obsidian)",
 		},
 		{
