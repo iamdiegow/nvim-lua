@@ -58,7 +58,9 @@ return {
 					-- 		return utils.root_has_file({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" })
 					-- 	end,
 					-- }),
-					diagnostics.markdownlint,
+					diagnostics.markdownlint.with({
+						method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+					}),
 					-- code actions
 					-- code_actions.eslint_d,
 					require("typescript.extensions.null-ls.code-actions"),
