@@ -69,6 +69,22 @@ return {
 			end,
 			desc = "Open Vault with Neogit (Obsidian)",
 		},
+		{
+			"<leader>oo",
+			function()
+				require("telescope.builtin").find_files(require("telescope.themes").get_dropdown({
+					cwd = "~/obsidian-vault",
+					prompt_title = " Obsidian Vault",
+					layout_config = {
+						prompt_position = "top",
+					},
+					previewer = false,
+					winblen = 0,
+					border = true,
+				}))
+			end,
+			desc = "Open Vault with Neogit (Obsidian)",
+		},
 	},
 	opts = {
 		dir = "~/obsidian-vault",
