@@ -13,13 +13,14 @@ local verticalConfig = {
 }
 
 local fuzzy_find_file = function()
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
+	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 		prompt_title = " Fuzzy Find Buffer",
 		sorting_strategy = "ascending",
 		layout_config = {
 			prompt_position = "top",
 			height = 15,
 		},
+		previewer = false,
 		winblen = 0,
 		border = true,
 	}))
