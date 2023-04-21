@@ -43,7 +43,7 @@ local diff = {
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "VeryLazy",
+		event = "BufReadPre",
 		dependencies = {
 			"kyazdani42/nvim-web-devicons",
 		},
@@ -61,10 +61,10 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = {},
+				lualine_b = { branch },
 				lualine_c = { filename },
 				lualine_x = { diff },
-				lualine_y = { branch },
+				lualine_y = {},
 				lualine_z = {},
 			},
 		},
