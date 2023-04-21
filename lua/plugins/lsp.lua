@@ -1,14 +1,4 @@
 return {
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	{
-		"neovim/nvim-lspconfig",
-		event = { "BufReadPre", "BufNewFile " },
-		config = function()
-			require("lsp.mason")
-			require("lsp.handlers").setup()
-		end,
-	},
 	"jose-elias-alvarez/typescript.nvim",
 	{
 		"jose-elias-alvarez/null-ls.nvim",
@@ -19,11 +9,8 @@ return {
 				return
 			end
 
-			-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 			local formatting = null_ls.builtins.formatting
-			-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 			local diagnostics = null_ls.builtins.diagnostics
-			-- local code_actions = null_ls.builtins.code_actions
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 			local lsp_formatting = function(bufnr)
@@ -52,19 +39,10 @@ return {
 					end
 				end,
 				sources = {
-					-- diagnostics
-					-- diagnostics.eslint_d.with({
-					-- 	condition = function(utils)
-					-- 		return utils.root_has_file({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" })
-					-- 	end,
-					-- }),
 					diagnostics.markdownlint.with({
 						method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 					}),
-					-- code actions
-					-- code_actions.eslint_d,
 					require("typescript.extensions.null-ls.code-actions"),
-					-- formatting
 					formatting.black.with({ extra_args = { "--fast" } }),
 					formatting.prettierd.with({
 						filetypes = {

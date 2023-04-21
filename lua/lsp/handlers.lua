@@ -1,10 +1,5 @@
 local M = {}
 
-if vim.g.diagnostics_hover_window == true then
-	vim.o.updatetime = 250
-	vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
-end
-
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
@@ -19,10 +14,9 @@ M.setup = function()
 
 	local config = {
 		virtual_text = false,
-		-- signs = {
-		--   active = signs,
-		-- },
-		signs = false,
+		signs = {
+			active = signs,
+		},
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
