@@ -22,6 +22,11 @@ return {
 				completion = {
 					completeopt = "menu,menuone",
 				},
+				performance = {
+					debounce = 500,
+					throttle = 800,
+					fetching_timeout = 1000,
+				},
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
