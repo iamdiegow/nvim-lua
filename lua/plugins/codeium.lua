@@ -3,7 +3,7 @@ return {
 	event = "InsertEnter",
 	config = function()
 		vim.g.codeium_enabled = true
-		vim.g.codeium_manual = false
+		vim.g.codeium_manual = true
 
 		vim.keymap.set("i", "<A-i>", function()
 			return vim.fn["codeium#Complete"]()

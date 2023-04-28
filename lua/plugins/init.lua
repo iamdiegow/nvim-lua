@@ -47,10 +47,10 @@ return {
 		opts = {
 			window = {
 				backdrop = 1,
-				width = 100,
+				width = 120,
 				height = 1,
 				options = {
-					number = false,
+					number = true,
 					relativenumber = false,
 					cursorline = true,
 				},
