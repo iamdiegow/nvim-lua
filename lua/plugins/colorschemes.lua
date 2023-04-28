@@ -10,8 +10,8 @@ return {
 			styles = {
 				comments = { italic = true },
 				keywords = { italic = false, bold = true },
-				sidebars = "transparent",
-				floats = "transparent",
+				sidebars = "normal",
+				floats = "normal",
 			},
 		},
 	},
