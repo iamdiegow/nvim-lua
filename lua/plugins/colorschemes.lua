@@ -47,6 +47,18 @@ return {
 				transparency = true,
 				cursorline = true,
 			},
+			-- *bold* *underline* *undercurl*
+			-- *underdouble* *underdotted*
+			-- *underdashed* *inverse* *italic*
+			-- *standout* *strikethrough* *altfont*
+			styles = {
+				comments = "italic",
+				keywords = "bold,italic",
+				functions = "bold",
+				constants = "underdotted",
+				strings = "italic",
+				types = "underdotted",
+			},
 		},
 	},
 }
