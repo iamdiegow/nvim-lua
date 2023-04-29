@@ -21,12 +21,6 @@ return {
 			cmp.setup({
 				completion = {
 					completeopt = "menu,menuone",
-					autocomplete = false,
-				},
-				performance = {
-					debounce = 500,
-					throttle = 800,
-					fetching_timeout = 1000,
 				},
 				snippet = {
 					expand = function(args)
