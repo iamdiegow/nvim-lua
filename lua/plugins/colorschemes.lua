@@ -9,7 +9,7 @@ return {
 			style = "storm",
 			styles = {
 				comments = { italic = true },
-				keywords = { italic = false, bold = true },
+				keywords = { italic = false, bold = false },
 				sidebars = "normal",
 				floats = "normal",
 			},
