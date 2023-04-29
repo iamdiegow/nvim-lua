@@ -50,7 +50,7 @@ return {
 		opts = {
 			options = {
 				icons_enabled = true,
-				theme = "tokyonight",
+				theme = "onedark",
 				component_separators = "",
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {

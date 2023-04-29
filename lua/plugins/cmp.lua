@@ -21,6 +21,7 @@ return {
 			cmp.setup({
 				completion = {
 					completeopt = "menu,menuone",
+					autocomplete = false,
 				},
 				performance = {
 					debounce = 500,
@@ -57,56 +58,56 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
-					-- ["<Tab>"] = cmp.mapping(function(fallback)
-					-- 	if cmp.visible() then
-					-- 		cmp.select_next_item()
-					-- 	elseif luasnip.expand_or_jumpable() then
-					-- 		luasnip.expand_or_jump()
-					-- 	elseif require("utils.cmp").has_words_before() then
-					-- 		cmp.complete()
-					-- 	else
-					-- 		fallback()
-					-- 	end
-					-- end, { "i", "s" }),
-					-- ["<S-Tab>"] = cmp.mapping(function(fallback)
-					-- 	if cmp.visible() then
-					-- 		cmp.select_prev_item()
-					-- 	elseif luasnip.jumpable(-1) then
-					-- 		luasnip.jump(-1)
-					-- 	else
-					-- 		fallback()
-					-- 	end
-					-- end, { "i", "s" }),
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						elseif require("luasnip").expand_or_jumpable() then
-							vim.fn.feedkeys(
-								vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true),
-								""
-							)
+						elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
+						elseif require("utils.cmp").has_words_before() then
+							cmp.complete()
 						else
 							fallback()
 						end
-					end, {
-						"i",
-						"s",
-					}),
+					end, { "i", "s" }),
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
-						elseif require("luasnip").jumpable(-1) then
-							vim.fn.feedkeys(
-								vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true),
-								""
-							)
+						elseif luasnip.jumpable(-1) then
+							luasnip.jump(-1)
 						else
 							fallback()
 						end
-					end, {
-						"i",
-						"s",
-					}),
+					end, { "i", "s" }),
+					-- 	["<Tab>"] = cmp.mapping(function(fallback)
+					-- 		if cmp.visible() then
+					-- 			cmp.select_next_item()
+					-- 		elseif require("luasnip").expand_or_jumpable() then
+					-- 			vim.fn.feedkeys(
+					-- 				vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true),
+					-- 				""
+					-- 			)
+					-- 		else
+					-- 			fallback()
+					-- 		end
+					-- 	end, {
+					-- 		"i",
+					-- 		"s",
+					-- 	}),
+					-- 	["<S-Tab>"] = cmp.mapping(function(fallback)
+					-- 		if cmp.visible() then
+					-- 			cmp.select_prev_item()
+					-- 		elseif require("luasnip").jumpable(-1) then
+					-- 			vim.fn.feedkeys(
+					-- 				vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true),
+					-- 				""
+					-- 			)
+					-- 		else
+					-- 			fallback()
+					-- 		end
+					-- 	end, {
+					-- 		"i",
+					-- 		"s",
+					-- 	}),
 				}),
 				sorting = {
 					comparators = {

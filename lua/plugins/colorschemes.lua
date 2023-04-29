@@ -1,12 +1,12 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		enabled = true,
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {
-			transparent = true,
-			style = "storm",
+			transparent = false,
+			style = "night",
 			styles = {
 				comments = { italic = true },
 				keywords = { italic = false, bold = false },
@@ -40,7 +40,13 @@ return {
 	},
 	{
 		"olimorris/onedarkpro.nvim",
-		enabled = false,
+		enabled = true,
 		priority = 1000,
+		opts = {
+			options = {
+				transparency = true,
+				cursorline = true,
+			},
+		},
 	},
 }

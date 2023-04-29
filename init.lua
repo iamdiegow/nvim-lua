@@ -54,10 +54,8 @@ require("lazy").setup("plugins", {
 
 vim.keymap.set("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Open Lazy", silent = true, noremap = true })
 
-vim.g.diagnostics_hover_window = false
-
 require("keymappings")
 require("settings")
 require("autocommands")
 
-vim.cmd([[ colorscheme tokyonight ]])
+vim.cmd([[ colorscheme onedark_vivid ]])
