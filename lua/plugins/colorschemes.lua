@@ -55,7 +55,6 @@ return {
 				comments = "italic",
 				keywords = "bold,italic",
 				functions = "bold",
-				strings = "italic",
 			},
 		},
 	},
