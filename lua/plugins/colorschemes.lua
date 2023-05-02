@@ -56,6 +56,9 @@ return {
 				keywords = "bold,italic",
 				functions = "bold",
 			},
+			highlights = {
+				CursorColumn = { link = "CursorLine" },
+			},
 		},
 	},
 }
