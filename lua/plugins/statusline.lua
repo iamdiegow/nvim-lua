@@ -1,5 +1,3 @@
-local colors = require("tokyonight.colors").default
-
 local branch = {
 	"branch",
 	"b:gitsigns_head",
@@ -32,11 +30,6 @@ local diff = {
 		removed = " ",
 	},
 	padding = { left = 1, right = 1 },
-	diff_color = {
-		added = { fg = colors.green },
-		modified = { fg = colors.yellow },
-		removed = { fg = colors.red },
-	},
 	cond = nil,
 }
 
