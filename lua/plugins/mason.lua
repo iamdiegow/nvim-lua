@@ -4,6 +4,7 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
+			"jose-elias-alvarez/typescript.nvim",
 		},
 		lazy = false,
 		config = function()
@@ -88,7 +89,8 @@ return {
 
 				if server == "tsserver" then
 					-- this plugins won't work if a call to lspconfig["tsserver"].setup() is made
-					require("typescript").setup({
+					local typescript = require("typescript")
+					typescript.setup({
 						disable_commands = false,
 						debug = false,
 						go_to_source_definition = {
@@ -99,12 +101,6 @@ return {
 							capabilities = opts.capabilities,
 						},
 					})
-
-					local options = { noremap = true, silent = true }
-					local map = vim.api.nvim_set_keymap
-					map("n", "gM", "<cmd>TypescriptAddMissingImports<CR>", options)
-					map("n", "gR", "<cmd>TypescriptRemoveUnused<CR>", options)
-					map("n", "gO", "<cmd>TypescriptOrganizeImports<CR>", options)
 					-- prevent calling lspconfig["tsserver"].setup()
 					::continue::
 				end

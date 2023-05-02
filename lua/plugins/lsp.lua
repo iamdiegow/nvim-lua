@@ -1,5 +1,4 @@
 return {
-	"jose-elias-alvarez/typescript.nvim",
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = "LspAttach",

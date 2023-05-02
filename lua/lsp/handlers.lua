@@ -42,19 +42,57 @@ M.setup = function()
 end
 
 local function lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true }
-	local map = vim.api.nvim_buf_set_keymap
-	map(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	map(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	local map = vim.keymap.set
+
+	map("n", "gD", function()
+		vim.lsp.buf.declaration()
+	end, { desc = "(LSP) Go to declaration", silent = true, buffer = bufnr })
+
+	map("n", "gd", function()
+		vim.lsp.buf.definition()
+	end, { desc = "(LSP) Go to definition", silent = true, buffer = bufnr })
+
+	map("n", "K", function()
+		vim.lsp.buf.hover()
+	end, { desc = "(LSP) Hover", silent = true, buffer = bufnr })
+
+	map("n", "gi", function()
+		vim.lsp.buf.implementation()
+	end, { desc = "(LSP) show implementations", silent = true, buffer = bufnr })
+
+	map("n", "gr", function()
+		vim.lsp.buf.references()
+	end, { desc = "(LSP) Show references", silent = true, buffer = bufnr })
+
+	map("n", "gR", function()
+		vim.lsp.buf.rename()
+	end, { desc = "(LSP) Rename Symbol", silent = true, buffer = bufnr })
 end
 
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.document_formatting = false
+
+		local typescript = require("typescript")
+		local map = vim.keymap.set
+
+		map("n", "gM", function()
+			typescript.actions.addMissingImports()
+		end, { desc = "(Typescript) Add Missing Imports" })
+
+		map("n", "gu", function()
+			typescript.actions.removeUnused()
+		end, { desc = "(Typescript) Remove Unused" })
+
+		map("n", "gO", function()
+			typescript.actions.organizeImports()
+		end, { desc = "(Typescript) Organize Imports" })
+
+		map("n", "ga", function()
+			typescript.actions.fixAll()
+		end, { desc = "(Typescript) Fix All" })
 	end
+
 	lsp_keymaps(bufnr)
 end
 
