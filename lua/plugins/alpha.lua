@@ -14,15 +14,26 @@ return {
 			"                                                     ",
 		}
 		dashboard.section.buttons.val = {
-			dashboard.button("f", " " .. " Find files", ":lua require('telescope.builtin').find_files()<CR>"),
+			dashboard.button(
+				"f",
+				" " .. " Find files",
+				":lua require('telescope.builtin').find_files()<CR>",
+				{ silent = true }
+			),
 			dashboard.button(
 				"o",
 				" " .. " Old files",
-				":lua require('telescope.builtin').oldfiles({ cwd = vim.fn.getcwd() })<CR>"
+				":lua require('telescope.builtin').oldfiles({ cwd = vim.fn.getcwd() })<CR>",
+				{ silent = true }
 			),
-			dashboard.button("r", "󰸧 " .. " Restore session for CWD", ":lua require('persistence').load()<CR>"),
-			dashboard.button("l", "鈴" .. " Lazy", ":Lazy<CR>"),
-			dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+			dashboard.button(
+				"r",
+				"󰸧 " .. " Restore session for CWD",
+				":lua require('persistence').load()<CR>",
+				{ silent = true }
+			),
+			dashboard.button("l", "鈴" .. " Lazy", ":Lazy<CR>", { silent = true }),
+			dashboard.button("q", " " .. " Quit", ":qa<CR>", { silent = true }),
 		}
 		for _, button in ipairs(dashboard.section.buttons.val) do
 			button.opts.hl = "AlphaButtons"
