@@ -7,7 +7,7 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldnestmax = 10
 vim.opt.foldenable = false
 vim.opt.foldlevel = 10
-vim.opt.lazyredraw = false
+vim.opt.lazyredraw = true
 vim.opt.encoding = "UTF-8"
 vim.opt.showmatch = true
 --vim.opt.fillchars = { vert = ' '}
