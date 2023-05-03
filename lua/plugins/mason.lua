@@ -35,7 +35,6 @@ return {
 				"eslint",
 				"docker_compose_language_service",
 				"dockerls",
-				"tailwindcss",
 			}
 
 			require("mason-lspconfig").setup({
