@@ -136,4 +136,24 @@ return {
 		},
 		config = true,
 	},
+	{
+		{
+			"Wansmer/treesj",
+			keys = {
+				{
+					"<C-;>",
+					function()
+						require("treesj").toggle({ recursive = true })
+					end,
+					desc = "Toggle join/split",
+				},
+			},
+			dependencies = { "nvim-treesitter/nvim-treesitter" },
+			config = function()
+				require("treesj").setup({
+					use_default_keymaps = false,
+				})
+			end,
+		},
+	},
 }

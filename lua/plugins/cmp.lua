@@ -19,8 +19,9 @@ return {
 			require("luasnip/loaders/from_vscode").lazy_load()
 
 			cmp.setup({
+				preselect = cmp.PreselectMode.None,
 				completion = {
-					completeopt = "menu,menuone",
+					completeopt = "menu,menuone,noselect,noinsert",
 				},
 				snippet = {
 					expand = function(args)
