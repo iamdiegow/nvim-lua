@@ -141,7 +141,7 @@ return {
 			"Wansmer/treesj",
 			keys = {
 				{
-					"<C-;>",
+					"J",
 					function()
 						require("treesj").toggle({ recursive = true })
 					end,
