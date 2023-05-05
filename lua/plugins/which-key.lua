@@ -110,6 +110,7 @@ return {
 			-- LSP
 			["l"] = {
 				name = "LSP",
+				g = { name = "Glance" },
 				a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 				l = {
 					"<cmd>lua vim.diagnostic.open_float(0, {scope = 'cursor', border = 'single', source = true })<CR>",
