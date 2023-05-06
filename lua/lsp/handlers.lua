@@ -14,9 +14,10 @@ M.setup = function()
 
 	local config = {
 		virtual_text = false,
-		signs = {
-			active = signs,
-		},
+		-- signs = {
+		-- 	active = signs,
+		-- },
+		signs = false,
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
