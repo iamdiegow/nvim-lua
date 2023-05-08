@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local options = { noremap = true, silent = true }
 
 -- Nops
@@ -86,6 +86,11 @@ map("i", "<C-h>", "<Left>", options)
 map("i", "<C-l>", "<Right>", options)
 map("i", "<C-j>", "<Down>", options)
 map("i", "<C-k>", "<Up>", options)
+
+map("i", "<A-l>", "<C-Right>", options)
+map("i", "<A-h>", "<C-Left>", options)
+map("i", "<A-a>", "<ESC>A", options)
+map("i", "<A-b>", "<ESC>I", options)
 
 -- insert empty lines
 map("i", "<C-Enter>", "<ESC>o", options)
