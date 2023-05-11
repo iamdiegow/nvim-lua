@@ -53,8 +53,6 @@ return {
 			-- *standout* *strikethrough* *altfont*
 			styles = {
 				comments = "italic",
-				keywords = "bold,italic",
-				functions = "bold",
 			},
 			highlights = {
 				CursorColumn = { link = "CursorLine" },
