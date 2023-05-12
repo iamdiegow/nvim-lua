@@ -40,17 +40,13 @@ return {
 	},
 	{
 		"olimorris/onedarkpro.nvim",
-		enabled = true,
+		enabled = false,
 		priority = 1000,
 		opts = {
 			options = {
 				transparency = true,
 				cursorline = true,
 			},
-			-- *bold* *underline* *undercurl*
-			-- *underdouble* *underdotted*
-			-- *underdashed* *inverse* *italic*
-			-- *standout* *strikethrough* *altfont*
 			styles = {
 				comments = "italic",
 			},
@@ -58,5 +54,13 @@ return {
 				CursorColumn = { link = "CursorLine" },
 			},
 		},
+	},
+	{
+		"projekt0n/github-nvim-theme",
+		version = "v0.0.7",
+		priority = 1000,
+		config = function()
+			require("github-theme").setup({})
+		end,
 	},
 }
