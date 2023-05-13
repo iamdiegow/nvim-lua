@@ -177,6 +177,9 @@ return {
 			v = {
 				name = "Virtual Notes",
 			},
+			p = {
+				name = "Sessions",
+			},
 		}
 
 		-- NORMAL MODE KEYBINDINGS
