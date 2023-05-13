@@ -60,7 +60,9 @@ return {
 		version = "v0.0.7",
 		priority = 1000,
 		config = function()
-			require("github-theme").setup({})
+			require("github-theme").setup({
+				transparent = true,
+			})
 		end,
 	},
 }
