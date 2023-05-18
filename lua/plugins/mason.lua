@@ -2,9 +2,18 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
-			"williamboman/mason.nvim",
-			"neovim/nvim-lspconfig",
-			"jose-elias-alvarez/typescript.nvim",
+			{
+				lazy = false,
+				"williamboman/mason.nvim",
+			},
+			{
+				"neovim/nvim-lspconfig",
+				lazy = false,
+			},
+			{
+				"jose-elias-alvarez/typescript.nvim",
+				lazy = false,
+			},
 		},
 		lazy = false,
 		config = function()
