@@ -135,7 +135,6 @@ return {
 				dependencies = {
 					"rafamadriz/friendly-snippets",
 				},
-				build = "make install_jsrefexp",
 				opts = {
 					history = false,
 				},
