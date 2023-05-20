@@ -188,10 +188,9 @@ return {
 				"<C-l>",
 			},
 			view = {
-				adaptive_size = false,
 				centralize_selection = true,
-				cursorline = false,
-				width = 25,
+				cursorline = true,
+				width = 28,
 				side = "left",
 				number = false,
 				signcolumn = "no",
@@ -203,7 +202,7 @@ return {
 					},
 				},
 				float = {
-					enable = true,
+					enable = false,
 					quit_on_focus_loss = true,
 					open_win_config = function()
 						local screen_w = vim.opt.columns:get()
