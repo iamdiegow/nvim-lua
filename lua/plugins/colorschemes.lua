@@ -57,11 +57,14 @@ return {
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		version = "v0.0.7",
+		version = "v1.0.0",
 		priority = 1000,
 		config = function()
 			require("github-theme").setup({
-				transparent = true,
+				options = {
+					transparent = true,
+					hide_end_of_buffer = true,
+				},
 			})
 		end,
 	},
