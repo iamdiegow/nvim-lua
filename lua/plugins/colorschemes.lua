@@ -1,7 +1,7 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+		enabled = true,
 		lazy = false,
 		priority = 1000,
 		opts = {
@@ -57,6 +57,7 @@ return {
 	},
 	{
 		"projekt0n/github-nvim-theme",
+		enable = false,
 		version = "v1.0.0",
 		priority = 1000,
 		config = function()

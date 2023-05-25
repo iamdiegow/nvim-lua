@@ -43,7 +43,7 @@ return {
 		opts = {
 			options = {
 				icons_enabled = true,
-				theme = "github_dimmed",
+				theme = "tokyonight",
 				component_separators = "",
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
