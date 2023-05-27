@@ -30,22 +30,22 @@ return {
 				name = "css",
 			},
 			js = {
-				icon = "",
+				icon = "",
 				color = colors.sun,
 				name = "js",
 			},
 			ts = {
-				icon = "ﯤ",
+				icon = "󰛦",
 				color = colors.teal,
 				name = "ts",
 			},
 			png = {
-				icon = "",
+				icon = "󰸭",
 				color = colors.dark_purple,
 				name = "png",
 			},
 			jpg = {
-				icon = "",
+				icon = "󰈥",
 				color = colors.dark_purple,
 				name = "jpg",
 			},
