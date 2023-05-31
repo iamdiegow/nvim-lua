@@ -1,7 +1,7 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		enabled = true,
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {
@@ -17,13 +17,16 @@ return {
 	},
 	{
 		"ellisonleao/gruvbox.nvim",
-		enabled = false,
-		lazy = false,
+		enabled = true,
 		priority = 1000,
 		config = function()
 			local colors = require("gruvbox.palette").colors
 			require("gruvbox").setup({
-				contrast = "dark",
+				contrast = "hard",
+				italic = {
+					strings = false,
+					folds = false,
+				},
 				overrides = {
 					Pmenu = { bg = colors.dark0_hard },
 					SignColumn = { bg = colors.dark0_hard },
