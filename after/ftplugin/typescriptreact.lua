@@ -1,5 +1,7 @@
-require("cmp").setup.buffer({
-	sources = {
+local cmp = require("cmp")
+
+cmp.setup.buffer({
+	sources = cmp.config.sources({
 		{
 			name = "nvim_lsp",
 			max_item_count = 10,
@@ -9,5 +11,5 @@ require("cmp").setup.buffer({
 			name = "luasnip",
 			max_item_count = 5,
 		},
-	},
+	}),
 })
