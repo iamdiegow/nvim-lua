@@ -22,22 +22,23 @@ return {
 		config = function()
 			local colors = require("gruvbox.palette").colors
 			require("gruvbox").setup({
+				transparent_mode = true,
 				contrast = "hard",
 				italic = {
 					strings = false,
 					folds = false,
 				},
-				overrides = {
-					Pmenu = { bg = colors.dark0_hard },
-					SignColumn = { bg = colors.dark0_hard },
-					GitSignsAdd = { bg = colors.dark0_hard, fg = colors.bright_green },
-					GitSignsChange = { bg = colors.dark0_hard, fg = colors.bright_aqua },
-					GitSignsDelete = { bg = colors.dark0_hard, fg = colors.bright_red },
-					DiagnosticSignWarn = { bg = colors.dark0_hard, fg = colors.bright_yellow },
-					DiagnosticSignInfo = { bg = colors.dark0_hard, fg = colors.bright_blue },
-					DiagnosticSignHint = { bg = colors.dark0_hard, fg = colors.bright_aqua },
-					DiagnosticSignError = { bg = colors.dark0_hard, fg = colors.bright_red },
-				},
+				-- overrides = {
+				-- Pmenu = { bg = colors.dark0_hard },
+				-- SignColumn = { bg = colors.dark0_hard },
+				-- GitSignsAdd = { bg = colors.dark0_hard, fg = colors.bright_green },
+				-- GitSignsChange = { bg = colors.dark0_hard, fg = colors.bright_aqua },
+				-- GitSignsDelete = { bg = colors.dark0_hard, fg = colors.bright_red },
+				-- DiagnosticSignWarn = { bg = colors.dark0_hard, fg = colors.bright_yellow },
+				-- DiagnosticSignInfo = { bg = colors.dark0_hard, fg = colors.bright_blue },
+				-- DiagnosticSignHint = { bg = colors.dark0_hard, fg = colors.bright_aqua },
+				-- DiagnosticSignError = { bg = colors.dark0_hard, fg = colors.bright_red },
+				-- },
 			})
 		end,
 	},
