@@ -117,7 +117,9 @@ return {
 				desc = "View Links",
 			},
 		},
-		opts = true,
+		config = function()
+			require("urlview").setup({})
+		end,
 	},
 	{
 		"arnamak/stay-centered.nvim",
