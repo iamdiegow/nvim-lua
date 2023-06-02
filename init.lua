@@ -62,4 +62,4 @@ require("keymappings")
 require("settings")
 require("autocommands")
 
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme tokyonight")

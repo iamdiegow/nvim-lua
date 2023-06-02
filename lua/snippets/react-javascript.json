@@ -13,7 +13,7 @@
   },
   "createReactComponentWithType": {
     "key": "createReactComponentWithType",
-    "prefix": "crc",
+    "prefix": "reactcrc",
     "scope": "javascriptreact,typescriptreact",
     "body": [
       "type ${3} = {",
@@ -27,6 +27,24 @@
       "};",
       "",
       "export default ${1};"
+    ],
+    "description": "Create React Component with TypeScript Type",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "createReactComponentWithTypeNamed": {
+    "key": "createReactComponentWithType",
+    "prefix": "reactcrce",
+    "scope": "javascriptreact,typescriptreact",
+    "body": [
+      "type ${3} = {",
+      "  ${4}",
+      "};",
+      "",
+      "export const ${1:Component} = (${2:props}: ${3:PropType}) => {",
+      "  return (",
+      "    $0",
+      "  );",
+      "};"
     ],
     "description": "Create React Component with TypeScript Type",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"

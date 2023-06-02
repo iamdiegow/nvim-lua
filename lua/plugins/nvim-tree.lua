@@ -189,7 +189,7 @@ return {
 			},
 			view = {
 				centralize_selection = true,
-				cursorline = true,
+				cursorline = false,
 				width = 28,
 				side = "left",
 				number = false,
