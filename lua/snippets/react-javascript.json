@@ -3,17 +3,17 @@
     "body": ["export type ${1:first} = {${2:second}}"],
     "key": "exportType",
     "prefix": "exptp",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+    "scope": "typescript,typescriptreact"
   },
   "exportInterface": {
     "key": "exportInterface",
     "prefix": "expint",
     "body": ["export interface ${1:first} {${2:second}}"],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+    "scope": "typescript,typescriptreact"
   },
   "createReactComponentWithType": {
     "key": "createReactComponentWithType",
-    "prefix": "reactcrc",
+    "prefix": "tscrc",
     "scope": "javascriptreact,typescriptreact",
     "body": [
       "type ${3} = {",
@@ -33,7 +33,7 @@
   },
   "createReactComponentWithTypeNamed": {
     "key": "createReactComponentWithType",
-    "prefix": "reactcrce",
+    "prefix": "tscrce",
     "scope": "javascriptreact,typescriptreact",
     "body": [
       "type ${3} = {",
@@ -239,6 +239,22 @@
     "description": "Creates a React component class with connected redux and ES7 module system and TypeScript interfaces",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
+  "reactNamedFunctionComponent": {
+    "key": "reactNamedFunctionComponent",
+    "prefix": "rnfc",
+    "body": [
+      "export function ${1:${TM_FILENAME_BASE}}() {",
+      "  return (",
+      "    <>",
+      "      <div>${1:first}</div>",
+      "    </>",
+      "  );",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
   "reactArrowFunctionComponent": {
     "key": "reactArrowFunctionComponent",
     "prefix": "rafc",
@@ -246,7 +262,7 @@
       "export const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
       "    <div>${1:first}</div>",
-      "  )",
+      "  );",
       "}",
       ""
     ],
@@ -632,116 +648,11 @@
     "description": "Creates a React Functional Component with ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
-  "consoleAssert": {
-    "key": "consoleAssert",
-    "prefix": "cas",
-    "body": ["console.assert(${1:first}, ${2:second})"],
-    "description": "If the specified expression is false, the message is written to the console along with a stack trace",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleClear": {
-    "key": "consoleClear",
-    "prefix": "ccl",
-    "body": ["console.clear()"],
-    "description": "Clears the console",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleCount": {
-    "key": "consoleCount",
-    "prefix": "cco",
-    "body": ["console.count(${1:first})"],
-    "description": "Writes the the number of times that count() has been invoked at the same line and with the same label",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleDir": {
-    "key": "consoleDir",
-    "prefix": "cdi",
-    "body": ["console.dir(${1:first})"],
-    "description": "Prints a JavaScript representation of the specified object",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleError": {
-    "key": "consoleError",
-    "prefix": "cer",
-    "body": ["console.error(${1:first})"],
-    "description": "Displays a message in the console and also includes a stack trace from where the method was called",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleGroup": {
-    "key": "consoleGroup",
-    "prefix": "cgr",
-    "body": ["console.group('${1:first}')"],
-    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called.",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleGroupEnd": {
-    "key": "consoleGroupEnd",
-    "prefix": "cge",
-    "body": ["console.groupEnd()"],
-    "description": "Closes out the corresponding console.group().",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleLog": {
-    "key": "consoleLog",
-    "prefix": "clg",
-    "body": ["console.log(${1:first})"],
-    "description": "Displays a message in the console",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleTrace": {
-    "key": "consoleTrace",
-    "prefix": "ctr",
-    "body": ["console.trace(${1:first})"],
-    "description": "Prints a stack trace from the point where the method was called",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleLogObject": {
-    "key": "consoleLogObject",
-    "prefix": "clo",
-    "body": ["console.log('${1:first}', ${1:first})"],
-    "description": "Logs property with name.",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
   "consoleLogJson": {
     "key": "consoleLogJson",
     "prefix": "clj",
     "body": ["console.log('${1:first}', JSON.stringify(${1:first}, null, 2))"],
     "description": "Logs stringified JSON property with name.",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleTime": {
-    "key": "consoleTime",
-    "prefix": "ctm",
-    "body": ["console.time('${1:first}')"],
-    "description": "Console time wrapper",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleTimeEnd": {
-    "key": "consoleTimeEnd",
-    "prefix": "cte",
-    "body": ["console.timeEnd('${1:first}')"],
-    "description": "Console time end wrapper",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleWarn": {
-    "key": "consoleWarn",
-    "prefix": "cwa",
-    "body": ["console.warn(${1:first})"],
-    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleInfo": {
-    "key": "consoleInfo",
-    "prefix": "cin",
-    "body": ["console.info(${1:first})"],
-    "description": "Displays a message in the console but also displays a blue information icon along with the logged message",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "consoleTable": {
-    "key": "consoleTable",
-    "prefix": "ctl",
-    "body": ["console.table([${1:first}])"],
-    "description": "Logs table to console",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "useCallback": {
@@ -1185,195 +1096,6 @@
     "description": "Any prop type",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
-  "reactNativeComponent": {
-    "key": "reactNativeComponent",
-    "prefix": "rnc",
-    "body": [
-      "import { Text, View } from 'react-native'",
-      "import React, { Component } from 'react'",
-      "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text>${1:first}</Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativeComponentExport": {
-    "key": "reactNativeComponentExport",
-    "prefix": "rnce",
-    "body": [
-      "import { Text, View } from 'react-native'",
-      "import React, { Component } from 'react'",
-      "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text>${1:first}</Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativeComponentWithStyles": {
-    "key": "reactNativeComponentWithStyles",
-    "prefix": "rncs",
-    "body": [
-      "import { Text, StyleSheet, View } from 'react-native'",
-      "import React, { Component } from 'react'",
-      "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text>${1:first}</Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "const styles = StyleSheet.create({})"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativeFunctionalComponent": {
-    "key": "reactNativeFunctionalComponent",
-    "prefix": "rnf",
-    "body": [
-      "import { View, Text } from 'react-native'",
-      "import React from 'react'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "  return (",
-      "    <View>",
-      "      <Text>${1:first}</Text>",
-      "    </View>",
-      "  )",
-      "}"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativeFunctionalComponentWithStyles": {
-    "key": "reactNativeFunctionalComponentWithStyles",
-    "prefix": "rnfs",
-    "body": [
-      "import { StyleSheet, Text, View } from 'react-native'",
-      "import React from 'react'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "  return (",
-      "    <View>",
-      "      <Text>${1:first}</Text>",
-      "    </View>",
-      "  )",
-      "}",
-      "",
-      "const styles = StyleSheet.create({})"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativeFunctionalExportComponent": {
-    "key": "reactNativeFunctionalExportComponent",
-    "prefix": "rnfe",
-    "body": [
-      "import { View, Text } from 'react-native'",
-      "import React from 'react'",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
-      "  return (",
-      "    <View>",
-      "      <Text>${1:first}</Text>",
-      "    </View>",
-      "  )",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativeFunctionalExportComponentWithStyles": {
-    "key": "reactNativeFunctionalExportComponentWithStyles",
-    "prefix": "rnfes",
-    "body": [
-      "import { StyleSheet, Text, View } from 'react-native'",
-      "import React from 'react'",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
-      "  return (",
-      "    <View>",
-      "      <Text>${1:first}</Text>",
-      "    </View>",
-      "  )",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}",
-      "",
-      "const styles = StyleSheet.create({})"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativeImport": {
-    "key": "reactNativeImport",
-    "prefix": "imrn",
-    "body": ["import { ${1:first} } from 'react-native'"],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativePureComponent": {
-    "key": "reactNativePureComponent",
-    "prefix": "rnpc",
-    "body": [
-      "import { Text, View } from 'react-native'",
-      "import React, { PureComponent } from 'react'",
-      "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text>${1:first}</Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativePureComponentExport": {
-    "key": "reactNativePureComponentExport",
-    "prefix": "rnpce",
-    "body": [
-      "import { Text, View } from 'react-native'",
-      "import React, { PureComponent } from 'react'",
-      "",
-      "export class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text>${1:first}</Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactNativeStyles": {
-    "key": "reactNativeStyles",
-    "prefix": "rnstyle",
-    "body": ["const styles = StyleSheet.create({${1:first}})"],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
   "importReduxConnect": {
     "key": "importReduxConnect",
     "prefix": "redux",
@@ -1506,88 +1228,6 @@
       "})"
     ],
     "description": "Create test component",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "setupReactNativeTest": {
-    "key": "setupReactNativeTest",
-    "prefix": "sntest",
-    "body": [
-      "import 'react-native'",
-      "import React from 'react'",
-      "import renderer from 'react-test-renderer'",
-      "",
-      "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
-      "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {}",
-      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
-      "",
-      "  test('render', () => {",
-      "    expect(wrapper).toMatchSnapshot()",
-      "  })",
-      "})"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "setupReactNativeTestWithRedux": {
-    "key": "setupReactNativeTestWithRedux",
-    "prefix": "snrtest",
-    "body": [
-      "import 'react-native'",
-      "import React from 'react'",
-      "import renderer from 'react-test-renderer'",
-      "import { Provider } from 'react-redux'",
-      "",
-      "import store from '~/store'",
-      "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
-      "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {}",
-      "  const wrapper = renderer.create(",
-      "    <Provider store={store}>",
-      "      <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
-      "    </Provider>,",
-      "  )",
-      "",
-      "  test('render', () => {",
-      "    expect(wrapper).toMatchSnapshot()",
-      "  })",
-      "})"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "setupReactTest": {
-    "key": "setupReactTest",
-    "prefix": "stest",
-    "body": [
-      "import React from 'react'",
-      "import renderer from 'react-test-renderer'",
-      "",
-      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
-      "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {}",
-      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
-      "",
-      "  test('render', () => {",
-      "    expect(wrapper).toMatchSnapshot()",
-      "  })",
-      "})"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "testAsyncBlock": {
-    "key": "testAsyncBlock",
-    "prefix": "testa",
-    "body": ["test('should ${1:first}', async () => { ${2:second} })"],
-    "description": "Testing `asynchronous test` block",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "testBlock": {
-    "key": "testBlock",
-    "prefix": "test",
-    "body": ["test('should ${1:first}', () => { ${2:second} })"],
-    "description": "Testing `test` block",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "exportDefault": {

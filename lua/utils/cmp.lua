@@ -144,6 +144,7 @@ M.format = function(entry, vim_item)
 	local kind = vim_item.kind
 	local source = entry.source.name
 	local lsp_name = vim.split(entry.source:get_debug_name(), ":", {})[2] or ""
+	vim_item.dup = { buffer = 1, nvim_lsp = 0, path = 1, luasnip = 1 }
 
 	vim_item.abbr = trim(vim_item.abbr):match("[^(]+")
 	vim_item.kind = (M.vscode_icons[kind] or ""):sub(1, -2)
