@@ -5,6 +5,11 @@ return {
 			"rcarriga/nvim-dap-ui",
 			"theHamsta/nvim-dap-virtual-text",
 			"nvim-telescope/telescope-dap.nvim",
+			{
+				"microsoft/vscode-js-debug",
+				version = "1.x",
+				build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
+			},
 			"mxsdev/nvim-dap-vscode-js",
 		},
 		keys = {
@@ -96,6 +101,48 @@ return {
 				numhl = "LspDiagnosticsInformation",
 			})
 
+			require("dap-vscode-js").setup({
+				debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
+				adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
+			})
+
+			for _, language in ipairs({
+				"typescript",
+				"javascript",
+				"typescriptreact",
+				"javascriptreact",
+			}) do
+				require("dap").configurations[language] = {
+					{
+						type = "pwa-node",
+						request = "attach",
+						name = "Attach debugger to existing 'node --inspect' process",
+						processId = require("dap.utils").pick_process,
+						sourceMaps = true,
+						resolveSourceMapLocations = {
+							"${workspaceFolder}/**",
+							"!**/node_modules/**",
+						},
+						cwd = "${workspaceFolder}",
+						skipFiles = {
+							"${workspaceFolder}/node_modules/**/*.js",
+						},
+					},
+					{
+						type = "pwa-chrome",
+						name = "Launch Chrome to debug client",
+						request = "launch",
+						sourceMaps = true,
+						protocol = "inspector",
+						port = 9222,
+						webRoot = "${workspaceFolder}",
+						skipFiles = {
+							"**/node_modules/**",
+						},
+					},
+				}
+			end
+
 			require("dapui").setup({
 				icons = { expanded = "▾", collapsed = "▸" },
 				mappings = {
@@ -106,40 +153,18 @@ return {
 					repl = "r",
 					toggle = "t",
 				},
-				layouts = {
-					{
-						elements = {
-							{ id = "scopes", size = 0.25 },
-							{ id = "breakpoints", size = 0.25 },
-						},
-						size = 40,
-						position = "right",
-					},
-					{
-						elements = {
-							"repl",
-							"console",
-						},
-						size = 0.25,
-						position = "bottom",
-					},
-				},
 				floating = {
-					max_height = nil, -- These can be integers or a float between 0 and 1.
-					max_width = nil, -- Floats will be treated as percentage of your screen.
-					border = "single", -- Border style. Can be "single", "double" or "rounded"
+					max_height = nil,
+					max_width = nil,
+					border = "single",
 					mappings = {
 						close = { "q", "<Esc>" },
 					},
 				},
-				windows = { indent = 1 },
-				render = {
-					max_type_length = nil, -- Can be integer or nil.
-				},
 			})
 
 			dap.listeners.after.event_initialized["dapui_config"] = function()
-				dapui.open()
+				dapui.open({ reset = true })
 			end
 
 			dap.listeners.before.event_terminated["dapui_config"] = function()
@@ -174,67 +199,6 @@ return {
 				virt_lines = false,
 				virt_text_win_col = nil,
 			})
-		end,
-	},
-	{
-		"mxsdev/nvim-dap-vscode-js",
-		config = function()
-			require("dap-vscode-js").setup({
-				debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
-				debugger_cmd = { "js-debug-adapter" },
-				adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
-			})
-
-			for _, language in ipairs({ "typescript", "javascrip", "typescriptreact" }) do
-				require("dap").configurations[language] = {
-					{
-						type = "pwa-node",
-						request = "launch",
-						name = "Launch file",
-						program = "${file}",
-						cwd = "${workspaceFolder}",
-					},
-					{
-						type = "pwa-node",
-						request = "attach",
-						name = "Attach",
-						processId = require("dap.utils").pick_process,
-						cwd = "${workspaceFolder}",
-					},
-					{
-						type = "pwa-node",
-						request = "launch",
-						name = "Debug Jest Tests",
-						-- trace = true, -- include debugger info
-						runtimeExecutable = "node",
-						runtimeArgs = {
-							"./node_modules/jest/bin/jest.js",
-							"--runInBand",
-						},
-						rootPath = "${workspaceFolder}",
-						cwd = "${workspaceFolder}",
-						console = "integratedTerminal",
-						internalConsoleOptions = "neverOpen",
-					},
-					{
-						type = "pwa-chrome",
-						name = "Attach - Remote Debugging",
-						request = "attach",
-						program = "${file}",
-						cwd = vim.fn.getcwd(),
-						sourceMaps = true,
-						protocol = "inspector",
-						port = 9222,
-						webRoot = "${workspaceFolder}",
-					},
-					{
-						type = "pwa-chrome",
-						name = "Launch Chrome",
-						request = "launch",
-						url = "http://localhost:3000",
-					},
-				}
-			end
 		end,
 	},
 }
