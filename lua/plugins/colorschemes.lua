@@ -61,7 +61,7 @@ return {
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		enable = false,
+		enabled = false,
 		version = "v1.0.0",
 		priority = 1000,
 		config = function()
