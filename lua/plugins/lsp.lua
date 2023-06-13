@@ -9,7 +9,6 @@ return {
 			end
 
 			local formatting = null_ls.builtins.formatting
-			local diagnostics = null_ls.builtins.diagnostics
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 			local lsp_formatting = function(bufnr)
@@ -38,11 +37,7 @@ return {
 					end
 				end,
 				sources = {
-					diagnostics.markdownlint.with({
-						method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-					}),
 					require("typescript.extensions.null-ls.code-actions"),
-					formatting.black.with({ extra_args = { "--fast" } }),
 					formatting.prettierd.with({
 						filetypes = {
 							"javascript",
