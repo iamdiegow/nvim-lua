@@ -124,19 +124,6 @@ return {
 		opts = true,
 	},
 	{
-		"danymat/neogen",
-		keys = {
-			{
-				"<leader>nc",
-				function()
-					require("neogen").generate({})
-				end,
-				desc = "add function comment (NEOGEN)",
-			},
-		},
-		config = true,
-	},
-	{
 		{
 			"Wansmer/treesj",
 			keys = {
