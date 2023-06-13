@@ -47,11 +47,11 @@ local function lsp_keymaps(bufnr)
 
 	map("n", "gD", function()
 		vim.lsp.buf.declaration()
-	end, { desc = "(LSP) Go to declaration", silent = true, buffer = bufnr })
+	end, { desc = "(LSP) Go to Declaration", silent = true, buffer = bufnr })
 
 	map("n", "gd", function()
 		vim.lsp.buf.definition()
-	end, { desc = "(LSP) Go to definition", silent = true, buffer = bufnr })
+	end, { desc = "(LSP) Go to Definition", silent = true, buffer = bufnr })
 
 	map("n", "K", function()
 		vim.lsp.buf.hover()
@@ -59,11 +59,11 @@ local function lsp_keymaps(bufnr)
 
 	map("n", "gi", function()
 		vim.lsp.buf.implementation()
-	end, { desc = "(LSP) show implementations", silent = true, buffer = bufnr })
+	end, { desc = "(LSP) Show Implementations", silent = true, buffer = bufnr })
 
 	map("n", "gr", function()
 		vim.lsp.buf.references()
-	end, { desc = "(LSP) Show references", silent = true, buffer = bufnr })
+	end, { desc = "(LSP) Show References", silent = true, buffer = bufnr })
 
 	map("n", "gR", function()
 		vim.lsp.buf.rename()
@@ -79,19 +79,19 @@ M.on_attach = function(client, bufnr)
 
 		map("n", "gM", function()
 			typescript.actions.addMissingImports()
-		end, { desc = "(Typescript) Add Missing Imports" })
+		end, { desc = "(LSP - Typescript) Add Missing Imports" })
 
 		map("n", "gu", function()
 			typescript.actions.removeUnused()
-		end, { desc = "(Typescript) Remove Unused" })
+		end, { desc = "(LSP - Typescript) Remove Unused" })
 
 		map("n", "gO", function()
 			typescript.actions.organizeImports()
-		end, { desc = "(Typescript) Organize Imports" })
+		end, { desc = "(LSP - Typescript) Organize Imports" })
 
 		map("n", "ga", function()
 			typescript.actions.fixAll()
-		end, { desc = "(Typescript) Fix All" })
+		end, { desc = "(LSP - Typescript) Fix All" })
 	end
 
 	lsp_keymaps(bufnr)
@@ -107,14 +107,13 @@ end
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 local diagnostics_visible = true
+
 M.toggle_diagnostics = function()
 	diagnostics_visible = not diagnostics_visible
 	if diagnostics_visible then
 		vim.diagnostic.hide(nil, 0)
-		require("notify")("diagnostics off", "error", { render = "minimal" })
 	else
 		vim.diagnostic.show(nil, 0)
-		require("notify")("diagnostics on", "info", { render = "minimal" })
 	end
 end
 
