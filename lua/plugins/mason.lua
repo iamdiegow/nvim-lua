@@ -36,15 +36,11 @@ return {
 				"jsonls",
 				"lua_ls",
 				"tsserver",
-				"pyright",
 				"yamlls",
 				"bashls",
-				"marksman",
-				"prismals",
 				"eslint",
 				"docker_compose_language_service",
 				"dockerls",
-				"tailwindcss",
 			}
 
 			require("mason-lspconfig").setup({
