@@ -66,38 +66,8 @@ return {
 		end,
 	},
 	{
-		"stevearc/aerial.nvim",
-		keys = {
-			{
-				"<leader>a",
-				"<cmd>AerialToggle! right<CR>",
-				desc = "Aerial Outline",
-			},
-		},
-		opts = {
-			attach_mode = "window",
-			backends = { "lsp", "markdown", "man" },
-			layout = { min_width = 28 },
-			show_guides = false,
-			lazy_load = true,
-			filter_kind = false,
-		},
-	},
-	{
 		"chikko80/error-lens.nvim",
 		event = "LspAttach",
 		opts = true,
-	},
-	{
-		"j-hui/fidget.nvim",
-		enabled = false,
-		event = "LspAttach",
-		config = function()
-			require("fidget").setup({
-				window = {
-					blend = 0,
-				},
-			})
-		end,
 	},
 }
