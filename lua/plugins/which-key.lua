@@ -152,12 +152,9 @@ return {
 				i = { "<cmd>set invlist<CR>", "Toggle white space and tabs" },
 			},
 			["n"] = {
-				name = "Numbers, nvim-tree and browse ",
+				name = "Numbers",
 				r = { "<cmd>set relativenumber!<CR>", "Toogle relative number" },
 				n = { "<cmd>set number!<CR>", "Toogle relative number" },
-			},
-			["d"] = {
-				name = "Debugger",
 			},
 			f = {
 				name = "Telescope",
@@ -165,17 +162,8 @@ return {
 			t = {
 				name = "Trouble Diagnostics & Terminal",
 			},
-			[";"] = {
-				name = "Neotest",
-			},
-			o = {
-				name = "Peek (Markdown) & Obsidian",
-			},
 			s = {
 				name = "Spectre",
-			},
-			v = {
-				name = "Virtual Notes",
 			},
 			p = {
 				name = "Sessions",
