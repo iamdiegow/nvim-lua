@@ -121,7 +121,9 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		event = "BufReadPost",
-		opts = true,
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
 	},
 	{
 		{

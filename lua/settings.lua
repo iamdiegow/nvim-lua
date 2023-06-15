@@ -23,7 +23,7 @@ vim.opt.splitright = true -- Put new windows right of current
 
 wo.number = true
 wo.numberwidth = 2
-wo.relativenumber = false
+wo.relativenumber = true
 
 o.swapfile = false
 o.dir = "/tmp"
