@@ -56,15 +56,6 @@ local keys = {
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
 	{ "<leader>ft", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
 	{ "<leader>fr", "<cmd>Telescope lsp_references<CR>", desc = "Find Document Diagnostics (Telescope)" },
-	{
-		"<leader>f'",
-		function()
-			require("telescope").extensions.luasnip.luasnip(require("telescope.themes").get_ivy({
-				previewer = false,
-			}))
-		end,
-		desc = "Find Luasnip Snippets (Telescope)",
-	},
 }
 
 return {
