@@ -212,10 +212,6 @@ return {
 				signcolumn = true,
 				numhl = false,
 				linehl = false,
-				keymaps = {
-					noremap = true,
-					buffer = true,
-				},
 				watch_gitdir = {
 					interval = 1000,
 					follow_files = true,
