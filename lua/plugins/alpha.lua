@@ -34,6 +34,12 @@ return {
 			),
 			dashboard.button("l", "鈴" .. " Lazy", ":Lazy<CR>", { silent = true }),
 			dashboard.button("q", " " .. " Quit", ":qa<CR>", { silent = true }),
+			dashboard.button(
+				"e",
+				" " .. " Open File explorer",
+				":lua require('nvim-tree.api').tree.toggle({ path = vim.fn.getcwd() })<CR>",
+				{ silent = true }
+			),
 		}
 		for _, button in ipairs(dashboard.section.buttons.val) do
 			button.opts.hl = "AlphaButtons"
