@@ -4,8 +4,8 @@ return {
 	keys = {
 		{ "<C-x>", "<cmd>ToggleTerm<CR>", desc = "Open terminal" },
 		{ "<leader>ts", "<cmd>ToggleTerm direction=horizontal<CR>", desc = "(Terminal) Open horizontal terminal" },
-		{ "<leader>tv", "<cmd>ToggleTerm direction=vertical<CR>", desc = "(Terminal) Open horizontal terminal" },
-		{ "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", desc = "(Terminal) Open horizontal terminal" },
+		{ "<leader>tv", "<cmd>ToggleTerm direction=vertical<CR>", desc = "(Terminal) Open vertical terminal" },
+		{ "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", desc = "(Terminal) Open floating terminal" },
 	},
 	config = function()
 		require("toggleterm").setup({
