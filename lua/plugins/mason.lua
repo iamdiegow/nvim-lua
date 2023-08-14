@@ -41,6 +41,7 @@ return {
 				"eslint",
 				"docker_compose_language_service",
 				"dockerls",
+				"gopls",
 			}
 
 			require("mason-lspconfig").setup({
