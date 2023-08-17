@@ -183,10 +183,6 @@ return {
 				},
 				symlink_destination = true,
 			},
-			remove_keymaps = {
-				"<C-k>",
-				"<C-l>",
-			},
 			view = {
 				centralize_selection = true,
 				cursorline = false,
@@ -195,12 +191,6 @@ return {
 				number = false,
 				signcolumn = "no",
 				preserve_window_proportions = true,
-				mappings = {
-					list = {
-						{ key = "l", action = "edit" },
-						{ key = "h", action = "close_node" },
-					},
-				},
 				float = {
 					enable = false,
 					quit_on_focus_loss = true,
