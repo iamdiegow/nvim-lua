@@ -113,7 +113,26 @@ return {
 			})
 
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+			local handlers = require("nvim-autopairs.completion.handlers")
+			cmp.event:on(
+				"confirm_done",
+				cmp_autopairs.on_confirm_done({
+					filetypes = {
+						javascriptreact = {
+							["("] = {
+								kind = {},
+								handler = handlers["*"],
+							},
+						},
+						typescriptreact = {
+							["("] = {
+								kind = {},
+								handler = handlers["*"],
+							},
+						},
+					},
+				})
+			)
 
 			-- unlink current snippet
 			vim.api.nvim_create_autocmd("ModeChanged", {
