@@ -122,7 +122,9 @@ return {
 		"windwp/nvim-ts-autotag",
 		event = "BufReadPost",
 		config = function()
-			require("nvim-ts-autotag").setup()
+			require("nvim-ts-autotag").setup({
+				enable_close_on_slash = false,
+			})
 		end,
 	},
 	{
