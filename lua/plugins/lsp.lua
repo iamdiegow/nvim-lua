@@ -51,6 +51,7 @@ return {
 							"yaml",
 							"graphql",
 							"markdown",
+							"astro",
 						},
 						prefer_local = "node_modules/.bin",
 					}),
