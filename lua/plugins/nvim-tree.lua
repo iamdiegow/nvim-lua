@@ -245,7 +245,7 @@ return {
 					quit_on_open = false,
 					resize_window = false,
 					window_picker = {
-						enable = true,
+						enable = false,
 						chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
 						exclude = {
 							filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
