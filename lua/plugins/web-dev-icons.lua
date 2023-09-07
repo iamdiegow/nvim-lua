@@ -138,6 +138,11 @@ return {
 				cterm_color = "59",
 				name = "GitIgnore",
 			},
+			astro = {
+				icon = "",
+				color = "#ef8547",
+				name = "astro",
+			},
 		}
 
 		for key, value in pairs(icons) do
