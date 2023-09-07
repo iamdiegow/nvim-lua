@@ -43,6 +43,7 @@ return {
 				"dockerls",
 				"gopls",
 				"astro",
+				"tailwindcss",
 			}
 
 			require("mason-lspconfig").setup({
