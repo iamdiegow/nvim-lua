@@ -105,6 +105,7 @@ return {
 				e = { "<cmd>Gitsigns toggle_linehl<cr>", "Toggle Line Highlight" },
 				n = { "<cmd>Gitsigns toggle_numhl<cr>", "Toggle Number Highlight" },
 				b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Line Blame" },
+				q = { "<cmd>Gitsigns setqflist<cr>", "Set QuickFix List" },
 			},
 			-- LSP
 			["l"] = {

@@ -343,7 +343,7 @@ return {
 				},
 				signcolumn = true,
 				numhl = false,
-				linehl = false,
+				linehl = true,
 				watch_gitdir = {
 					interval = 1000,
 					follow_files = true,
@@ -360,7 +360,7 @@ return {
 					row = 0,
 					col = 1,
 				},
-				trouble = false,
+				trouble = true,
 				sign_priority = 6,
 				update_debounce = 100,
 				status_formatter = nil,
