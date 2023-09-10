@@ -343,7 +343,7 @@ return {
 				},
 				signcolumn = true,
 				numhl = false,
-				linehl = true,
+				linehl = false,
 				watch_gitdir = {
 					interval = 1000,
 					follow_files = true,
