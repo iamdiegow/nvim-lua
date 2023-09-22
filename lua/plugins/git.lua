@@ -96,7 +96,7 @@ return {
 		end,
 	},
 	{
-		"TimUntersberger/neogit",
+		"NeogitOrg/neogit",
 		keys = {
 			{ "<leader>gg", "<cmd>lua require('neogit').open()<CR>", desc = "Open Neogit" },
 		},
@@ -114,15 +114,10 @@ return {
 				disable_signs = false,
 				-- Do not ask to confirm the commit - just do it when the buffer is closed.
 				disable_commit_confirmation = false,
-				-- Uses `vim.notify` instead of the built-in notification system.
-				disable_builtin_notifications = false,
 				-- Changes what mode the Commit Editor starts in. `true` will leave nvim in normal mode, `false` will change nvim to insert mode, and `"auto"` will change nvim to insert mode IF the commit message is empty, otherwise leaving it in normal mode.
 				disable_insert_on_commit = true,
 				-- Allows a different telescope sorter. Defaults to 'fuzzy_with_index_bias'. The example below will use the native fzf
 				-- sorter instead. By default, this function returns `nil`.
-				telescope_sorter = function()
-					return require("telescope").extensions.fzf.native_fzf_sorter()
-				end,
 				-- Persist the values of switches/options within and across sessions
 				remember_settings = true,
 				-- Scope persisted settings on a per-project basis
