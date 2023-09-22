@@ -99,7 +99,9 @@ return {
 						},
 					},
 				},
-				theme = "lotus",
+				background = {
+					dark = "wave",
+				},
 				overrides = function(colors)
 					local theme = colors.theme
 					return {
