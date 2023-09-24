@@ -74,3 +74,13 @@ vim.cmd([[
 -- vim.cmd([[
 -- 	set listchars=tab:▸\ ,trail:▓,nbsp:░,eol:↲
 -- ]])
+
+-- Neovide config
+if vim.g.neovide then
+	vim.o.guifont = "MesloLGSDZ_Nerd_Font_Mono"
+	vim.g.neovide_floating_blur_amount_x = 2.0
+	vim.g.neovide_floating_blur_amount_y = 2.0
+	vim.g.neovide_transparency = 0.95
+	vim.g.neovide_scroll_animation_length = 0.3
+	vim.g.neovide_cursor_animation_length = 0
+end
