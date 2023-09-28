@@ -77,10 +77,12 @@ vim.cmd([[
 
 -- Neovide config
 if vim.g.neovide then
-	vim.o.guifont = "MesloLGSDZ_Nerd_Font_Mono"
+	-- vim.o.guifont = "MesloLGSDZ Nerd Font Mono:h12"
+	-- vim.o.guifont = "JetBrainsMonoNL NFM:h12"
+	-- vim.o.guifont = "IosevkaTerm NFM:h14"
 	vim.g.neovide_floating_blur_amount_x = 2.0
 	vim.g.neovide_floating_blur_amount_y = 2.0
-	vim.g.neovide_transparency = 0.95
+	vim.g.neovide_transparency = 0.97
 	vim.g.neovide_scroll_animation_length = 0.3
 	vim.g.neovide_cursor_animation_length = 0
 end
