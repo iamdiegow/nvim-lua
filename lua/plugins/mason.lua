@@ -44,6 +44,7 @@ return {
 				"gopls",
 				"astro",
 				"tailwindcss",
+				"prismals",
 			}
 
 			require("mason-lspconfig").setup({
