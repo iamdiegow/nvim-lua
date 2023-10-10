@@ -11,6 +11,15 @@ return {
 				{ desc = "Toggle indent line" },
 			},
 		},
+		opts = {
+			enabled = false,
+			indent = {
+				highlight = { "Function", "Label" },
+			},
+			scope = {
+				enabled = false,
+			},
+		},
 	},
 	{
 		"echasnovski/mini.indentscope",
