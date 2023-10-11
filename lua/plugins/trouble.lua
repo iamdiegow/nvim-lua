@@ -6,28 +6,28 @@ return {
 		{
 			"<leader>tt",
 			"<cmd>TroubleToggle<CR>",
-			desc = "Open Trouble"
+			desc = "Open Trouble",
 		},
 		{
 			"<leader>tw",
 			"<cmd>Trouble workspace_diagnostics<CR>",
-			desc = "Workspace diagnostics"
+			desc = "Workspace diagnostics",
 		},
 		{
 			"<leader>td",
 			"<cmd>Trouble document_diagnostics<CR>",
-			desc = "Document diagnostics"
+			desc = "Document diagnostics",
 		},
 		{
 			"<leader>tq",
 			"<cmd>Trouble quickfix<CR>",
-			desc = "Open quickfix list"
+			desc = "Open quickfix list",
 		},
 		{
 			"<leader>tr",
-			"<cmd>Trouble lsp_reference<CR>",
-			desc = "Open reference list"
-		}
+			"<cmd>Trouble lsp_references<CR>",
+			desc = "Open reference list",
+		},
 	},
 	opts = {
 		position = "bottom", -- position of the list can be: bottom, top, left, right
