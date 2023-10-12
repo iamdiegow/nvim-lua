@@ -156,6 +156,8 @@ return {
 					initial_mode = "insert",
 					only_cwd = true,
 					sort_lastused = false,
+					ignore_current_buffer = false,
+					bufnr_width = 0,
 				},
 				oldfiles = verticalConfig,
 			},
