@@ -14,7 +14,7 @@ return {
 		opts = {
 			enabled = false,
 			indent = {
-				highlight = { "Function", "Label" },
+				highlight = { "Comment" },
 			},
 			scope = {
 				enabled = false,
