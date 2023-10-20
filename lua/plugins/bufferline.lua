@@ -12,7 +12,8 @@ return {
 			middle_mouse_command = nil,
 			--"⎟ ⎜ ⎢ ⎜ ▏ ▊ ▋ ▉ ▎ ▍ ▋ ▍ ▎ "
 			indicator = {
-				icon = "▍",
+				-- icon = "▍",
+				style = "none",
 			},
 			buffer_close_icon = "  ",
 			modified_icon = "  ",
