@@ -19,7 +19,7 @@ M.setup = function()
 		-- },
 		signs = false,
 		update_in_insert = false,
-		underline = true,
+		underline = false,
 		severity_sort = true,
 		float = {
 			focusable = true,
