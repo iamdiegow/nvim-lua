@@ -83,7 +83,7 @@ return {
 				undercurl = true,
 				commentStyle = { italic = true },
 				functionStyle = {},
-				keywordStyle = { italic = true },
+				keywordStyle = { italic = false },
 				statementStyle = { bold = true },
 				typeStyle = {},
 				transparent = false, -- do not set background color
