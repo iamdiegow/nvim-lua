@@ -111,6 +111,8 @@ map("v", "<C-k>", "5k", options)
 map("x", "<A-j>", ":m '>+1<CR>gv-gv", options)
 map("x", "<A-k>", ":m '<-2<CR>gv-gv", options)
 
+map("x", "y", "ygv<Esc>")
+
 -- Create only for Diffview filetype
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "DiffviewFiles",
