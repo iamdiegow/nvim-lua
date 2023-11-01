@@ -87,13 +87,13 @@ return {
 					{ name = "nvim_lua", keyword_length = 3 },
 					{
 						name = "nvim_lsp",
-						entry_filter = function(entry) -- (entry, ctx)
-							local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
-							if kind == "Text" then
-								return false
-							end
-							return true
-						end,
+						-- entry_filter = function(entry) -- (entry, ctx)
+						-- 	local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
+						-- 	if kind == "Text" then
+						-- 		return false
+						-- 	end
+						-- 	return true
+						-- end,
 					},
 					{ name = "luasnip" },
 					{ name = "path", max_item_count = 3 },

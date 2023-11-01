@@ -45,6 +45,7 @@ return {
 				"astro",
 				"tailwindcss",
 				"prismals",
+				"emmet_language_server",
 			}
 
 			require("mason-lspconfig").setup({
