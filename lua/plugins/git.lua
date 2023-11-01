@@ -106,23 +106,13 @@ return {
 		},
 		config = function()
 			require("neogit").setup({
-				-- Hides the hints at the top of the status buffer
 				disable_hint = false,
-				-- Disables changing the buffer highlights based on where the cursor is.
 				disable_context_highlighting = false,
-				-- Disables signs for sections/items/hunks
 				disable_signs = false,
-				-- Do not ask to confirm the commit - just do it when the buffer is closed.
 				disable_commit_confirmation = false,
-				-- Changes what mode the Commit Editor starts in. `true` will leave nvim in normal mode, `false` will change nvim to insert mode, and `"auto"` will change nvim to insert mode IF the commit message is empty, otherwise leaving it in normal mode.
 				disable_insert_on_commit = true,
-				-- Allows a different telescope sorter. Defaults to 'fuzzy_with_index_bias'. The example below will use the native fzf
-				-- sorter instead. By default, this function returns `nil`.
-				-- Persist the values of switches/options within and across sessions
 				remember_settings = true,
-				-- Scope persisted settings on a per-project basis
 				use_per_project_settings = true,
-				-- Table of settings to never persist. Uses format "Filetype--cli-value"
 				ignored_settings = {
 					"NeogitPushPopup--force-with-lease",
 					"NeogitPushPopup--force",
@@ -130,19 +120,10 @@ return {
 					"NeogitCommitPopup--allow-empty",
 					"NeogitRevertPopup--no-edit",
 				},
-				-- Neogit refreshes its internal state after specific events, which can be expensive depending on the repository size.
-				-- Disabling `auto_refresh` will make it so you have to manually refresh the status after you open it.
 				auto_refresh = true,
-				-- Value used for `--sort` option for `git branch` command
-				-- By default, branches will be sorted by commit date descending
-				-- Flag description: https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---sortltkeygt
-				-- Sorting keys: https://git-scm.com/docs/git-for-each-ref#_options
 				sort_branches = "-committerdate",
-				-- Change the default way of opening neogit
 				kind = "tab",
-				-- The time after which an output console is shown for slow running commands
 				console_timeout = 2000,
-				-- Automatically show console if a command takes more than console_timeout milliseconds
 				auto_show_console = true,
 				status = {
 					recent_commit_count = 10,
@@ -175,7 +156,6 @@ return {
 					kind = "split",
 				},
 				signs = {
-					-- { CLOSED, OPENED }
 					hunk = { "", "" },
 					item = { ">", "v" },
 					section = { ">", "v" },
@@ -184,7 +164,6 @@ return {
 					diffview = true,
 				},
 				sections = {
-					-- Reverting/Cherry Picking
 					sequencer = {
 						folded = false,
 						hidden = false,
@@ -235,6 +214,7 @@ return {
 						["<cr>"] = "Select",
 						["<c-c>"] = "Close",
 						["<esc>"] = "Close",
+						["q"] = "Close",
 						["<c-n>"] = "Next",
 						["<c-p>"] = "Previous",
 						["<down>"] = "Next",
@@ -243,7 +223,23 @@ return {
 						["<s-tab>"] = "MultiselectTogglePrevious",
 						["<c-j>"] = "NOP",
 					},
-					-- Setting any of these to `false` will disable the mapping.
+					popup = {
+						["?"] = "HelpPopup",
+						["A"] = "CherryPickPopup",
+						["D"] = "DiffPopup",
+						["M"] = "RemotePopup",
+						["P"] = "PushPopup",
+						["X"] = "ResetPopup",
+						["Z"] = "StashPopup",
+						["b"] = "BranchPopup",
+						["c"] = "CommitPopup",
+						["f"] = "FetchPopup",
+						["l"] = "LogPopup",
+						["m"] = "MergePopup",
+						["p"] = "PullPopup",
+						["r"] = "RebasePopup",
+						["v"] = "RevertPopup",
+					},
 					status = {
 						["q"] = "Close",
 						["I"] = "InitRepo",
@@ -266,21 +262,6 @@ return {
 						["<c-v>"] = "VSplitOpen",
 						["<c-x>"] = "SplitOpen",
 						["<c-t>"] = "TabOpen",
-						["?"] = "HelpPopup",
-						["D"] = "DiffPopup",
-						["p"] = "PullPopup",
-						["r"] = "RebasePopup",
-						["m"] = "MergePopup",
-						["P"] = "PushPopup",
-						["c"] = "CommitPopup",
-						["l"] = "LogPopup",
-						["v"] = "RevertPopup",
-						["Z"] = "StashPopup",
-						["A"] = "CherryPickPopup",
-						["b"] = "BranchPopup",
-						["f"] = "FetchPopup",
-						["X"] = "ResetPopup",
-						["M"] = "RemotePopup",
 						["{"] = "GoToPreviousHunkHeader",
 						["}"] = "GoToNextHunkHeader",
 					},
