@@ -10,6 +10,11 @@ return {
 				"<cmd>IBLToggle<CR>",
 				{ desc = "Toggle indent line" },
 			},
+			{
+				"<leader>ih",
+				"<cmd>IBLToggleScope<CR>",
+				{ desc = "Toggle indent line scope" },
+			},
 		},
 		opts = {
 			enabled = false,
@@ -18,6 +23,7 @@ return {
 			},
 			scope = {
 				enabled = false,
+				show_exact_scope = true,
 			},
 		},
 	},
