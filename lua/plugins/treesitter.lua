@@ -6,7 +6,6 @@ return {
 		event = "BufReadPost",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
-			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		opts = {
 			ensure_installed = {
@@ -45,25 +44,6 @@ return {
 			},
 			autopairs = {
 				enable = true,
-			},
-			context_commentstring = {
-				enable = true,
-				config = {
-					javascript = {
-						__default = "// %s",
-						jsx_element = "{/* %s */}",
-						jsx_fragment = "{/* %s */}",
-						jsx_attribute = "// %s",
-						comment = "// %s",
-					},
-					typescriptreact = {
-						__default = "// %s",
-						jsx_element = "{/* %s */}",
-						jsx_fragment = "{/* %s */}",
-						jsx_attribute = "// %s",
-						comment = "// %s",
-					},
-				},
 			},
 			incremental_selection = {
 				enable = true,
