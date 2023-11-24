@@ -5,12 +5,16 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			transparent = true,
+			transparent = false,
 			style = "storm",
+			terminal_colors = true,
+			hide_inactive_statusline = true,
+			lualine_bold = true,
+			dim_inactive = true,
 			styles = {
 				comments = { italic = true },
 				keywords = { italic = false, bold = false },
-				sidebars = "normal",
+				sidebars = "dark",
 				floats = "normal",
 			},
 		},
