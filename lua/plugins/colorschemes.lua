@@ -8,9 +8,9 @@ return {
 			transparent = false,
 			style = "storm",
 			terminal_colors = true,
-			hide_inactive_statusline = true,
+			hide_inactive_statusline = false,
 			lualine_bold = true,
-			dim_inactive = true,
+			dim_inactive = false,
 			styles = {
 				comments = { italic = true },
 				keywords = { italic = false, bold = false },
