@@ -21,10 +21,10 @@ return {
 			skip_ssl_verification = false,
 			encode_url = true,
 			result = {
-				show_url = true,
+				show_url = false,
 				show_curl_command = false,
 				show_http_info = false,
-				show_headers = true,
+				show_headers = false,
 			},
 		})
 	end,
