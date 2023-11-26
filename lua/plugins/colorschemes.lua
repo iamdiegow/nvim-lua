@@ -6,7 +6,7 @@ return {
 		priority = 1000,
 		opts = {
 			transparent = false,
-			style = "storm",
+			style = "night",
 			terminal_colors = true,
 			hide_inactive_statusline = false,
 			lualine_bold = true,
