@@ -20,7 +20,7 @@ return {
 		require("rest-nvim").setup({
 			skip_ssl_verification = false,
 			result_split_horizontal = true,
-			stay_in_current_window_after_split = true,
+			stay_in_current_window_after_split = false,
 			encode_url = true,
 			result = {
 				-- URL, HTTP info, headers at the top of the result

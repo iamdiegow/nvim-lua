@@ -121,6 +121,14 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- Create only for Diffview filetype
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "httpResult",
+	callback = function()
+		map("n", "q", ":q!<CR>", options)
+	end,
+})
+
 vim.keymap.set("n", "<Leader>is", function()
 	vim.o.spell = not vim.o.spell
 	print("spell: " .. tostring(vim.o.spell))
