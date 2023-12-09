@@ -19,12 +19,15 @@ return {
 	config = function()
 		require("rest-nvim").setup({
 			skip_ssl_verification = false,
+			result_split_horizontal = true,
+			stay_in_current_window_after_split = true,
 			encode_url = true,
 			result = {
-				show_url = false,
+				-- URL, HTTP info, headers at the top of the result
+				show_url = true,
 				show_curl_command = false,
-				show_http_info = false,
-				show_headers = false,
+				show_http_info = true,
+				show_headers = true,
 			},
 		})
 	end,
