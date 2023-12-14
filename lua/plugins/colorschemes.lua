@@ -1,8 +1,7 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		enabled = true,
-		lazy = false,
+		enabled = false,
 		priority = 1000,
 		opts = {
 			transparent = false,
@@ -132,5 +131,14 @@ return {
 				end,
 			})
 		end,
+	},
+	{
+		"Mofiqul/vscode.nvim",
+		enabled = true,
+		priority = 1000,
+		opts = {
+			transparent = true,
+			disable_nvimtree_bg = true,
+		},
 	},
 }
