@@ -244,8 +244,9 @@ return {
 				open_file = {
 					quit_on_open = false,
 					resize_window = false,
+					eject = true,
 					window_picker = {
-						enable = false,
+						enable = true,
 						chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
 						exclude = {
 							filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
