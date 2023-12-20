@@ -164,6 +164,10 @@ return {
 			},
 			s = {
 				name = "Spectre",
+				s = "Init selection (Treesitter)",
+				i = "Increment selection (Treesitter)",
+				d = "Decrement selection (Treesitter)",
+				c = "Scope incremental (Treesitter)",
 			},
 			p = {
 				name = "Sessions",
