@@ -166,6 +166,18 @@ return {
 					theme = "dropdown",
 					previewer = false,
 				},
+				lsp_references = {
+					theme = "cursor",
+					previewer = false,
+					show_line = false,
+					trim_text = true,
+					include_declaration = false,
+				},
+				diagnostics = {
+					theme = "cursor",
+					previewer = false,
+					disable_coordinates = true,
+				},
 			},
 			extensions = {
 				["ui-select"] = {
