@@ -162,6 +162,10 @@ return {
 					bufnr_width = 0,
 				},
 				oldfiles = verticalConfig,
+				live_grep = {
+					theme = "dropdown",
+					previewer = false,
+				},
 			},
 			extensions = {
 				["ui-select"] = {
