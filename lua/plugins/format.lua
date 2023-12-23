@@ -6,7 +6,7 @@ return {
 	},
 	keys = {
 		{
-			"<C-f>f",
+			"<C-f>",
 			function()
 				require("conform").format({ async = true, lsp_fallback = true })
 			end,
