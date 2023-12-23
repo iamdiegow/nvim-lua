@@ -1,6 +1,7 @@
 return {
 	{
 		"jose-elias-alvarez/null-ls.nvim",
+		enabled = false,
 		event = "LspAttach",
 		config = function()
 			local null_ls_status_ok, null_ls = pcall(require, "null-ls")
