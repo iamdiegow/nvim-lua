@@ -61,11 +61,13 @@ local keys = {
 return {
 	"nvim-telescope/telescope.nvim",
 	keys = keys,
+	cmd = "Telescope",
 	dependencies = {
 		{ "nvim-lua/popup.nvim" },
 		{ "nvim-lua/plenary.nvim" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		{ "folke/trouble.nvim" },
+		{ "tomasky/bookmarks.nvim" },
 	},
 	config = function()
 		require("telescope").setup({
@@ -165,8 +167,12 @@ return {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
 				},
+				bookmarks = {
+					require("telescope.themes").get_dropdown(),
+				},
 			},
 		})
 		require("telescope").load_extension("ui-select")
+		require("telescope").load_extension("bookmarks")
 	end,
 }

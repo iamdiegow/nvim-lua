@@ -11,7 +11,7 @@ return {
 				["@f"] = "⛏ ",
 				["@n"] = " ",
 			},
-			on_attach = function(bufnr)
+			on_attach = function()
 				local bm = require("bookmarks")
 				local map = vim.keymap.set
 				map("n", "mm", bm.bookmark_toggle, { desc = "Add or remove bookmark" })
@@ -19,7 +19,12 @@ return {
 				map("n", "mc", bm.bookmark_clean, { desc = "Clean all marks in local buffer" })
 				map("n", "mn", bm.bookmark_next, { desc = "Jump to next mark in local buffer" })
 				map("n", "mp", bm.bookmark_prev, { desc = "Jump to previous mark in local buffer" })
-				map("n", "ml", bm.bookmark_list, { desc = "Show marked file list in quickfix window" })
+				map(
+					"n",
+					"ml",
+					"<cmd>Telescope bookmarks list<CR>",
+					{ desc = "Show marked file list in quickfix window" }
+				)
 			end,
 		})
 	end,
