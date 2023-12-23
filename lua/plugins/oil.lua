@@ -4,7 +4,7 @@ return {
 	keys = {
 		{
 			"<leader>o",
-			"<cmd>Oil<CR>",
+			"<cmd>Oil --float<CR>",
 			desc = "Open Oil File Explorer",
 		},
 	},
