@@ -16,7 +16,7 @@ map("n", "<Space>", "<NOP>", options)
 map("n", "<BS>", "<cmd>:noh<CR>", options)
 vim.g.mapleader = " "
 -- Format file
-map("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", options)
+-- map("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", options)
 -- LSP
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", options)
 -- better movement
