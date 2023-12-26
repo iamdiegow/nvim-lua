@@ -61,13 +61,25 @@ local function lsp_keymaps(bufnr)
 		vim.lsp.buf.implementation()
 	end, { desc = "(LSP) Show Implementations", silent = true, buffer = bufnr })
 
-	map("n", "gr", function()
+	map("n", "gR", function()
 		vim.lsp.buf.references()
 	end, { desc = "(LSP) Show References", silent = true, buffer = bufnr })
 
-	map("n", "gR", function()
+	map("n", "gr", function()
 		vim.lsp.buf.rename()
 	end, { desc = "(LSP) Rename Symbol", silent = true, buffer = bufnr })
+
+	map("n", "gs", function()
+		vim.lsp.buf.signature_help()
+	end, { desc = "(LSP) Signature Help", silent = true, buffer = bufnr })
+
+	map("n", "gf", function()
+		vim.lsp.buf.format()
+	end, { desc = "(LSP) Format Current File", silent = true, buffer = bufnr })
+
+	map("n", "ga", function()
+		vim.lsp.buf.code_action()
+	end, { desc = "(LSP) Code Actions", silent = true, buffer = bufnr })
 end
 
 M.on_attach = function(client, bufnr)
