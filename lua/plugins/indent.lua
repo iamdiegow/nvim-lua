@@ -18,9 +18,6 @@ return {
 		},
 		opts = {
 			enabled = false,
-			indent = {
-				highlight = { "Comment" },
-			},
 			scope = {
 				enabled = false,
 				show_exact_scope = true,
