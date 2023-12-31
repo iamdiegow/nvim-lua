@@ -64,6 +64,7 @@ return {
 	},
 	{
 		"chikko80/error-lens.nvim",
+		enabled = false,
 		event = "BufRead",
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
