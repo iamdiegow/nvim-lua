@@ -1,12 +1,18 @@
 return {
 	"akinsho/nvim-bufferline.lua",
-	dependencies = "nvim-tree/nvim-web-devicons",
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		{ "echasnovski/mini.bufremove", version = "*" },
+	},
 	event = "BufReadPre",
 	opts = {
 		options = {
 			mode = "buffers",
 			numbers = "none",
-			close_command = "bdelete! %d",
+			-- close_command = "bdelete! %d",
+			close_command = function(n)
+				require("mini.bufremove").delete(n, false)
+			end,
 			right_mouse_command = "bdelete! %d",
 			left_mouse_command = "buffer %d",
 			middle_mouse_command = nil,

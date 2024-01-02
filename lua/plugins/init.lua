@@ -3,6 +3,7 @@ return {
 	-- Workflow
 	{
 		"famiu/bufdelete.nvim",
+		enabled = false,
 		keys = {
 			{
 				"<leader>c",
@@ -90,6 +91,23 @@ return {
 		event = "VeryLazy",
 		config = function()
 			require("stay-centered")
+		end,
+	},
+	{
+		"echasnovski/mini.bufremove",
+		event = "VeryLazy",
+		version = "*",
+		keys = {
+			{
+				"<leader>c",
+				function()
+					require("mini.bufremove").delete(0, false)
+				end,
+				desc = "Close Buffer",
+			},
+		},
+		config = function()
+			require("mini.bufremove").setup()
 		end,
 	},
 }
