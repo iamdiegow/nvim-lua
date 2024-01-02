@@ -73,10 +73,6 @@ local function lsp_keymaps(bufnr)
 		vim.lsp.buf.signature_help()
 	end, { desc = "(LSP) Signature Help", silent = true, buffer = bufnr })
 
-	map("n", "gf", function()
-		vim.lsp.buf.format()
-	end, { desc = "(LSP) Format Current File", silent = true, buffer = bufnr })
-
 	map("n", "ga", function()
 		vim.lsp.buf.code_action()
 	end, { desc = "(LSP) Code Actions", silent = true, buffer = bufnr })

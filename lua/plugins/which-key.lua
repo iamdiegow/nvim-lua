@@ -117,7 +117,6 @@ return {
 					"Show Line Diagnostics",
 				},
 				t = { "<cmd>lua require'lsp.handlers'.toggle_diagnostics()<CR>", "Toggle Diagnostics (Show/Hide)" },
-				f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 				i = { "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", "Show Implementation" },
 				j = {
 					"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'single' }})<cr>",
