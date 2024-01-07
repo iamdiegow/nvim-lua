@@ -38,13 +38,13 @@ end
 M.order_by_kind_sorter = function(entry1, entry2)
 	local score = {
 		Variable = 1,
-		Constant = 2,
-		Method = 3,
+		Constant = 7,
+		Method = 8,
 		Field = 4,
 		Value = 5,
 		Keyword = 6,
-		Class = 7,
-		Function = 8,
+		Class = 2,
+		Function = 3,
 		Property = 9,
 		Snippet = 10,
 	}
