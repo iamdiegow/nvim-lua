@@ -1,7 +1,7 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+		enabled = true,
 		priority = 1000,
 		opts = {
 			transparent = false,
@@ -134,7 +134,7 @@ return {
 	},
 	{
 		"Mofiqul/vscode.nvim",
-		enabled = true,
+		enabled = false,
 		priority = 1000,
 		opts = {
 			transparent = true,
