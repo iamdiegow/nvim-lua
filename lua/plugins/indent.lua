@@ -19,8 +19,19 @@ return {
 		opts = {
 			enabled = false,
 			scope = {
-				enabled = false,
-				show_exact_scope = true,
+				enabled = true,
+				show_exact_scope = false,
+				show_start = false,
+				show_end = false,
+				highlight = { "Function", "Label" },
+				priority = 500,
+			},
+			whitespace = {
+				highlight = { "Whitespace", "NonText" },
+				remove_blankline_trail = true,
+			},
+			indent = {
+				char = "┆",
 			},
 		},
 	},
