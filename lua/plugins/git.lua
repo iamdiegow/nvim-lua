@@ -16,12 +16,11 @@ return {
 			local actions = require("diffview.actions")
 
 			diffview.setup({
-				diff_binaries = false, -- Show diffs for binaries
-				enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
-				git_cmd = { "git" }, -- The git executable followed by default args.
-				use_icons = true, -- Requires nvim-web-devicons
+				diff_binaries = false,
+				enhanced_diff_hl = false,
+				git_cmd = { "git" },
+				use_icons = true,
 				icons = {
-					-- Only applies when use_icons is true.
 					folder_closed = "",
 					folder_open = "",
 				},
@@ -30,21 +29,18 @@ return {
 					fold_open = "",
 				},
 				file_panel = {
-					listing_style = "tree", -- One of 'list' or 'tree'
+					listing_style = "tree",
 					tree_options = {
-						-- Only applies when listing_style is 'tree'
-						flatten_dirs = true, -- Flatten dirs that only contain one single dir
-						folder_statuses = "only_folded", -- One of 'never', 'only_folded' or 'always'.
+						flatten_dirs = true,
+						folder_statuses = "only_folded",
 					},
 					win_config = {
-						-- See ':h diffview-config-win_config'
 						position = "left",
 						width = 25,
 					},
 				},
 				file_history_panel = {
 					log_options = {
-						-- See ':h diffview-config-log_options'
 						git = {
 							single_file = {
 								follow = true,
@@ -56,20 +52,18 @@ return {
 						},
 					},
 					win_config = {
-						-- See ':h diffview-config-win_config'
 						position = "bottom",
 						height = 16,
 					},
 				},
 				commit_log_panel = {
-					win_config = {}, -- See ':h diffview-config-win_config'
+					win_config = {},
 				},
 				default_args = {
-					-- Default args prepended to the arg-list for the listed commands
 					DiffviewOpen = {},
 					DiffviewFileHistory = {},
 				},
-				hooks = {}, -- See ':h diffview-config-hooks'
+				hooks = {},
 				keymaps = {
 					disable_defaults = false,
 					view = {

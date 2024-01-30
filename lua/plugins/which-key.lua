@@ -94,6 +94,7 @@ return {
 				k = { "<cmd>lua require 'gitsigns'.prev_hunk({preview = true, foldopen = true})<cr>", "Prev Hunk" },
 				l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 				p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+				i = { "<cmd>lua require 'gitsigns'.preview_hunk_inline()<cr>", "Preview Hunk Inline" },
 				r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 				R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 				s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
