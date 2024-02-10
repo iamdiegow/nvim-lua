@@ -87,11 +87,6 @@ return {
 					opts = vim.tbl_deep_extend("force", luals_opts, opts)
 				end
 
-				if server == "emmet_ls" then
-					local emmet_ls_opts = require("lsp.settings.emmet_ls")
-					opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
-				end
-
 				if server == "eslint" then
 					local eslint_opts = require("lsp.settings.eslint")
 					opts = vim.tbl_deep_extend("force", eslint_opts, opts)
