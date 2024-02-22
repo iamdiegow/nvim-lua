@@ -67,7 +67,7 @@ map("n", "<A-j>", ":m .+1<CR>==", options)
 map("n", "<A-k>", ":m .-2<CR>==", options)
 -- insert empty lines
 map("n", "<C-Enter>", '<cmd>call append(line("."), "")<CR>', options)
-map("n", "<C-BS>", '<cmd>call append(line(".")-1, "")<CR>', options)
+map("n", "<C-\\>", '<cmd>call append(line(".")-1, "")<CR>', options)
 
 -- INSERT MODE ----------
 -- exit insert mode
