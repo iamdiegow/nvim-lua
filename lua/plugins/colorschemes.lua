@@ -4,7 +4,7 @@ return {
 		enabled = true,
 		priority = 1000,
 		opts = {
-			transparent = false,
+			transparent = true,
 			style = "night",
 			terminal_colors = true,
 			hide_inactive_statusline = false,
@@ -13,8 +13,8 @@ return {
 			styles = {
 				comments = { italic = true },
 				keywords = { italic = false, bold = false },
-				sidebars = "dark",
-				floats = "normal",
+				sidebars = "transparent",
+				floats = "transparent",
 			},
 		},
 	},
