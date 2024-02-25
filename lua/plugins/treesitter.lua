@@ -54,46 +54,6 @@ return {
 					scope_incremental = "<leader>sc",
 				},
 			},
-			textobjects = {
-				select = {
-					enable = true,
-					lookahead = true,
-					keymaps = {
-						["af"] = "@function.outer",
-						["if"] = "@function.inner",
-						["ac"] = "@class.outer",
-					},
-				},
-				move = {
-					enable = true,
-					set_jumps = true,
-					goto_next_start = {
-						["]]"] = "@function.outer",
-						["]c"] = { query = "@class.outer", desc = "Next class start" },
-						["]o"] = "@loop.*",
-						["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-						["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
-					},
-					goto_next_end = {
-						["]["] = "@function.outer",
-						["]C"] = "@class.outer",
-					},
-					goto_previous_start = {
-						["[]"] = "@function.outer",
-						["[c"] = "@class.outer",
-					},
-					goto_previous_end = {
-						["[["] = "@function.outer",
-						["[C"] = "@class.outer",
-					},
-					goto_next = {
-						["]d"] = "@conditional.outer",
-					},
-					goto_previous = {
-						["[d"] = "@conditional.outer",
-					},
-				},
-			},
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
