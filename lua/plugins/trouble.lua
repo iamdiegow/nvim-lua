@@ -5,32 +5,42 @@ return {
 	keys = {
 		{
 			"<leader>tt",
-			"<cmd>TroubleToggle<CR>",
-			desc = "Open Trouble",
+			"<cmd>TroubleToggle document_diagnostics<CR>",
+			desc = "(Trouble) Document Diagnostics",
 		},
 		{
 			"<leader>tw",
-			"<cmd>Trouble workspace_diagnostics<CR>",
-			desc = "Workspace diagnostics",
-		},
-		{
-			"<leader>td",
-			"<cmd>Trouble document_diagnostics<CR>",
-			desc = "Document diagnostics",
-		},
-		{
-			"<leader>tq",
-			"<cmd>Trouble quickfix<CR>",
-			desc = "Open quickfix list",
+			"<cmd>TroubleToggle workspace_diagnostics<CR>",
+			desc = "(Trouble) Workspace Diagnostics",
 		},
 		{
 			"<leader>tr",
-			"<cmd>Trouble lsp_references<CR>",
-			desc = "Open reference list",
+			"<cmd>TroubleToggle lsp_references<CR>",
+			desc = "(Trouble) Lsp References",
+		},
+		{
+			"<leader>ts",
+			"<cmd>TroubleToggle lsp_type_definitions<CR>",
+			desc = "(Trouble) Lsp Type Definitions",
+		},
+		{
+			"<leader>ti",
+			"<cmd>TroubleToggle lsp_implementations<CR>",
+			desc = "(Trouble) Lsp Implementations",
+		},
+		{
+			"<leader>td",
+			"<cmd>TroubleToggle lsp_definitions<CR>",
+			desc = "(Trouble) Lsp Definitions",
+		},
+		{
+			"<leader>tq",
+			"<cmd>TroubleToggle quickfix<CR>",
+			desc = "(Trouble) Open Quickfix List",
 		},
 	},
 	opts = {
-		position = "bottom", -- position of the list can be: bottom, top, left, right
+		position = "right", -- position of the list can be: bottom, top, left, right
 		height = 10, -- height of the trouble list when position is top or bottom
 		icons = true, -- use devicons for filenames
 		fold_open = "", -- icon used for open folds
