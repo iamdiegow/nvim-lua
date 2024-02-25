@@ -14,6 +14,9 @@ map("n", "<C-z>", ":ZenMode<CR>", options)
 map("n", "<Space>", "<NOP>", options)
 -- Disable highlight
 map("n", "<BS>", "<cmd>:noh<CR>", options)
+-- Clear search with <esc>
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+
 vim.g.mapleader = " "
 -- LSP
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", options)
