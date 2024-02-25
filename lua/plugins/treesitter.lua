@@ -25,6 +25,7 @@ return {
 				"regex",
 				"yaml",
 				"fish",
+				"jsdoc",
 			},
 			highlight = {
 				enable = true,
