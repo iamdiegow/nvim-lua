@@ -1,7 +1,6 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		version = false,
 		build = ":TSUpdate",
 		event = "BufReadPost",
 		dependencies = {
@@ -65,7 +64,10 @@ return {
 		event = "BufReadPost",
 		config = function()
 			require("nvim-ts-autotag").setup({
+				enable = true,
 				enable_close_on_slash = false,
+				enable_rename = true,
+				enable_close = true,
 			})
 		end,
 	},
