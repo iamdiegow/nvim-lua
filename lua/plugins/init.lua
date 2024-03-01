@@ -33,16 +33,17 @@ return {
 		opts = {
 			window = {
 				backdrop = 1,
-				width = 120,
+				width = 100,
 				height = 1,
 				options = {
-					number = true,
+					number = false,
 					relativenumber = false,
-					cursorline = true,
+					cursorline = false,
 				},
 			},
 			plugins = {
 				twilight = { enabled = false },
+				gitsigns = { enabled = false },
 			},
 		},
 	},
