@@ -88,3 +88,18 @@ if vim.g.neovide then
 	vim.g.neovide_scroll_animation_length = 0.3
 	vim.g.neovide_cursor_animation_length = 0
 end
+
+if os.getenv("WAYLAND_DISPLAY") then
+	vim.cmd([[
+			let g:clipboard = {
+					\   'copy': {
+					\       '+': ['wl-copy', '--trim-newline'],
+					\       '*': ['wl-copy', '--trim-newline'],
+					\   },
+					\   'paste': {
+					\       '+': ['wl-paste', '--no-newline'],
+					\       '*': ['wl-paste', '--no-newline'],
+					\   },
+					\ }
+			]])
+end
