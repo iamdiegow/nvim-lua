@@ -25,6 +25,8 @@ return {
 				["q"] = "actions.close",
 				["l"] = "actions.select",
 				["h"] = "actions.parent",
+				["<C-s>"] = "actions.select_split",
+				["<C-v>"] = "actions.select_vsplit",
 			},
 		})
 	end,
