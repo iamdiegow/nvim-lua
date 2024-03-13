@@ -97,8 +97,8 @@ if os.getenv("WAYLAND_DISPLAY") then
 					\       '*': ['wl-copy', '--trim-newline'],
 					\   },
 					\   'paste': {
-					\       '+': ['wl-paste', '--no-newline'],
-					\       '*': ['wl-paste', '--no-newline'],
+					\       '+': ['wl-paste'],
+					\       '*': ['wl-paste'],
 					\   },
 					\ }
 			]])
