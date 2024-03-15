@@ -27,19 +27,19 @@ return {
 		local glance = require("glance")
 		local actions = glance.actions
 		glance.setup({
-			height = 20,
+			height = 25,
 			zindex = 50,
 			preview_win_opts = {
 				cursorline = true,
 				number = true,
-				wrap = true,
+				wrap = false,
 			},
 			border = {
 				enable = true,
 			},
 			list = {
 				position = "left",
-				width = 0.35,
+				width = 0.30,
 			},
 			theme = {
 				enable = true,
