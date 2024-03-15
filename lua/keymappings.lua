@@ -74,8 +74,6 @@ map("n", "<C-\\>", '<cmd>call append(line(".")-1, "")<CR>', options)
 
 -- INSERT MODE ----------
 -- exit insert mode
-map("i", "jj", "<Esc>", options)
-map("i", "jj", "<Esc>", options)
 map("i", "jk", "<Esc>", options)
 
 -- move current line
