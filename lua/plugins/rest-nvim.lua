@@ -1,7 +1,7 @@
 return {
 	{
 		"vhyrro/luarocks.nvim",
-		enabled = false,
+		enabled = true,
 		config = function()
 			require("luarocks").setup({
 				rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
@@ -34,7 +34,7 @@ return {
 					split = {
 						horizontal = false,
 						in_place = false,
-						stay_in_current_window_after_split = true,
+						stay_in_current_window_after_split = false,
 					},
 					behavior = {
 						decode_url = true,
