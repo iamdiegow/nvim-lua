@@ -5,7 +5,7 @@ local verticalConfig = {
 			mirror = true,
 			prompt_position = "top",
 			width = 90,
-			height = 15,
+			height = 20,
 		},
 	},
 	previewer = false,
@@ -18,7 +18,7 @@ local fuzzy_find_file = function()
 		sorting_strategy = "ascending",
 		layout_config = {
 			prompt_position = "top",
-			height = 15,
+			height = 20,
 		},
 		previewer = false,
 		winblen = 0,
@@ -48,14 +48,13 @@ local keys = {
 	},
 	{ "<leader>fO", "<cmd>Telescope oldfiles<CR>", desc = "Find All Old Files (Telescope)" },
 	{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
-	{ "<leader>fS", "<cmd>Telescope git_status<CR>", desc = "Git Status (Telescope)" },
+	{ "<leader>fl", "<cmd>Telescope git_status<CR>", desc = "Git Status (Telescope)" },
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
-	{ "<leader>fl", "<cmd>Telescope lsp_references<CR>", desc = "Find Lsp References (Telescope)" },
-	{ "<leader>fd", "<cmd>Telescope lsp_definitions<CR>", desc = "Find Outgoing Calls (Telescope)" },
+	{ "<leader>fd", "<cmd>Telescope lsp_definitions<CR>", desc = "Find Definitions (Telescope)" },
 	{ "<leader>fi", "<cmd>Telescope lsp_implementations<CR>", desc = "Find Implementations (Telescope)" },
+	{ "<leader>fr", "<cmd>Telescope lsp_references<CR>", desc = "Find References (Telescope)" },
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
 	{ "<leader>ft", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
-	{ "<leader>fr", "<cmd>Telescope lsp_references<CR>", desc = "Find Document Diagnostics (Telescope)" },
 }
 
 return {
@@ -140,7 +139,6 @@ return {
 			pickers = {
 				find_files = vim.tbl_deep_extend("force", verticalConfig, {
 					prompt_title = " Project files",
-					layout_config = { vertical = { height = 15 } },
 					hidden = true,
 					find_command = {
 						"rg",
