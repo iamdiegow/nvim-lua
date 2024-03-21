@@ -57,15 +57,19 @@ local function lsp_keymaps(bufnr)
 		vim.lsp.buf.hover()
 	end, { desc = "(LSP) Hover", silent = true, buffer = bufnr })
 
+	map("n", "gh", function()
+		vim.lsp.buf.hover()
+	end, { desc = "(LSP) Hover", silent = true, buffer = bufnr })
+
 	map("n", "gi", function()
 		vim.lsp.buf.implementation()
 	end, { desc = "(LSP) Show Implementations", silent = true, buffer = bufnr })
 
-	map("n", "gR", function()
+	map("n", "gr", function()
 		vim.lsp.buf.references()
 	end, { desc = "(LSP) Show References", silent = true, buffer = bufnr })
 
-	map("n", "gr", function()
+	map("n", "gR", function()
 		vim.lsp.buf.rename()
 	end, { desc = "(LSP) Rename Symbol", silent = true, buffer = bufnr })
 
@@ -89,7 +93,7 @@ M.on_attach = function(client, bufnr)
 			typescript.actions.addMissingImports()
 		end, { desc = "(LSP - Typescript) Add Missing Imports" })
 
-		map("n", "gu", function()
+		map("n", "gU", function()
 			typescript.actions.removeUnused()
 		end, { desc = "(LSP - Typescript) Remove Unused" })
 
@@ -97,7 +101,7 @@ M.on_attach = function(client, bufnr)
 			typescript.actions.organizeImports()
 		end, { desc = "(LSP - Typescript) Organize Imports" })
 
-		map("n", "ga", function()
+		map("n", "gA", function()
 			typescript.actions.fixAll()
 		end, { desc = "(LSP - Typescript) Fix All" })
 	end
