@@ -50,4 +50,10 @@ return {
 			},
 		},
 	},
+	keys = {
+		{ "<S-l>", ":BufferLineCycleNext<CR>", desc = "Go To Next Buffer" },
+		{ "<S-h>", ":BufferLineCyclePrev<CR>", desc = "Go To Prev Buffer" },
+		{ "<TAB>", ":BufferLineCycleNext<CR>", desc = "Go To Next Buffer" },
+		{ "<S-TAB>", ":BufferLineCyclePrev<CR>", desc = "Go To Prev Buffer" },
+	},
 }

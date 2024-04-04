@@ -18,30 +18,15 @@ map("n", "<BS>", "<cmd>:noh<CR>", options)
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 vim.g.mapleader = " "
--- LSP
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", options)
--- better movement
+
+-- Movement
 map("n", "<C-j>", "5gjzz", options)
 map("n", "<C-k>", "5gkzz", options)
--- map('n', '<C-l>', '$', options )
--- map('n', '<C-h>', '0', options )
--- window movement
--- map('n', '<C-j>', '<C-w>j', options )
--- map('n', '<C-k>', '<C-w>k', options )
+
 map("n", "<C-l>", "<C-w>l", options)
 map("n", "<C-h>", "<C-w>h", options)
 -- tabs
 map("n", "tt", ":tab split<CR>", options)
--- Buffer cycle
-map("n", "<S-l>", ":BufferLineCycleNext<CR>", options)
-map("n", "<S-h>", ":BufferLineCyclePrev<CR>", options)
--- map('n', '<S-l>', ':bnext<CR>', options)
--- map('n', '<S-h>', ':bprev<CR>', options)
--- Tab switch buffer
-map("n", "<TAB>", ":BufferLineCycleNext<CR>", options)
-map("n", "<S-TAB>", ":BufferLineCyclePrev<CR>", options)
--- map('n', '<TAB>', ':bnext<CR>', options)
--- map('n', '<S-TAB>', ':bprev<CR>', options)
 -- better yank
 map("n", "Y", "y$", options)
 -- Center screen
@@ -59,7 +44,7 @@ map("n", "<C-Left>", ":vertical resize +2<CR>", options)
 -- Quickfix list
 map("n", "<]q>", ":cnext<CR>", options)
 map("n", "<[q>", ":cprev<CR>", options)
-map("n", "<C-q>", ":TroubleToggle<CR>", options)
+map("n", "<C-q>", ":copen<CR>", options)
 -- Move around wrap text with j-k
 map("n", "j", "gj", options)
 map("n", "k", "gk", options)
@@ -91,9 +76,9 @@ map("i", "<A-h>", "<C-Left>", options)
 map("i", "<A-a>", "<ESC>A", options)
 map("i", "<A-b>", "<ESC>I", options)
 
--- insert empty lines
+-- insert empty line
 map("i", "<C-Enter>", "<ESC>o", options)
-map("i", "<C-BS>", "<ESC>O", options)
+map("i", "<C-\\>", "<ESC>O", options)
 
 -- VISUAL MODE -----------
 -- better indenting
@@ -117,14 +102,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "DiffviewFiles",
 	callback = function()
 		map("n", "q", ":DiffviewClose<CR>", options)
-	end,
-})
-
--- Create only for Diffview filetype
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "httpResult",
-	callback = function()
-		map("n", "q", ":q!<CR>", options)
 	end,
 })
 
