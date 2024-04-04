@@ -40,8 +40,8 @@ return {
 		},
 	},
 	opts = {
-		position = "right", -- position of the list can be: bottom, top, left, right
-		height = 10, -- height of the trouble list when position is top or bottom
+		position = "bottom", -- position of the list can be: bottom, top, left, right
+		height = 15, -- height of the trouble list when position is top or bottom
 		icons = true, -- use devicons for filenames
 		fold_open = "", -- icon used for open folds
 		fold_closed = "", -- icon used for closed folds
