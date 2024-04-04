@@ -96,4 +96,15 @@ return {
 			require("mini.bufremove").setup()
 		end,
 	},
+	{
+		"szw/vim-maximizer",
+		pin = true,
+		keys = {
+			{
+				"<leader>bm",
+				"<cmd>MaximizerToggle<CR>",
+				desc = "Maximize/minimize split",
+			},
+		},
+	},
 }
