@@ -46,6 +46,11 @@ return {
 						scrollbar = true,
 					}),
 				},
+				view = {
+					entries = {
+						follow_cursor = true,
+					},
+				},
 				duplicates = {
 					nvim_lsp = 1,
 					luasnip = 1,
