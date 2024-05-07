@@ -38,14 +38,14 @@ end
 M.order_by_kind_sorter = function(entry1, entry2)
 	local score = {
 		Variable = 1,
-		Constant = 7,
-		Method = 8,
-		Field = 4,
-		Value = 5,
-		Keyword = 6,
-		Class = 2,
-		Function = 3,
-		Property = 9,
+		Constant = 8,
+		Method = 3,
+		Field = 2,
+		Value = 6,
+		Keyword = 7,
+		Class = 9,
+		Function = 5,
+		Property = 4,
 		Snippet = 10,
 	}
 	local itemKind = require("cmp.types").lsp.CompletionItemKind
