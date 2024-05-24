@@ -64,10 +64,11 @@ return {
 		event = "BufReadPost",
 		config = function()
 			require("nvim-ts-autotag").setup({
-				enable = true,
-				enable_close_on_slash = false,
-				enable_rename = true,
-				enable_close = true,
+				opts = {
+					enable_close_on_slash = false,
+					enable_rename = true,
+					enable_close = true,
+				},
 			})
 		end,
 	},
