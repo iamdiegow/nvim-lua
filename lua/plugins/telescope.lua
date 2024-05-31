@@ -121,7 +121,7 @@ return {
 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 				mappings = {
 					i = {
-						["<C-t>"] = require("trouble.providers.telescope").open_with_trouble,
+						["<C-t>"] = require("trouble.sources.telescope").open,
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<C-c>"] = require("telescope.actions").close,
@@ -131,7 +131,7 @@ return {
 					},
 					n = {
 						["q"] = require("telescope.actions").close,
-						["<C-t>"] = require("trouble.providers.telescope").open_with_trouble,
+						["<C-t>"] = require("trouble.sources.telescope").open,
 						["<M-p>"] = require("telescope.actions.layout").toggle_preview,
 					},
 				},
