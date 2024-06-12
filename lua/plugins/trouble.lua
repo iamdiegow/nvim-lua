@@ -49,5 +49,12 @@ return {
 			type = "main",
 			scratch = true,
 		},
+		modes = {
+			symbols = {
+				win = {
+					position = "bottom",
+				},
+			},
+		},
 	},
 }
