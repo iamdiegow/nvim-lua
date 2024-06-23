@@ -15,38 +15,23 @@ return {
 			local text1 = "▍"
 
 			gitsigns.setup({
-				-- signs = {
-				-- 	add = {
-				-- 		hl = "GitSignsAdd",
-				-- 		text = text1,
-				-- 		numhl = "GitSignsAddNr",
-				-- 		linehl = "GitSignsAddLn",
-				-- 	},
-				-- 	change = {
-				-- 		hl = "GitSignsChange",
-				-- 		text = text1,
-				-- 		numhl = "GitSignsChangeNr",
-				-- 		linehl = "GitSignsChangeLn",
-				-- 	},
-				-- 	delete = {
-				-- 		hl = "GitSignsDelete",
-				-- 		text = "契",
-				-- 		numhl = "GitSignsDeleteNr",
-				-- 		linehl = "GitSignsDeleteLn",
-				-- 	},
-				-- 	topdelete = {
-				-- 		hl = "GitSignsDelete",
-				-- 		text = "契",
-				-- 		numhl = "GitSignsDeleteNr",
-				-- 		linehl = "GitSignsDeleteLn",
-				-- 	},
-				-- 	changedelete = {
-				-- 		hl = "GitSignsChange",
-				-- 		text = text1,
-				-- 		numhl = "GitSignsChangeNr",
-				-- 		linehl = "GitSignsChangeLn",
-				-- 	},
-				-- },
+				signs = {
+					add = {
+						text = text1,
+					},
+					change = {
+						text = text1,
+					},
+					delete = {
+						text = "契",
+					},
+					topdelete = {
+						text = "契",
+					},
+					changedelete = {
+						text = text1,
+					},
+				},
 				signcolumn = true,
 				numhl = false,
 				linehl = false,
