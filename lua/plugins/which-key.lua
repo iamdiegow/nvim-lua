@@ -66,6 +66,11 @@ return {
 				"<leader>x",
 				icon = "",
 			},
+			{
+				group = "Glance",
+				"<leader>d",
+				icon = "",
+			},
 		})
 
 		wk.add({
@@ -75,18 +80,21 @@ return {
 				"<cmd>lua vim.diagnostic.open_float(0, {scope = 'cursor', border = 'single', source = true })<CR>",
 				desc = "Show Line Diagnostics",
 			},
-		}, {
-			"<leader>lt",
-			"<cmd>lua require'lsp.handlers'.toggle_diagnostics()<CR>",
-			desc = "Toggle Diagnostics (Show/Hide)",
-		}, {
-			"<leader>lj",
-			"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'single' }})<cr>",
-			desc = "Next Diagnostic",
-		}, {
-			"<leader>lk",
-			"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'single' }})<cr>",
-			desc = "Prev Diagnostic",
+			{
+				"<leader>lt",
+				"<cmd>lua require'lsp.handlers'.toggle_diagnostics()<CR>",
+				desc = "Toggle Diagnostics (Show/Hide)",
+			},
+			{
+				"<leader>lj",
+				"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'single' }})<cr>",
+				desc = "Next Diagnostic",
+			},
+			{
+				"<leader>lk",
+				"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'single' }})<cr>",
+				desc = "Prev Diagnostic",
+			},
 		})
 	end,
 }

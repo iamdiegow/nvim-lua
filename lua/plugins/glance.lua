@@ -3,22 +3,22 @@ return {
 	event = "LspAttach",
 	keys = {
 		{
-			"<leader>lgd",
+			"<leader>dd",
 			"<cmd>Glance definitions<CR>",
 			desc = "definitions (Glance)",
 		},
 		{
-			"<leader>lgr",
+			"<leader>dr",
 			"<cmd>Glance references<CR>",
 			desc = "references (Glance)",
 		},
 		{
-			"<leader>lgi",
+			"<leader>di",
 			"<cmd>Glance implementations<CR>",
 			desc = "implementations (Glance)",
 		},
 		{
-			"<leader>lgt",
+			"<leader>dt",
 			"<cmd>Glance type_definitions<CR>",
 			desc = "type_definitions (Glance)",
 		},
