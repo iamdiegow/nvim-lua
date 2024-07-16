@@ -53,8 +53,6 @@ require("lazy").setup("plugins", {
 	},
 })
 
-vim.keymap.set("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Open Lazy", silent = true, noremap = true })
-
 require("keymappings")
 require("settings")
 require("autocommands")

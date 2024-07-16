@@ -2,6 +2,30 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPre", "BufNewFile" },
+		keys = {
+			{
+				"<leader>gj",
+				"<cmd>lua require 'gitsigns'.next_hunk({preview = true, foldopen = true})<cr>",
+				desc = "Next Hunk",
+			},
+			{
+				"<leader>gk",
+				"<cmd>lua require 'gitsigns'.prev_hunk({preview = true, foldopen = true})<cr>",
+				desc = "Prev Hunk",
+			},
+			{ "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", desc = "Blame" },
+			{ "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", desc = "Preview Hunk" },
+			{ "<leader>gi", "<cmd>lua require 'gitsigns'.preview_hunk_inline()<cr>", desc = "Preview Hunk Inline" },
+			{ "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", desc = "Reset Hunk" },
+			{ "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer" },
+			{ "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", desc = "Stage Hunk" },
+			{ "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk" },
+			{ "<leader>gw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle Word Diff" },
+			{ "<leader>ge", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle Line Highlight" },
+			{ "<leader>gn", "<cmd>Gitsigns toggle_numhl<cr>", desc = "Toggle Number Highlight" },
+			{ "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Line Blame" },
+			{ "<leader>gq", "<cmd>Gitsigns setqflist<cr>", desc = "Set QuickFix List" },
+		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
