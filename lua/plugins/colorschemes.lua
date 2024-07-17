@@ -16,6 +16,17 @@ return {
 				sidebars = "transparent",
 				floats = "transparent",
 			},
+			on_highlights = function(hl, c)
+				hl["WinSeparator"] = {
+					fg = c.blue,
+				}
+				hl["NvimTreeWinSeparator"] = {
+					fg = c.blue,
+				}
+				hl["ZenBorder"] = {
+					fg = c.blue,
+				}
+			end,
 		},
 	},
 	{
