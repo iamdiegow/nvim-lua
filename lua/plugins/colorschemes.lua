@@ -26,6 +26,11 @@ return {
 				hl["ZenBorder"] = {
 					fg = c.blue,
 				}
+				hl["BufferLineBufferSelected"] = {
+					bg = c.blue0,
+					fg = c.white,
+					bold = true,
+				}
 			end,
 		},
 	},
