@@ -1,11 +1,11 @@
 return {
 	"folke/which-key.nvim",
+	tag = "v3.7.0",
 	event = "VeryLazy",
 	config = function()
 		local wk = require("which-key")
 
 		wk.setup({
-			preset = "classic",
 			plugins = {
 				marks = true,
 				registers = true,
@@ -21,9 +21,6 @@ return {
 					z = false,
 					g = false,
 				},
-			},
-			icons = {
-				mappings = false,
 			},
 		})
 
