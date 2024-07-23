@@ -31,6 +31,11 @@ return {
 					fg = c.white,
 					bold = true,
 				}
+				hl["BufferLineDuplicateSelected"] = {
+					bg = c.blue0,
+					fg = c.white,
+					bold = true,
+				}
 			end,
 		},
 	},
