@@ -27,13 +27,11 @@ return {
 					fg = c.blue,
 				}
 				hl["BufferLineBufferSelected"] = {
-					bg = c.blue0,
-					fg = c.white,
+					fg = c.blue0,
 					bold = true,
 				}
 				hl["BufferLineDuplicateSelected"] = {
-					bg = c.blue0,
-					fg = c.white,
+					fg = c.blue0,
 					bold = true,
 				}
 			end,
