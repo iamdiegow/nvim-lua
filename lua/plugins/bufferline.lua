@@ -13,6 +13,15 @@ return {
 			close_command = function(n)
 				require("mini.bufremove").delete(n, false)
 			end,
+			offsets = {
+				{
+
+					filetype = "NvimTree",
+					text = "File Explorer",
+					text_align = "left",
+					separator = true,
+				},
+			},
 			right_mouse_command = "bdelete! %d",
 			left_mouse_command = "buffer %d",
 			middle_mouse_command = nil,
@@ -29,7 +38,7 @@ return {
 			max_name_length = 18,
 			max_prefix_length = 15,
 			truncate_names = true,
-			tab_size = 18,
+			tab_size = 20,
 			diagnostics = false,
 			diagnostics_update_in_insert = false,
 			color_icons = true,
@@ -39,8 +48,8 @@ return {
 			show_tab_indicators = true,
 			persist_buffer_sort = true,
 			separator_style = { "", "" },
-			enforce_regular_tabs = false,
-			always_show_bufferline = false,
+			enforce_regular_tabs = true,
+			always_show_bufferline = true,
 			sort_by = "insert_after_current",
 		},
 		highlights = {
