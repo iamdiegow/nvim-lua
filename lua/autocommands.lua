@@ -65,8 +65,3 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Fix folding in files opened with nvim-tree of telescope
 vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx" })
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = "*.tsx",
-	command = "set filetype=javascriptreact",
-})
