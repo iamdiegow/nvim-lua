@@ -94,20 +94,7 @@ return {
 
 				if server == "tsserver" then
 					-- this plugins won't work if a call to lspconfig["tsserver"].setup() is made
-					local typescript = require("typescript")
-					typescript.setup({
-						disable_commands = false,
-						debug = false,
-						go_to_source_definition = {
-							fallback = true,
-						},
-						server = {
-							on_attach = opts.on_attach,
-							capabilities = opts.capabilities,
-						},
-					})
-					-- prevent calling lspconfig["tsserver"].setup()
-					::continue::
+					server = "ts_ls"
 				end
 
 				lspconfig[server].setup(vim.tbl_deep_extend("force", opts, {
