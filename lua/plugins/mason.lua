@@ -35,7 +35,7 @@ return {
 				"html",
 				"jsonls",
 				"lua_ls",
-				"tsserver",
+				"ts_ls",
 				"yamlls",
 				"bashls",
 				"eslint",
@@ -90,11 +90,6 @@ return {
 				if server == "eslint" then
 					local eslint_opts = require("lsp.settings.eslint")
 					opts = vim.tbl_deep_extend("force", eslint_opts, opts)
-				end
-
-				if server == "tsserver" then
-					-- this plugins won't work if a call to lspconfig["tsserver"].setup() is made
-					server = "ts_ls"
 				end
 
 				lspconfig[server].setup(vim.tbl_deep_extend("force", opts, {
