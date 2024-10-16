@@ -55,22 +55,8 @@ return {
 					prompt = "Render the following text as a markdown list:\n$text",
 					replace = false,
 				},
-				Make_Table = {
-					prompt = "Render the following text as a markdown table:\n$text",
-					replace = false,
-				},
 				Review_Code = {
 					prompt = "Review the following code and make concise suggestions:\n```$filetype\n$text\n```",
-				},
-				Enhance_Code = {
-					prompt = "Enhance the following code, only output the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
-					replace = false,
-					extract = "```$filetype\n(.-)```",
-				},
-				Change_Code = {
-					prompt = "Regarding the following code, $input, only output the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
-					replace = false,
-					extract = "```$filetype\n(.-)```",
 				},
 			}
 		end,
