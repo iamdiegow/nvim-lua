@@ -1,6 +1,5 @@
 return {
 	"folke/persistence.nvim",
-	event = "BufReadPre",
 	keys = {
 		{
 			"<leader>pl",

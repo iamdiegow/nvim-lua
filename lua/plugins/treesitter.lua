@@ -61,7 +61,8 @@ return {
 	},
 	{
 		"windwp/nvim-ts-autotag",
-		event = "BufReadPost",
+		event = "VeryLazy",
+		-- event = "BufReadPost",
 		config = function()
 			require("nvim-ts-autotag").setup({
 				opts = {

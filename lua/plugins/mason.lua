@@ -1,6 +1,7 @@
 return {
 	{
 		"williamboman/mason-lspconfig.nvim",
+		event = "BufReadPre",
 		dependencies = {
 			{
 				lazy = false,
@@ -15,7 +16,6 @@ return {
 				lazy = false,
 			},
 		},
-		lazy = false,
 		config = function()
 			require("mason").setup({
 				ui = {

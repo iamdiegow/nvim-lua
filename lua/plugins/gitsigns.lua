@@ -1,7 +1,8 @@
 return {
 	{
 		"lewis6991/gitsigns.nvim",
-		event = { "BufReadPre", "BufNewFile" },
+		event = "VeryLazy",
+		-- event = { "BufReadPre", "BufNewFile" },
 		keys = {
 			{
 				"<leader>gj",

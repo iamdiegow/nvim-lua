@@ -2,10 +2,8 @@ return {
 	{
 		"David-Kunz/gen.nvim",
 		event = "VeryLazy",
-		opts = {},
 		config = function()
 			local gen = require("gen")
-
 			gen.setup({
 				model = "llama3.2",
 				quit_map = "q",

@@ -36,7 +36,8 @@ local diff = {
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "BufReadPre",
+		event = "VeryLazy",
+		-- event = "BufReadPre",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
