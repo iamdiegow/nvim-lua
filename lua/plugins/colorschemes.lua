@@ -1,7 +1,7 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+		enabled = true,
 		priority = 1000,
 		opts = {
 			transparent = true,
@@ -9,7 +9,7 @@ return {
 			terminal_colors = true,
 			hide_inactive_statusline = false,
 			lualine_bold = true,
-			dim_inactive = false,
+			dim_inactive = true,
 			styles = {
 				comments = { italic = true },
 				keywords = { italic = false, bold = false },
@@ -35,23 +35,6 @@ return {
 					bold = true,
 				}
 			end,
-		},
-	},
-	{
-		"scottmckendry/cyberdream.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			transparent = true,
-			italic_comments = false,
-			hide_fillchars = false,
-			borderless_telescope = true,
-			terminal_colors = true,
-			cache = true,
-			theme = {
-				variant = "default",
-				saturation = 1,
-			},
 		},
 	},
 }
