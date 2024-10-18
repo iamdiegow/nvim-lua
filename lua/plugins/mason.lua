@@ -46,6 +46,7 @@ return {
 				"tailwindcss",
 				"prismals",
 				"emmet_language_server",
+				"marksman",
 			}
 
 			require("mason-lspconfig").setup({

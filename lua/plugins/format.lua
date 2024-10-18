@@ -34,7 +34,7 @@ return {
 				html = { "prettierd" },
 				css = { "prettierd" },
 				scss = { "prettierd" },
-				markdown = { "markdownlint" },
+				markdown = { "prettierd" },
 			},
 			format_on_save = function(bufnr)
 				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
