@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	"dnlhc/glance.nvim",
 	event = "LspAttach",
 	keys = {

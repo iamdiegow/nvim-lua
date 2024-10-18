@@ -94,6 +94,13 @@ return {
 		version = "*",
 		keys = {
 			{
+				"<leader>q",
+				function()
+					require("mini.bufremove").wipeout(0, false)
+				end,
+				desc = "Close Buffer",
+			},
+			{
 				"<leader>c",
 				function()
 					require("mini.bufremove").delete(0, false)

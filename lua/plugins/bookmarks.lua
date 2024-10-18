@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	"tomasky/bookmarks.nvim",
 	event = "VimEnter",
 	config = function()
