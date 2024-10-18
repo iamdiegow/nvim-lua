@@ -18,7 +18,6 @@ map("n", "<BS>", "<cmd>:noh<CR>", options)
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 map("n", "<leader>q", "<cmd>q!<CR>", { desc = "Quit", noremap = true, silent = true })
-map("n", "<leader>=", "<cmd>:Colorizer<CR>", { desc = "Toggle Colorizer", noremap = true, silent = true })
 map("n", "<leader>ii", "<cmd>set invlist<CR>", { desc = "Toggle white space and tabs", noremap = true, silent = true })
 
 -- Movement

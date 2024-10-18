@@ -56,6 +56,13 @@ return {
 	{
 		"norcalli/nvim-colorizer.lua",
 		cmd = { "ColorizerToggle" },
+		keys = {
+			{
+				"<leader>=c",
+				"<cmd>:ColorizerToggle<CR>",
+				desc = "Colorizer Toggle",
+			},
+		},
 		opts = {
 			filetypes = { "*", "!lazy" },
 			buftype = { "*", "!prompt", "!nofile" },
