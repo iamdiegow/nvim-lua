@@ -25,7 +25,7 @@ vim.opt.autoread = true
 
 wo.number = true
 wo.numberwidth = 2
-wo.relativenumber = true
+wo.relativenumber = false
 
 o.swapfile = false
 o.dir = "/tmp"
