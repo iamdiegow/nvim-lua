@@ -100,6 +100,7 @@ return {
 			sort_by = "name",
 			hijack_cursor = true,
 			hijack_unnamed_buffer_when_opening = true,
+			select_prompts = false,
 			hijack_directories = {
 				enable = true,
 				auto_open = true,
@@ -185,8 +186,8 @@ return {
 			},
 			view = {
 				centralize_selection = true,
-				cursorline = false,
-				width = 28,
+				cursorline = true,
+				width = 30,
 				side = "left",
 				number = false,
 				signcolumn = "no",
