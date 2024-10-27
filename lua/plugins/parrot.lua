@@ -21,7 +21,7 @@ return {
 		},
 		dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
 		config = function()
-			local prompts = require("utils.parrot")
+			local prompts = require("utils.parrot-prompts")
 
 			require("parrot").setup({
 				chat_free_cursor = true,
