@@ -1,14 +1,5 @@
 local M = {}
 
-M.ChatEnglish = function(prt, params)
-	local chat_prompt = [[
-						  You are an expert English teacher. Please perform a spell check and improve the grammar of user input text.
-							Response the improved text with a short explanation of the grammar and mention the theory behind it. Your
-							response should have less than 200 words.
-						]]
-	prt.ChatNew(params, chat_prompt)
-end
-
 M.ExplainCode = function(prt, params)
 	local template = [[
 							Please take the following code snippet from {{filename}} and explain it with with gradually
@@ -34,7 +25,7 @@ M.ExplainGrammar = function(prt, params)
 							Please take the following text: `{{selection}}`, and explain it's grammar,
 							check spelling and punctuation errors. Provide suggestions and corrections.
 							The objective is to help the reader understand English grammar better.
-							Your response should have less than 200 words.
+							Your response should have less than 200 words, be consice.
 						]]
 	local model = prt.get_model("command")
 	prt.logger.info("Explain Grammar")

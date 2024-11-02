@@ -3,17 +3,17 @@ return {
 		"frankroeder/parrot.nvim",
 		event = "VeryLazy",
 		keys = {
-			{ "<leader>/v", "<cmd>PrtChatToggle vsplit<CR>", desc = "Toggle Chat vsplit(Parrot)" },
-			{ "<leader>/s", "<cmd>PrtChatToggle split<CR>", desc = "Toggle Chat split(Parrot)" },
-			{ "<leader>//", "<cmd>PrtChatToggle popup<CR>", desc = "Toggle Chat popup(Parrot)" },
+			{ "<C-g>v", "<cmd>PrtChatToggle vsplit<CR>", desc = "Toggle Chat vsplit(Parrot)" },
+			{ "<C-g>s", "<cmd>PrtChatToggle split<CR>", desc = "Toggle Chat split(Parrot)" },
+			{ "<C-g><C-g>", "<cmd>PrtChatToggle popup<CR>", desc = "Toggle Chat popup(Parrot)" },
 			{
-				"<leader>/g",
+				"<C-g>e",
 				":<C-u>'<,'>PrtExplainGrammar<CR>",
 				mode = { "v" },
 				desc = "ExplainGrammar command(Parrot)",
 			},
 			{
-				"<leader>/c",
+				"<C-g>c",
 				":<C-u>'<,'>PrtExplainCode<CR>",
 				mode = { "v" },
 				desc = "ExplainCode command(Parrot)",
