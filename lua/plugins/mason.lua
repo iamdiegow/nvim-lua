@@ -11,10 +11,6 @@ return {
 				"neovim/nvim-lspconfig",
 				lazy = false,
 			},
-			{
-				"jose-elias-alvarez/typescript.nvim",
-				lazy = false,
-			},
 		},
 		config = function()
 			require("mason").setup({

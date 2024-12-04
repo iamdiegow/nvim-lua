@@ -83,29 +83,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
-		client.server_capabilities.document_formatting = false
-
-		local typescript = require("typescript")
-		local map = vim.keymap.set
-
-		map("n", "gM", function()
-			typescript.actions.addMissingImports()
-		end, { desc = "(LSP - Typescript) Add Missing Imports" })
-
-		map("n", "gU", function()
-			typescript.actions.removeUnused()
-		end, { desc = "(LSP - Typescript) Remove Unused" })
-
-		map("n", "gO", function()
-			typescript.actions.organizeImports()
-		end, { desc = "(LSP - Typescript) Organize Imports" })
-
-		map("n", "gA", function()
-			typescript.actions.fixAll()
-		end, { desc = "(LSP - Typescript) Fix All" })
-	end
-
 	lsp_keymaps(bufnr)
 end
 
