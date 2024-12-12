@@ -4,8 +4,6 @@ local verticalConfig = {
 		vertical = {
 			mirror = true,
 			prompt_position = "top",
-			width = 90,
-			height = 20,
 		},
 	},
 	previewer = false,
@@ -47,14 +45,21 @@ local keys = {
 		desc = "Find Old files in CWD (Telescope)",
 	},
 	{ "<leader>fO", "<cmd>Telescope oldfiles<CR>", desc = "Find All Old Files (Telescope)" },
-	{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
+	{ "<leader>fp", "<cmd>Telescope resume<CR>", desc = "Resume Last Search (Telescope)" },
+	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
 	{ "<leader>fl", "<cmd>Telescope git_status<CR>", desc = "Git Status (Telescope)" },
-	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
-	{ "<leader>fd", "<cmd>Telescope lsp_definitions<CR>", desc = "Find Definitions (Telescope)" },
-	{ "<leader>fi", "<cmd>Telescope lsp_implementations<CR>", desc = "Find Implementations (Telescope)" },
+
 	{ "<leader>fr", "<cmd>Telescope lsp_references<CR>", desc = "Find References (Telescope)" },
-	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymaps (Telescope)" },
-	{ "<leader>ft", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
+	{ "<leader>lr", "<cmd>Telescope lsp_references<CR>", desc = "Find References (Telescope)" },
+
+	{ "<leader>fd", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
+	{ "<leader>ld", "<cmd>Telescope diagnostics bufrn=0<CR>", desc = "Find Document Diagnostics (Telescope)" },
+
+	{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
+	{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Symbols (Telescope)" },
+
+	{ "<leader>fi", "<cmd>Telescope lsp_implementations<CR>", desc = "Find Implementations (Telescope)" },
+	{ "<leader>li", "<cmd>Telescope lsp_implementations<CR>", desc = "Find Implementations (Telescope)" },
 }
 
 return {
@@ -66,6 +71,7 @@ return {
 		{ "nvim-lua/plenary.nvim" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		{ "folke/trouble.nvim" },
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		{ "tomasky/bookmarks.nvim" },
 	},
 	config = function()
@@ -187,6 +193,8 @@ return {
 			},
 		})
 		require("telescope").load_extension("ui-select")
+		require("telescope").load_extension("fzf")
+
 		-- require("telescope").load_extension("bookmarks")
 	end,
 }
