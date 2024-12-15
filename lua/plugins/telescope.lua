@@ -1,35 +1,12 @@
-local verticalConfig = {
-	layout_strategy = "vertical",
-	layout_config = {
-		vertical = {
-			mirror = true,
-			prompt_position = "top",
-		},
-	},
-	previewer = false,
-	border = true,
-}
-
-local fuzzy_find_file = function()
-	require("telescope.builtin").current_buffer_fuzzy_find({
-		prompt_title = " Fuzzy Find Buffer",
-		layout_strategy = "vertical",
-		layout_config = {
-			vertical = {
-				mirror = true,
-				prompt_position = "top",
-			},
-		},
-	})
-end
-
 local keys = {
 	{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffers (Telescope)" },
 	{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files (Telescope)" },
 	{
 		"<leader>f/",
 		function()
-			fuzzy_find_file()
+			require("telescope.builtin").current_buffer_fuzzy_find({
+				prompt_title = " Fuzzy Find Buffer",
+			})
 		end,
 		desc = "Fuzy find buffer (Telescope)",
 	},
@@ -73,6 +50,8 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
+		local open_with_trouble = require("trouble.sources.telescope").open
+
 		require("telescope").setup({
 			defaults = {
 				vimgrep_arguments = {
@@ -88,11 +67,9 @@ return {
 				selection_strategy = "reset",
 				sorting_strategy = "descending",
 				scroll_strategy = "cycle",
-				border = {},
 				prompt_prefix = " ",
 				selection_caret = " ",
 				initial_mode = "insert",
-				use_less = false,
 				set_env = { ["COLORTERM"] = "truecolor" },
 				file_ignore_patterns = { "node_modules", ".git/" },
 				color_devicons = true,
@@ -100,32 +77,27 @@ return {
 				-- 'flex' | 'horizontal' | 'vertical' | 'bottom_pane'
 				layout_strategy = "flex",
 				layout_config = {
-					prompt_position = "top",
 					horizontal = {
-						prompt_position = "bottom",
-						preview_cutoff = 0.20,
-						preview_width = 0.6,
+						prompt_position = "top",
 						mirror = false,
+						scroll_speed = 2,
 					},
 					vertical = {
-						prompt_position = "bottom",
-						preview_cutoff = 0.20,
-						preview_height = 0.5,
-						mirror = false,
+						prompt_position = "top",
+						mirror = true,
+						scroll_speed = 2,
 					},
 					center = {
-						preview_cutoff = 0.20,
-						width_padding = 0.05,
-						height_padding = 1,
-						preview_height = 0.8,
+						prompt_position = "top",
 						mirror = true,
+						scroll_speed = 2,
 					},
 				},
 				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 				mappings = {
 					i = {
-						["<C-t>"] = require("trouble.sources.telescope").open,
+						["<C-t>"] = open_with_trouble,
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<C-c>"] = require("telescope.actions").close,
@@ -135,13 +107,13 @@ return {
 					},
 					n = {
 						["q"] = require("telescope.actions").close,
-						["<C-t>"] = require("trouble.sources.telescope").open,
+						["<C-t>"] = open_with_trouble,
 						["<M-p>"] = require("telescope.actions.layout").toggle_preview,
 					},
 				},
 			},
 			pickers = {
-				find_files = vim.tbl_deep_extend("force", verticalConfig, {
+				find_files = {
 					prompt_title = " Project files",
 					hidden = true,
 					find_command = {
@@ -153,9 +125,8 @@ return {
 						".git/",
 						"node_modules/",
 					},
-				}),
+				},
 				buffers = {
-					theme = "dropdown",
 					previewer = false,
 					initial_mode = "insert",
 					only_cwd = true,
@@ -163,12 +134,6 @@ return {
 					ignore_current_buffer = false,
 					bufnr_width = 0,
 				},
-				oldfiles = verticalConfig,
-				live_grep = verticalConfig,
-				lsp_references = verticalConfig,
-				lsp_implementations = verticalConfig,
-				lsp_document_symbols = verticalConfig,
-				diagnostics = verticalConfig,
 			},
 			extensions = {
 				["ui-select"] = {
