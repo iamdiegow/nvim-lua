@@ -48,10 +48,10 @@ return {
 						text = text1,
 					},
 					delete = {
-						text = "契",
+						text = text1,
 					},
 					topdelete = {
-						text = "契",
+						text = text1,
 					},
 					changedelete = {
 						text = text1,
