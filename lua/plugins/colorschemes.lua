@@ -45,6 +45,15 @@ return {
 			flavour = "mocha",
 			transparent_background = true,
 			term_colors = true,
+			integrations = {
+				diffview = true,
+				gitsigns = true,
+				grug_far = true,
+				hop = true,
+				mason = true,
+				nvim_surround = true,
+				lsp_trouble = true,
+			},
 		},
 	},
 }
