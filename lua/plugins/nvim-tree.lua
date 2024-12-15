@@ -106,6 +106,11 @@ return {
 				auto_open = true,
 			},
 			sync_root_with_cwd = true,
+			filesystem_watchers = {
+				ignore_dirs = {
+					"node_modules",
+				},
+			},
 			update_focused_file = {
 				enable = true,
 				update_cwd = false,
