@@ -72,7 +72,6 @@ return {
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		{ "folke/trouble.nvim" },
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-		{ "tomasky/bookmarks.nvim" },
 	},
 	config = function()
 		require("telescope").setup({
@@ -187,14 +186,9 @@ return {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
 				},
-				-- bookmarks = {
-				-- 	require("telescope.themes").get_dropdown(),
-				-- },
 			},
 		})
 		require("telescope").load_extension("ui-select")
 		require("telescope").load_extension("fzf")
-
-		-- require("telescope").load_extension("bookmarks")
 	end,
 }
