@@ -11,17 +11,16 @@ local verticalConfig = {
 }
 
 local fuzzy_find_file = function()
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+	require("telescope.builtin").current_buffer_fuzzy_find({
 		prompt_title = " Fuzzy Find Buffer",
-		sorting_strategy = "ascending",
+		layout_strategy = "vertical",
 		layout_config = {
-			prompt_position = "top",
-			height = 20,
+			vertical = {
+				mirror = true,
+				prompt_position = "top",
+			},
 		},
-		previewer = false,
-		winblen = 0,
-		border = true,
-	}))
+	})
 end
 
 local keys = {
@@ -165,22 +164,11 @@ return {
 					bufnr_width = 0,
 				},
 				oldfiles = verticalConfig,
-				live_grep = {
-					theme = "dropdown",
-					previewer = false,
-				},
-				lsp_references = {
-					theme = "cursor",
-					previewer = false,
-					show_line = false,
-					trim_text = true,
-					include_declaration = false,
-				},
-				diagnostics = {
-					theme = "cursor",
-					previewer = false,
-					disable_coordinates = true,
-				},
+				live_grep = verticalConfig,
+				lsp_references = verticalConfig,
+				lsp_implementations = verticalConfig,
+				lsp_document_symbols = verticalConfig,
+				diagnostics = verticalConfig,
 			},
 			extensions = {
 				["ui-select"] = {
