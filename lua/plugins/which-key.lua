@@ -83,12 +83,14 @@ return {
 			},
 			{
 				"<leader>lj",
-				"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'single' }})<cr>",
+				-- "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'single' }})<cr>",
+				"<cmd>lua vim.diagnostic.goto_next({ float = false })<cr>",
 				desc = "Next Diagnostic",
 			},
 			{
 				"<leader>lk",
-				"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'single' }})<cr>",
+				-- "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'single' }})<cr>",
+				"<cmd>lua vim.diagnostic.goto_prev({ float = false })<cr>",
 				desc = "Prev Diagnostic",
 			},
 		})
