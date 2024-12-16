@@ -53,7 +53,7 @@ return {
 				icon = "",
 			},
 			{
-				group = "Spectre",
+				group = "Grug-Far",
 				"<leader>s",
 				icon = "",
 			},

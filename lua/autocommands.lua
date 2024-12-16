@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"help",
 		"man",
 		"lspinfo",
-		"spectre_panel",
+		"grug-far",
 		"lir",
 	},
 	callback = function()
