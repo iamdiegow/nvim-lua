@@ -5,8 +5,24 @@ return {
 		"rachartier/tiny-inline-diagnostic.nvim",
 		event = "VeryLazy",
 		priority = 1000,
+		keys = {
+			{
+				"<leader>lT",
+				function()
+					require("tiny-inline-diagnostic").toggle()
+				end,
+				mode = "n",
+				desc = "Toggle Tiny Diagnostic (Show/Hide)",
+			},
+		},
 		config = function()
-			require("tiny-inline-diagnostic").setup()
+			require("tiny-inline-diagnostic").setup({
+				preset = "modern",
+				options = {
+					show_source = true,
+					multilines = true,
+				},
+			})
 		end,
 	},
 	{
