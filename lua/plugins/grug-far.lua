@@ -4,7 +4,13 @@ return {
 		{
 			"<leader>sg",
 			function()
-				require("grug-far").open({ transient = true })
+				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+				require("grug-far").open({
+					transient = true,
+					prefills = {
+						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
+					},
+				})
 			end,
 			mode = { "n", "v", "x" },
 			desc = "Open GrugFar",
