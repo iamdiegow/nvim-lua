@@ -53,6 +53,7 @@ return {
 				mason = true,
 				nvim_surround = true,
 				lsp_trouble = true,
+				fzf = true,
 			},
 		},
 	},
