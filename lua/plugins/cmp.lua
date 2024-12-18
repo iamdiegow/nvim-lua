@@ -62,7 +62,6 @@ return {
 					["<C-f>"] = cmp.mapping.scroll_docs(2),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
-					["<C-c>"] = cmp.mapping.close(),
 					["<CR>"] = cmp.mapping.confirm({ behaviour = cmp.ConfirmBehavior.Insert }),
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
