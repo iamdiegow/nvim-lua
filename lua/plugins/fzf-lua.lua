@@ -105,6 +105,23 @@ return {
 					color_icons = false,
 					formatter = "path.filename_first",
 				},
+				oldfiles = {
+					cwd_only = true,
+					include_current_session = true,
+				},
+				previewers = {
+					builtin = {
+						syntax_limit_b = 1024 * 100,
+					},
+				},
+				grep = {
+					rg_glob = true,
+				},
+				keymap = {
+					builtin = {
+						["<c-e>"] = "toggle-preview",
+					},
+				},
 			})
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
