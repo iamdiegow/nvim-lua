@@ -46,13 +46,7 @@ return {
 				enable = true,
 			},
 			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<leader>ss",
-					node_incremental = "<leader>si",
-					node_decremental = "<leader>sd",
-					scope_incremental = "<leader>sc",
-				},
+				enable = false,
 			},
 		},
 		config = function(_, opts)

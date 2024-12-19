@@ -94,7 +94,11 @@ return {
 		},
 		config = function()
 			require("fzf-lua").setup({
+				fzf_opts = {
+					["--cycle"] = true,
+				},
 				winopts = {
+					border = "thicc",
 					preview = {
 						default = "builtin",
 					},
@@ -104,6 +108,31 @@ return {
 					git_icons = false,
 					color_icons = false,
 					formatter = "path.filename_first",
+				},
+				oldfiles = {
+					cwd_only = true,
+					include_current_session = true,
+				},
+				previewers = {
+					builtin = {
+						syntax_limit_b = 1024 * 100,
+					},
+				},
+				grep = {
+					rg_glob = true,
+				},
+				diagnostics = {
+					cwd_only = true,
+				},
+				keymap = {
+					builtin = {
+						["<F1>"] = "toggle-help",
+						["<F2>"] = "toggle-fullscreen",
+						["<C-e>"] = "toggle-preview",
+						["<S-down>"] = "preview-page-down",
+						["<S-up>"] = "preview-page-up",
+						["<F5>"] = "toggle-preview-ccw",
+					},
 				},
 			})
 		end,
