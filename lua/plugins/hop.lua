@@ -43,15 +43,6 @@ return {
 			end,
 			desc = "Hop T",
 		},
-		{
-			"<C-p>",
-			function()
-				require("hop").hint_lines({
-					uppercase_labels = true,
-				})
-			end,
-			desc = "Hop Hint Lines",
-		},
 	},
 	config = function()
 		require("hop").setup()

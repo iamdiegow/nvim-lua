@@ -10,6 +10,34 @@ return {
 				desc = "Files (fzf-lua)",
 			},
 			{
+				"<leader>ss",
+				function()
+					require("fzf-lua").lsp_document_symbols()
+				end,
+				desc = "Document Symbols (fzf-lua)",
+			},
+			{
+				"<leader>sd",
+				function()
+					require("fzf-lua").lsp_document_diagnostics()
+				end,
+				desc = "Document Diagnostics (fzf-lua)",
+			},
+			{
+				"<C-p>",
+				function()
+					require("fzf-lua").files({
+						winopts = {
+							preview = {
+								hidden = "hidden",
+							},
+						},
+						formatter = "path.filename_first",
+					})
+				end,
+				desc = "Files (fzf-lua)",
+			},
+			{
 				"<leader>sp",
 				function()
 					require("fzf-lua").resume()
@@ -19,7 +47,13 @@ return {
 			{
 				"<leader>sb",
 				function()
-					require("fzf-lua").buffers()
+					require("fzf-lua").buffers({
+						winopts = {
+							preview = {
+								hidden = "hidden",
+							},
+						},
+					})
 				end,
 				desc = "Buffers (fzf-lua)",
 			},
@@ -38,15 +72,40 @@ return {
 				desc = "Grep (fzf-lua)",
 			},
 			{
-				"<leader>sl",
+				"<leader>sc",
 				function()
 					require("fzf-lua").live_grep()
 				end,
 				desc = "Live Grep (fzf-lua)",
 			},
+			{
+				"<leader>sl",
+				function()
+					require("fzf-lua").git_status({
+						winopts = {
+							preview = {
+								hidden = "hidden",
+							},
+						},
+					})
+				end,
+				desc = "Git Status (fzf-lua)",
+			},
 		},
 		config = function()
-			require("fzf-lua").setup({ "max-perf" })
+			require("fzf-lua").setup({
+				winopts = {
+					preview = {
+						default = "builtin",
+					},
+				},
+				defaults = {
+					file_icons = false,
+					git_icons = false,
+					color_icons = false,
+					formatter = "path.filename_first",
+				},
+			})
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
