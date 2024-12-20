@@ -5,7 +5,10 @@ return {
 		{
 			"<leader>o",
 			function()
-				require("mini.files").open()
+				local MiniFiles = require("mini.files")
+				if not MiniFiles.close() then
+					MiniFiles.open()
+				end
 			end,
 			desc = "Open Mini Files Explorer",
 		},
