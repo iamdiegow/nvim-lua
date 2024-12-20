@@ -91,6 +91,13 @@ return {
 				end,
 				desc = "Git Status (fzf-lua)",
 			},
+			{
+				"<leader>s/",
+				function()
+					require("fzf-lua").grep_curbuf()
+				end,
+				desc = "Grep Current Buffer (fzf-lua)",
+			},
 		},
 		config = function()
 			require("fzf-lua").setup({
