@@ -26,17 +26,6 @@ return {
 		end,
 	},
 	{
-		"famiu/bufdelete.nvim",
-		enabled = false,
-		keys = {
-			{
-				"<leader>c",
-				"<cmd>Bwipeout<CR>",
-				desc = "Close Buffer",
-			},
-		},
-	},
-	{
 		"kylechui/nvim-surround",
 		event = "VeryLazy",
 		config = function()
