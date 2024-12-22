@@ -52,7 +52,7 @@ map("n", "<C-q>", ":copen<CR>", options)
 map("n", "j", "gj", options)
 map("n", "k", "gk", options)
 -- Save file
-map("n", "<C-s>", "<cmd>w!<CR>", options)
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 -- move current line
 map("n", "<A-j>", ":m .+1<CR>==", options)
 map("n", "<A-k>", ":m .-2<CR>==", options)
