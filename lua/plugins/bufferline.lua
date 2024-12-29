@@ -10,6 +10,7 @@ return {
 		options = {
 			mode = "buffers",
 			numbers = "none",
+			themable = true,
 			-- close_command = "bdelete! %d",
 			close_command = function(n)
 				require("mini.bufremove").delete(n, false)
@@ -26,11 +27,6 @@ return {
 			right_mouse_command = "bdelete! %d",
 			left_mouse_command = "buffer %d",
 			middle_mouse_command = nil,
-			--"⎟ ⎜ ⎢ ⎜ ▏ ▊ ▋ ▉ ▎ ▍ ▋ ▍ ▎ "
-			indicator = {
-				-- icon = "▍",
-				style = "none",
-			},
 			buffer_close_icon = "  ",
 			modified_icon = "  ",
 			close_icon = "  ",
@@ -43,7 +39,7 @@ return {
 			diagnostics = false,
 			diagnostics_update_in_insert = false,
 			color_icons = true,
-			show_buffer_icons = false,
+			show_buffer_icons = true,
 			show_buffer_close_icons = false,
 			show_close_icon = false,
 			show_tab_indicators = true,
@@ -51,7 +47,13 @@ return {
 			separator_style = { "", "" },
 			enforce_regular_tabs = true,
 			always_show_bufferline = true,
-			sort_by = "insert_after_current",
+			-- sort_by = "insert_after_current",
+			-- sort by modified date
+			sort_by = function(buffer_a, buffer_b)
+				local modified_a = vim.fn.getftime(buffer_a.path)
+				local modified_b = vim.fn.getftime(buffer_b.path)
+				return modified_a > modified_b
+			end,
 		},
 		highlights = {
 			buffer_selected = {
