@@ -1,7 +1,6 @@
 return {
 	{
 		"frankroeder/parrot.nvim",
-		event = "VeryLazy",
 		keys = {
 			{ "<C-g>v", "<cmd>PrtChatToggle vsplit<CR>", desc = "Toggle Chat vsplit(Parrot)" },
 			{ "<C-g>s", "<cmd>PrtChatToggle split<CR>", desc = "Toggle Chat split(Parrot)" },
