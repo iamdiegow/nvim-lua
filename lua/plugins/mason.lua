@@ -42,6 +42,7 @@ return {
 				"prismals",
 				"emmet_language_server",
 				"marksman",
+				"denols",
 			}
 
 			require("mason-lspconfig").setup({
