@@ -64,6 +64,9 @@ map("n", "<leader>\\", '<cmd>call append(line(".")-1, "")<CR>', options)
 -- exit insert mode
 map("i", "jk", "<Esc>", options)
 
+-- Save file
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+
 -- move current line
 map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", options)
 map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", options)
