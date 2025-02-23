@@ -94,9 +94,15 @@ return {
 			{
 				"<leader>s/",
 				function()
-					require("fzf-lua").grep_curbuf()
+					require("fzf-lua").lines({
+						winopts = {
+							preview = {
+								hidden = "hidden",
+							},
+						},
+					})
 				end,
-				desc = "Grep Current Buffer (fzf-lua)",
+				desc = "Open Buffer Lines (fzf-lua)",
 			},
 		},
 		config = function()
