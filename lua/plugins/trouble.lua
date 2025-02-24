@@ -28,6 +28,16 @@ return {
 			"<cmd>Trouble qflist toggle<CR>",
 			desc = "(Trouble) Toggle Quickfix List",
 		},
+		{
+			"<leader>xi",
+			"<cmd>Trouble lsp_incoming_calls toggle<CR>",
+			desc = "(Trouble) Toggle Lsp Incoming Calls",
+		},
+		{
+			"<leader>xr",
+			"<cmd>Trouble lsp_references toggle<CR>",
+			desc = "(Trouble) Toggle Lsp References",
+		},
 	},
 	opts = {
 		auto_close = false,
