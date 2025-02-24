@@ -17,6 +17,20 @@ return {
 				desc = "Document Symbols (fzf-lua)",
 			},
 			{
+				"<leader>sl",
+				function()
+					require("fzf-lua").lsp_finder()
+				end,
+				desc = "Lsp Finder (fzf-lua)",
+			},
+			{
+				"<leader>sw",
+				function()
+					require("fzf-lua").lsp_live_workspace_symbols()
+				end,
+				desc = "Lsp Live Workspace Symbols (fzf-lua)",
+			},
+			{
 				"<leader>sd",
 				function()
 					require("fzf-lua").lsp_document_diagnostics()
@@ -43,6 +57,13 @@ return {
 					require("fzf-lua").resume()
 				end,
 				desc = "Resume (fzf-lua)",
+			},
+			{
+				"<leader>sm",
+				function()
+					require("fzf-lua").marks()
+				end,
+				desc = "Marks (fzf-lua)",
 			},
 			{
 				"<leader>sb",
@@ -79,19 +100,6 @@ return {
 				desc = "Live Grep (fzf-lua)",
 			},
 			{
-				"<leader>sl",
-				function()
-					require("fzf-lua").git_status({
-						winopts = {
-							preview = {
-								hidden = "hidden",
-							},
-						},
-					})
-				end,
-				desc = "Git Status (fzf-lua)",
-			},
-			{
 				"<leader>s/",
 				function()
 					require("fzf-lua").lines({
@@ -103,6 +111,14 @@ return {
 					})
 				end,
 				desc = "Open Buffer Lines (fzf-lua)",
+			},
+			{
+				"<leader>sv",
+				function()
+					require("fzf-lua").grep_visual()
+				end,
+				desc = "Grep Visual (fzf-lua)",
+				mode = { "v", "x" },
 			},
 		},
 		config = function()
