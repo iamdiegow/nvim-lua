@@ -46,7 +46,7 @@ return {
 				icons_enabled = true,
 				theme = vim.g.lualine_theme,
 				component_separators = "",
-				section_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					"Outline",
 					"NvimTree",
