@@ -2,6 +2,7 @@ return {
 	"nvim-telescope/telescope.nvim",
 	keys = {
 		{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffers (Telescope)" },
+		{ "<leader>fm", "<cmd>Telescope marks<CR>", desc = "Find Buffers (Telescope)" },
 		{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files (Telescope)" },
 		{
 			"<leader>f/",
@@ -124,6 +125,9 @@ return {
 						".git/",
 						"node_modules/",
 					},
+				},
+				marks = {
+					mark_type = "global",
 				},
 				buffers = {
 					previewer = false,
