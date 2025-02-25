@@ -150,6 +150,9 @@ return {
 				grep = {
 					rg_glob = true,
 				},
+				marks = {
+					marks = "%a",
+				},
 				diagnostics = {
 					cwd_only = true,
 				},
