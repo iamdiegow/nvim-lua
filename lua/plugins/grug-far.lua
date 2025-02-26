@@ -2,7 +2,7 @@ return {
 	"MagicDuck/grug-far.nvim",
 	keys = {
 		{
-			"<leader>sg",
+			"<leader>rr",
 			function()
 				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
 				require("grug-far").open({
