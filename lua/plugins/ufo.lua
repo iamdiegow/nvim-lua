@@ -5,8 +5,16 @@ return {
 	config = function()
 		require("ufo").setup({
 			open_fold_hl_timeout = 0,
-		})
+			---@diagnostic disable-next-line: unused-local
+			provider_selector = function(_bufnr, filetype, _buftype)
+				print(filetype)
+				if filetype == "NeogitStatus" then
+					return ""
+				end
 
+				return { "treesitter", "indent" }
+			end,
+		})
 		vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 		vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 		vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
