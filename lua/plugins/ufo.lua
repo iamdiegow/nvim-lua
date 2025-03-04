@@ -7,7 +7,6 @@ return {
 			open_fold_hl_timeout = 0,
 			---@diagnostic disable-next-line: unused-local
 			provider_selector = function(_bufnr, filetype, _buftype)
-				print(filetype)
 				if filetype == "NeogitStatus" then
 					return ""
 				end
