@@ -57,12 +57,11 @@ return {
 		opts = {
 			window = {
 				backdrop = 1,
-				width = 0.95,
-				height = 0.95,
+				width = 0.60,
 				options = {
-					signcolumn = "yes",
+					signcolumn = "no",
 					number = true,
-					relativenumber = true,
+					relativenumber = false,
 					cursorline = true,
 					cursorcolumn = false,
 				},
