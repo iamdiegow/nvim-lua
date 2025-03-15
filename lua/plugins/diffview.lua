@@ -4,6 +4,7 @@ return {
 		{ "<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Open Diffview" },
 		{ "<leader>gq", "<cmd>DiffviewClose<CR>", desc = "Close Diffview" },
 		{ "<leader>gh", "<cmd>DiffviewFileHistory<CR>", desc = "View File History" },
+		{ "<leader>gf", "<cmd>DiffviewFileHistory %<CR>", desc = "View Current File History" },
 	},
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
