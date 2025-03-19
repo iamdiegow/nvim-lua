@@ -16,7 +16,7 @@ vim.opt.termguicolors = true
 vim.opt.ruler = false
 vim.opt.pumheight = 10
 vim.opt.scrolloff = 5
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 vim.opt.confirm = true
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
@@ -54,7 +54,7 @@ o.signcolumn = "yes"
 o.showmode = false
 o.backup = false
 o.writebackup = false
-o.cursorline = true
+o.cursorline = false
 o.cursorcolumn = false
 o.wrap = true
 
