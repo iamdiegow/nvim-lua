@@ -1,44 +1,25 @@
 local M = {}
 
 M.setup = function()
-	local signs = {
-		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
-	}
-
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
-
-	local config = {
+	vim.diagnostic.config({
 		virtual_text = false,
 		signs = {
-			active = signs,
+			text = {
+				[vim.diagnostic.severity.ERROR] = "",
+				[vim.diagnostic.severity.WARN] = "",
+				[vim.diagnostic.severity.HINT] = "",
+				[vim.diagnostic.severity.INFO] = "",
+			},
+			numhl = {
+				[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+				[vim.diagnostic.severity.WARN] = "WarningMsg",
+				[vim.diagnostic.severity.HINT] = "DiagnosticHint",
+				[vim.diagnostic.severity.INFO] = "DiagnisticInfo",
+			},
 		},
-		-- signs = false,
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
-		float = {
-			focusable = true,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
-	}
-
-	vim.diagnostic.config(config)
-
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "single",
-	})
-
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "single",
 	})
 end
 
@@ -54,7 +35,7 @@ local function lsp_keymaps(bufnr)
 	end, { desc = "(LSP) Go to Definition", silent = true, buffer = bufnr })
 
 	map("n", "K", function()
-		vim.lsp.buf.hover()
+		vim.lsp.buf.hover({ border = "single" })
 	end, { desc = "(LSP) Hover", silent = true, buffer = bufnr })
 
 	map("n", "gh", function()
@@ -74,12 +55,16 @@ local function lsp_keymaps(bufnr)
 	end, { desc = "(LSP) Rename Symbol", silent = true, buffer = bufnr })
 
 	map("n", "gs", function()
-		vim.lsp.buf.signature_help()
+		vim.lsp.buf.signature_help({ border = "single" })
 	end, { desc = "(LSP) Signature Help", silent = true, buffer = bufnr })
 
 	map("n", "ga", function()
 		vim.lsp.buf.code_action()
 	end, { desc = "(LSP) Code Actions", silent = true, buffer = bufnr })
+
+	map("n", "gI", function()
+		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+	end, { desc = "(LSP) Toggle Inlay Hint" })
 end
 
 M.on_attach = function(client, bufnr)

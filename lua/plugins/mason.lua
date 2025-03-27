@@ -94,6 +94,11 @@ return {
 					opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts)
 				end
 
+				if server == "ts_ls" then
+					local tsls_opts = require("lsp.settings.ts_ls")
+					opts = vim.tbl_deep_extend("force", tsls_opts, opts)
+				end
+
 				lspconfig[server].setup(vim.tbl_deep_extend("force", opts, {
 					capabilities = {
 						textDocument = {
