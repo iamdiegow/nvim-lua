@@ -28,8 +28,9 @@ map("n", "<C-k>", "5gkzz", options)
 
 map("n", "<C-l>", "<C-w>l", options)
 map("n", "<C-h>", "<C-w>h", options)
--- tabs
-map("n", "tt", ":tab split<CR>", options)
+
+map("n", "<leader>-", "<C-w>s", { desc = "Split Window Below", remap = true })
+map("n", "<leader>|", "<C-w>v", { desc = "Split Window Right", remap = true })
 -- better yank
 map("n", "Y", "y$", options)
 -- Center screen
