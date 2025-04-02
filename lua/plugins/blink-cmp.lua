@@ -21,10 +21,10 @@ return {
 		},
 		completion = {
 			menu = {
-				auto_show = false,
+				auto_show = true,
 			},
 			ghost_text = {
-				enabled = true,
+				enabled = false,
 				show_with_menu = false,
 			},
 			documentation = {
@@ -34,7 +34,7 @@ return {
 			},
 		},
 		signature = {
-			enabled = true,
+			enabled = false,
 			window = default_window,
 		},
 		sources = {
