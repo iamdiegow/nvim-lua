@@ -24,7 +24,7 @@ return {
 				auto_show = false,
 			},
 			ghost_text = {
-				enabled = true,
+				enabled = false,
 				show_with_menu = false,
 			},
 			documentation = {
@@ -34,7 +34,7 @@ return {
 			},
 		},
 		signature = {
-			enabled = true,
+			enabled = false,
 			window = default_window,
 		},
 		sources = {
