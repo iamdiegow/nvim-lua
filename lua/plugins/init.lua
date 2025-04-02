@@ -17,12 +17,17 @@ return {
 		},
 		config = function()
 			require("tiny-inline-diagnostic").setup({
-				preset = "modern",
+				preset = "minimal",
+				transparent_bg = true,
 				options = {
-					show_source = true,
-					multilines = true,
+					show_source = false,
+					multilines = {
+						enabled = true,
+						always_show = true,
+					},
 				},
 			})
+			vim.diagnostic.config({ virtual_text = false })
 		end,
 	},
 	{
