@@ -18,9 +18,13 @@ return {
 		require("mini.files").setup({
 			windows = {
 				preview = false,
+				width_focus = 20,
+				width_nofocus = 20,
 			},
 			mappings = {
-				go_in_plus = "<CR>",
+				go_in_plus = "l",
+				go_in = "<CR>",
+				synchronize = "<C-s>",
 			},
 		})
 	end,
