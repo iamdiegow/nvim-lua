@@ -22,7 +22,7 @@ require("lazy").setup("plugins", {
 	defaults = {
 		lazy = true,
 	},
-	install = { colorscheme = { "tokyonight" } },
+	install = { colorscheme = { "catppuccin" } },
 	checker = {
 		enabled = true,
 		notify = false,
@@ -59,5 +59,5 @@ require("keymappings")
 require("settings")
 require("autocommands")
 
-vim.cmd("colorscheme tokyonight")
-vim.g.lualine_theme = "tokyonight"
+vim.cmd("colorscheme catppuccin")
+vim.g.lualine_theme = "catppuccin"

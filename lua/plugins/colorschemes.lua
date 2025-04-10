@@ -42,7 +42,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			flavour = "mocha",
+			flavour = "latte",
 			transparent_background = true,
 			term_colors = true,
 			integrations = {
@@ -54,6 +54,7 @@ return {
 				nvim_surround = true,
 				lsp_trouble = true,
 				fzf = true,
+				blink_cmp = true,
 			},
 		},
 	},
