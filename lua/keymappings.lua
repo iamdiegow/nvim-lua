@@ -112,7 +112,19 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- Search and Replace
+map("n", "<leader>SS", ":%s/\\v", { desc = "Substitute in same line" })
+map("n", "<leader>Ss", ":s/\\v", { desc = "Substitute and replace in file" })
+map("v", "<leader>Sv", ":s/\\%V", { desc = "Substitute in visual selection" })
+
 vim.keymap.set("n", "<Leader>is", function()
 	vim.o.spell = not vim.o.spell
 	print("spell: " .. tostring(vim.o.spell))
 end, { desc = "Toggle Spelling" })
+
+vim.keymap.set(
+	"n",
+	"<leader>Sf",
+	':let @+ = expand("%:p")<cr>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<cr>',
+	{ desc = "Copy current file name and path", silent = false }
+)
