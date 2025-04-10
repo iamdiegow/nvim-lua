@@ -16,7 +16,7 @@ return {
 			["<CR>"] = { "select_and_accept", "fallback" },
 		},
 		appearance = {
-			use_nvim_cmp_as_default = false,
+			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
 		},
 		completion = {
@@ -28,7 +28,7 @@ return {
 				show_with_menu = false,
 			},
 			documentation = {
-				auto_show = false,
+				auto_show = true,
 				treesitter_highlighting = true,
 				window = default_window,
 			},
