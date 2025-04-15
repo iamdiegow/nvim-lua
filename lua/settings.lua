@@ -63,7 +63,6 @@ bo.shiftwidth = 2
 bo.autoindent = false
 
 vim.cmd([[ set shortmess+=sI ]])
-vim.cmd([[ set iskeyword+=- ]])
 
 vim.cmd([[
  highlight WinSeparator guibg=None
