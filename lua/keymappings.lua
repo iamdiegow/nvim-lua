@@ -2,14 +2,11 @@ local map = vim.keymap.set
 local options = { noremap = true, silent = true }
 
 -- Nops
--- Disable accidentally pressing ctrl-z and suspending
-map("n", "<c-z>", "<Nop>", options)
 -- Disable ex mode
 map("n", "Q", "<Nop>", options)
 map("n", "gQ", "<Nop>", options)
 
 -- NORMAL MODE ----------
-map("n", "<C-z>", ":ZenMode<CR>", options)
 -- set LEADER key to space
 map("n", "<Space>", "<NOP>", options)
 -- Disable highlight
