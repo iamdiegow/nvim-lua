@@ -1,11 +1,11 @@
 return {
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		event = "BufReadPre",
 		dependencies = {
 			{
 				lazy = false,
-				"williamboman/mason.nvim",
+				"mason-org/mason.nvim",
 			},
 			{
 				"neovim/nvim-lspconfig",
