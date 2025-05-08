@@ -8,8 +8,8 @@ return {
 				"mason-org/mason.nvim",
 			},
 			{
-				"neovim/nvim-lspconfig",
 				lazy = false,
+				"neovim/nvim-lspconfig",
 			},
 		},
 		config = function()
@@ -47,72 +47,53 @@ return {
 
 			require("mason-lspconfig").setup({
 				ensure_installed = {},
-				automatic_installation = false,
+				automatic_enable = true,
 			})
 
-			local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-			if not lspconfig_status_ok then
-				return
-			end
-
-			local opts = {}
-
-			for _, server in pairs(servers) do
-				opts = {
-					on_attach = require("lsp.handlers").on_attach,
-					capabilities = require("lsp.handlers").capabilities,
-					flags = {
-						allow_incremental_sync = true,
-						debounce_text_changes = 200,
+			vim.diagnostic.config({
+				virtual_text = false,
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = "",
+						[vim.diagnostic.severity.WARN] = "",
+						[vim.diagnostic.severity.HINT] = "",
+						[vim.diagnostic.severity.INFO] = "",
 					},
-				}
-
-				server = vim.split(server, "@")[1]
-
-				if server == "jsonls" then
-					local jsonls_opts = require("lsp.settings.jsonls")
-					opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-				end
-
-				if server == "yamlls" then
-					local yamlls_opts = require("lsp.settings.yamlls")
-					opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
-				end
-
-				if server == "lua_ls" then
-					local luals_opts = require("lsp.settings.lua_ls")
-					opts = vim.tbl_deep_extend("force", luals_opts, opts)
-				end
-
-				if server == "eslint" then
-					local eslint_opts = require("lsp.settings.eslint")
-					opts = vim.tbl_deep_extend("force", eslint_opts, opts)
-				end
-
-				if server == "tailwindcss" then
-					local tailwindcss_opts = require("lsp.settings.tailwindcss")
-					opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts)
-				end
-
-				if server == "ts_ls" then
-					local tsls_opts = require("lsp.settings.ts_ls")
-					opts = vim.tbl_deep_extend("force", tsls_opts, opts)
-				end
-
-				lspconfig[server].setup(vim.tbl_deep_extend("force", opts, {
-					capabilities = {
-						textDocument = {
-							foldingRange = {
-								dynamicRegistration = false,
-								lineFoldingOnly = true,
-							},
-						},
+					numhl = {
+						[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+						[vim.diagnostic.severity.WARN] = "WarningMsg",
+						[vim.diagnostic.severity.HINT] = "DiagnosticHint",
+						[vim.diagnostic.severity.INFO] = "DiagnisticInfo",
 					},
-				}))
-				::continue::
-			end
+				},
+				update_in_insert = false,
+				underline = true,
+				severity_sort = true,
+			})
 
-			require("lsp.handlers").setup()
+			vim.lsp.config("*", {
+				capabilities = require("lsp.handlers").capabilities,
+				on_attach = require("lsp.handlers").on_attach,
+			})
+
+			vim.api.nvim_create_autocmd("LspAttach", {
+				callback = function(event)
+					local bufnr = event.buf
+					local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+					if not client then
+						return
+					end
+
+					if client.name == "lua_ls" then
+						client.server_capabilities.documentFormattingProvider = false
+					end
+
+					if client.name == "ts_ls" then
+						client.server_capabilities.documentFormattingProvider = false
+					end
+				end,
+			})
 		end,
 	},
 }
