@@ -1,5 +1,5 @@
 return {
-	"epwalsh/obsidian.nvim",
+	"obsidian-nvim/obsidian.nvim",
 	version = "*",
 	ft = "markdown",
 	dependencies = {
@@ -9,14 +9,15 @@ return {
 		"ObsidianSearch",
 	},
 	keys = {
-		{ "<leader>'s", "<cmd>ObsidianSearch<CR>", desc = "Search (Obsidian)" },
-		{ "<leader>''", "<cmd>ObsidianQuickSwitch<CR>", desc = "QuickSwitch (Obsidian)" },
-		{ "<leader>'n", "<cmd>ObsidianNew<CR>", desc = "New (Obsidian)" },
-		{ "<leader>'b", "<cmd>ObsidianBacklinks<CR>", desc = "BackLinks (Obsidian)" },
-		{ "<leader>'l", "<cmd>ObsidianLinkNew<CR>", desc = "New Link (Obsidian)" },
+		{ "<leader>'s", "<cmd>Obsidian search<CR>", desc = "Search (Obsidian)" },
+		{ "<leader>''", "<cmd>Obsidian quich_switch<CR>", desc = "QuickSwitch (Obsidian)" },
+		{ "<leader>'n", "<cmd>Obsidian new<CR>", desc = "New (Obsidian)" },
+		{ "<leader>'b", "<cmd>Obsidian backlinks<CR>", desc = "BackLinks (Obsidian)" },
+		{ "<leader>'l", "<cmd>Obsidian link_new<CR>", desc = "New Link (Obsidian)" },
+		{ "<leader>'l", "<cmd>Obsidian follow_link<CR>", desc = "Follow Link (Obsidian)" },
 		{
 			"<leader>'t",
-			"<cmd>ObsidianTags<CR>",
+			"<cmd>Obsidian tags<CR>",
 			desc = "Tags (Obsidian)",
 		},
 	},
@@ -32,10 +33,13 @@ return {
 				enable = false,
 			},
 			completion = {
-				nvim_cmp = false,
+				blink = true,
 				min_chars = 2,
 			},
 			preferred_link_style = "wiki",
+			picker = {
+				name = "fzf-lua",
+			},
 			note_id_func = function(title)
 				local suffix = ""
 				if title ~= nil then
