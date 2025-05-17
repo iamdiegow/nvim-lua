@@ -39,7 +39,11 @@ local function lsp_keymaps(bufnr)
 	end, { desc = "(LSP) Hover", silent = true, buffer = bufnr })
 
 	map("n", "gh", function()
-		vim.lsp.buf.hover()
+		vim.lsp.buf.hover({
+			border = "single",
+			relative = "editor",
+			width = vim.api.nvim_win_get_width(0),
+		})
 	end, { desc = "(LSP) Hover", silent = true, buffer = bufnr })
 
 	map("n", "gi", function()
