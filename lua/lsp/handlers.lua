@@ -23,7 +23,7 @@ M.setup = function()
 	})
 end
 
-local function lsp_keymaps(bufnr)
+M.lsp_keymaps = function(bufnr)
 	local map = vim.keymap.set
 
 	map("n", "gD", function()
@@ -72,7 +72,7 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	lsp_keymaps(bufnr)
+	M.lsp_keymaps(bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -85,13 +85,7 @@ return {
 						return
 					end
 
-					if client.name == "lua_ls" then
-						client.server_capabilities.documentFormattingProvider = false
-					end
-
-					if client.name == "ts_ls" then
-						client.server_capabilities.documentFormattingProvider = false
-					end
+					require("lsp.handlers").lsp_keymaps(bufnr)
 				end,
 			})
 		end,
