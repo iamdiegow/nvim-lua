@@ -20,9 +20,9 @@ return {
 			{
 				"<leader>sl",
 				function()
-					require("fzf-lua").lsp_finder()
+					require("fzf-lua").git_status()
 				end,
-				desc = "Lsp Finder (fzf-lua)",
+				desc = "Git Status (fzf-lua)",
 			},
 			{
 				"<leader>sw",
