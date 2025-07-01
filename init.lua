@@ -59,5 +59,5 @@ require("keymappings")
 require("settings")
 require("autocommands")
 
-vim.cmd("colorscheme catppuccin")
-vim.g.lualine_theme = "catppuccin"
+vim.cmd("colorscheme tokyonight")
+vim.g.lualine_theme = "tokyonight"

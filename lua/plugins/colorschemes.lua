@@ -5,7 +5,7 @@ return {
 		priority = 1000,
 		opts = {
 			transparent = true,
-			style = "day",
+			style = "night",
 			terminal_colors = true,
 			hide_inactive_statusline = false,
 			lualine_bold = true,
@@ -42,7 +42,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			flavour = "latte",
+			flavour = "mocha",
 			transparent_background = true,
 			term_colors = true,
 			integrations = {
