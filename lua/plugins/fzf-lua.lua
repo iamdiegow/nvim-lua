@@ -18,7 +18,7 @@ return {
 				desc = "Document Symbols (fzf-lua)",
 			},
 			{
-				"<leader>sl",
+				"<leadergsl",
 				function()
 					require("fzf-lua").git_status()
 				end,
@@ -82,7 +82,15 @@ return {
 			{
 				"<leader>so",
 				function()
-					require("fzf-lua").oldfiles()
+					require("fzf-lua").combine({
+						pickers = "oldfiles;git_files",
+						winopts = {
+							preview = {
+								hidden = "hidden",
+							},
+						},
+						formatter = "path.filename_first",
+					})
 				end,
 				desc = "Old Files (fzf-lua)",
 			},
@@ -120,6 +128,18 @@ return {
 				end,
 				desc = "Grep Visual (fzf-lua)",
 				mode = { "v", "x" },
+			},
+			{
+				"<leader>sg",
+				function()
+					require("fzf-lua").global({
+						winopts = {
+							preview = { hidden = "hidden" },
+						},
+						formatter = "path.filename_first",
+					})
+				end,
+				desc = "Global Picker (fzf-lua)",
 			},
 		},
 		config = function()
