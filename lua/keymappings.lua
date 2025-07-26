@@ -26,6 +26,12 @@ map("n", "<C-k>", "5gkzz", options)
 map("n", "<C-l>", "<C-w>l", options)
 map("n", "<C-h>", "<C-w>h", options)
 
+-- Buffers
+map("n", "<S-h>", "<cmd>bnext<CR>", options)
+map("n", "<S-l>", "<cmd>bprev<CR>", options)
+map("n", "<TAB>", "<cmd>bnext<CR>", options)
+map("n", "<S-TAB>", "<cmd>bprev<CR>", options)
+
 map("n", "<leader>-", "<C-w>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-w>v", { desc = "Split Window Right", remap = true })
 -- better yank

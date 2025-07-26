@@ -4,6 +4,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		{ "echasnovski/mini.bufremove", version = "*" },
 	},
+	enabled = false,
 	event = "VeryLazy",
 	-- event = "BufReadPre",
 	opts = {
