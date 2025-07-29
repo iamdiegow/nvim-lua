@@ -5,9 +5,6 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	cmd = {
-		"ObsidianSearch",
-	},
 	keys = {
 		{ "<leader>'s", "<cmd>Obsidian search<CR>", desc = "Search (Obsidian)" },
 		{ "<leader>''", "<cmd>Obsidian quick_switch<CR>", desc = "QuickSwitch (Obsidian)" },
@@ -23,6 +20,7 @@ return {
 	},
 	config = function()
 		require("obsidian").setup({
+			legacy_commands = false,
 			workspaces = {
 				{
 					name = "vault",
