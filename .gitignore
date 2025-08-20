@@ -2,3 +2,4 @@ plugin
 vscode-node-debug2
 lazy-lock.json
 lua/plugins/codeium.lua
+lua/plugins/copilot.lua
