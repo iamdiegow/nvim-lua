@@ -47,7 +47,6 @@ return {
 								hidden = "hidden",
 							},
 						},
-						formatter = "path.filename_first",
 					})
 				end,
 				desc = "Files (fzf-lua)",
@@ -89,7 +88,6 @@ return {
 								hidden = "hidden",
 							},
 						},
-						formatter = "path.filename_first",
 					})
 				end,
 				desc = "Old Files (fzf-lua)",
@@ -136,7 +134,6 @@ return {
 						winopts = {
 							preview = { hidden = "hidden" },
 						},
-						formatter = "path.filename_first",
 					})
 				end,
 				desc = "Global Picker (fzf-lua)",
@@ -157,11 +154,22 @@ return {
 					file_icons = false,
 					git_icons = false,
 					color_icons = false,
-					formatter = "path.filename_first",
+					formatter = {
+						"path.filename_first",
+						2,
+					},
 				},
 				oldfiles = {
 					cwd_only = true,
 					include_current_session = true,
+				},
+				files = {
+					cwd_prompt = false,
+					cwd_header = true,
+					formatter = {
+						"path.filename_first",
+						2,
+					},
 				},
 				previewers = {
 					builtin = {
