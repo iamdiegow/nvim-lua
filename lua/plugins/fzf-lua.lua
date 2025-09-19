@@ -79,6 +79,19 @@ return {
 				desc = "Buffers (fzf-lua)",
 			},
 			{
+				"<leader>st",
+				function()
+					require("fzf-lua").tabs({
+						winopts = {
+							preview = {
+								hidden = "hidden",
+							},
+						},
+					})
+				end,
+				desc = "Tabs (fzf-lua)",
+			},
+			{
 				"<leader>so",
 				function()
 					require("fzf-lua").combine({
