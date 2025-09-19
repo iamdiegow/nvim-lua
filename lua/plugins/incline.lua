@@ -16,6 +16,11 @@ return {
 						winbar = false,
 					},
 				},
+				ignore = {
+					filetypes = { "sql" },
+					buftypes = "special",
+					wintypes = "special",
+				},
 				render = function(props)
 					local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":.")
 					local modified = vim.bo[props.buf].modified
