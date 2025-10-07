@@ -19,7 +19,7 @@ return {
 	cmd = "GrugFar",
 	config = function()
 		require("grug-far").setup({
-			startInInsertMode = false,
+			startInInsertMode = true,
 			keymaps = {
 				replace = { n = "<localleader>r" },
 				qflist = { n = "<localleader>q" },
