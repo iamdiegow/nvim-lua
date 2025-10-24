@@ -1,10 +1,21 @@
 return {
 	"folke/sidekick.nvim",
+	dependencies = {
+		"nvim-telescope/telescope.nvim",
+	},
 	opts = {
 		cli = {
 			mux = {
 				backend = "tmux",
-				enabled = false,
+				enabled = true,
+				create = "window",
+			},
+			win = {
+				layout = "right",
+			},
+			picker = "telescope",
+			prompts = {
+				english = "Please review the grammar and syntax (English) of this {file}",
 			},
 		},
 		nes = {
@@ -15,7 +26,11 @@ return {
 		{
 			"<leader>aa",
 			function()
-				require("sidekick.cli").toggle()
+				require("sidekick.cli").toggle({
+					filter = {
+						installed = true,
+					},
+				})
 			end,
 			desc = "Sidekick Toggle CLI",
 		},
@@ -29,6 +44,14 @@ return {
 				})
 			end,
 			desc = "Select CLI",
+		},
+		{
+			"<leader>af",
+			function()
+				require("sidekick.cli").send({ msg = "{file}" })
+			end,
+			mode = { "x", "n" },
+			desc = "Sidekick Send File",
 		},
 		{
 			"<leader>at",
@@ -53,14 +76,6 @@ return {
 			end,
 			mode = { "n", "x" },
 			desc = "Sidekick Select Prompt",
-		},
-		{
-			"<C-.>",
-			function()
-				require("sidekick.cli").focus()
-			end,
-			mode = { "n", "x", "i", "t" },
-			desc = "Sidekick Switch Focus",
 		},
 		{
 			"<leader>ac",
