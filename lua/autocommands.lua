@@ -65,3 +65,21 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Fix folding in files opened with nvim-tree of telescope
 vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx" })
+
+vim.api.nvim_create_autocmd("FocusGained", {
+	desc = "Reload files from disk when we focus vim",
+	pattern = "*",
+	command = "if getcmdwintype() == '' | checktime | endif",
+})
+
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+	desc = "Reload files from disk",
+	pattern = "*",
+	command = "if getcmdwintype() == '' | checktime | endif",
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	desc = "Every time we enter an unmodified buffer, check if it changed on disk",
+	pattern = "*",
+	command = "if &buftype == '' && !&modified && expand('%') != '' | exec 'checktime ' . expand('<abuf>') | endif",
+})
